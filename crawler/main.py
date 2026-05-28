@@ -5,13 +5,13 @@ Führt alle Module zusammen: sammeln → filtern → bewerten → speichern.
 
 import asyncio
 import hashlib
-import sys
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 
 import yaml
+from dateutil import parser as dateparser
 
 from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
 from curator  import is_valid_curator, calc_weight
@@ -31,6 +31,34 @@ def domain_ok(url: str, blacklist: set) -> bool:
         return bool(domain) and domain not in blacklist
     except Exception:
         return False
+
+
+def newest_signal_time(signals: list[dict]) -> tuple[str, datetime | None]:
+    """Return freshest shared_at value and parsed UTC datetime, if parseable."""
+    newest_raw = ""
+    newest_at: datetime | None = None
+
+    for signal in signals:
+        raw = signal.get("shared_at", "")
+        if raw > newest_raw:
+            newest_raw = raw
+
+        try:
+            parsed = dateparser.parse(raw)
+        except Exception:
+            continue
+
+        if parsed is None:
+            continue
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        parsed = parsed.astimezone(timezone.utc)
+
+        if newest_at is None or parsed > newest_at:
+            newest_at = parsed
+            newest_raw = raw
+
+    return newest_raw, newest_at
 
 
 async def run():
@@ -95,16 +123,19 @@ async def run():
     articles = []
     max_age_h = cfg["article_filter"].get("max_age_hours", 48)
     now = datetime.now(timezone.utc)
+    too_old_count = 0
 
     for url, sigs in by_url.items():
+        # Neuestes shared_at bestimmt, ob ein Artikel noch ins Feed darf.
+        latest_shared, latest_at = newest_signal_time(sigs)
+        if latest_at is not None:
+            age_hours = (now - latest_at).total_seconds() / 3600
+            if age_hours > max_age_h:
+                too_old_count += 1
+                continue
+
         score = score_article(sigs)
         title = next((s.get("title") for s in sigs if s.get("title")), "")
-
-        # Neuestes shared_at bestimmen
-        latest_shared = max(
-            (s.get("shared_at", "") for s in sigs),
-            default=""
-        )
 
         # Tags aus Signalen aggregieren; Domain-Fallback für ungetaggte Artikel
         all_tags: list[str] = []
@@ -126,6 +157,9 @@ async def run():
             "latest_shared": latest_shared,
             "tags":          article_tags,
         })
+
+    if too_old_count:
+        print(f"→ {too_old_count} Artikel älter als {max_age_h}h verworfen")
 
     # ── 8. Nur Artikel mit sozialem Signal behalten ────────────────────────
     social_platforms = {"mastodon", "bluesky"}
