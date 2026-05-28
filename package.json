@@ -1,5 +1,5 @@
 {
-  "name": "feedbeat",
+  "name": "octobeat",
   "version": "1.0.0",
   "description": "Social news aggregator powered by Mastodon, Bluesky & RSS",
   "scripts": {

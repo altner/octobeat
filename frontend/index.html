@@ -232,7 +232,7 @@
 <body>
 
 <header>
-  <h1>feedbeat</h1>
+  <h1>OctoBeat</h1>
   <span class="meta" id="genTime"></span>
   <div class="spacer"></div>
   <a href="feeds.html" style="color:var(--muted);font-size:13px;text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:8px;">Feeds</a>
@@ -263,13 +263,13 @@
   let allArticles = [];
 
   function getFeedUrl() {
-    return localStorage.getItem("feedbeat_feed_url") || DEFAULT_FEED_URL;
+    return localStorage.getItem("octobeat_feed_url") || DEFAULT_FEED_URL;
   }
 
   function saveFeedUrl() {
     const url = document.getElementById("feedUrlInput").value.trim();
     if (!url) return;
-    localStorage.setItem("feedbeat_feed_url", url);
+    localStorage.setItem("octobeat_feed_url", url);
     document.getElementById("configBanner").style.display = "none";
     loadFeed(url);
   }

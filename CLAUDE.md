@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-Feedbeat is a German-language social news aggregator. It crawls Mastodon, Bluesky, RSS feeds (and optionally Hacker News), scores articles by social signal strength, and produces a ranked `data/feed.json` that a static frontend reads.
+OctoBeat is a German-language social news aggregator. It crawls Mastodon, Bluesky, RSS feeds (and optionally Hacker News), scores articles by social signal strength, and produces a ranked `data/feed.json` that a static frontend reads.
 
 ## Commands
 

@@ -5,7 +5,7 @@ interface Props {
   pageType?: 'main' | 'feeds' | 'debug';
 }
 
-const { title = 'Feedbeat', genTime = '', pageType = 'main' } = Astro.props;
+const { title = 'OctoBeat', genTime = '', pageType = 'main' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -116,7 +116,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </head>
 <body>
   <header>
-    <a class="logo" href={`${base}/`}>feedbeat</a>
+    <a class="logo" href={`${base}/`}>OctoBeat</a>
     {pageType === 'debug' && <span class="debug-badge">Debug</span>}
     {genTime && <span class="meta">{genTime}</span>}
     <div class="spacer"></div>
