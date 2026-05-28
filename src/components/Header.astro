@@ -5,6 +5,12 @@ interface Props {
 }
 const { currentPage, genTime = '' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navItems = [
+  { page: 'main', label: 'Aktuell', href: `${base}/` },
+  { page: 'feeds', label: 'Settings', href: `${base}/feeds.html` },
+  { page: 'debug', label: 'Debug', href: `${base}/debug.html` },
+] as const;
 ---
 <header>
   <a class="logo" href={`${base}/`}>OctoBeat</a>
@@ -12,11 +18,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   {genTime && <span class="meta">{genTime}</span>}
   <div class="spacer"></div>
   <nav class="nav-links">
-    {currentPage !== 'feeds' && <a class="nav-link" href={`${base}/feeds`}>Feeds</a>}
-    {currentPage === 'main'  && <a class="nav-link" href={`${base}/debug`}>Debug</a>}
-    {(currentPage === 'debug' || currentPage === 'feeds') && (
-      <a class="nav-link" href={`${base}/`}>← Zurück</a>
-    )}
+    {navItems.map(item => (
+      <a
+        class:list={['nav-link', { active: item.page === currentPage }]}
+        href={item.href}
+        aria-current={item.page === currentPage ? 'page' : undefined}
+      >
+        {item.label}
+      </a>
+    ))}
   </nav>
   <slot />
 </header>
@@ -75,11 +85,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     border: 1px solid var(--border);
     border-radius: 8px;
     white-space: nowrap;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
   .nav-link:hover { color: var(--text); border-color: var(--muted); }
+  .nav-link.active {
+    color: var(--text);
+    border-color: var(--accent);
+    background: rgba(108,142,255,0.12);
+  }
 
   @media (max-width: 600px) {
     header { flex-wrap: wrap; }
+    .nav-links { order: 3; width: 100%; }
+    .nav-link { flex: 1; text-align: center; }
   }
 </style>

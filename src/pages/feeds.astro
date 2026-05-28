@@ -52,10 +52,10 @@ function isTravel(url: string) {
 }
 ---
 
-<BaseLayout title="OctoBeat – Feeds">
+<BaseLayout title="OctoBeat – Settings">
   <Header currentPage="feeds" />
   <main>
-    <h2>RSS-Feeds <span class="count">{feeds.length} Quellen</span></h2>
+    <h2>Feed-URLs <span class="count">{feeds.length} Quellen</span></h2>
 
     {feeds.length === 0 ? (
       <p class="empty">Noch keine Feeds — bitte <code>python crawler/main.py</code> ausführen.</p>
