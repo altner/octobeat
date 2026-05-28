@@ -57,7 +57,7 @@ jobs:
       - name: Build site
         run: |
           mkdir _site
-          cp index.html feeds.html .nojekyll _site/
+          cp index.html feeds.html debug.html .nojekyll _site/
           mkdir _site/data
           cp data/feed.json data/feeds.json _site/data/
 
