@@ -44,6 +44,11 @@ def strip_html(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text or "").strip()
 
 
+def extract_hashtags(text: str) -> list[str]:
+    """Hashtags aus Text extrahieren (dedupliziert, lowercase)."""
+    return list(dict.fromkeys(t.lower() for t in re.findall(r'#(\w{2,})', text)))
+
+
 async def fetch_title(url: str, client: httpx.AsyncClient) -> str:
     """<title>-Tag einer URL abrufen. Gibt leeren String zurück bei Fehler."""
     try:
@@ -101,6 +106,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
                     content = strip_html(status.get("content", ""))
                     urls = extract_urls(content)
                     acc = status.get("account", {})
+                    tags = extract_hashtags(content)
                     for url in urls:
                         if domain in url:
                             signals.append({
@@ -115,6 +121,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
                                     "created_at": acc.get("created_at", ""),
                                 },
                                 "shared_at": status.get("created_at", ""),
+                                "tags":       tags,
                             })
             except Exception as e:
                 print(f"  Mastodon {instance}: {e}")
@@ -167,17 +174,23 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                 facets  = record.get("facets", [])
                 text    = record.get("text", "")
 
-                # URLs aus Facets (zuverlässiger als Regex bei Bluesky)
+                # URLs + Tags aus Facets
                 urls = []
+                tags = []
                 for facet in facets:
                     for feat in facet.get("features", []):
-                        if feat.get("$type") == "app.bsky.richtext.facet#link":
+                        ftype = feat.get("$type", "")
+                        if ftype == "app.bsky.richtext.facet#link":
                             uri = feat.get("uri", "")
                             if uri.startswith("http"):
                                 urls.append(normalize_url(uri))
+                        elif ftype == "app.bsky.richtext.facet#tag":
+                            tags.append(feat.get("tag", "").lower())
                 # Fallback: Regex auf Text
                 if not urls:
                     urls = extract_urls(text)
+                if not tags:
+                    tags = extract_hashtags(text)
 
                 followers = author.get("followersCount", 0)
                 following = author.get("followsCount", 0)
@@ -203,6 +216,7 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                                 "created_at": author.get("createdAt", ""),
                             },
                             "shared_at": record.get("createdAt", ""),
+                            "tags":       tags,
                         })
         except Exception as e:
             print(f"  Bluesky {domain}: {type(e).__name__}: {e}")
@@ -272,6 +286,11 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
                 link = getattr(entry, "link", "")
                 if not link:
                     continue
+                rss_tags = list(dict.fromkeys(
+                    re.sub(r'\s+', '_', (t.get('term', '') or t.get('label', '')).strip().lower())
+                    for t in getattr(entry, 'tags', [])
+                    if (t.get('term') or t.get('label', '')).strip()
+                ))
                 signals.append({
                     "url":            normalize_url(link),
                     "title":          entry.get("title", ""),
@@ -287,6 +306,7 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
                         "published",
                         datetime.now(timezone.utc).isoformat()
                     ),
+                    "tags": rss_tags,
                 })
         except Exception as e:
             print(f"  RSS {url}: {e}")

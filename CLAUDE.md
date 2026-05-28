@@ -17,10 +17,18 @@ pip install -r crawler/requirements.txt
 python crawler/main.py
 ```
 
+### Astro frontend
+```bash
+npm install      # einmalig
+npm run dev      # dev server → http://localhost:4321/feedbeat/
+npm run build    # statischen Build in dist/ erzeugen
+npm run preview  # gebauten Build lokal prüfen
+```
+
 ### Local Node.js server (live RSS mode)
 ```bash
-npm start        # production
-npm run dev      # watch mode (node --watch)
+npm run server      # production
+npm run server:dev  # watch mode
 # Server runs at http://localhost:3000
 ```
 
@@ -51,12 +59,19 @@ An alternative local mode that serves a live RSS reader. Separate from the crawl
 - Serves `public/` as static files
 - REST API: `GET/POST/DELETE /api/feeds` (persisted to `feeds.json` in repo root), `GET /api/articles` (live RSS fetch via `rss-parser`)
 
-### 3. Frontend (root `index.html` / `feeds.html`)
-Static HTML/JS with no build step, served by GitHub Pages:
-- `index.html` — reads `data/feed.json` (relative path; overridable via `localStorage["feedbeat_feed_url"]` to point at a raw GitHub URL)
-- `feeds.html` — reads `data/feeds.json` (written by crawler from `config.yaml`'s `rss_feeds` list)
+### 3. Frontend (`src/`) — Astro 5, static output
+Three pages built with Astro. Data is read at **build time** from `data/feed.json` and `data/feeds.json` — no client-side JSON fetch. Search uses pre-rendered cards + DOM show/hide.
 
-`frontend/` contains the original copies of these files and can be ignored.
+- `src/pages/index.astro` — main page: sections grouped by hashtag, client-side search
+- `src/pages/feeds.astro` — RSS sources list
+- `src/pages/debug.astro` — full article list with platform labels, curators, tags
+- `src/layouts/Base.astro` — HTML shell, global CSS, header
+
+Sections are built server-side in `index.astro` frontmatter: articles are assigned to their first matching tag that has `≥ 2` articles; unassigned articles → "Weitere".
+
+Config: `astro.config.mjs` — `base: '/feedbeat'` (GitHub Pages sub-path), `build.format: 'file'` (no trailing slashes). Build output → `dist/`.
+
+`server-ui/` contains the local Express server's UI (not part of the Astro build).
 
 ### 4. GitHub Actions (`.github/workflows/crawl.yml`)
 Single job that crawls, commits data, then deploys to GitHub Pages:

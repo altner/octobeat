@@ -1,0 +1,349 @@
+---
+import Base from '../layouts/Base.astro';
+
+interface Article {
+  id: string;
+  url: string;
+  title: string;
+  score: number;
+  signal_count: number;
+  curators: string[];
+  platforms: string[];
+  latest_shared: string;
+  tags?: string[];
+}
+
+interface FeedData {
+  generated_at: string;
+  article_count: number;
+  articles: Article[];
+}
+
+let feedData: FeedData = { generated_at: '', article_count: 0, articles: [] };
+try {
+  const mod = await import('../../data/feed.json');
+  feedData = mod.default as FeedData;
+} catch {
+  // feed.json not yet generated – show empty state
+}
+
+const articles = feedData.articles ?? [];
+
+const genTime = feedData.generated_at
+  ? new Date(feedData.generated_at).toLocaleString('de-DE', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit',
+    }) + ' UTC'
+  : '';
+
+// ── Build sections ────────────────────────────────────────────────────────────
+const MIN_SECTION = 2;
+
+const tagCount: Record<string, number> = {};
+articles.forEach(a => (a.tags ?? []).forEach(t => { tagCount[t] = (tagCount[t] ?? 0) + 1; }));
+
+const sectionTags = Object.entries(tagCount)
+  .filter(([, c]) => c >= MIN_SECTION)
+  .sort((a, b) => b[1] - a[1])
+  .map(([t]) => t);
+
+const sections: Record<string, Article[]> = {};
+const assigned = new Set<string>();
+sectionTags.forEach(t => { sections[t] = []; });
+
+articles.forEach(a => {
+  const primary = (a.tags ?? []).find(t => sectionTags.includes(t));
+  if (primary) {
+    sections[primary].push(a);
+    assigned.add(a.id);
+  }
+});
+
+sectionTags.forEach(t => sections[t].sort((a, b) => b.score - a.score));
+const remaining = articles.filter(a => !assigned.has(a.id)).sort((a, b) => b.score - a.score);
+
+function domain(url: string) {
+  try { return new URL(url).hostname.replace('www.', ''); } catch { return ''; }
+}
+---
+
+<Base title="Feedbeat" genTime={genTime} pageType="main">
+  <input slot="search" class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
+
+  {sectionTags.length > 0 && (
+    <nav id="tagNav" aria-label="Kategorien">
+      {sectionTags.map(tag => (
+        <a class="tag-pill" href={`#sec-${tag}`}>
+          #{tag} <span class="pill-count">{sections[tag].length}</span>
+        </a>
+      ))}
+      {remaining.length > 0 && (
+        <a class="tag-pill" href="#sec-weitere">
+          Weitere <span class="pill-count">{remaining.length}</span>
+        </a>
+      )}
+    </nav>
+  )}
+
+  <main>
+    {/* Search results (hidden until user types) */}
+    <div id="searchView" hidden>
+      <p class="count-line" id="searchCount"></p>
+      <div class="articles" id="searchResults"></div>
+    </div>
+
+    {/* Pre-rendered sections */}
+    <div id="sectionsView">
+      {articles.length === 0 && (
+        <div class="state">
+          <p>Noch keine Artikel — bitte <code>python crawler/main.py</code> ausführen.</p>
+        </div>
+      )}
+
+      {sectionTags.map(tag => sections[tag].length > 0 && (
+        <section>
+          <div class="section-header" id={`sec-${tag}`}>
+            <span class="section-title">#{tag}</span>
+            <span class="section-count">{sections[tag].length} Artikel</span>
+          </div>
+          <div class="articles">
+            {sections[tag].map(a => (
+              <article class="article-card" data-title={a.title} data-url={a.url} data-tags={(a.tags ?? []).join(' ')}>
+                <div>
+                  <div class="article-title">
+                    <a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a>
+                  </div>
+                  <div class="article-meta">
+                    <span>{domain(a.url)}</span>
+                    <span class="time" data-ts={a.latest_shared}></span>
+                  </div>
+                </div>
+                <div class="article-score">
+                  <div class="score-value">{Math.round(a.score)}</div>
+                  <div class="score-sub">{a.signal_count} Signal{a.signal_count !== 1 ? 'e' : ''}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      {remaining.length > 0 && (
+        <section>
+          <div class="section-header" id="sec-weitere">
+            <span class="section-title">Weitere</span>
+            <span class="section-count">{remaining.length} Artikel</span>
+          </div>
+          <div class="articles">
+            {remaining.map(a => (
+              <article class="article-card" data-title={a.title} data-url={a.url} data-tags={(a.tags ?? []).join(' ')}>
+                <div>
+                  <div class="article-title">
+                    <a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a>
+                  </div>
+                  <div class="article-meta">
+                    <span>{domain(a.url)}</span>
+                    <span class="time" data-ts={a.latest_shared}></span>
+                    {(a.tags ?? []).length > 0 && (
+                      <span class="article-tags">
+                        {(a.tags ?? []).slice(0, 3).map(t => (
+                          <span class="article-tag">#{t}</span>
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div class="article-score">
+                  <div class="score-value">{Math.round(a.score)}</div>
+                  <div class="score-sub">{a.signal_count} Signal{a.signal_count !== 1 ? 'e' : ''}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</Base>
+
+<style>
+  /* ── Tag nav ── */
+  nav#tagNav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 57px;
+    z-index: 10;
+  }
+  nav#tagNav::-webkit-scrollbar { display: none; }
+
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .tag-pill:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(108,142,255,0.08);
+  }
+  .pill-count { font-size: 10px; font-weight: 400; color: var(--muted); }
+
+  /* ── Main ── */
+  main { max-width: 780px; margin: 0 auto; padding: 24px 24px 60px; }
+
+  .count-line { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+  /* ── Sections ── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 110px;
+  }
+  section:first-child .section-header { margin-top: 0; }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .section-count { font-size: 12px; color: var(--muted); }
+
+  /* ── Cards ── */
+  .articles { display: flex; flex-direction: column; gap: 8px; }
+
+  .article-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    transition: border-color 0.2s, transform 0.1s;
+  }
+  .article-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+  .article-title { font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
+  .article-title a { color: var(--text); text-decoration: none; }
+  .article-title a:hover { color: var(--accent); }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .article-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .article-tag {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent2);
+    background: rgba(167,139,250,0.1);
+    border: 1px solid rgba(167,139,250,0.2);
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  .article-score { text-align: right; min-width: 48px; flex-shrink: 0; }
+  .score-value {
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .score-sub { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+  .state { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .state code { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .article-card { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // ── Relative timestamps ───────────────────────────────────────────────────
+  document.querySelectorAll<HTMLElement>('.time[data-ts]').forEach(el => {
+    const ts = el.dataset.ts;
+    if (!ts) return;
+    const diff = (Date.now() - new Date(ts).getTime()) / 1000;
+    if (diff < 3600)       el.textContent = `vor ${Math.round(diff / 60)} Min`;
+    else if (diff < 86400) el.textContent = `vor ${Math.round(diff / 3600)} Std`;
+    else                   el.textContent = `vor ${Math.round(diff / 86400)} Tagen`;
+  });
+
+  // ── Search ────────────────────────────────────────────────────────────────
+  const searchBox     = document.getElementById('searchBox') as HTMLInputElement;
+  const tagNav        = document.getElementById('tagNav');
+  const sectionsView  = document.getElementById('sectionsView')!;
+  const searchView    = document.getElementById('searchView')!;
+  const searchResults = document.getElementById('searchResults')!;
+  const searchCount   = document.getElementById('searchCount')!;
+
+  // Collect all pre-rendered cards for search
+  const allCards = Array.from(
+    document.querySelectorAll<HTMLElement>('#sectionsView .article-card')
+  );
+
+  function relativeTime(iso: string) {
+    const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (diff < 3600)       return `vor ${Math.round(diff / 60)} Min`;
+    if (diff < 86400)      return `vor ${Math.round(diff / 3600)} Std`;
+    return `vor ${Math.round(diff / 86400)} Tagen`;
+  }
+
+  searchBox?.addEventListener('input', () => {
+    const q = searchBox.value.trim().toLowerCase();
+
+    if (!q) {
+      sectionsView.hidden = false;
+      searchView.hidden   = true;
+      if (tagNav) tagNav.hidden = false;
+      return;
+    }
+
+    sectionsView.hidden = true;
+    if (tagNav) tagNav.hidden = true;
+    searchView.hidden   = false;
+
+    const matches = allCards.filter(card => {
+      const title = (card.dataset.title ?? '').toLowerCase();
+      const url   = (card.dataset.url   ?? '').toLowerCase();
+      const tags  = (card.dataset.tags  ?? '').toLowerCase();
+      return title.includes(q) || url.includes(q) || tags.includes(q);
+    });
+
+    searchCount.textContent = matches.length > 0 ? `${matches.length} Treffer` : '';
+    searchResults.innerHTML = matches.length === 0
+      ? '<p style="color:var(--muted);padding:40px 0;text-align:center">Keine Artikel gefunden.</p>'
+      : matches.map(c => c.outerHTML).join('');
+  });
+</script>

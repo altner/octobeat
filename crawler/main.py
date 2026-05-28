@@ -6,6 +6,7 @@ Führt alle Module zusammen: sammeln → filtern → bewerten → speichern.
 import asyncio
 import hashlib
 import sys
+from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 from datetime import datetime, timezone
@@ -105,15 +106,25 @@ async def run():
             default=""
         )
 
+        # Tags aus Signalen aggregieren; Domain-Fallback für ungetaggte Artikel
+        all_tags: list[str] = []
+        for s in sigs:
+            all_tags.extend(s.get("tags", []))
+        article_tags = [t for t, _ in Counter(all_tags).most_common(5)]
+        if not article_tags:
+            domain = urlparse(url).netloc.replace("www.", "")
+            article_tags = cfg.get("domain_tags", {}).get(domain, [])
+
         articles.append({
-            "id":           hashlib.md5(url.encode()).hexdigest()[:12],
-            "url":          url,
-            "title":        title,
-            "score":        score,
-            "signal_count": len(sigs),
-            "curators":     list(set(s["curator_handle"] for s in sigs)),
-            "platforms":    list(set(s["platform"]       for s in sigs)),
+            "id":            hashlib.md5(url.encode()).hexdigest()[:12],
+            "url":           url,
+            "title":         title,
+            "score":         score,
+            "signal_count":  len(sigs),
+            "curators":      list(set(s["curator_handle"] for s in sigs)),
+            "platforms":     list(set(s["platform"]       for s in sigs)),
             "latest_shared": latest_shared,
+            "tags":          article_tags,
         })
 
     # ── 8. Nur Artikel mit sozialem Signal behalten ────────────────────────

@@ -66,6 +66,33 @@ domain_blacklist:
   - facebook.com
   - tiktok.com
 
+# Domain → Kategorie-Tags (Fallback für RSS-Artikel ohne Social-Hashtags)
+domain_tags:
+  heise.de:             [tech]
+  golem.de:             [tech]
+  netzpolitik.org:      [netzpolitik, datenschutz]
+  t3n.de:               [tech, startups]
+  basicthinking.de:     [tech]
+  mixed.de:             [tech, ki]
+  stadt-bremerhaven.de: [tech]
+  ifun.de:              [tech, apple]
+  winfuture.de:         [tech]
+  kuketz-blog.de:       [datenschutz, sicherheit]
+  mobiflip.de:          [tech]
+  nextpit.de:           [tech]
+  carta.info:           [medien]
+  irights.info:         [datenschutz, recht]
+  travelbook.de:        [reisen]
+  reisereporter.de:     [reisen]
+  reisehappen.de:       [reisen]
+  fernwehking.de:       [reisen]
+  nomadblogger.de:      [reisen]
+  reisefreiheit.org:    [reisen]
+  spiegel.de:           [politik]
+  faz.net:              [wirtschaft, politik]
+  sueddeutsche.de:      [politik]
+  taz.de:               [politik]
+
 # Output
 output:
   data_dir: ../data

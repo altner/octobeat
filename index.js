@@ -9,7 +9,7 @@ const PORT = 3000;
 const FEEDS_FILE = path.join(__dirname, 'feeds.json');
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('server-ui'));
 
 // Load feeds from disk
 function loadFeeds() {

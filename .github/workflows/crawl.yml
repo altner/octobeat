@@ -9,8 +9,8 @@ on:
     paths:
       - "crawler/config.yaml"
       - "crawler/**.py"
-      - "index.html"
-      - "feeds.html"
+      - "src/**"
+      - "astro.config.mjs"
 
 permissions:
   contents: write
@@ -35,8 +35,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: pip install -r crawler/requirements.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node dependencies
+        run: npm install
 
       - name: Run crawler
         run: python crawler/main.py
@@ -52,18 +60,14 @@ jobs:
           commit_message: "feed: ${{ github.run_id }}"
           file_pattern: "data/feed.json data/feeds.json data/archive/*.json"
 
-      - uses: actions/configure-pages@v4
+      - name: Build Astro site
+        run: npm run build
 
-      - name: Build site
-        run: |
-          mkdir _site
-          cp index.html feeds.html debug.html .nojekyll _site/
-          mkdir _site/data
-          cp data/feed.json data/feeds.json _site/data/
+      - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
 
       - id: deployment
         uses: actions/deploy-pages@v4

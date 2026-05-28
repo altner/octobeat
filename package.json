@@ -1,13 +1,16 @@
 {
   "name": "feedbeat",
   "version": "1.0.0",
-  "description": "A local RSS feed aggregator with web interface",
-  "main": "index.js",
+  "description": "Social news aggregator powered by Mastodon, Bluesky & RSS",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "server": "node index.js",
+    "server:dev": "node --watch index.js"
   },
   "dependencies": {
+    "astro": "^5.0.0",
     "express": "^4.18.2",
     "rss-parser": "^3.13.0"
   }
