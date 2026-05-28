@@ -1,5 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
 
 interface FeedsData {
   feeds?: string[];
@@ -51,7 +52,8 @@ function isTravel(url: string) {
 }
 ---
 
-<Base title="Feedbeat – Feeds" pageType="feeds">
+<BaseLayout title="OctoBeat – Feeds">
+  <Header currentPage="feeds" />
   <main>
     <h2>RSS-Feeds <span class="count">{feeds.length} Quellen</span></h2>
 
@@ -72,7 +74,7 @@ function isTravel(url: string) {
       </ul>
     )}
   </main>
-</Base>
+</BaseLayout>
 
 <style>
   main {

@@ -1,5 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
 
 interface Article {
   id: string;
@@ -67,8 +68,10 @@ function domain(url: string) {
 }
 ---
 
-<Base title="Feedbeat" genTime={genTime} pageType="main">
-  <input slot="search" class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
+<BaseLayout title="OctoBeat">
+  <Header currentPage="main" genTime={genTime}>
+    <input class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
+  </Header>
 
   {sectionTags.length > 0 && (
     <nav id="tagNav" aria-label="Kategorien">
@@ -164,7 +167,7 @@ function domain(url: string) {
       )}
     </div>
   </main>
-</Base>
+</BaseLayout>
 
 <style>
   /* ── Tag nav ── */

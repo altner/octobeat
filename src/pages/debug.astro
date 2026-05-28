@@ -1,5 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
 
 interface Article {
   id: string;
@@ -48,8 +49,10 @@ const PLATFORM_LABELS: Record<string, string> = {
 };
 ---
 
-<Base title="Feedbeat – Debug" genTime={genTime} pageType="debug">
-  <input slot="search" class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
+<BaseLayout title="OctoBeat – Debug">
+  <Header currentPage="debug" genTime={genTime}>
+    <input class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
+  </Header>
 
   <main>
     <p class="count-line">{articles.length} Artikel</p>
@@ -101,7 +104,7 @@ const PLATFORM_LABELS: Record<string, string> = {
       ))}
     </div>
   </main>
-</Base>
+</BaseLayout>
 
 <style>
   main { max-width: 780px; margin: 0 auto; padding: 20px 24px 60px; }

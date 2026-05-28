@@ -1,0 +1,85 @@
+---
+interface Props {
+  currentPage: 'main' | 'feeds' | 'debug';
+  genTime?: string;
+}
+const { currentPage, genTime = '' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<header>
+  <a class="logo" href={`${base}/`}>OctoBeat</a>
+  {currentPage === 'debug' && <span class="debug-badge">Debug</span>}
+  {genTime && <span class="meta">{genTime}</span>}
+  <div class="spacer"></div>
+  <nav class="nav-links">
+    {currentPage !== 'feeds' && <a class="nav-link" href={`${base}/feeds`}>Feeds</a>}
+    {currentPage === 'main'  && <a class="nav-link" href={`${base}/debug`}>Debug</a>}
+    {(currentPage === 'debug' || currentPage === 'feeds') && (
+      <a class="nav-link" href={`${base}/`}>← Zurück</a>
+    )}
+  </nav>
+  <slot />
+</header>
+
+<style>
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .debug-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent2);
+    background: rgba(167,139,250,0.12);
+    border: 1px solid rgba(167,139,250,0.3);
+    padding: 3px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .meta { font-size: 12px; color: var(--muted); flex-shrink: 0; }
+  .spacer { flex: 1; }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-link:hover { color: var(--text); border-color: var(--muted); }
+
+  @media (max-width: 600px) {
+    header { flex-wrap: wrap; }
+  }
+</style>
