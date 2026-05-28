@@ -1,0 +1,165 @@
+"""
+main.py — Feedbeat Einstiegspunkt.
+Führt alle Module zusammen: sammeln → filtern → bewerten → speichern.
+"""
+
+import asyncio
+import hashlib
+import sys
+from pathlib import Path
+from urllib.parse import urlparse
+from datetime import datetime, timezone
+
+import yaml
+
+from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
+from curator  import is_valid_curator, calc_weight
+from scorer   import score_article
+from storage  import write_feed, push_to_github
+
+
+def load_config() -> dict:
+    cfg_path = Path(__file__).parent / "config.yaml"
+    with open(cfg_path) as f:
+        return yaml.safe_load(f)
+
+
+def domain_ok(url: str, blacklist: set) -> bool:
+    try:
+        domain = urlparse(url).netloc.replace("www.", "")
+        return bool(domain) and domain not in blacklist
+    except Exception:
+        return False
+
+
+async def run():
+    cfg       = load_config()
+    blacklist = set(cfg.get("domain_blacklist", []))
+    all_signals: list[dict] = []
+
+    # ── 1. Mastodon ────────────────────────────────────────────────────────
+    print("→ Mastodon crawlen...")
+    for domain in cfg["seed_domains"]:
+        sigs = await collect_mastodon(domain, cfg.get("mastodon_instances", []))
+        all_signals.extend(sigs)
+        print(f"  {domain}: {len(sigs)} Signale")
+
+    # ── 2. Bluesky ─────────────────────────────────────────────────────────
+    bsky_cfg = cfg.get("bluesky", {})
+    if bsky_cfg.get("enabled", True):
+        print("→ Bluesky crawlen...")
+        for domain in cfg["seed_domains"]:
+            sigs = await collect_bluesky(domain, bsky_cfg.get("limit", 25))
+            all_signals.extend(sigs)
+            print(f"  {domain}: {len(sigs)} Signale")
+
+    # ── 3. RSS ─────────────────────────────────────────────────────────────
+    rss_urls = cfg.get("rss_feeds", [])
+    if rss_urls:
+        print("→ RSS-Feeds crawlen...")
+        sigs = collect_rss(rss_urls)
+        all_signals.extend(sigs)
+        print(f"  {len(sigs)} Signale aus {len(rss_urls)} Feeds")
+
+    # ── 2. Hacker News ─────────────────────────────────────────────────────
+    hn_cfg = cfg.get("hackernews", {})
+    if hn_cfg.get("enabled", True):
+        print("→ Hacker News crawlen...")
+        sigs = await collect_hackernews(hn_cfg.get("top_n", 100), hn_cfg.get("min_score", 10))
+        all_signals.extend(sigs)
+        print(f"  HN: {len(sigs)} Signale")
+
+    # ── 4. Filter: Domain-Blacklist + Kuratoren-Validierung ────────────────
+    valid_signals = []
+    for s in all_signals:
+        if not domain_ok(s["url"], blacklist):
+            continue
+        if not is_valid_curator(s["curator_meta"], cfg):
+            continue
+        s["weight"] = calc_weight(s["curator_meta"], s["platform"])
+        valid_signals.append(s)
+
+    print(f"→ {len(valid_signals)} gültige Signale (von {len(all_signals)})")
+
+    # ── 5. Titel nachladen wo nötig ────────────────────────────────────────
+    print("→ Fehlende Titel nachladen...")
+    valid_signals = await enrich_titles(valid_signals)
+
+    # ── 6. Signale nach URL gruppieren ─────────────────────────────────────
+    by_url: dict[str, list] = {}
+    for s in valid_signals:
+        by_url.setdefault(s["url"], []).append(s)
+
+    # ── 7. Artikel bauen + scoren ──────────────────────────────────────────
+    articles = []
+    max_age_h = cfg["article_filter"].get("max_age_hours", 48)
+    now = datetime.now(timezone.utc)
+
+    for url, sigs in by_url.items():
+        score = score_article(sigs)
+        title = next((s.get("title") for s in sigs if s.get("title")), "")
+
+        # Neuestes shared_at bestimmen
+        latest_shared = max(
+            (s.get("shared_at", "") for s in sigs),
+            default=""
+        )
+
+        articles.append({
+            "id":           hashlib.md5(url.encode()).hexdigest()[:12],
+            "url":          url,
+            "title":        title,
+            "score":        score,
+            "signal_count": len(sigs),
+            "curators":     list(set(s["curator_handle"] for s in sigs)),
+            "platforms":    list(set(s["platform"]       for s in sigs)),
+            "latest_shared": latest_shared,
+        })
+
+    # ── 8. Nur Artikel mit sozialem Signal behalten ────────────────────────
+    social_platforms = {"mastodon", "bluesky"}
+    articles = [
+        a for a in articles
+        if social_platforms & set(a["platforms"])
+    ]
+    print(f"→ {len(articles)} Artikel mit sozialem Signal (Mastodon/Bluesky)")
+
+    # ── 9. Sortieren + Top N ───────────────────────────────────────────────
+    articles.sort(key=lambda a: a["score"], reverse=True)
+    top_n = cfg["article_filter"]["top_n"]
+    top   = articles[:top_n]
+
+    print(f"→ Top {len(top)} Artikel selektiert (von {len(articles)} unique URLs)")
+
+    # ── 9. Kuratoren-Übersicht ─────────────────────────────────────────────
+    from collections import Counter
+    for platform in ("mastodon", "bluesky"):
+        counts = Counter(
+            s["curator_handle"] for s in valid_signals if s["platform"] == platform
+        )
+        if counts:
+            print(f"\n→ Top Kuratoren ({platform.capitalize()}):")
+            for handle, count in counts.most_common(10):
+                print(f"  {handle:<40} {count} Artikel geteilt")
+        else:
+            print(f"\n→ Keine {platform.capitalize()}-Kuratoren gefunden.")
+
+    # ── 10. Schreiben + pushen ─────────────────────────────────────────────
+    out = cfg["output"]
+    write_feed(top, out["data_dir"])
+
+    # feeds.json für die Unterseite
+    import json as _json
+    from pathlib import Path as _Path
+    feeds_path = _Path(out["data_dir"]) / "feeds.json"
+    feeds_path.write_text(
+        _json.dumps(cfg.get("rss_feeds", []), ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+    print(f"✓ {len(cfg.get('rss_feeds', []))} Feeds → {feeds_path}")
+    if out.get("github_push", False):
+        push_to_github(out["data_dir"], out["commit_message"])
+
+
+if __name__ == "__main__":
+    asyncio.run(run())

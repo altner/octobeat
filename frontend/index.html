@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedbeat</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f1117;
+      --surface:  #1a1d27;
+      --surface2: #22263a;
+      --border:   #2e3354;
+      --accent:   #6c8eff;
+      --accent2:  #a78bfa;
+      --text:     #e2e8f0;
+      --muted:    #8892b0;
+      --danger:   #ff6b6b;
+      --hn:       #ff6600;
+      --mastodon: #6364ff;
+      --bluesky:  #0285ff;
+      --rss:      #f6a623;
+      --radius:   10px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .meta { font-size: 12px; color: var(--muted); }
+    .spacer { flex: 1; }
+
+    .search-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      outline: none;
+      width: 220px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus { border-color: var(--accent); }
+    .search-box::placeholder { color: var(--muted); }
+
+    /* ── Config Banner ── */
+    #configBanner {
+      background: rgba(108,142,255,0.08);
+      border: 1px solid rgba(108,142,255,0.3);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 24px auto;
+      max-width: 700px;
+      font-size: 13px;
+      color: var(--muted);
+      display: none;
+    }
+    #configBanner code {
+      background: var(--surface2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    #configBanner input {
+      width: 100%;
+      margin-top: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+    }
+    #configBanner input:focus { border-color: var(--accent); }
+    #configBanner button {
+      margin-top: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+
+    .count { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+    .articles { display: flex; flex-direction: column; gap: 2px; }
+
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      transition: border-color 0.2s, transform 0.1s;
+      margin-bottom: 8px;
+    }
+    .article-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .article-left {}
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 7px;
+      flex-wrap: wrap;
+    }
+
+    .platform-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .platform-hackernews { background: rgba(255,102,0,0.15); color: var(--hn); }
+    .platform-mastodon   { background: rgba(99,100,255,0.15); color: var(--mastodon); }
+    .platform-bluesky    { background: rgba(2,133,255,0.15); color: var(--bluesky); }
+    .platform-rss        { background: rgba(246,166,35,0.15); color: var(--rss); }
+    .platform-multi      { background: rgba(167,139,250,0.15); color: var(--accent2); }
+
+    .article-date { font-size: 12px; color: var(--muted); }
+
+    .article-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    .article-title a { color: var(--text); text-decoration: none; }
+    .article-title a:hover { color: var(--accent); }
+
+    .article-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .article-url { font-size: 12px; color: var(--muted); }
+
+    .curators {
+      font-size: 11px;
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .article-score {
+      text-align: right;
+      min-width: 52px;
+    }
+    .score-value {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .score-label { font-size: 10px; color: var(--muted); }
+    .signal-count { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* ── States ── */
+    .state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 600px) {
+      header { flex-wrap: wrap; }
+      .search-box { width: 100%; }
+      .article-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>feedbeat</h1>
+  <span class="meta" id="genTime"></span>
+  <div class="spacer"></div>
+  <a href="feeds.html" style="color:var(--muted);font-size:13px;text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:8px;">Feeds</a>
+  <input class="search-box" id="searchBox" type="text" placeholder="Suchen…" oninput="render()" />
+</header>
+
+<div id="configBanner">
+  <strong style="color:var(--text)">Feed-URL konfigurieren</strong><br>
+  Trage die raw.githubusercontent.com URL zu deinem <code>feed.json</code> ein:
+  <input type="url" id="feedUrlInput" placeholder="https://raw.githubusercontent.com/DEIN-USER/REPO/main/data/feed.json" />
+  <button onclick="saveFeedUrl()">Speichern & laden</button>
+</div>
+
+
+<main>
+  <div class="count" id="count"></div>
+  <div id="container">
+    <div class="state"><div class="spinner"></div><p>Lade Feed…</p></div>
+  </div>
+</main>
+
+<script>
+  // ── Konfiguration ────────────────────────────────────────────────────────
+  // Lokal: feed.json liegt relativ zum Server-Root unter /data/feed.json
+  // GitHub Pages: hier die raw.githubusercontent.com URL eintragen
+  const DEFAULT_FEED_URL = "/data/feed.json";
+
+  let allArticles = [];
+
+  function getFeedUrl() {
+    return localStorage.getItem("feedbeat_feed_url") || DEFAULT_FEED_URL;
+  }
+
+  function saveFeedUrl() {
+    const url = document.getElementById("feedUrlInput").value.trim();
+    if (!url) return;
+    localStorage.setItem("feedbeat_feed_url", url);
+    document.getElementById("configBanner").style.display = "none";
+    loadFeed(url);
+  }
+
+
+  async function loadFeed(url) {
+    if (!url) {
+      document.getElementById("configBanner").style.display = "block";
+      document.getElementById("container").innerHTML =
+        '<div class="state"><p style="color:var(--accent)">↑ Bitte Feed-URL eintragen</p></div>';
+      return;
+    }
+
+    document.getElementById("container").innerHTML =
+      '<div class="state"><div class="spinner"></div><p>Lade Feed…</p></div>';
+
+    try {
+      // Cache-Buster damit GitHub CDN nicht stale liefert
+      const r = await fetch(url + "?t=" + Date.now());
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const data = await r.json();
+      allArticles = data.articles || [];
+
+      const d = new Date(data.generated_at);
+      document.getElementById("genTime").textContent =
+        "Stand: " + d.toLocaleString("de-DE", {
+          day: "2-digit", month: "short", year: "numeric",
+          hour: "2-digit", minute: "2-digit"
+        }) + " UTC";
+
+      render();
+    } catch (e) {
+      document.getElementById("container").innerHTML =
+        `<div class="state"><p style="color:var(--danger)">Fehler: ${e.message}</p></div>`;
+    }
+  }
+
+  function platformTag(platforms) {
+    if (!platforms || platforms.length === 0) return "";
+    if (platforms.length > 1) {
+      return `<span class="platform-tag platform-multi">Multi-Platform</span>`;
+    }
+    const p = platforms[0];
+    const labels = { hackernews: "Hacker News", mastodon: "Mastodon", bluesky: "Bluesky", rss: "RSS" };
+    return `<span class="platform-tag platform-${p}">${labels[p] || p}</span>`;
+  }
+
+  function relativeTime(iso) {
+    if (!iso) return "";
+    const diff = (Date.now() - new Date(iso)) / 1000;
+    if (diff < 3600)   return `vor ${Math.round(diff/60)} Min`;
+    if (diff < 86400)  return `vor ${Math.round(diff/3600)} Std`;
+    return `vor ${Math.round(diff/86400)} Tagen`;
+  }
+
+  function render() {
+    const q = document.getElementById("searchBox").value.toLowerCase();
+
+    let articles = allArticles;
+
+    if (q) {
+      articles = articles.filter(a =>
+        (a.title || "").toLowerCase().includes(q) ||
+        (a.url  || "").toLowerCase().includes(q)
+      );
+    }
+
+    document.getElementById("count").textContent =
+      articles.length > 0 ? `${articles.length} Artikel` : "";
+
+    if (articles.length === 0) {
+      document.getElementById("container").innerHTML =
+        '<div class="state"><p>Keine Artikel gefunden.</p></div>';
+      return;
+    }
+
+    const html = articles.map((a, i) => {
+      const domain = (() => { try { return new URL(a.url).hostname.replace("www.",""); } catch { return ""; } })();
+      const curators = (a.curators || []).slice(0,4).join(", ");
+      const time = relativeTime(a.latest_shared);
+
+      return `
+        <div class="article-card">
+          <div class="article-left">
+            <div class="article-meta">
+              ${platformTag(a.platforms)}
+              ${time ? `<span class="article-date">${time}</span>` : ""}
+            </div>
+            <div class="article-title">
+              <a href="${a.url}" target="_blank" rel="noopener">${a.title || a.url}</a>
+            </div>
+            <div class="article-footer">
+              <span class="article-url">${domain}</span>
+              ${curators ? `<span class="curators">👥 ${curators}</span>` : ""}
+            </div>
+          </div>
+          <div class="article-score">
+            <div class="score-value">${Math.round(a.score)}</div>
+            <div class="score-label">Score</div>
+            <div class="signal-count">${a.signal_count} Signal${a.signal_count !== 1 ? "e" : ""}</div>
+          </div>
+        </div>`;
+    }).join("");
+
+    document.getElementById("container").innerHTML =
+      `<div class="articles">${html}</div>`;
+  }
+
+  // Init
+  const url = getFeedUrl();
+  if (!url) {
+    document.getElementById("configBanner").style.display = "block";
+    document.getElementById("feedUrlInput").value = url;
+  }
+  loadFeed(url);
+</script>
+</body>
+</html>

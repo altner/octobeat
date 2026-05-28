@@ -1,0 +1,74 @@
+# Ausgangspunkte: Domains die wir kennen und vertrauen
+seed_domains:
+  - netzpolitik.org
+  - heise.de
+  - golem.de
+  - taz.de
+  - spiegel.de
+  - faz.net
+  - sueddeutsche.de
+
+# RSS-Feeds — deutsche Blogs & Tech-Medien
+rss_feeds:
+  # Tech & Netz
+  - https://www.heise.de/rss/heise-atom.xml
+  - https://www.golem.de/rss.php
+  - https://netzpolitik.org/feed/
+  - https://t3n.de/rss.xml
+  - https://www.basicthinking.de/blog/feed/
+  - https://mixed.de/feed/
+  - https://www.stadt-bremerhaven.de/feed/   # Caschys Blog
+  - https://www.ifun.de/feed/
+  - https://www.winfuture.de/rss.xml
+  - https://www.kuketz-blog.de/feed/          # Datenschutz & Sicherheit
+  - https://www.mobiflip.de/feed/
+  - https://www.nextpit.de/feed/rss           # Android & Mobile
+  - https://www.heise.de/tp/news-atom.xml     # Telepolis
+  - https://carta.info/feed/                  # Medien & Digitales
+  - https://irights.info/feed                 # Recht im Netz
+
+  # Reisen
+  - https://www.travelbook.de/feed/
+  - https://www.reisereporter.de/feed/
+  - https://reisehappen.de/feed/
+  - https://www.fernwehking.de/feed/
+  - https://nomadblogger.de/feed/
+  - https://www.reisefreiheit.org/feed/
+
+# Bluesky
+bluesky:
+  enabled: true
+  limit: 25
+
+# Hacker News einbeziehen?
+hackernews:
+  enabled: false
+  min_score: 10
+  top_n: 100
+
+# Spam-Filter für Kuratoren
+curator_filter:
+  min_followers: 10
+  max_following: 5000
+  min_posts: 5
+
+# Artikel-Filter
+article_filter:
+  max_age_hours: 48  # Artikel älter als 48h ignorieren
+  top_n: 50          # Wie viele Artikel ins feed.json
+
+# Domains die nie ins Feed kommen
+domain_blacklist:
+  - t.co
+  - bit.ly
+  - twitter.com
+  - instagram.com
+  - facebook.com
+  - tiktok.com
+
+# Output
+output:
+  data_dir: ../data
+  # true = git push nach lokalem Run; wird automatisch deaktiviert in GitHub Actions
+  github_push: false
+  commit_message: "feed: {timestamp}"
