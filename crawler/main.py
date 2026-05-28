@@ -143,7 +143,6 @@ async def run():
     print(f"→ Top {len(top)} Artikel selektiert (von {len(articles)} unique URLs)")
 
     # ── 9. Kuratoren-Übersicht ─────────────────────────────────────────────
-    from collections import Counter
     for platform in ("mastodon", "bluesky"):
         counts = Counter(
             s["curator_handle"] for s in valid_signals if s["platform"] == platform
