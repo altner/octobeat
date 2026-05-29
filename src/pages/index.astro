@@ -43,7 +43,11 @@ const genTime = feedData.generated_at
 const MIN_SECTION = 2;
 
 const tagCount: Record<string, number> = {};
-articles.forEach(a => (a.tags ?? []).forEach(t => { tagCount[t] = (tagCount[t] ?? 0) + 1; }));
+articles.forEach(a => {
+  (a.tags ?? []).forEach(t => {
+    tagCount[t] = (tagCount[t] ?? 0) + 1;
+  });
+});
 
 const candidateSectionTags = Object.entries(tagCount)
   .filter(([, c]) => c >= MIN_SECTION)
@@ -62,7 +66,9 @@ articles.forEach(a => {
   }
 });
 
-candidateSectionTags.forEach(t => sections[t].sort((a, b) => b.score - a.score));
+candidateSectionTags.forEach(t => {
+  sections[t].sort((a, b) => b.score - a.score);
+});
 const sectionTags = candidateSectionTags.filter(t => sections[t].length > 0);
 const remaining = articles.filter(a => !assigned.has(a.id)).sort((a, b) => b.score - a.score);
 const remainingLabel = sectionTags.length > 0 ? 'More' : 'All feeds';
