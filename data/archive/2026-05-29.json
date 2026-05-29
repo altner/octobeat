@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-05-29T00:33:57.069916+00:00",
+  "generated_at": "2026-05-29T00:43:29.407363+00:00",
   "article_count": 50,
   "articles": [
     {
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt - netzpolitik.org",
-      "score": 3750.45,
+      "score": 3632.53,
       "signal_count": 6,
       "curators": [
-        "peterru.eurosky.social",
-        "pirati.bsky.social",
-        "netzpolitik.org",
         "PeterRu@climatejustice.social",
+        "netzpolitik.org",
+        "pirati.bsky.social",
+        "peterru.eurosky.social",
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Thu, 28 May 2026 14:24:36 +0000",
       "syndications": [
@@ -54,7 +54,7 @@
         }
       ],
       "engagement": {
-        "boosts": 24,
+        "boosts": 25,
         "likes": 50,
         "replies": 1,
         "quotes": 1
@@ -71,21 +71,21 @@
       "id": "d6153a56195d",
       "url": "https://netzpolitik.org/2026/strafanzeige-journalist-wehrt-sich-gegen-staatstrojaner-angriff/",
       "title": "Strafanzeige: Journalist wehrt sich gegen Staatstrojaner-Angriff - netzpolitik.org",
-      "score": 2365.53,
+      "score": 2331.86,
       "signal_count": 8,
       "curators": [
-        "pirati.bsky.social",
-        "netzpolitik.org",
-        "andre_meister@chaos.social",
         "theunicornxxl.bsky.social",
+        "netzpolitik.org",
+        "andre.netzpolitik.org",
+        "andre_meister@chaos.social",
+        "pirati.bsky.social",
         "Ollital@nrw.social",
-        "netzpolitik_feed@chaos.social",
-        "andre.netzpolitik.org"
+        "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Thu, 28 May 2026 06:17:11 +0000",
       "syndications": [
@@ -150,23 +150,23 @@
       "id": "8b79e13411bd",
       "url": "https://netzpolitik.org/2026/breakpoint-das-internet-verrottet/",
       "title": "Breakpoint: Das Internet verrottet - netzpolitik.org",
-      "score": 1428.24,
+      "score": 1417.06,
       "signal_count": 9,
       "curators": [
-        "zulauf.eu",
         "netzpolitik.org",
+        "zulauf.eu",
+        "doener.eurosky.social",
         "DigitalNaiv",
         "Mons1serrata",
-        "teezeh@ieji.de",
-        "doener.eurosky.social",
         "bkalhaus.bsky.social",
-        "netzpolitik_feed@chaos.social",
-        "zulauf@nrw.social"
+        "zulauf@nrw.social",
+        "teezeh@ieji.de",
+        "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Sun, 24 May 2026 06:29:54 +0000",
       "syndications": [
@@ -237,7 +237,7 @@
       "id": "8a4300ff5bbf",
       "url": "https://netzpolitik.org/2026/unsichere-billigimporte-eu-kommission-ueberzieht-temu-mit-einer-satten-strafe/",
       "title": "Unsichere Billigimporte: EU-Kommission überzieht Temu mit einer satten Strafe - netzpolitik.org",
-      "score": 588.87,
+      "score": 581.97,
       "signal_count": 4,
       "curators": [
         "netzpolitik.org",
@@ -245,9 +245,9 @@
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Thu, 28 May 2026 12:20:27 +0000",
       "syndications": [
@@ -288,11 +288,11 @@
       "id": "ee8586705872",
       "url": "https://t3n.de/news/ein-p-in-google-warum-die-ki-suche-nicht-richtig-buchstabieren-kann-1744663/",
       "title": "Ein P in Google? Warum die KI-Suche nicht richtig buchstabieren kann | t3n",
-      "score": 560.57,
+      "score": 541.69,
       "signal_count": 2,
       "curators": [
-        "aellalabrys.bsky.social",
-        "t3n.de - News"
+        "t3n.de - News",
+        "aellalabrys.bsky.social"
       ],
       "platforms": [
         "rss",
@@ -323,15 +323,15 @@
       "id": "dc556bc69c6a",
       "url": "https://stadt-bremerhaven.de/xtool-m2-angekuendigt-bastelmaschine-mit-laser-tintenstrahldrucker-plotter-mehr/",
       "title": "xTool M2 vorgestellt: Bastelmaschine mit Laser, Tintenstrahldrucker &#038; mehr",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 20:00:19 +0000",
       "syndications": [
@@ -356,15 +356,15 @@
       "id": "346d8f7a3220",
       "url": "https://stadt-bremerhaven.de/disclosure-day-finaler-trailer-zum-spielberg-spektakel/",
       "title": "Disclosure Day: Finaler Trailer zum Spielberg-Spektakel",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 19:30:07 +0000",
       "syndications": [
@@ -389,15 +389,15 @@
       "id": "e06efcd2a19d",
       "url": "https://stadt-bremerhaven.de/elevenlabs-launcht-music-v2-ki-beherrscht-jetzt-besseren-gesang-filigranere-arrangements-und-mehr/",
       "title": "ElevenLabs launcht Music v2: KI beherrscht jetzt besseren Gesang, filigranere Arrangements und mehr",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 19:00:47 +0000",
       "syndications": [
@@ -423,15 +423,15 @@
       "id": "a6cb6f034e82",
       "url": "https://stadt-bremerhaven.de/openai-poliert-gpt-5-5-instant-auf/",
       "title": "OpenAI poliert GPT-5.5 Instant auf",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 18:50:21 +0000",
       "syndications": [
@@ -458,15 +458,15 @@
       "id": "ec9e1d7a0054",
       "url": "https://stadt-bremerhaven.de/spotify-update-ordner-fuer-mobile-playlisten-und-bessere-warteschlangen/",
       "title": "Spotify-Update: Ordner für mobile Playlisten und bessere Warteschlangen",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 18:30:53 +0000",
       "syndications": [
@@ -491,15 +491,15 @@
       "id": "def464d3068c",
       "url": "https://stadt-bremerhaven.de/claude-opus-4-8-anthropic-schraubt-an-zuverlaessigkeit-und-kontrolle/",
       "title": "Claude Opus 4.8: Anthropic schraubt an Zuverlässigkeit und Kontrolle",
-      "score": 438.85,
+      "score": 430.4,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 18:00:12 +0000",
       "syndications": [
@@ -524,18 +524,18 @@
       "id": "7c6b7b4d9851",
       "url": "https://netzpolitik.org/2026/tiere-und-kuenstliche-intelligenz-wie-die-ki-in-unser-hackfleisch-kommt/",
       "title": "Tiere und künstliche Intelligenz: Wie die KI in unser Hackfleisch kommt - netzpolitik.org",
-      "score": 356.11,
+      "score": 354.07,
       "signal_count": 4,
       "curators": [
-        "teezeh@ieji.de",
-        "netzpolitik.org",
         "pirati.bsky.social",
+        "netzpolitik.org",
+        "teezeh@ieji.de",
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Wed, 27 May 2026 16:19:01 +0000",
       "syndications": [
@@ -576,15 +576,15 @@
       "id": "136350f8417b",
       "url": "https://stadt-bremerhaven.de/age-of-empires-ii-definitive-edition-fuer-macos-ist-da/",
       "title": "Age of Empires II: Definitive Edition für macOS ist da",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 16:00:53 +0000",
       "syndications": [
@@ -609,15 +609,15 @@
       "id": "143b8be5eb95",
       "url": "https://stadt-bremerhaven.de/dreame-x60-pro-preise-und-verfuegbarkeiten-bekannt/",
       "title": "Dreame X60 Pro: Preise und Verfügbarkeiten bekannt",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 17:30:01 +0000",
       "syndications": [
@@ -644,15 +644,15 @@
       "id": "04a00d6e6cfd",
       "url": "https://stadt-bremerhaven.de/geforce-now-james-bond-und-weitere-neuzugaenge-im-cloud-gaming/",
       "title": "GeForce NOW: James Bond und weitere Neuzugänge im Cloud-Gaming",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 16:15:37 +0000",
       "syndications": [
@@ -678,15 +678,15 @@
       "id": "a754036f44f0",
       "url": "https://stadt-bremerhaven.de/deutschland-neue-it-abhaengigkeiten-telekom-und-sap-statt-amazon-und-microsoft/",
       "title": "Deutschland: Neue IT-Abhängigkeiten &#8211; Telekom und SAP statt Amazon und Microsoft",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 16:30:05 +0000",
       "syndications": [
@@ -711,15 +711,15 @@
       "id": "330168d1bffb",
       "url": "https://stadt-bremerhaven.de/snapdragon-c-qualcomm-bringt-frischen-wind-in-guenstige-laptops/",
       "title": "Snapdragon C: Qualcomm bringt frischen Wind in günstige Laptops",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 15:15:50 +0000",
       "syndications": [
@@ -744,15 +744,15 @@
       "id": "65bbd8a8e389",
       "url": "https://stadt-bremerhaven.de/prusa-colormix-echtes-farbmischen-landet-in-easyprint-und-prusaslicer-2-9-6/",
       "title": "Prusa ColorMix: Echtes Farbmischen landet in EasyPrint und PrusaSlicer 2.9.6",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 15:30:28 +0000",
       "syndications": [
@@ -778,15 +778,15 @@
       "id": "f33c60c6fcfb",
       "url": "https://stadt-bremerhaven.de/youtube-fuehrt-anpassbare-feeds-per-text-eingabe-ein-usa/",
       "title": "YouTube führt anpassbare Feeds per Text-Eingabe ein (USA)",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 17:00:54 +0000",
       "syndications": [
@@ -813,15 +813,15 @@
       "id": "3a501f43c984",
       "url": "https://stadt-bremerhaven.de/epic-games-store-diese-spiele-gibt-es-aktuell-kostenlos/",
       "title": "Epic Games Store: Diese Spiele gibt es aktuell kostenlos",
-      "score": 242.98,
+      "score": 241.37,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 15:02:26 +0000",
       "syndications": [
@@ -846,19 +846,19 @@
       "id": "28c09e80ab83",
       "url": "https://winfuture.de/news,158927.html",
       "title": "Noch schnell KI trainiert: Zuckerberg verh&#246;hnt entlassene Mitarbeiter",
-      "score": 240.81,
+      "score": 239.0,
       "signal_count": 6,
       "curators": [
         "reddoc.bsky.social",
-        "notesoflife",
-        "cdeeg.bsky.social",
-        "cryptoparty@bonn.social",
         "weirdmustard.flipping.rocks.ap.brid.gy",
-        "thomasfricke.23.social.ap.brid.gy"
+        "cdeeg.bsky.social",
+        "notesoflife",
+        "thomasfricke.23.social.ap.brid.gy",
+        "cryptoparty@bonn.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-27T21:05:08.363Z",
       "syndications": [
@@ -917,15 +917,15 @@
       "id": "d7bc829056e4",
       "url": "https://netzpolitik.org",
       "title": "netzpolitik.org - Medium für digitale Freiheitsrechte",
-      "score": 217.98,
+      "score": 213.95,
       "signal_count": 2,
       "curators": [
         "doob.eurosky.social",
         "mcse"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T17:14:14.103Z",
       "syndications": [
@@ -957,18 +957,18 @@
       "id": "114ab5a69aaa",
       "url": "https://netzpolitik.org/2026/fuer-250-millionen-euro-bund-schafft-neue-abhaengigkeiten-von-it-konzernen/",
       "title": "Für 250 Millionen Euro: Bund schafft neue Abhängigkeiten von IT-Konzernen - netzpolitik.org",
-      "score": 192.68,
+      "score": 192.48,
       "signal_count": 5,
       "curators": [
         "netzpolitik.org",
         "pirati.bsky.social",
-        "rant-ifa-2024.bsky.social",
-        "netzpolitik_feed@chaos.social"
+        "netzpolitik_feed@chaos.social",
+        "rant-ifa-2024.bsky.social"
       ],
       "platforms": [
+        "mastodon",
         "rss",
-        "bluesky",
-        "mastodon"
+        "bluesky"
       ],
       "latest_shared": "Wed, 27 May 2026 06:59:53 +0000",
       "syndications": [
@@ -1015,15 +1015,15 @@
       "id": "bb3ee53700bf",
       "url": "https://stadt-bremerhaven.de/samsung-display-bringt-4k-und-360hz-auf-ein-qd-oled-panel/",
       "title": "Samsung Display bringt 4K und 360Hz auf ein QD-OLED-Panel",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 14:30:20 +0000",
       "syndications": [
@@ -1048,15 +1048,15 @@
       "id": "8245efe12808",
       "url": "https://stadt-bremerhaven.de/ios-27-so-soll-die-neue-siri-aussehen-und-arbeiten/",
       "title": "iOS 27: So soll die neue Siri aussehen und arbeiten",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 12:25:27 +0000",
       "syndications": [
@@ -1082,15 +1082,15 @@
       "id": "5153c5f764fe",
       "url": "https://stadt-bremerhaven.de/xiaomi-smart-band-10-pro-und-watch-s5-46-mm-zwei-neue-wearables-fuer-deutschland/",
       "title": "Xiaomi Smart Band 10 Pro und Watch S5 (46 mm): Zwei neue Wearables für Deutschland",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 13:15:55 +0000",
       "syndications": [
@@ -1116,15 +1116,15 @@
       "id": "1bdffc4fa707",
       "url": "https://stadt-bremerhaven.de/xiaomi-buds-6-und-party-lautsprecher-sound-play-vorgestellt/",
       "title": "Xiaomi Buds 6 und Party-Lautsprecher Sound Play vorgestellt",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 13:30:58 +0000",
       "syndications": [
@@ -1151,15 +1151,15 @@
       "id": "6186908a8b30",
       "url": "https://stadt-bremerhaven.de/microsoft-365-onedrive-bekommt-speicher-abrechnung-nach-verbrauch/",
       "title": "Microsoft 365: OneDrive bekommt Speicher-Abrechnung nach Verbrauch",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 13:58:51 +0000",
       "syndications": [
@@ -1185,15 +1185,15 @@
       "id": "fcf8928eede5",
       "url": "https://stadt-bremerhaven.de/xiaomi-17t-pro-das-sind-die-neuen-meister-der-telefotografie/",
       "title": "Xiaomi 17T (Pro): Das sind die neuen &#8222;Meister der Telefotografie&#8220;",
-      "score": 170.38,
+      "score": 170.17,
       "signal_count": 2,
       "curators": [
         "Caschys Blog",
         "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "Thu, 28 May 2026 12:59:19 +0000",
       "syndications": [
@@ -1219,15 +1219,15 @@
       "id": "ee3ccc20ebca",
       "url": "https://t3n.de/news/hacker-george-hotz-ki-agenten-unternehmen-schaden-1744019/",
       "title": "„Agenten können nicht programmieren“: Hacker George Hotz warnt vor dem Einsatz von KI | t3n",
-      "score": 164.75,
+      "score": 161.62,
       "signal_count": 2,
       "curators": [
-        "ingosander.bsky.social",
-        "macst3r"
+        "macst3r",
+        "ingosander.bsky.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T15:02:03.932Z",
       "syndications": [
@@ -1262,7 +1262,7 @@
       "id": "2c69c585efbf",
       "url": "https://t3n.de/news/probleme-mondbasis-scheitern-1744794/?amp%3Butm_medium=activitypub",
       "title": "Nicht nur Staub und Strahlung: Diese Probleme könnten eine Mondbasis gefährden | t3n",
-      "score": 156.47,
+      "score": 153.87,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -1291,7 +1291,7 @@
       "id": "ca2abc7543dc",
       "url": "https://heise.de/-11310370",
       "title": "SAP: Nur gut die Hälfte der Angestellten vertraut Vorstand | heise online",
-      "score": 141.85,
+      "score": 137.91,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
@@ -1320,11 +1320,11 @@
       "id": "d3047b7ddb67",
       "url": "https://t3n.de/news/zwischen-krise-und-ki-boom-warum-otto-den-umbruch-vergleichsweise-gut-hinbekommt-1744714/",
       "title": "Deutliche Gewinnsteigerung: Warum Otto den Umbruch vergleichsweise gut hinbekommt | t3n",
-      "score": 133.69,
+      "score": 131.56,
       "signal_count": 2,
       "curators": [
-        "ki-news.bsky.social",
-        "t3n.de - News"
+        "t3n.de - News",
+        "ki-news.bsky.social"
       ],
       "platforms": [
         "rss",
@@ -1357,7 +1357,7 @@
       "id": "e2164212645e",
       "url": "https://heise.de/-11310165",
       "title": "Pentagon: US-Militär über Standortdaten aus Smartphones ins Visier genommen | heise online",
-      "score": 133.58,
+      "score": 130.09,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
@@ -1386,15 +1386,15 @@
       "id": "845a7743ebd6",
       "url": "http://heise.de/-11309493",
       "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
-      "score": 129.69,
+      "score": 128.2,
       "signal_count": 2,
       "curators": [
         "frankstohl",
         "frankstohl.mastodon.social.ap.brid.gy"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T11:50:04.366Z",
       "syndications": [
@@ -1425,7 +1425,7 @@
       "id": "f64ff04ebd6d",
       "url": "https://heise.de/-11310469",
       "title": "Arc G3: Intel bringt Panther-Lake-Ableger für Gaming-Handhelds | heise online",
-      "score": 125.45,
+      "score": 122.38,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
@@ -1454,11 +1454,11 @@
       "id": "8510b5123aba",
       "url": "https://t3n.de/news/unabhaengige-studie-belegt-ki-modelle-umgehen-vorgaben-und-verwischen-dabei-ihre-spuren-1744065/",
       "title": "Unabhängige Studie belegt: KI-Modelle umgehen Vorgaben – und verwischen dabei ihre Spuren | t3n",
-      "score": 107.18,
+      "score": 107.54,
       "signal_count": 3,
       "curators": [
-        "cheesemir.bsky.social",
-        "aellalabrys.bsky.social"
+        "aellalabrys.bsky.social",
+        "cheesemir.bsky.social"
       ],
       "platforms": [
         "bluesky"
@@ -1498,7 +1498,7 @@
       "id": "6f24deabada6",
       "url": "https://t3n.de/news/apokalypse-website-privatjets-1744790/?amp%3Butm_medium=activitypub",
       "title": "Apokalypse-Frühwarnsystem: Website trackt Privatjets von Milliardären | t3n",
-      "score": 98.15,
+      "score": 97.34,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -1527,15 +1527,15 @@
       "id": "11b0f64f7e8e",
       "url": "https://t3n.de/news/per-vibecoding-eine-website-erstellen-welche-prompts-du-brauchst-und-worauf-anfaenger-achten-muessen-1743784/",
       "title": "Per Vibecoding eine Website erstellen? Welche Prompts du brauchst – und worauf Anfänger achten müssen | t3n",
-      "score": 97.48,
+      "score": 96.08,
       "signal_count": 2,
       "curators": [
         "ramichaelseidlitz@legal.social",
         "ramichaelseidlitz.bsky.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T11:14:33.016Z",
       "syndications": [
@@ -1564,15 +1564,15 @@
       "id": "10b10d62a18b",
       "url": "https://stadt-bremerhaven.de/last-fm-wird-unabhaengig/",
       "title": "Last.fm wird unabhängig",
-      "score": 95.85,
+      "score": 95.24,
       "signal_count": 2,
       "curators": [
-        "dubliner86.bsky.social",
-        "stadtbremerhaven@feedmirror.social"
+        "stadtbremerhaven@feedmirror.social",
+        "dubliner86.bsky.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T09:33:41.184Z",
       "syndications": [
@@ -1601,7 +1601,7 @@
       "id": "ae37557c06ca",
       "url": "https://stadt-bremerhaven.de/vivaldi-8-0-fuer-android-und-ios-ist-da/",
       "title": "Vivaldi 8.0 für Android und iOS ist da",
-      "score": 93.17,
+      "score": 92.43,
       "signal_count": 2,
       "curators": [
         "AndiFFM@mstdn.social",
@@ -1642,15 +1642,15 @@
       "id": "566a875467a4",
       "url": "https://t3n.de/news/weltmeisterschaft-2026-spiele-free-tv-magenta-1744414/",
       "title": "Nur 60 Spiele kostenlos im Stream: So macht die WM 2026 den Fußball endgültig kaputt | t3n",
-      "score": 89.23,
+      "score": 88.45,
       "signal_count": 2,
       "curators": [
         "teezeh@ieji.de",
         "marcoengelien.bsky.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
       "latest_shared": "2026-05-28T08:58:59.036Z",
       "syndications": [
@@ -1679,11 +1679,11 @@
       "id": "a1557f9ec8ec",
       "url": "https://t3n.de/news/gemini-nutzungslimit-pruefen-1743295/",
       "title": "Gemini-Nutzungslimit prüfen: So geht&#039;s | t3n",
-      "score": 80.64,
+      "score": 81.46,
       "signal_count": 2,
       "curators": [
-        "scripter.bsky.social",
-        "scripter.social.tchncs.de.ap.brid.gy"
+        "scripter.social.tchncs.de.ap.brid.gy",
+        "scripter.bsky.social"
       ],
       "platforms": [
         "bluesky"
@@ -1719,7 +1719,7 @@
       "id": "9f5923fbe87c",
       "url": "https://heise.de/-11306715",
       "title": "Pro &amp; Contra: Hat der Mac Pro ein Comeback verdient? | heise online",
-      "score": 76.58,
+      "score": 74.98,
       "signal_count": 1,
       "curators": [
         "macandi.bsky.social"
@@ -1748,7 +1748,7 @@
       "id": "d8286a4f5c88",
       "url": "https://t3n.de/news/alte-handys-wert-nokia-motorola-sammler-1582433/",
       "title": "Dein altes Nokia könnte ein Vermögen wert sein – Welche Modelle gefragt sind",
-      "score": 73.4,
+      "score": 72.34,
       "signal_count": 1,
       "curators": [
         "darbales.bsky.social"
@@ -1774,45 +1774,10 @@
       "tags": []
     },
     {
-      "id": "cdec6b69fdd0",
-      "url": "https://heise.de/-11308981?wt_mc=sm.red.ho.mastodon.mastodon.md_beitraege.md_beitraege&amp%3Butm_source=mastodon",
-      "title": "Sapperlot: Deutsche Telekom mietet fremde Glasfaseranschlüsse mit Bitstrom | heise online",
-      "score": 67.39,
-      "signal_count": 1,
-      "curators": [
-        "heiseonline@social.heise.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T13:03:20.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "heiseonline@social.heise.de",
-          "url": "https://social.heise.de/@heiseonline/116652336773949485",
-          "shared_at": "2026-05-28T13:03:20.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 5,
-        "likes": 4,
-        "replies": 1,
-        "quotes": 0
-      },
-      "tags": [
-        "deutschetelekom",
-        "glasfaser",
-        "breitband",
-        "digitalisierung",
-        "openaccess"
-      ]
-    },
-    {
       "id": "6b503ca1c5a2",
       "url": "https://winfuture.de/news,158957.html",
       "title": "IT-Wende jetzt auch in Bayern - Open Source statt Microsoft 365",
-      "score": 67.29,
+      "score": 66.67,
       "signal_count": 2,
       "curators": [
         "PeterRu@climatejustice.social",
@@ -1849,10 +1814,45 @@
       ]
     },
     {
+      "id": "cdec6b69fdd0",
+      "url": "https://heise.de/-11308981?wt_mc=sm.red.ho.mastodon.mastodon.md_beitraege.md_beitraege&amp%3Butm_source=mastodon",
+      "title": "Sapperlot: Deutsche Telekom mietet fremde Glasfaseranschlüsse mit Bitstrom | heise online",
+      "score": 66.39,
+      "signal_count": 1,
+      "curators": [
+        "heiseonline@social.heise.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T13:03:20.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "heiseonline@social.heise.de",
+          "url": "https://social.heise.de/@heiseonline/116652336773949485",
+          "shared_at": "2026-05-28T13:03:20.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 5,
+        "likes": 4,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [
+        "deutschetelekom",
+        "glasfaser",
+        "breitband",
+        "digitalisierung",
+        "openaccess"
+      ]
+    },
+    {
       "id": "1821376b2a9a",
       "url": "https://heise.de/-11310434",
       "title": "Starship erhält nach Zwischenfall Startverbot von der FAA | heise online",
-      "score": 60.05,
+      "score": 59.51,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
@@ -1881,7 +1881,7 @@
       "id": "e76846e23472",
       "url": "https://heise.de/-11310149",
       "title": "Bundesregierung legt Entwurf für Kritis-Verordnung vor | heise online",
-      "score": 59.69,
+      "score": 59.16,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
@@ -1912,7 +1912,7 @@
       "id": "b9e8eef0d646",
       "url": "https://heise.de/-11310019",
       "title": "EU verhängt Rekordstrafe gegen Temu wegen mangelhafter Risikobewertung | heise online",
-      "score": 59.46,
+      "score": 58.94,
       "signal_count": 1,
       "curators": [
         "mattdrayton.bsky.social"
