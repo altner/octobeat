@@ -1,7 +1,7 @@
 {
   "name": "octobeat",
   "version": "1.0.0",
-  "description": "Social news aggregator powered by Mastodon, Bluesky & RSS",
+  "description": "Link discovery bot for German blogs, Webrings, Mastodon, Bluesky and RSS",
   "scripts": {
     "dev": "astro dev",
     "feedback": "python3 crawler/feedback_server.py",

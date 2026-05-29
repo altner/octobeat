@@ -1,5 +1,5 @@
 """
-collector.py — collect signals from Mastodon, Bluesky, Hacker News, and RSS.
+collector.py — collect link signals from Mastodon, Bluesky, Hacker News, and RSS.
 Each signal = {url, platform, curator_handle, curator_meta, shared_at, title?}
 """
 
@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 # Load .env from the project root (one level above crawler/).
 load_dotenv(Path(__file__).parent.parent / ".env")
 
-HEADERS = {"User-Agent": "FeedbeatAgent/1.0 (open source news aggregator)"}
+HEADERS = {"User-Agent": "OctoBeatBot/1.0 (open source link discovery crawler)"}
 
 
 # ---------------------------------------------------------------------------

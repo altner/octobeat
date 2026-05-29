@@ -149,8 +149,9 @@ def domain_from_url(url: str) -> str:
         domain = urlparse(url).netloc.lower()
     except Exception:
         return ""
-    if domain.startswith("www."):
-        domain = domain[4:]
+    for prefix in ("www.", "rss.", "feeds."):
+        if domain.startswith(prefix):
+            domain = domain[len(prefix):]
     return domain
 
 
@@ -428,6 +429,7 @@ def record_source_stats(
     rss_counts: dict[str, int] = {}
     social_counts: dict[str, int] = {}
     top_counts: dict[str, int] = {}
+    feed_article_domains: dict[str, set[str]] = {}
 
     for signal in signals:
         platform = signal.get("platform", "")
@@ -435,6 +437,9 @@ def record_source_stats(
             feed_url = signal.get("feed_url", "")
             if feed_url:
                 rss_counts[feed_url] = rss_counts.get(feed_url, 0) + 1
+                article_domain = domain_from_url(signal.get("url", ""))
+                if article_domain:
+                    feed_article_domains.setdefault(feed_url, set()).add(article_domain)
             continue
 
         if platform in {"mastodon", "bluesky"}:
@@ -450,8 +455,9 @@ def record_source_stats(
     for feed_url in feed_urls:
         domain = domain_from_url(feed_url)
         rss_count = rss_counts.get(feed_url, 0)
-        social_count = social_counts.get(domain, 0)
-        top_count = top_counts.get(domain, 0)
+        source_domains = {domain, *feed_article_domains.get(feed_url, set())}
+        social_count = sum(social_counts.get(source_domain, 0) for source_domain in source_domains)
+        top_count = sum(top_counts.get(source_domain, 0) for source_domain in source_domains)
         last_rss_signal_at = now_iso if rss_count else None
         last_social_signal_at = now_iso if social_count else None
 

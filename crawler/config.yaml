@@ -26,6 +26,26 @@ rss_feeds:
   - https://www.reisefreiheit.org/feed/
 
   - https://www.metacheles.de/rss/
+  - https://uberblogr.de/rss
+  - https://uberblogr.de/rss-trending
+
+# Public Mastodon instances used as additional Fediverse search windows.
+# The own MASTODON_INSTANCE from .env is searched first and does not need to be listed here.
+mastodon_instances:
+  - https://mastodon.social
+  - https://mastodon.online
+  - https://troet.cafe
+  - https://social.tchncs.de
+  - https://social.heise.de
+  - https://chaos.social
+  - https://digitalcourage.social
+  - https://norden.social
+  - https://berlin.social
+  - https://troet.uberblogr.de
+
+# Additional social searches derived from RSS article URLs.
+social_search:
+  max_rss_article_domains: 50
 
 # Bluesky
 bluesky:
@@ -67,6 +87,7 @@ domain_blacklist:
   - t.co
   - bit.ly
   - twitter.com
+  - x.com
   - instagram.com
   - facebook.com
   - tiktok.com

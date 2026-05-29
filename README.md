@@ -1,8 +1,13 @@
 # OctoBeat
 
-German-language social news aggregator. The Python crawler collects Mastodon,
-Bluesky and RSS signals, scores articles, and writes static JSON into `data/`.
-The Astro frontend reads that data at build time.
+OctoBeat is a link-discovery bot for the German-speaking web. It follows RSS,
+blog, Webring, Mastodon, and Bluesky links, learns which domains and curators
+surface good finds, and collects the most interesting pieces that are being
+linked and discussed.
+
+The bot is the tireless crawler behind the project: it follows links, discovers
+what gets referenced repeatedly, scores those signals, and writes static JSON
+into `data/`. The Astro frontend reads that data at build time.
 
 ## Local Commands
 
@@ -13,7 +18,7 @@ pip install -r crawler/requirements.txt
 npm install
 ```
 
-Run the crawler from the repo root:
+Run the bot from the repo root:
 
 ```bash
 python3 crawler/main.py
@@ -43,14 +48,14 @@ Preview the built site:
 npm run preview
 ```
 
-## GitHub Actions Schedule
+## Bot Schedule
 
-The crawler workflow runs daily at 06:17 Europe/Berlin. It intentionally avoids
+The bot workflow runs daily at 06:17 Europe/Berlin. It intentionally avoids
 minute 0 because scheduled GitHub workflows can be delayed at busy times.
 
 ## Local Feedback And Ratings
 
-Interactive feed and curator ratings only work in local dev. Start the feedback
+Interactive source and curator ratings only work in local dev. Start the feedback
 API in a second terminal:
 
 ```bash
@@ -70,21 +75,21 @@ http://localhost:4321/octobeat/settings/
 http://localhost:4321/octobeat/debug/
 ```
 
-Settings lets you add/delete RSS feed URLs and rate feeds from `-5` to `+5`,
+Settings lets you add/delete RSS feed URLs and rate sources from `-5` to `+5`,
 reset to `Neutral`, or `Block` them. Debug lets you rate curators. Feedback is
-stored in `data/octobeat.sqlite3` and is applied on the next crawler run.
+stored in `data/octobeat.sqlite3` and is applied on the next bot run.
 
 ## Source List
 
 `data/feeds.json` is the active source list. It contains the RSS feed URLs used
-for crawling, and the crawler derives the Mastodon/Bluesky search domains from
+for crawling, and the bot derives the Mastodon/Bluesky search domains from
 those feed URLs automatically. There is no separate seed-domain list to maintain.
 
 `crawler/config.yaml` still contains defaults and crawler settings. If
-`data/feeds.json` does not exist yet, the crawler falls back to the default
+`data/feeds.json` does not exist yet, the bot falls back to the default
 `rss_feeds` list in `crawler/config.yaml`.
 
-The crawler also learns source quality over time. For each run it stores how
+The bot also learns source quality over time. For each run it stores how
 many RSS signals and social signals each feed/domain produced. By default,
 inactive sources are only flagged in Settings after the configured run/day
 thresholds. Automatic removal stays disabled unless `auto_remove` is set to

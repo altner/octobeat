@@ -30,7 +30,7 @@ def write_feed(articles: list[dict], data_dir: str) -> Path:
     archive_path = base / "archive" / f"{now.strftime('%Y-%m-%d')}.json"
     archive_path.write_text(payload, encoding="utf-8")
 
-    print(f"✓ {len(articles)} articles → {feed_path}")
+    print(f"✓ {len(articles)} finds → {feed_path}")
     return feed_path
 
 

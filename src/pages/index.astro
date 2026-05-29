@@ -100,7 +100,7 @@ function domain(url: string) {
     <div id="sectionsView">
       {articles.length === 0 && (
         <div class="state">
-          <p>No articles yet. Run <code>python crawler/main.py</code>.</p>
+          <p>No finds yet. Run <code>python crawler/main.py</code>.</p>
         </div>
       )}
 
@@ -108,7 +108,7 @@ function domain(url: string) {
         <section>
           <div class="section-header" id={`sec-${tag}`}>
             <span class="section-title">#{tag}</span>
-            <span class="section-count">{sections[tag].length} article{sections[tag].length !== 1 ? 's' : ''}</span>
+            <span class="section-count">{sections[tag].length} find{sections[tag].length !== 1 ? 's' : ''}</span>
           </div>
           <div class="articles">
             {sections[tag].map(a => (
@@ -136,7 +136,7 @@ function domain(url: string) {
         <section>
           <div class="section-header" id="sec-more">
             <span class="section-title">{remainingLabel}</span>
-            <span class="section-count">{remaining.length} article{remaining.length !== 1 ? 's' : ''}</span>
+            <span class="section-count">{remaining.length} find{remaining.length !== 1 ? 's' : ''}</span>
           </div>
           <div class="articles">
             {remaining.map(a => (

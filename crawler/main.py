@@ -1,6 +1,6 @@
 """
-main.py — Feedbeat entrypoint.
-Combines all modules: collect -> filter -> score -> store.
+main.py — OctoBeat bot entrypoint.
+Combines all modules: discover -> filter -> score -> store.
 """
 
 from __future__ import annotations
@@ -80,8 +80,9 @@ def domains_from_feed_urls(feed_urls: list[str]) -> list[str]:
             host = urlparse(feed_url).netloc.lower()
         except Exception:
             continue
-        if host.startswith("www."):
-            host = host[4:]
+        for prefix in ("www.", "rss.", "feeds."):
+            if host.startswith(prefix):
+                host = host[len(prefix):]
         if not host or host in seen:
             continue
         seen.add(host)
@@ -89,9 +90,48 @@ def domains_from_feed_urls(feed_urls: list[str]) -> list[str]:
     return domains
 
 
+def domain_from_url(url: str) -> str:
+    try:
+        host = urlparse(url).netloc.lower()
+    except Exception:
+        return ""
+    for prefix in ("www.", "rss.", "feeds."):
+        if host.startswith(prefix):
+            host = host[len(prefix):]
+    return host
+
+
+def merge_domains(primary_domains: list[str], extra_domains: list[str]) -> list[str]:
+    """Merge domains while keeping primary source domains first."""
+    merged = []
+    seen = set()
+    for domain in [*primary_domains, *extra_domains]:
+        if not domain or domain in seen:
+            continue
+        seen.add(domain)
+        merged.append(domain)
+    return merged
+
+
+def domains_from_rss_signals(
+    signals: list[dict],
+    blacklist: set[str],
+    max_domains: int,
+) -> list[str]:
+    """Derive extra social search domains from RSS article URLs."""
+    counts: Counter[str] = Counter()
+    for signal in signals:
+        if signal.get("platform") != "rss":
+            continue
+        domain = domain_from_url(signal.get("url", ""))
+        if domain and domain not in blacklist:
+            counts[domain] += 1
+    return [domain for domain, _ in counts.most_common(max_domains)]
+
+
 def domain_ok(url: str, blacklist: set) -> bool:
     try:
-        domain = urlparse(url).netloc.replace("www.", "")
+        domain = domain_from_url(url)
         return bool(domain) and domain not in blacklist
     except Exception:
         return False
@@ -192,18 +232,36 @@ async def run():
     cfg       = load_config()
     blacklist = set(cfg.get("domain_blacklist", []))
     rss_urls = load_feed_urls(cfg)
-    source_domains = domains_from_feed_urls(rss_urls)
+    feed_domains = domains_from_feed_urls(rss_urls)
     all_signals: list[dict] = []
-    print(f"→ Loaded {len(rss_urls)} feeds and derived {len(source_domains)} source domains")
+    rss_signals: list[dict] = []
+    print(f"→ Loaded {len(rss_urls)} feeds and derived {len(feed_domains)} source domains")
 
-    # ── 1. Mastodon ────────────────────────────────────────────────────────
+    # ── 1. RSS ─────────────────────────────────────────────────────────────
+    if rss_urls:
+        print("→ Crawling RSS feeds...")
+        rss_signals = collect_rss(rss_urls)
+        all_signals.extend(rss_signals)
+        print(f"  {len(rss_signals)} signals from {len(rss_urls)} feeds")
+
+    social_cfg = cfg.get("social_search", {})
+    rss_article_domains = domains_from_rss_signals(
+        rss_signals,
+        blacklist,
+        social_cfg.get("max_rss_article_domains", 50),
+    )
+    source_domains = merge_domains(feed_domains, rss_article_domains)
+    if rss_article_domains:
+        print(f"→ Added {len(source_domains) - len(feed_domains)} RSS article domains for social search")
+
+    # ── 2. Mastodon ────────────────────────────────────────────────────────
     print("→ Crawling Mastodon...")
     for domain in source_domains:
         sigs = await collect_mastodon(domain, cfg.get("mastodon_instances", []))
         all_signals.extend(sigs)
         print(f"  {domain}: {len(sigs)} signals")
 
-    # ── 2. Bluesky ─────────────────────────────────────────────────────────
+    # ── 3. Bluesky ─────────────────────────────────────────────────────────
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
         print("→ Crawling Bluesky...")
@@ -212,14 +270,7 @@ async def run():
             all_signals.extend(sigs)
             print(f"  {domain}: {len(sigs)} signals")
 
-    # ── 3. RSS ─────────────────────────────────────────────────────────────
-    if rss_urls:
-        print("→ Crawling RSS feeds...")
-        sigs = collect_rss(rss_urls)
-        all_signals.extend(sigs)
-        print(f"  {len(sigs)} signals from {len(rss_urls)} feeds")
-
-    # ── 2. Hacker News ─────────────────────────────────────────────────────
+    # ── 4. Hacker News ─────────────────────────────────────────────────────
     hn_cfg = cfg.get("hackernews", {})
     if hn_cfg.get("enabled", True):
         print("→ Crawling Hacker News...")
@@ -227,7 +278,7 @@ async def run():
         all_signals.extend(sigs)
         print(f"  HN: {len(sigs)} signals")
 
-    # ── 4. Filter: domain blacklist + curator validation ──────────────────
+    # ── 5. Filter: domain blacklist + curator validation ──────────────────
     valid_signals = []
     for s in all_signals:
         if not domain_ok(s["url"], blacklist):
@@ -299,7 +350,7 @@ async def run():
         })
 
     if too_old_count:
-        print(f"→ Dropped {too_old_count} articles older than {max_age_h}h")
+        print(f"→ Dropped {too_old_count} finds older than {max_age_h}h")
 
     # ── 8. Keep only articles with social signal ───────────────────────────
     social_platforms = {"mastodon", "bluesky"}
@@ -307,14 +358,14 @@ async def run():
         a for a in articles
         if social_platforms & set(a["platforms"])
     ]
-    print(f"→ {len(articles)} articles with social signal (Mastodon/Bluesky)")
+    print(f"→ {len(articles)} finds with social signal (Mastodon/Bluesky)")
 
     # ── 9. Sort and keep top N ─────────────────────────────────────────────
     articles.sort(key=lambda a: a["score"], reverse=True)
     top_n = cfg["article_filter"]["top_n"]
     top   = articles[:top_n]
 
-    print(f"→ Selected top {len(top)} articles (from {len(articles)} unique URLs)")
+    print(f"→ Selected top {len(top)} finds (from {len(articles)} unique URLs)")
 
     if learning_cfg.get("enabled", True):
         run_id = record_run(learning_db_path, run_started_at, top, valid_signals, rss_urls)
@@ -350,7 +401,7 @@ async def run():
         if counts:
             print(f"\n→ Top curators ({platform.capitalize()}):")
             for handle, count in counts.most_common(10):
-                print(f"  {handle:<40} shared {count} articles")
+                print(f"  {handle:<40} shared {count} links")
         else:
             print(f"\n→ No {platform.capitalize()} curators found.")
 
