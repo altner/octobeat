@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import json
 import re
 from collections import Counter
 from pathlib import Path
@@ -18,7 +19,7 @@ from dateutil import parser as dateparser
 
 from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
 from curator  import is_valid_curator, calc_weight
-from database import apply_curator_learning, apply_feed_learning, record_run
+from database import apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run
 from scorer   import score_article
 from storage  import write_feed, push_to_github
 
@@ -37,6 +38,55 @@ def resolve_config_path(path: str) -> Path:
     if configured.is_absolute():
         return configured
     return (CRAWLER_DIR / configured).resolve()
+
+
+def data_dir_from_config(cfg: dict) -> Path:
+    return resolve_config_path(cfg.get("output", {}).get("data_dir", "../data"))
+
+
+def feeds_path_from_config(cfg: dict) -> Path:
+    return data_dir_from_config(cfg) / "feeds.json"
+
+
+def load_feed_urls(cfg: dict) -> list[str]:
+    """Load the source feed list. data/feeds.json is the source of truth."""
+    feeds_path = feeds_path_from_config(cfg)
+    if feeds_path.exists():
+        try:
+            data = json.loads(feeds_path.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return [str(url).strip() for url in data if str(url).strip()]
+            if isinstance(data, dict):
+                return [str(url).strip() for url in data.get("feeds", []) if str(url).strip()]
+        except Exception as exc:
+            print(f"  Could not read {feeds_path}: {exc}")
+
+    return [str(url).strip() for url in cfg.get("rss_feeds", []) if str(url).strip()]
+
+
+def write_feed_urls(cfg: dict, feed_urls: list[str]) -> Path:
+    feeds_path = feeds_path_from_config(cfg)
+    feeds_path.parent.mkdir(parents=True, exist_ok=True)
+    feeds_path.write_text(json.dumps(feed_urls, ensure_ascii=False, indent=2), encoding="utf-8")
+    return feeds_path
+
+
+def domains_from_feed_urls(feed_urls: list[str]) -> list[str]:
+    """Derive social search domains from the configured RSS feed URLs."""
+    domains: list[str] = []
+    seen: set[str] = set()
+    for feed_url in feed_urls:
+        try:
+            host = urlparse(feed_url).netloc.lower()
+        except Exception:
+            continue
+        if host.startswith("www."):
+            host = host[4:]
+        if not host or host in seen:
+            continue
+        seen.add(host)
+        domains.append(host)
+    return domains
 
 
 def domain_ok(url: str, blacklist: set) -> bool:
@@ -141,11 +191,14 @@ async def run():
     run_started_at = datetime.now(timezone.utc)
     cfg       = load_config()
     blacklist = set(cfg.get("domain_blacklist", []))
+    rss_urls = load_feed_urls(cfg)
+    source_domains = domains_from_feed_urls(rss_urls)
     all_signals: list[dict] = []
+    print(f"→ Loaded {len(rss_urls)} feeds and derived {len(source_domains)} source domains")
 
     # ── 1. Mastodon ────────────────────────────────────────────────────────
     print("→ Crawling Mastodon...")
-    for domain in cfg["seed_domains"]:
+    for domain in source_domains:
         sigs = await collect_mastodon(domain, cfg.get("mastodon_instances", []))
         all_signals.extend(sigs)
         print(f"  {domain}: {len(sigs)} signals")
@@ -154,13 +207,12 @@ async def run():
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
         print("→ Crawling Bluesky...")
-        for domain in cfg["seed_domains"]:
+        for domain in source_domains:
             sigs = await collect_bluesky(domain, bsky_cfg.get("limit", 25))
             all_signals.extend(sigs)
             print(f"  {domain}: {len(sigs)} signals")
 
     # ── 3. RSS ─────────────────────────────────────────────────────────────
-    rss_urls = cfg.get("rss_feeds", [])
     if rss_urls:
         print("→ Crawling RSS feeds...")
         sigs = collect_rss(rss_urls)
@@ -265,8 +317,30 @@ async def run():
     print(f"→ Selected top {len(top)} articles (from {len(articles)} unique URLs)")
 
     if learning_cfg.get("enabled", True):
-        run_id = record_run(learning_db_path, run_started_at, top, valid_signals)
+        run_id = record_run(learning_db_path, run_started_at, top, valid_signals, rss_urls)
         print(f"✓ Stored run #{run_id} in SQLite → {learning_db_path}")
+
+        pruning_cfg = learning_cfg.get("source_pruning", {})
+        if pruning_cfg.get("enabled", True):
+            inactive_feeds = inactive_feed_urls(
+                learning_db_path,
+                rss_urls,
+                pruning_cfg.get("min_runs", 5),
+                pruning_cfg.get("min_age_days", 14),
+                pruning_cfg.get("require_no_social_signals", True),
+            )
+            if inactive_feeds:
+                print(f"→ Flagged {len(inactive_feeds)} inactive feeds")
+                for item in inactive_feeds:
+                    print(
+                        "  "
+                        f"{item['domain']}: {item['runs_seen']} runs, "
+                        f"{item['social_signal_sum']} social signals"
+                    )
+                if pruning_cfg.get("auto_remove", False):
+                    inactive_set = {item["feed_url"] for item in inactive_feeds}
+                    rss_urls = [url for url in rss_urls if url not in inactive_set]
+                    print(f"→ Removed {len(inactive_feeds)} inactive feeds from feeds.json")
 
     # ── 9. Curator overview ────────────────────────────────────────────────
     for platform in ("mastodon", "bluesky"):
@@ -282,17 +356,12 @@ async def run():
 
     # ── 10. Write and push ─────────────────────────────────────────────────
     out = cfg["output"]
-    data_dir = resolve_config_path(out["data_dir"])
+    data_dir = data_dir_from_config(cfg)
     write_feed(top, data_dir)
 
     # feeds.json for the settings page
-    import json as _json
-    feeds_path = data_dir / "feeds.json"
-    feeds_path.write_text(
-        _json.dumps(cfg.get("rss_feeds", []), ensure_ascii=False, indent=2),
-        encoding="utf-8"
-    )
-    print(f"✓ {len(cfg.get('rss_feeds', []))} feeds → {feeds_path}")
+    feeds_path = write_feed_urls(cfg, rss_urls)
+    print(f"✓ {len(rss_urls)} feeds → {feeds_path}")
     if out.get("github_push", False):
         push_to_github(str(data_dir), out["commit_message"])
 

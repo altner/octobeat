@@ -8,8 +8,9 @@ from __future__ import annotations
 import json
 import math
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 SCHEMA_VERSION = 1
@@ -111,12 +112,46 @@ def init_db(db_path: Path) -> None:
               note TEXT,
               updated_at TEXT NOT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS source_runs (
+              run_id INTEGER NOT NULL,
+              feed_url TEXT NOT NULL,
+              domain TEXT NOT NULL,
+              rss_signal_count INTEGER NOT NULL DEFAULT 0,
+              social_signal_count INTEGER NOT NULL DEFAULT 0,
+              top_article_count INTEGER NOT NULL DEFAULT 0,
+              PRIMARY KEY (run_id, feed_url),
+              FOREIGN KEY (run_id) REFERENCES runs(id)
+            );
+
+            CREATE TABLE IF NOT EXISTS source_stats (
+              feed_url TEXT PRIMARY KEY,
+              domain TEXT NOT NULL,
+              first_seen TEXT NOT NULL,
+              last_seen TEXT NOT NULL,
+              runs_seen INTEGER NOT NULL DEFAULT 0,
+              rss_signal_sum INTEGER NOT NULL DEFAULT 0,
+              social_signal_sum INTEGER NOT NULL DEFAULT 0,
+              top_article_sum INTEGER NOT NULL DEFAULT 0,
+              last_rss_signal_at TEXT,
+              last_social_signal_at TEXT
+            );
             """
         )
         con.execute(
             "INSERT OR REPLACE INTO meta(key, value) VALUES ('schema_version', ?)",
             (str(SCHEMA_VERSION),),
         )
+
+
+def domain_from_url(url: str) -> str:
+    try:
+        domain = urlparse(url).netloc.lower()
+    except Exception:
+        return ""
+    if domain.startswith("www."):
+        domain = domain[4:]
+    return domain
 
 
 def curator_multipliers(
@@ -381,11 +416,259 @@ def set_feed_feedback(
     }
 
 
+def record_source_stats(
+    con: sqlite3.Connection,
+    run_id: int,
+    feed_urls: list[str],
+    signals: list[dict],
+    top_urls: set[str],
+    now_iso: str,
+) -> None:
+    """Persist per-source RSS and social signal counts for pruning decisions."""
+    rss_counts: dict[str, int] = {}
+    social_counts: dict[str, int] = {}
+    top_counts: dict[str, int] = {}
+
+    for signal in signals:
+        platform = signal.get("platform", "")
+        if platform == "rss":
+            feed_url = signal.get("feed_url", "")
+            if feed_url:
+                rss_counts[feed_url] = rss_counts.get(feed_url, 0) + 1
+            continue
+
+        if platform in {"mastodon", "bluesky"}:
+            domain = domain_from_url(signal.get("url", ""))
+            if domain:
+                social_counts[domain] = social_counts.get(domain, 0) + 1
+
+    for url in top_urls:
+        domain = domain_from_url(url)
+        if domain:
+            top_counts[domain] = top_counts.get(domain, 0) + 1
+
+    for feed_url in feed_urls:
+        domain = domain_from_url(feed_url)
+        rss_count = rss_counts.get(feed_url, 0)
+        social_count = social_counts.get(domain, 0)
+        top_count = top_counts.get(domain, 0)
+        last_rss_signal_at = now_iso if rss_count else None
+        last_social_signal_at = now_iso if social_count else None
+
+        con.execute(
+            """
+            INSERT INTO source_runs(
+              run_id, feed_url, domain, rss_signal_count,
+              social_signal_count, top_article_count
+            )
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (run_id, feed_url, domain, rss_count, social_count, top_count),
+        )
+        con.execute(
+            """
+            INSERT INTO source_stats(
+              feed_url, domain, first_seen, last_seen, runs_seen,
+              rss_signal_sum, social_signal_sum, top_article_sum,
+              last_rss_signal_at, last_social_signal_at
+            )
+            VALUES (?, ?, ?, ?, 1, ?, ?, ?, ?, ?)
+            ON CONFLICT(feed_url) DO UPDATE SET
+              domain=excluded.domain,
+              last_seen=excluded.last_seen,
+              runs_seen=source_stats.runs_seen + 1,
+              rss_signal_sum=source_stats.rss_signal_sum + excluded.rss_signal_sum,
+              social_signal_sum=source_stats.social_signal_sum + excluded.social_signal_sum,
+              top_article_sum=source_stats.top_article_sum + excluded.top_article_sum,
+              last_rss_signal_at=COALESCE(excluded.last_rss_signal_at, source_stats.last_rss_signal_at),
+              last_social_signal_at=COALESCE(excluded.last_social_signal_at, source_stats.last_social_signal_at)
+            """,
+            (
+                feed_url,
+                domain,
+                now_iso,
+                now_iso,
+                rss_count,
+                social_count,
+                top_count,
+                last_rss_signal_at,
+                last_social_signal_at,
+            ),
+        )
+
+
+def inactive_feed_urls(
+    db_path: Path,
+    feed_urls: list[str],
+    min_runs: int = 5,
+    min_age_days: int = 14,
+    require_no_social_signals: bool = True,
+) -> list[dict]:
+    """Return feeds eligible for pruning based on accumulated source stats."""
+    init_db(db_path)
+    if not feed_urls:
+        return []
+
+    now = datetime.now(timezone.utc)
+    cutoff = (
+        datetime.min.replace(tzinfo=timezone.utc)
+        if min_age_days <= 0
+        else now - timedelta(days=min_age_days)
+    )
+    inactive = []
+
+    with connect(db_path) as con:
+        stats_rows = con.execute(
+            """
+            SELECT feed_url, domain, first_seen
+            FROM source_stats
+            """
+        ).fetchall()
+
+        stats_by_feed = {row["feed_url"]: row for row in stats_rows}
+
+        for feed_url in feed_urls:
+            row = stats_by_feed.get(feed_url)
+            if not row:
+                continue
+
+            first_seen = datetime.fromisoformat(row["first_seen"])
+            if first_seen.tzinfo is None:
+                first_seen = first_seen.replace(tzinfo=timezone.utc)
+            age_days = (now - first_seen.astimezone(timezone.utc)).total_seconds() / 86400
+            if age_days < min_age_days:
+                continue
+
+            recent = con.execute(
+                """
+                SELECT COUNT(*) AS runs_seen,
+                       COALESCE(SUM(rss_signal_count), 0) AS rss_signal_sum,
+                       COALESCE(SUM(social_signal_count), 0) AS social_signal_sum,
+                       COALESCE(SUM(top_article_count), 0) AS top_article_sum
+                FROM source_runs
+                JOIN runs ON runs.id = source_runs.run_id
+                WHERE source_runs.feed_url = ?
+                  AND runs.finished_at >= ?
+                """,
+                (feed_url, cutoff.isoformat()),
+            ).fetchone()
+
+            runs_seen = int(recent["runs_seen"])
+            social_sum = int(recent["social_signal_sum"])
+            rss_sum = int(recent["rss_signal_sum"])
+
+            if runs_seen < min_runs:
+                continue
+            if require_no_social_signals and social_sum > 0:
+                continue
+
+            inactive.append({
+                "feed_url": feed_url,
+                "domain": row["domain"],
+                "runs_seen": runs_seen,
+                "age_days": round(age_days, 1),
+                "rss_signal_sum": rss_sum,
+                "social_signal_sum": social_sum,
+                "top_article_sum": int(recent["top_article_sum"]),
+            })
+
+    return inactive
+
+
+def source_status_rows(
+    db_path: Path,
+    feed_urls: list[str],
+    min_runs: int = 5,
+    min_age_days: int = 14,
+    require_no_social_signals: bool = True,
+) -> list[dict]:
+    """Return source learning status for the local settings UI."""
+    init_db(db_path)
+    inactive = {
+        item["feed_url"]: item
+        for item in inactive_feed_urls(
+            db_path,
+            feed_urls,
+            min_runs,
+            min_age_days,
+            require_no_social_signals,
+        )
+    }
+
+    with connect(db_path) as con:
+        rows = con.execute(
+            """
+            SELECT feed_url, domain, first_seen, last_seen, runs_seen,
+                   rss_signal_sum, social_signal_sum, top_article_sum,
+                   last_rss_signal_at, last_social_signal_at
+            FROM source_stats
+            """
+        ).fetchall()
+
+    stats_by_feed = {row["feed_url"]: row for row in rows}
+    now = datetime.now(timezone.utc)
+    statuses = []
+
+    for feed_url in feed_urls:
+        row = stats_by_feed.get(feed_url)
+        if not row:
+            statuses.append({
+                "feed_url": feed_url,
+                "domain": domain_from_url(feed_url),
+                "status": "new",
+                "min_runs": min_runs,
+                "min_age_days": min_age_days,
+                "runs_seen": 0,
+                "rss_signal_sum": 0,
+                "social_signal_sum": 0,
+                "top_article_sum": 0,
+                "age_days": 0,
+                "prune_candidate": False,
+            })
+            continue
+
+        first_seen = datetime.fromisoformat(row["first_seen"])
+        if first_seen.tzinfo is None:
+            first_seen = first_seen.replace(tzinfo=timezone.utc)
+        age_days = (now - first_seen.astimezone(timezone.utc)).total_seconds() / 86400
+        social_sum = int(row["social_signal_sum"])
+        runs_seen = int(row["runs_seen"])
+        prune_candidate = feed_url in inactive
+
+        if prune_candidate:
+            status = "prune_candidate"
+        elif runs_seen < min_runs or age_days < min_age_days:
+            status = "learning"
+        elif social_sum == 0:
+            status = "no_social_signals"
+        else:
+            status = "healthy"
+
+        statuses.append({
+            "feed_url": feed_url,
+            "domain": row["domain"],
+            "status": status,
+            "min_runs": min_runs,
+            "min_age_days": min_age_days,
+            "runs_seen": runs_seen,
+            "rss_signal_sum": int(row["rss_signal_sum"]),
+            "social_signal_sum": social_sum,
+            "top_article_sum": int(row["top_article_sum"]),
+            "last_rss_signal_at": row["last_rss_signal_at"],
+            "last_social_signal_at": row["last_social_signal_at"],
+            "age_days": round(age_days, 1),
+            "prune_candidate": prune_candidate,
+        })
+
+    return statuses
+
+
 def record_run(
     db_path: Path,
     started_at: datetime,
     articles: list[dict],
     signals: list[dict],
+    feed_urls: list[str] | None = None,
 ) -> int:
     """Persist the completed crawler run and update historical stats."""
     init_db(db_path)
@@ -495,5 +778,8 @@ def record_run(
                     """,
                     (platform, curator, is_top, score, now_iso, now_iso),
                 )
+
+        if feed_urls is not None:
+            record_source_stats(con, run_id, feed_urls, signals, top_urls, now_iso)
 
     return run_id

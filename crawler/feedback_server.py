@@ -6,14 +6,13 @@ Only intended for local development; GitHub Pages remains static/read-only.
 from __future__ import annotations
 
 import json
-import re
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
 import yaml
 
-from database import feed_feedback_rows, set_curator_feedback, set_feed_feedback
+from database import feed_feedback_rows, set_curator_feedback, set_feed_feedback, source_status_rows
 
 
 CRAWLER_DIR = Path(__file__).parent
@@ -38,6 +37,10 @@ def feedback_db_path() -> Path:
     return resolve_config_path(learning.get("db_path", "../data/octobeat.sqlite3"))
 
 
+def source_pruning_config(cfg: dict) -> dict:
+    return cfg.get("learning", {}).get("source_pruning", {})
+
+
 def feeds_json_path(cfg: dict) -> Path:
     output = cfg.get("output", {})
     return resolve_config_path(output.get("data_dir", "../data")) / "feeds.json"
@@ -49,6 +52,17 @@ def write_feeds_json(feeds: list[str], cfg: dict) -> None:
     path.write_text(json.dumps(feeds, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def read_feeds(cfg: dict) -> list[str]:
+    path = feeds_json_path(cfg)
+    if path.exists():
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(data, list):
+            return [str(url).strip() for url in data if str(url).strip()]
+        if isinstance(data, dict):
+            return [str(url).strip() for url in data.get("feeds", []) if str(url).strip()]
+    return [str(url).strip() for url in cfg.get("rss_feeds", []) if str(url).strip()]
+
+
 def normalize_feed_url(feed_url: str) -> str:
     feed_url = feed_url.strip()
     parsed = urlparse(feed_url)
@@ -57,76 +71,23 @@ def normalize_feed_url(feed_url: str) -> str:
     return feed_url
 
 
-def rss_feed_block(lines: list[str]) -> tuple[int, int]:
-    """Return line indexes for the rss_feeds block."""
-    start = next(
-        (index for index, line in enumerate(lines) if re.match(r"^rss_feeds:\s*$", line)),
-        None,
-    )
-    if start is None:
-        raise ValueError("rss_feeds block not found in config.yaml")
-
-    end = len(lines)
-    for index in range(start + 1, len(lines)):
-        if re.match(r"^[A-Za-z_][\w-]*:\s*", lines[index]):
-            end = index
-            break
-    return start, end
-
-
-def insert_feed_in_config(feed_url: str) -> None:
-    lines = CONFIG_PATH.read_text(encoding="utf-8").splitlines()
-    start, end = rss_feed_block(lines)
-
-    insert_at = end
-    while insert_at > start + 1 and lines[insert_at - 1].strip() == "":
-        insert_at -= 1
-    while insert_at > start + 1 and lines[insert_at - 1].lstrip().startswith("#"):
-        insert_at -= 1
-
-    spacer = [""] if insert_at < len(lines) and lines[insert_at].lstrip().startswith("#") else []
-    next_lines = lines[:insert_at] + [f"  - {feed_url}"] + spacer + lines[insert_at:]
-    CONFIG_PATH.write_text("\n".join(next_lines).rstrip() + "\n", encoding="utf-8")
-
-
-def delete_feed_from_config(feed_url: str) -> None:
-    lines = CONFIG_PATH.read_text(encoding="utf-8").splitlines()
-    start, end = rss_feed_block(lines)
-    next_lines = []
-    removed = False
-
-    for index, line in enumerate(lines):
-        if start < index < end:
-            match = re.match(r"^(\s*-\s+)(\S+)(.*)$", line)
-            if match and match.group(2) == feed_url:
-                removed = True
-                continue
-        next_lines.append(line)
-
-    if not removed:
-        raise ValueError("feed_url not found")
-    CONFIG_PATH.write_text("\n".join(next_lines).rstrip() + "\n", encoding="utf-8")
-
-
 def add_feed(feed_url: str) -> dict:
     cfg = load_config()
-    feeds = list(cfg.get("rss_feeds", []))
+    feeds = read_feeds(cfg)
     feed_url = normalize_feed_url(feed_url)
     if feed_url not in feeds:
         feeds.append(feed_url)
-        insert_feed_in_config(feed_url)
         write_feeds_json(feeds, cfg)
     return {"feed_url": feed_url, "feeds": feeds, "count": len(feeds)}
 
 
 def delete_feed(feed_url: str) -> dict:
     cfg = load_config()
-    feeds = list(cfg.get("rss_feeds", []))
+    feeds = read_feeds(cfg)
     feed_url = normalize_feed_url(feed_url)
     next_feeds = [url for url in feeds if url != feed_url]
     if len(next_feeds) == len(feeds):
         raise ValueError("feed_url not found")
-    delete_feed_from_config(feed_url)
     write_feeds_json(next_feeds, cfg)
     return {"feed_url": feed_url, "feeds": next_feeds, "count": len(next_feeds)}
 
@@ -155,6 +116,21 @@ class FeedbackHandler(BaseHTTPRequestHandler):
             return
         if self.path == "/feedback/feeds":
             self.send_json({"ok": True, "feedback": feed_feedback_rows(feedback_db_path())})
+            return
+        if self.path == "/sources/status":
+            cfg = load_config()
+            pruning = source_pruning_config(cfg)
+            self.send_json({
+                "ok": True,
+                "sources": source_status_rows(
+                    feedback_db_path(),
+                    read_feeds(cfg),
+                    pruning.get("min_runs", 5),
+                    pruning.get("min_age_days", 14),
+                    pruning.get("require_no_social_signals", True),
+                ),
+                "auto_remove": pruning.get("auto_remove", False),
+            })
             return
 
         self.send_json({"ok": False, "error": "not found"}, status=404)

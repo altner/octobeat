@@ -1,14 +1,4 @@
-# Seed domains we know and trust
-seed_domains:
-  - netzpolitik.org
-  - heise.de
-  - golem.de
-  - taz.de
-  - spiegel.de
-  - faz.net
-  - sueddeutsche.de
-
-# RSS feeds — German blogs and tech media
+# Default RSS feeds. data/feeds.json is the active source list.
 rss_feeds:
   # Tech and web
   - https://www.heise.de/rss/heise-atom.xml
@@ -65,6 +55,12 @@ learning:
   db_path: ../data/octobeat.sqlite3
   min_curator_signals: 3
   max_curator_bonus: 0.25
+  source_pruning:
+    enabled: true
+    auto_remove: false
+    min_runs: 5
+    min_age_days: 14
+    require_no_social_signals: true
 
 # Domains that never enter the feed
 domain_blacklist:
@@ -160,6 +156,6 @@ tag_rules:
 # Output
 output:
   data_dir: ../data
-  # true = git push nach lokalem Run; wird automatisch deaktiviert in GitHub Actions
+  # true = git push after a local run; automatically disabled in GitHub Actions
   github_push: false
   commit_message: "feed: {timestamp}"

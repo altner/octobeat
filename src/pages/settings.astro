@@ -89,6 +89,11 @@ function isTravel(url: string) {
                 <div class="feed-info">
                   <div class="feed-name">{nameFromUrl(url)}</div>
                   <a class="feed-url" href={url} target="_blank" rel="noopener" title={url}>{url}</a>
+                  <div
+                    class="source-status"
+                    data-source-status={url}
+                    title="Source learning status"
+                  >Not observed yet</div>
                 </div>
                 <div class="feed-actions" aria-label={`Rating for ${nameFromUrl(url)}`}>
                   <span
@@ -281,6 +286,18 @@ function isTravel(url: string) {
   }
   .feed-url:hover { color: var(--accent); }
 
+  .source-status {
+    color: var(--muted);
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+  .source-status.healthy { color: var(--accent); }
+  .source-status.learning { color: var(--muted); }
+  .source-status.no-social { color: var(--accent2); }
+  .source-status.prune-candidate { color: var(--danger); }
+
   .feed-actions {
     display: flex;
     align-items: center;
@@ -395,6 +412,19 @@ function isTravel(url: string) {
       blocked: boolean;
     };
 
+    type SourceStatus = {
+      feed_url: string;
+      status: 'new' | 'learning' | 'healthy' | 'no_social_signals' | 'prune_candidate';
+      min_runs: number;
+      min_age_days: number;
+      runs_seen: number;
+      age_days: number;
+      rss_signal_sum: number;
+      social_signal_sum: number;
+      top_article_sum: number;
+      prune_candidate: boolean;
+    };
+
     const feedFeedback = new Map<string, FeedFeedback>();
 
     const normalizedFeedback = (feedUrl: string, rating = 0, blocked = false): FeedFeedback => ({
@@ -472,7 +502,51 @@ function isTravel(url: string) {
       }
     };
 
+    const sourceStatusLabel = (source: SourceStatus) => {
+      const runProgress = `${source.runs_seen}/${source.min_runs} runs`;
+      const ageProgress = `${source.age_days}/${source.min_age_days} days`;
+      const suffix = `${runProgress}, ${source.social_signal_sum} social`;
+      if (source.status === 'new') return 'Not observed yet';
+      if (source.status === 'learning') return `Learning (${suffix}, ${ageProgress})`;
+      if (source.status === 'healthy') return `Healthy (${suffix})`;
+      if (source.status === 'no_social_signals') return `No social signals (${suffix})`;
+      return `Inactive: 0 social after ${runProgress}`;
+    };
+
+    const applySourceState = (source: SourceStatus) => {
+      const state = document.querySelector<HTMLElement>(
+        `[data-source-status="${CSS.escape(source.feed_url)}"]`
+      );
+      if (!state) return;
+      state.classList.remove('healthy', 'learning', 'no-social', 'prune-candidate');
+      state.textContent = sourceStatusLabel(source);
+      state.title = [
+        `${source.rss_signal_sum} RSS signals`,
+        `${source.social_signal_sum} social signals`,
+        `${source.top_article_sum} top articles`,
+        `${source.age_days} days observed`,
+        `Inactive threshold: ${source.min_runs} runs and ${source.min_age_days} days`,
+      ].join(' · ');
+
+      if (source.status === 'healthy') state.classList.add('healthy');
+      if (source.status === 'learning' || source.status === 'new') state.classList.add('learning');
+      if (source.status === 'no_social_signals') state.classList.add('no-social');
+      if (source.status === 'prune_candidate') state.classList.add('prune-candidate');
+    };
+
+    const loadSourceStates = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8765/sources/status');
+        if (!response.ok) return;
+        const payload = await response.json();
+        payload.sources?.forEach((source: SourceStatus) => applySourceState(source));
+      } catch {
+        // Source learning is optional; this appears once the feedback API is running.
+      }
+    };
+
     loadRatingStates();
+    loadSourceStates();
 
     document.getElementById('addFeedForm')?.addEventListener('submit', async event => {
       event.preventDefault();
