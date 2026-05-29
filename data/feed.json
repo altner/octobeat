@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-05-29T08:10:55.484552+00:00",
+  "generated_at": "2026-05-29T10:34:15.656316+00:00",
   "article_count": 50,
   "articles": [
     {
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
-      "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr - netzpolitik.org",
-      "score": 10349.64,
+      "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
+      "score": 3905.76,
       "signal_count": 5,
       "curators": [
-        "netzpolitik.org",
         "matthimon@systemli.social",
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social"
+        "pirati.bsky.social",
+        "netzpolitik.org",
+        "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Fri, 29 May 2026 06:28:50 +0000",
+      "latest_shared": "2026-05-29T07:53:27.000Z",
       "syndications": [
         {
           "platform": "mastodon",
@@ -47,37 +47,37 @@
         }
       ],
       "engagement": {
-        "boosts": 25,
-        "likes": 22,
+        "boosts": 33,
+        "likes": 34,
         "replies": 2,
-        "quotes": 2
+        "quotes": 4
       },
       "tags": [
         "irini",
-        "ostlibyen",
         "demokratie",
         "frontex",
-        "libyen"
+        "libyen",
+        "statewatch"
       ]
     },
     {
       "id": "8a4300ff5bbf",
       "url": "https://netzpolitik.org/2026/unsichere-billigimporte-eu-kommission-ueberzieht-temu-mit-einer-satten-strafe/",
-      "title": "Unsichere Billigimporte: EU-Kommission überzieht Temu mit einer satten Strafe - netzpolitik.org",
-      "score": 6626.82,
+      "title": "Unsichere Billigimporte: EU-Kommission überzieht Temu mit einer satten Strafe",
+      "score": 3043.86,
       "signal_count": 5,
       "curators": [
+        "Ollital@nrw.social",
         "pirati.bsky.social",
         "netzpolitik.org",
-        "netzpolitik_feed@chaos.social",
-        "Ollital@nrw.social"
+        "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Thu, 28 May 2026 12:20:27 +0000",
+      "latest_shared": "2026-05-29T06:59:41.000Z",
       "syndications": [
         {
           "platform": "mastodon",
@@ -107,7 +107,7 @@
       "engagement": {
         "boosts": 28,
         "likes": 78,
-        "replies": 1,
+        "replies": 2,
         "quotes": 3
       },
       "tags": [
@@ -119,33 +119,38 @@
       ]
     },
     {
-      "id": "e05a5dc9535d",
-      "url": "https://stadt-bremerhaven.de/netflix-kritisiert-deutsche-streaming-plaene/",
-      "title": "Netflix kritisiert deutsche Streaming-Pläne",
-      "score": 1325.35,
+      "id": "c5e3b4a5a2fc",
+      "url": "https://t3n.de/news/penny-rewe-tochter-fuehrt-ki-erkennungssoftware-ein-so-sollen-smarte-kameras-warteschlangen-verkuerzen-eagle-eye-1744601/",
+      "title": "Penny führt KI-Erkennungssoftware ein: So sollen smarte Kameras Warteschlangen verkürzen | t3n",
+      "score": 1840.65,
       "signal_count": 3,
       "curators": [
-        "teezeh@ieji.de",
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "scripter.social.tchncs.de.ap.brid.gy",
+        "jottomat.eurosky.social",
+        "scripter.bsky.social"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "bluesky"
       ],
-      "latest_shared": "Fri, 29 May 2026 05:00:05 +0000",
+      "latest_shared": "2026-05-29T09:42:49.373Z",
       "syndications": [
         {
-          "platform": "mastodon",
-          "curator": "teezeh@ieji.de",
-          "url": "https://ieji.de/@teezeh/116656318550838457",
-          "shared_at": "2026-05-29T05:55:57.000Z"
+          "platform": "bluesky",
+          "curator": "scripter.bsky.social",
+          "url": "https://bsky.app/profile/scripter.bsky.social/post/3mmyapjo4ec2o",
+          "shared_at": "2026-05-29T09:42:49.373Z"
         },
         {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116656263457001945",
-          "shared_at": "2026-05-29T05:41:56.000Z"
+          "platform": "bluesky",
+          "curator": "scripter.social.tchncs.de.ap.brid.gy",
+          "url": "https://bsky.app/profile/scripter.social.tchncs.de.ap.brid.gy/post/3mmyaop4qxbu2",
+          "shared_at": "2026-05-29T09:42:13.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "jottomat.eurosky.social",
+          "url": "https://bsky.app/profile/jottomat.eurosky.social/post/3mmvvgsssbc2k",
+          "shared_at": "2026-05-28T11:15:46.337Z"
         }
       ],
       "engagement": {
@@ -155,95 +160,153 @@
         "quotes": 0
       },
       "tags": [
-        "streaming"
+        "discounter",
+        "penny",
+        "ki",
+        "kameras",
+        "erkennungssoftware"
       ]
     },
     {
-      "id": "5d8183d4e486",
-      "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
-      "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt - netzpolitik.org",
-      "score": 1220.47,
-      "signal_count": 6,
+      "id": "418b49859794",
+      "url": "https://status.z428.eu/feststellung-des-aktuellen-zustands-tabellen-aus-text-und-z",
+      "title": "Feststellung des aktuellen Zustands: Tabellen aus Text und Zahlen, die... | z428",
+      "score": 1426.87,
+      "signal_count": 3,
       "curators": [
-        "netzpolitik_feed@chaos.social",
-        "peterru.eurosky.social",
-        "netzpolitik.org",
-        "PeterRu@climatejustice.social",
-        "pirati.bsky.social"
+        "z428.eu",
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Thu, 28 May 2026 14:24:36 +0000",
+      "latest_shared": "2026-05-29T09:50:03+02:00",
       "syndications": [
         {
           "platform": "bluesky",
-          "curator": "netzpolitik.org",
-          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmwvgt647k2e",
-          "shared_at": "2026-05-28T20:48:26.447Z"
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mmy2fvgogz2y",
+          "shared_at": "2026-05-29T09:50:03+02:00"
         },
         {
           "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116654149657203473",
-          "shared_at": "2026-05-28T20:44:22.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "peterru.eurosky.social",
-          "url": "https://bsky.app/profile/peterru.eurosky.social/post/3mmwd3io4tc2h",
-          "shared_at": "2026-05-28T15:19:58.986Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "PeterRu@climatejustice.social",
-          "url": "https://climatejustice.social/@PeterRu/116652871575232206",
-          "shared_at": "2026-05-28T15:19:20.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmwahelxas2h",
-          "shared_at": "2026-05-28T14:32:56Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194e98-24a6-500b-ad0f-b8591d78f01f.json",
+          "shared_at": "2026-05-29T08:30:16.000Z"
         }
       ],
       "engagement": {
-        "boosts": 51,
-        "likes": 89,
-        "replies": 2,
-        "quotes": 2
+        "boosts": 0,
+        "likes": 7,
+        "replies": 0,
+        "quotes": 0
       },
       "tags": [
-        "öffentlichkeit",
-        "1789_capital",
-        "binance",
-        "brasilien",
-        "brian_quintenz"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus251"
+      ]
+    },
+    {
+      "id": "b43d4776ecde",
+      "url": "https://minorherba.wordpress.com/2026/05/29/bild-des-tages-678/",
+      "title": "Bild des Tages | Unkraut vergeht nicht...oder doch?",
+      "score": 1325.33,
+      "signal_count": 3,
+      "curators": [
+        "herbaminor.bsky.social",
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:30:21.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194e9d-4942-dcda-852e-669b0a7082c4.json",
+          "shared_at": "2026-05-29T08:30:21.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "herbaminor.bsky.social",
+          "url": "https://bsky.app/profile/herbaminor.bsky.social/post/3mmy2ipx6vk2w",
+          "shared_at": "2026-05-29T07:51:38.629Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus289"
+      ]
+    },
+    {
+      "id": "3a9121912ff3",
+      "url": "https://stadt-bremerhaven.de/deutsche-glasfaser-kassiert-schlappe-vor-gericht/",
+      "title": "Deutsche Glasfaser kassiert Schlappe vor Gericht",
+      "score": 1268.52,
+      "signal_count": 2,
+      "curators": [
+        "websenat.berlin",
+        "Caschys Blog"
+      ],
+      "platforms": [
+        "rss",
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T09:53:31.827Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "websenat.berlin",
+          "url": "https://bsky.app/profile/websenat.berlin/post/3mmybcogket23",
+          "shared_at": "2026-05-29T09:53:31.827Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "internet"
       ]
     },
     {
       "id": "d6153a56195d",
       "url": "https://netzpolitik.org/2026/strafanzeige-journalist-wehrt-sich-gegen-staatstrojaner-angriff/",
-      "title": "Strafanzeige: Journalist wehrt sich gegen Staatstrojaner-Angriff - netzpolitik.org",
-      "score": 1181.0,
+      "title": "Strafanzeige: Journalist wehrt sich gegen Staatstrojaner-Angriff",
+      "score": 1006.77,
       "signal_count": 8,
       "curators": [
         "theunicornxxl.bsky.social",
-        "netzpolitik_feed@chaos.social",
         "netzpolitik.org",
         "Ollital@nrw.social",
-        "pirati.bsky.social",
+        "netzpolitik_feed@chaos.social",
         "andre_meister@chaos.social",
+        "pirati.bsky.social",
         "andre.netzpolitik.org"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Thu, 28 May 2026 06:17:11 +0000",
+      "latest_shared": "2026-05-28T14:52:56.824Z",
       "syndications": [
         {
           "platform": "bluesky",
@@ -289,8 +352,8 @@
         }
       ],
       "engagement": {
-        "boosts": 190,
-        "likes": 322,
+        "boosts": 194,
+        "likes": 327,
         "replies": 1,
         "quotes": 1
       },
@@ -303,34 +366,282 @@
       ]
     },
     {
-      "id": "a754036f44f0",
-      "url": "https://stadt-bremerhaven.de/deutschland-neue-it-abhaengigkeiten-telekom-und-sap-statt-amazon-und-microsoft/",
-      "title": "Deutschland: Neue IT-Abhängigkeiten &#8211; Telekom und SAP statt Amazon und Microsoft",
-      "score": 1134.16,
-      "signal_count": 3,
+      "id": "3b5488a88d21",
+      "url": "https://eay.cc/2026/whatcable-macos-menu-bar-diagnostics-for-usb-c/",
+      "title": "WhatCable – macOS menu bar diagnostics for USB-C | Stefan Grund",
+      "score": 1003.82,
+      "signal_count": 2,
       "curators": [
-        "dpolt.bsky.social",
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
-      "latest_shared": "Thu, 28 May 2026 16:30:05 +0000",
+      "latest_shared": "2026-05-29T09:45:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a19601d-101e-6f14-85af-ab08d2e24099.json",
+          "shared_at": "2026-05-29T09:45:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus17"
+      ]
+    },
+    {
+      "id": "5d8183d4e486",
+      "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
+      "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
+      "score": 977.98,
+      "signal_count": 6,
+      "curators": [
+        "netzpolitik.org",
+        "netzpolitik_feed@chaos.social",
+        "peterru.eurosky.social",
+        "pirati.bsky.social",
+        "PeterRu@climatejustice.social"
+      ],
+      "platforms": [
+        "rss",
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T20:48:26.447Z",
       "syndications": [
         {
           "platform": "bluesky",
-          "curator": "dpolt.bsky.social",
-          "url": "https://bsky.app/profile/dpolt.bsky.social/post/3mmxsdnpevk2l",
-          "shared_at": "2026-05-29T05:25:37.445136Z"
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmwvgt647k2e",
+          "shared_at": "2026-05-28T20:48:26.447Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116654149657203473",
+          "shared_at": "2026-05-28T20:44:22.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "peterru.eurosky.social",
+          "url": "https://bsky.app/profile/peterru.eurosky.social/post/3mmwd3io4tc2h",
+          "shared_at": "2026-05-28T15:19:58.986Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "PeterRu@climatejustice.social",
+          "url": "https://climatejustice.social/@PeterRu/116652871575232206",
+          "shared_at": "2026-05-28T15:19:20.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmwahelxas2h",
+          "shared_at": "2026-05-28T14:32:56Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 54,
+        "likes": 94,
+        "replies": 6,
+        "quotes": 2
+      },
+      "tags": [
+        "öffentlichkeit",
+        "1789_capital",
+        "brian_quintenz",
+        "caroline_pham",
+        "cftc"
+      ]
+    },
+    {
+      "id": "b6586b3c0bae",
+      "url": "https://heise.de/-11310723",
+      "title": "Sechs Zero-Days in sechs Wochen offengelegt: Microsoft reagiert mit Drohung | heise online",
+      "score": 877.96,
+      "signal_count": 2,
+      "curators": [
+        "theunicornxxl.bsky.social",
+        "jag0911.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T09:24:20.330Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "theunicornxxl.bsky.social",
+          "url": "https://bsky.app/profile/theunicornxxl.bsky.social/post/3mmy7ohyskk2z",
+          "shared_at": "2026-05-29T09:24:20.330Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "jag0911.bsky.social",
+          "url": "https://bsky.app/profile/jag0911.bsky.social/post/3mmxssbarhc2z",
+          "shared_at": "2026-05-29T05:33:48.826Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "zerodays",
+        "microsoft",
+        "drohung"
+      ]
+    },
+    {
+      "id": "f7d131dddcf4",
+      "url": "https://heise.de/-11309493",
+      "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
+      "score": 746.57,
+      "signal_count": 2,
+      "curators": [
+        "theunicornxxl.bsky.social",
+        "alexthurow@mstdn.social"
+      ],
+      "platforms": [
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:47:49.342Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "theunicornxxl.bsky.social",
+          "url": "https://bsky.app/profile/theunicornxxl.bsky.social/post/3mmy5n6j5tk2s",
+          "shared_at": "2026-05-29T08:47:49.342Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "alexthurow@mstdn.social",
+          "url": "https://mstdn.social/@alexthurow/116656408428128616",
+          "shared_at": "2026-05-29T06:18:48.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "onmoderndev",
+        "alexthudisruption",
+        "alexthureadinghttps",
+        "ki"
+      ]
+    },
+    {
+      "id": "e05a5dc9535d",
+      "url": "https://stadt-bremerhaven.de/netflix-kritisiert-deutsche-streaming-plaene/",
+      "title": "Netflix kritisiert deutsche Streaming-Pläne",
+      "score": 712.53,
+      "signal_count": 3,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social",
+        "teezeh@ieji.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T05:55:57.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "teezeh@ieji.de",
+          "url": "https://ieji.de/@teezeh/116656318550838457",
+          "shared_at": "2026-05-29T05:55:57.000Z"
         },
         {
           "platform": "mastodon",
           "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116653410515928675",
-          "shared_at": "2026-05-28T17:36:24.000Z"
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656263457001945",
+          "shared_at": "2026-05-29T05:41:56.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "streaming"
+      ]
+    },
+    {
+      "id": "e5c1846b7512",
+      "url": "https://stadt-bremerhaven.de/google-app-neuer-video-tab-fuer-personalisierte-empfehlungen-im-anmarsch/",
+      "title": "Google-App: Neuer Video-Tab für personalisierte Empfehlungen im Anmarsch",
+      "score": 684.64,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:12:03.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656853734722155",
+          "shared_at": "2026-05-29T08:12:03.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "google",
+        "mobile"
+      ]
+    },
+    {
+      "id": "83298586129f",
+      "url": "https://stadt-bremerhaven.de/euro-office-europaeische-office-alternative-startet-am-9-juni/",
+      "title": "Euro-Office: Europäische Office-Alternative startet am 9. Juni",
+      "score": 684.64,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:12:03.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656853729093579",
+          "shared_at": "2026-05-29T08:12:03.000Z"
         }
       ],
       "engagement": {
@@ -344,22 +655,133 @@
       ]
     },
     {
+      "id": "4e38a879cac6",
+      "url": "https://stadt-bremerhaven.de/aldi-talk-bonus-daten-fuer-die-jahres-pakete/",
+      "title": "ALDI TALK: Bonus-Daten für die Jahres-Pakete",
+      "score": 684.64,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:12:03.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656853722595538",
+          "shared_at": "2026-05-29T08:12:03.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "internet",
+        "mobile"
+      ]
+    },
+    {
+      "id": "e210378a76f1",
+      "url": "https://stadt-bremerhaven.de/o2-zieht-den-stecker-das-ende-der-mms-bei-telefonica/",
+      "title": "O2 zieht den Stecker: Das Ende der MMS bei Telefónica",
+      "score": 684.64,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:12:03.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656853717229215",
+          "shared_at": "2026-05-29T08:12:03.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "internet",
+        "mobile"
+      ]
+    },
+    {
+      "id": "fef1efc33175",
+      "url": "https://blog.kieselwiese.de/?p=250",
+      "title": "2026-05-24: Pfingstochsentour Bremen Tag 2 | Kieselblog",
+      "score": 641.53,
+      "signal_count": 3,
+      "curators": [
+        "flumen_calculi@ruhr.social",
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:30:08.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a193270-3e78-e56e-872e-396a5f5913e6.json",
+          "shared_at": "2026-05-29T06:30:08.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "flumen_calculi@ruhr.social",
+          "url": "https://ruhr.social/@flumen_calculi/116656336267489416",
+          "shared_at": "2026-05-29T06:00:27.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus265",
+        "kultur"
+      ]
+    },
+    {
       "id": "346d8f7a3220",
       "url": "https://stadt-bremerhaven.de/disclosure-day-finaler-trailer-zum-spielberg-spektakel/",
       "title": "Disclosure Day: Finaler Trailer zum Spielberg-Spektakel",
-      "score": 1043.38,
+      "score": 630.88,
       "signal_count": 3,
       "curators": [
         "websenat.berlin",
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Thu, 28 May 2026 19:30:07 +0000",
+      "latest_shared": "2026-05-29T04:46:17.009Z",
       "syndications": [
         {
           "platform": "bluesky",
@@ -385,26 +807,26 @@
       ]
     },
     {
-      "id": "fac0a169651a",
-      "url": "https://stadt-bremerhaven.de/google-gemini-anpassungen-bei-den-neuen-compute-limits/",
-      "title": "Google Gemini: Anpassungen bei den neuen Compute-Limits",
-      "score": 905.64,
+      "id": "28559ea64e9b",
+      "url": "https://daoweg.wordpress.com/2026/05/29/republica-26-alles-unpolitisch-zwischen-reichweite-und-politischer-verantwortung/",
+      "title": "re:publica 26: Alle(s) unpolitisch?! Zwischen Reichweite und politischer Verantwortung | Blütensthaub",
+      "score": 602.49,
       "signal_count": 2,
       "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
         "rss",
         "mastodon"
       ],
-      "latest_shared": "Fri, 29 May 2026 06:00:41 +0000",
+      "latest_shared": "2026-05-29T08:30:33.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116656479881521291",
-          "shared_at": "2026-05-29T06:36:59.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194ea9-3d9f-1395-aa97-2ed915140336.json",
+          "shared_at": "2026-05-29T08:30:33.000Z"
         }
       ],
       "engagement": {
@@ -414,30 +836,32 @@
         "quotes": 0
       },
       "tags": [
-        "google"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus357"
       ]
     },
     {
-      "id": "7c4f8e878e38",
-      "url": "https://stadt-bremerhaven.de/raycast-fuer-ios-eigene-ki-schluessel-statt-pro-abo/",
-      "title": "Raycast für iOS: Eigene KI-Schlüssel statt Pro-Abo",
-      "score": 905.64,
+      "id": "3a481c895823",
+      "url": "https://maschas-buch.blogspot.com/2026/05/tagesbild_01016445641.html",
+      "title": "Tagesbild | Maschas Buch",
+      "score": 602.14,
       "signal_count": 2,
       "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
         "rss",
         "mastodon"
       ],
-      "latest_shared": "Fri, 29 May 2026 06:30:18 +0000",
+      "latest_shared": "2026-05-29T08:30:27.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116656479888700217",
-          "shared_at": "2026-05-29T06:36:59.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194ea3-d00b-9882-9d91-c71ddfa57fd1.json",
+          "shared_at": "2026-05-29T08:30:27.000Z"
         }
       ],
       "engagement": {
@@ -447,31 +871,32 @@
         "quotes": 0
       },
       "tags": [
-        "ios",
-        "ki"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus422"
       ]
     },
     {
-      "id": "8c3b7297e32c",
-      "url": "https://stadt-bremerhaven.de/xiaomi-tv-s-mini-led-neue-smart-tvs-mit-bis-zu-98-zoll-diagonale-starten-in-deutschland/",
-      "title": "Xiaomi TV S Mini LED: Neue Smart-TVs mit bis zu 98 Zoll Diagonale starten in Deutschland",
-      "score": 657.25,
+      "id": "7f1b1b98a5b3",
+      "url": "https://foto-zine.de/der-eigene-anspruch-oder-ist-das-noch-ein-zine/",
+      "title": "Der eigene Anspruch, oder ist das noch ein Zine? | Foto-Zine",
+      "score": 601.28,
       "signal_count": 2,
       "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
         "rss",
         "mastodon"
       ],
-      "latest_shared": "Fri, 29 May 2026 05:30:25 +0000",
+      "latest_shared": "2026-05-29T08:30:12.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116656263461681927",
-          "shared_at": "2026-05-29T05:41:56.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194e94-88fb-63ad-b42e-39b77bcc25e1.json",
+          "shared_at": "2026-05-29T08:30:12.000Z"
         }
       ],
       "engagement": {
@@ -481,31 +906,32 @@
         "quotes": 0
       },
       "tags": [
-        "hardware",
-        "streaming"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus277"
       ]
     },
     {
-      "id": "ebeb8bb77d83",
-      "url": "https://stadt-bremerhaven.de/youtube-premium-erweitert-den-funktionsumfang-fuer-podcasts/",
-      "title": "YouTube Premium erweitert den Funktionsumfang für Podcasts",
-      "score": 657.25,
+      "id": "25b55cf8ec45",
+      "url": "https://blog-puzzle-welt.de/sommerpause/",
+      "title": "Sommerpause | Blog PuzzleWelt",
+      "score": 600.99,
       "signal_count": 2,
       "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
         "rss",
         "mastodon"
       ],
-      "latest_shared": "Fri, 29 May 2026 04:30:39 +0000",
+      "latest_shared": "2026-05-29T08:30:07.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116656263451569346",
-          "shared_at": "2026-05-29T05:41:56.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194e8f-a792-36c4-99ee-28dc8bdbde5f.json",
+          "shared_at": "2026-05-29T08:30:07.000Z"
         }
       ],
       "engagement": {
@@ -515,31 +941,137 @@
         "quotes": 0
       },
       "tags": [
-        "google",
-        "streaming"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus178"
+      ]
+    },
+    {
+      "id": "bfadd2567a9e",
+      "url": "https://blog-puzzle-welt.de/ein-puzzle-stanzen-so-macht-es/",
+      "title": "Ein Puzzle stanzen: So macht es | Blog PuzzleWelt",
+      "score": 600.64,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:30:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194e89-fb08-c611-8fae-05d7db710e44.json",
+          "shared_at": "2026-05-29T08:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus178"
+      ]
+    },
+    {
+      "id": "35b5f02c7a1f",
+      "url": "https://heise.de/-11309343?wt_mc=sm.red.ho.mastodon.mastodon.md_beitraege.md_beitraege&amp%3Butm_source=mastodon",
+      "title": "LibreOffice greift Google Docs und Microsoft 365 an | heise online",
+      "score": 565.19,
+      "signal_count": 1,
+      "curators": [
+        "heiseonline@social.heise.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T09:23:43.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "heiseonline@social.heise.de",
+          "url": "https://social.heise.de/@heiseonline/116657135515019069",
+          "shared_at": "2026-05-29T09:23:43.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 16,
+        "likes": 29,
+        "replies": 2,
+        "quotes": 0
+      },
+      "tags": [
+        "libreoffice",
+        "opensource",
+        "office",
+        "googledocs",
+        "microsoft365"
+      ]
+    },
+    {
+      "id": "b08f6259be20",
+      "url": "https://ibb.town/2026/05/29/maehverbot-fuer-beamte/",
+      "title": "Mähverbot für Beamte | Ibbtown",
+      "score": 552.61,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T08:15:02.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194b06-c322-20b5-afa3-ac59cc291ee7.json",
+          "shared_at": "2026-05-29T08:15:02.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus342"
       ]
     },
     {
       "id": "8b79e13411bd",
       "url": "https://netzpolitik.org/2026/breakpoint-das-internet-verrottet/",
-      "title": "Breakpoint: Das Internet verrottet - netzpolitik.org",
-      "score": 618.82,
+      "title": "Breakpoint: Das Internet verrottet",
+      "score": 547.2,
       "signal_count": 7,
       "curators": [
-        "Mons1serrata",
-        "teezeh@ieji.de",
-        "netzpolitik_feed@chaos.social",
-        "zulauf@nrw.social",
-        "zulauf.eu",
         "netzpolitik.org",
-        "DigitalNaiv"
+        "zulauf.eu",
+        "netzpolitik_feed@chaos.social",
+        "Mons1serrata",
+        "zulauf@nrw.social",
+        "DigitalNaiv",
+        "teezeh@ieji.de"
       ],
       "platforms": [
+        "rss",
         "bluesky",
-        "mastodon",
-        "rss"
+        "mastodon"
       ],
-      "latest_shared": "Sun, 24 May 2026 06:29:54 +0000",
+      "latest_shared": "2026-05-28T08:43:44.000Z",
       "syndications": [
         {
           "platform": "mastodon",
@@ -588,15 +1120,750 @@
         "ki",
         "links",
         "netzpolitik",
-        "linkrot",
-        "internetarchive"
+        "wissen",
+        "bibliothek"
+      ]
+    },
+    {
+      "id": "7384118612ba",
+      "url": "https://t3n.de/news/sichere-cloud-speicher-aus-europa-1729839/?amp%3Butm_medium=activitypub",
+      "title": "Sichere Cloud-Speicher aus Europa: Alternativen zu Google Drive, Dropbox und iCloud | t3n",
+      "score": 546.08,
+      "signal_count": 1,
+      "curators": [
+        "t3n@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T09:55:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "t3n@flipboard.com",
+          "url": "https://flipboard.com/@t3n/software-entwicklung-%7C-t3n-rm9frs1dz/-/a-TYFQ5TjZTISYw40IlLf9HQ%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-29T09:55:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "3dc5ea653167",
+      "url": "https://t3n.de/news/ios-27-so-koennte-die-neue-siri-aussehen-1744859/?amp%3Butm_medium=activitypub",
+      "title": "iOS 27: So könnte die neue Siri aussehen | t3n",
+      "score": 501.52,
+      "signal_count": 1,
+      "curators": [
+        "t3n@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T09:45:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "t3n@flipboard.com",
+          "url": "https://flipboard.com/@t3n/software-entwicklung-%7C-t3n-rm9frs1dz/-/a-GCHGAlXuRgSIaH3Owe5wpA%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-29T09:45:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "7c4f8e878e38",
+      "url": "https://stadt-bremerhaven.de/raycast-fuer-ios-eigene-ki-schluessel-statt-pro-abo/",
+      "title": "Raycast für iOS: Eigene KI-Schlüssel statt Pro-Abo",
+      "score": 443.98,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:36:59.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656479888700217",
+          "shared_at": "2026-05-29T06:36:59.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "ios",
+        "ki"
+      ]
+    },
+    {
+      "id": "fac0a169651a",
+      "url": "https://stadt-bremerhaven.de/google-gemini-anpassungen-bei-den-neuen-compute-limits/",
+      "title": "Google Gemini: Anpassungen bei den neuen Compute-Limits",
+      "score": 443.98,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:36:59.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656479881521291",
+          "shared_at": "2026-05-29T06:36:59.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "google"
+      ]
+    },
+    {
+      "id": "105c78011e50",
+      "url": "https://www.amberlight-label.de/linkparty-bsan-besser-spaet-als-nie-no-3/",
+      "title": "Linkparty #BSAN Besser spät als nie No. 3 | amberlight",
+      "score": 442.38,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T07:30:23.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a19408f-49ea-0b27-9c6a-1a56f287fae6.json",
+          "shared_at": "2026-05-29T07:30:23.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "bsan",
+        "uberblogr",
+        "uberbot",
+        "blogrhaus145"
+      ]
+    },
+    {
+      "id": "e1f8775a0711",
+      "url": "https://stefanpfeiffer.blog/2026/05/29/vorkoetter/",
+      "title": "„Eigener freier Verstand“ – und null Quellen: Ein mehr als nur seltsamer Artikel zu Reiche | StefanPfeiffer.Blog",
+      "score": 442.21,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T07:30:18.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a19408a-9038-132b-8487-19de92723b44.json",
+          "shared_at": "2026-05-29T07:30:18.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus25"
+      ]
+    },
+    {
+      "id": "ddb5149a5d34",
+      "url": "https://queergedacht.de/2026/05/warten-auf-den-zusteller/",
+      "title": "Warten auf den Zusteller | QueerGedacht",
+      "score": 442.04,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T07:30:13.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194085-0337-c658-aff7-38460919f466.json",
+          "shared_at": "2026-05-29T07:30:13.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus100"
+      ]
+    },
+    {
+      "id": "680d187f2a54",
+      "url": "https://gruebelnundsinnieren.de/2026/05/29/nichts-klappt-donnerstag-28-5-2026/",
+      "title": "Nichts klappt, Donnerstag 28.5.2026 | Grübeln und Sinnieren",
+      "score": 441.63,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T07:30:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a194079-710e-925e-9bb8-4c29c5a776d9.json",
+          "shared_at": "2026-05-29T07:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus245"
+      ]
+    },
+    {
+      "id": "84b8fcc5ba25",
+      "url": "https://ibb.town/2026/05/29/im-schatten-des-silos-ueber-die-metaphysische-kraft-der-landschaft/",
+      "title": "Im Schatten des Silos: Über die metaphysische Kraft der Landschaft | Ibbtown",
+      "score": 412.86,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T07:15:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a193cf5-d401-6a58-b26e-df8ea2a15b60.json",
+          "shared_at": "2026-05-29T07:15:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus342"
+      ]
+    },
+    {
+      "id": "8c3b7297e32c",
+      "url": "https://stadt-bremerhaven.de/xiaomi-tv-s-mini-led-neue-smart-tvs-mit-bis-zu-98-zoll-diagonale-starten-in-deutschland/",
+      "title": "Xiaomi TV S Mini LED: Neue Smart-TVs mit bis zu 98 Zoll Diagonale starten in Deutschland",
+      "score": 363.27,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T05:41:56.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656263461681927",
+          "shared_at": "2026-05-29T05:41:56.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "hardware",
+        "streaming"
+      ]
+    },
+    {
+      "id": "ebeb8bb77d83",
+      "url": "https://stadt-bremerhaven.de/youtube-premium-erweitert-den-funktionsumfang-fuer-podcasts/",
+      "title": "YouTube Premium erweitert den Funktionsumfang für Podcasts",
+      "score": 363.27,
+      "signal_count": 2,
+      "curators": [
+        "Caschys Blog",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T05:41:56.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116656263451569346",
+          "shared_at": "2026-05-29T05:41:56.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "google",
+        "streaming"
+      ]
+    },
+    {
+      "id": "47d5889c2088",
+      "url": "https://status.z428.eu/lunch-break-temporary-deviations-but-by-choice-limited-res",
+      "title": "status",
+      "score": 359.4,
+      "signal_count": 1,
+      "curators": [
+        "z428.eu"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T12:10:03+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mmycaa5k5c2r",
+          "shared_at": "2026-05-29T12:10:03+02:00"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "439db36f597b",
+      "url": "https://www.onli-blogging.de/2644/Linksammlung-222026.html",
+      "title": "Linksammlung 22/2026 | onli blogging",
+      "score": 343.63,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:30:18.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a19327a-20a2-1cf0-b50a-916b92a61ca0.json",
+          "shared_at": "2026-05-29T06:30:18.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus133"
+      ]
+    },
+    {
+      "id": "e55ca1bac114",
+      "url": "https://daoweg.wordpress.com/2026/05/29/mark-twain-ob-dieser-wohl-recht-hatte-als-er-schrieb/",
+      "title": "Mark Twain – ob dieser wohl recht hatte, als er schrieb: | Blütensthaub",
+      "score": 343.52,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:30:13.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a193275-3a56-3fcb-b10b-3c286ab13e17.json",
+          "shared_at": "2026-05-29T06:30:13.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus357"
+      ]
+    },
+    {
+      "id": "26be04380421",
+      "url": "https://www.sports-insider.de/homerun-von-savas-coban-das-vielleicht-inspirierendste-laufbuch-2026-59827/",
+      "title": "Homerun von Savas Coban: Das vielleicht inspirierendste Laufbuch 2026? | Sports Insider Laufblog",
+      "score": 324.4,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:15:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a192ee5-105a-f4c8-a89b-9337fcde6e22.json",
+          "shared_at": "2026-05-29T06:15:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus108"
+      ]
+    },
+    {
+      "id": "3b0cc21e85be",
+      "url": "https://daoweg.wordpress.com/2026/05/29/lockerflockig-eben-nichts/?amp%3Butm_medium=jetpack_social",
+      "title": "Lockerflockig, eben Nichts | Blütensthaub",
+      "score": 321.21,
+      "signal_count": 1,
+      "curators": [
+        "Elkeringhausen"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T10:12:09.617Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "Elkeringhausen",
+          "url": "https://mastodon.social/@Elkeringhausen/116657325972922813",
+          "shared_at": "2026-05-29T10:12:09.617Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "4dbac73b2a8e",
+      "url": "https://netzpolitik.org/2024/databroker-files-wie-datenhaendler-nato-und-us-militaer-blossstellen/",
+      "title": "Databroker Files: Wie Datenhändler NATO und US-Militär bloßstellen - netzpolitik.org",
+      "score": 289.24,
+      "signal_count": 1,
+      "curators": [
+        "roofjoke.netzpolitik.org"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T09:43:42.527Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "roofjoke.netzpolitik.org",
+          "url": "https://bsky.app/profile/roofjoke.netzpolitik.org/post/3mmyar7mpdk2i",
+          "shared_at": "2026-05-29T09:43:42.527Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [
+        "netzpolitik"
+      ]
+    },
+    {
+      "id": "a754036f44f0",
+      "url": "https://stadt-bremerhaven.de/deutschland-neue-it-abhaengigkeiten-telekom-und-sap-statt-amazon-und-microsoft/",
+      "title": "Deutschland: Neue IT-Abhängigkeiten &#8211; Telekom und SAP statt Amazon und Microsoft",
+      "score": 287.71,
+      "signal_count": 2,
+      "curators": [
+        "dpolt.bsky.social",
+        "stadtbremerhaven@feedmirror.social"
+      ],
+      "platforms": [
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T05:25:37.445136Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "dpolt.bsky.social",
+          "url": "https://bsky.app/profile/dpolt.bsky.social/post/3mmxsdnpevk2l",
+          "shared_at": "2026-05-29T05:25:37.445136Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116653410515928675",
+          "shared_at": "2026-05-28T17:36:24.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "46469eb961c6",
+      "url": "https://heise.de/-11310811",
+      "title": "Chrome-Update schließt 151 Sicherheitslecks – davon 22 kritische | heise online",
+      "score": 284.24,
+      "signal_count": 1,
+      "curators": [
+        "theunicornxxl.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T09:29:33.185Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "theunicornxxl.bsky.social",
+          "url": "https://bsky.app/profile/theunicornxxl.bsky.social/post/3mmy7xsee222z",
+          "shared_at": "2026-05-29T09:29:33.185Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "sicherheit"
+      ]
+    },
+    {
+      "id": "2d43432b5822",
+      "url": "https://heise.de/-11310487",
+      "title": "Datenleck in der Schweiz: Offene Datenbanken bei Parkplatz-Überwachungsfirmen | heise online",
+      "score": 266.45,
+      "signal_count": 1,
+      "curators": [
+        "theunicornxxl.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T09:20:49.486Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "theunicornxxl.bsky.social",
+          "url": "https://bsky.app/profile/theunicornxxl.bsky.social/post/3mmy7i6we7k2z",
+          "shared_at": "2026-05-29T09:20:49.486Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "datenschutz"
+      ]
+    },
+    {
+      "id": "db56b1da7c23",
+      "url": "https://status.z428.eu/%E2%98%95-more-morning-bird-conversations-familiar-amount-of-not-un",
+      "title": "status",
+      "score": 264.55,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "z428.eu"
+      ],
+      "platforms": [
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T06:00:03+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mmxnkmxyvc2g",
+          "shared_at": "2026-05-29T06:00:03+02:00"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a191649-c60a-6551-a6b1-5640dcedc3ec.json",
+          "shared_at": "2026-05-29T04:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 10,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "uberblogr",
+        "uberbot",
+        "blogrhaus251"
+      ]
+    },
+    {
+      "id": "0021c911de46",
+      "url": "http://heise.de/-11309209",
+      "title": "Studie: So viele Privatleute wie nie stiegen 2025 auf E-Autos um | heise autos",
+      "score": 243.68,
+      "signal_count": 1,
+      "curators": [
+        "lichtblick.news"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T10:00:43.572Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "lichtblick.news",
+          "url": "https://bsky.app/profile/lichtblick.news/post/3mmybpkkn3c2w",
+          "shared_at": "2026-05-29T10:00:43.572Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "eautos",
+        "nachhaltigkeit"
       ]
     },
     {
       "id": "09202776dd89",
       "url": "https://heise.de/-11308878?wt_mc=sm.red.ho.mastodon.mastodon.md_beitraege.md_beitraege&amp%3Butm_source=mastodon",
       "title": "Bayrisches Digitalministerium will Arbeitsplätze ohne Microsoft | heise online",
-      "score": 458.12,
+      "score": 236.1,
       "signal_count": 1,
       "curators": [
         "heiseonline@social.heise.de"
@@ -614,8 +1881,8 @@
         }
       ],
       "engagement": {
-        "boosts": 35,
-        "likes": 46,
+        "boosts": 44,
+        "likes": 60,
         "replies": 5,
         "quotes": 0
       },
@@ -628,1323 +1895,45 @@
       ]
     },
     {
-      "id": "b9ceaa764308",
-      "url": "https://t3n.de/news/paradox-of-choice-zu-viele-optionen-conversion-rate-1738564/?amp%3Butm_medium=activitypub",
-      "title": "Zu viele Optionen: So killt das Paradox of Choice deine Conversion",
-      "score": 396.18,
-      "signal_count": 1,
+      "id": "9c785dd3a18e",
+      "url": "https://status.z428.eu/freitagmorgen-also-nacht-zerrbilder-milde-luft-gelegentl",
+      "title": "status",
+      "score": 231.76,
+      "signal_count": 2,
       "curators": [
-        "t3n@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T07:00:00.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "t3n@flipboard.com",
-          "url": "https://flipboard.com/@t3n/e-commerce-%7C-t3n-vln4t4diz/-/a-ojDEB-TOR5isCN5tPYe2lg%3Aa%3A128306677-%2F0",
-          "shared_at": "2026-05-29T07:00:00.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "7c6b7b4d9851",
-      "url": "https://netzpolitik.org/2026/tiere-und-kuenstliche-intelligenz-wie-die-ki-in-unser-hackfleisch-kommt/",
-      "title": "Tiere und künstliche Intelligenz: Wie die KI in unser Hackfleisch kommt - netzpolitik.org",
-      "score": 235.61,
-      "signal_count": 4,
-      "curators": [
-        "pirati.bsky.social",
-        "netzpolitik.org",
-        "teezeh@ieji.de",
-        "netzpolitik_feed@chaos.social"
+        "uberblogr@troet.uberblogr.de",
+        "z428.eu"
       ],
       "platforms": [
         "bluesky",
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "Wed, 27 May 2026 16:19:01 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "teezeh@ieji.de",
-          "url": "https://ieji.de/@teezeh/116650462126316112",
-          "shared_at": "2026-05-28T05:06:35.000Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116647517859967849",
-          "shared_at": "2026-05-27T16:37:49.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmtwppwzml2q",
-          "shared_at": "2026-05-27T16:33:19Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 19,
-        "likes": 20,
-        "replies": 3,
-        "quotes": 0
-      },
-      "tags": [
-        "technologie",
-        "anthropic",
-        "baidu",
-        "bitkom",
-        "ceti"
-      ]
-    },
-    {
-      "id": "0d487d99e87f",
-      "url": "https://t3n.de/news/new-glenn-bezos-rakete-explodiert-bei-test-vor-dem-start-1744811/?amp%3Butm_medium=activitypub",
-      "title": "New Glenn: Bezos-Rakete explodiert bei Test vor dem Start | t3n",
-      "score": 235.27,
-      "signal_count": 1,
-      "curators": [
-        "t3n@flipboard.com"
-      ],
-      "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-29T05:20:19.000Z",
+      "latest_shared": "2026-05-29T05:00:03+02:00",
       "syndications": [
         {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mmxk7d32nr25",
+          "shared_at": "2026-05-29T05:00:03+02:00"
+        },
+        {
           "platform": "mastodon",
-          "curator": "t3n@flipboard.com",
-          "url": "https://flipboard.com/@t3n/future-science-ut96tr78z/-/a-AlLSNkPMS6y4oSSdfLbkpw%3Aa%3A128306677-%2F0",
-          "shared_at": "2026-05-29T05:20:19.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a190839-571b-8f62-8973-a1f5e1e780ac.json",
+          "shared_at": "2026-05-29T03:30:01.000Z"
         }
       ],
       "engagement": {
         "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "995be7932e12",
-      "url": "https://social.heise.de/@heiseonline/116656419339200850",
-      "title": "heise online: „Jetzt traut sich auch Bayern: Digitalminister Meh…“ - Heise Medien on Mastodon",
-      "score": 225.53,
-      "signal_count": 1,
-      "curators": [
-        "heiseonline.social.heise.de.ap.brid.gy"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T06:21:35.000Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "heiseonline.social.heise.de.ap.brid.gy",
-          "url": "https://bsky.app/profile/heiseonline.social.heise.de.ap.brid.gy/post/3mmxvhzevcj52",
-          "shared_at": "2026-05-29T06:21:35.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 7,
-        "likes": 2,
-        "replies": 1,
-        "quotes": 1
-      },
-      "tags": []
-    },
-    {
-      "id": "1e4c1581b33a",
-      "url": "https://heise.de/-11308878?wt_mc=sm.red.ho.mastodon.mastodon.md_beitraege.md_beitraege",
-      "title": "Bayrisches Digitalministerium will Arbeitsplätze ohne Microsoft | heise online",
-      "score": 225.53,
-      "signal_count": 1,
-      "curators": [
-        "heiseonline.social.heise.de.ap.brid.gy"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T06:21:35.000Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "heiseonline.social.heise.de.ap.brid.gy",
-          "url": "https://bsky.app/profile/heiseonline.social.heise.de.ap.brid.gy/post/3mmxvhzevcj52",
-          "shared_at": "2026-05-29T06:21:35.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 7,
-        "likes": 2,
-        "replies": 1,
-        "quotes": 1
-      },
-      "tags": []
-    },
-    {
-      "id": "b34b2e049298",
-      "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/raycast-fuer-ios-eigene-ki-schluessel-statt-pro-abo/",
-      "title": "Raycast für iOS: Eigene KI-Schlüssel statt Pro-Abo",
-      "score": 207.29,
-      "signal_count": 1,
-      "curators": [
-        "stadt-bremerhaven.de@web.brid.gy"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T06:30:18.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadt-bremerhaven.de@web.brid.gy",
-          "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/raycast-fuer-ios-eigene-ki-schluessel-statt-pro-abo/",
-          "shared_at": "2026-05-29T06:30:18.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "ki"
-      ]
-    },
-    {
-      "id": "28c09e80ab83",
-      "url": "https://winfuture.de/news,158927.html",
-      "title": "Noch schnell KI trainiert: Zuckerberg verh&#246;hnt entlassene Mitarbeiter",
-      "score": 203.67,
-      "signal_count": 6,
-      "curators": [
-        "weirdmustard.flipping.rocks.ap.brid.gy",
-        "reddoc.bsky.social",
-        "cryptoparty@bonn.social",
-        "thomasfricke.23.social.ap.brid.gy",
-        "cdeeg.bsky.social",
-        "notesoflife"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-27T21:05:08.363Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "notesoflife",
-          "url": "https://mastodon.social/@notesoflife/116648568970037340",
-          "shared_at": "2026-05-27T21:05:08.363Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "cdeeg.bsky.social",
-          "url": "https://bsky.app/profile/cdeeg.bsky.social/post/3mmu4p7jejs2m",
-          "shared_at": "2026-05-27T18:20:24.811Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "reddoc.bsky.social",
-          "url": "https://bsky.app/profile/reddoc.bsky.social/post/3mmtpjtl5ws2b",
-          "shared_at": "2026-05-27T14:24:45.871Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "cryptoparty@bonn.social",
-          "url": "https://bonn.social/@cryptoparty/116645993114507403",
-          "shared_at": "2026-05-27T10:10:03.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "thomasfricke.23.social.ap.brid.gy",
-          "url": "https://bsky.app/profile/thomasfricke.23.social.ap.brid.gy/post/3mmsu7l6rqkr2",
-          "shared_at": "2026-05-27T06:15:36.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "weirdmustard.flipping.rocks.ap.brid.gy",
-          "url": "https://bsky.app/profile/weirdmustard.flipping.rocks.ap.brid.gy/post/3mmrjf6pkzlk2",
-          "shared_at": "2026-05-26T17:29:23.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 13,
-        "likes": 5,
-        "replies": 2,
-        "quotes": 0
-      },
-      "tags": [
-        "meta",
-        "ki",
-        "tesla",
-        "ai",
-        "entlassung"
-      ]
-    },
-    {
-      "id": "95f29a13d517",
-      "url": "https://heise.de/-11308345",
-      "title": "Kommentar: Open-Source-Entwickler arbeiten sich an AI-Bugs krank | heise online",
-      "score": 180.47,
-      "signal_count": 1,
-      "curators": [
-        "alexthurow@mstdn.social"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T06:20:35.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "alexthurow@mstdn.social",
-          "url": "https://mstdn.social/@alexthurow/116656415433006307",
-          "shared_at": "2026-05-29T06:20:35.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
+        "likes": 10,
         "replies": 1,
         "quotes": 0
       },
       "tags": [
-        "onmoderndev",
-        "alexthudisruption",
-        "alexthureadinghttps"
+        "uberblogr",
+        "uberbot",
+        "blogrhaus251"
       ]
-    },
-    {
-      "id": "ee8586705872",
-      "url": "https://t3n.de/news/ein-p-in-google-warum-die-ki-suche-nicht-richtig-buchstabieren-kann-1744663/",
-      "title": "Ein P in Google? Warum die KI-Suche nicht richtig buchstabieren kann | t3n",
-      "score": 178.1,
-      "signal_count": 2,
-      "curators": [
-        "aellalabrys.bsky.social",
-        "t3n.de - News"
-      ],
-      "platforms": [
-        "bluesky",
-        "rss"
-      ],
-      "latest_shared": "Thu, 28 May 2026 16:00:38 +0200",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "aellalabrys.bsky.social",
-          "url": "https://bsky.app/profile/aellalabrys.bsky.social/post/3mmwwbtmfl22r",
-          "shared_at": "2026-05-28T21:03:32.884Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 4,
-        "likes": 23,
-        "replies": 2,
-        "quotes": 0
-      },
-      "tags": [
-        "google",
-        "künstliche_intelligenz",
-        "ki"
-      ]
-    },
-    {
-      "id": "f7d131dddcf4",
-      "url": "https://heise.de/-11309493",
-      "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
-      "score": 174.88,
-      "signal_count": 1,
-      "curators": [
-        "alexthurow@mstdn.social"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T06:18:48.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "alexthurow@mstdn.social",
-          "url": "https://mstdn.social/@alexthurow/116656408428128616",
-          "shared_at": "2026-05-29T06:18:48.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "onmoderndev",
-        "alexthudisruption",
-        "alexthureadinghttps",
-        "ki"
-      ]
-    },
-    {
-      "id": "0a11568b7f80",
-      "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/google-gemini-anpassungen-bei-den-neuen-compute-limits/",
-      "title": "Google Gemini: Anpassungen bei den neuen Compute-Limits",
-      "score": 162.52,
-      "signal_count": 1,
-      "curators": [
-        "stadt-bremerhaven.de@web.brid.gy"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T06:00:41.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadt-bremerhaven.de@web.brid.gy",
-          "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/google-gemini-anpassungen-bei-den-neuen-compute-limits/",
-          "shared_at": "2026-05-29T06:00:41.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "114ab5a69aaa",
-      "url": "https://netzpolitik.org/2026/fuer-250-millionen-euro-bund-schafft-neue-abhaengigkeiten-von-it-konzernen/",
-      "title": "Für 250 Millionen Euro: Bund schafft neue Abhängigkeiten von IT-Konzernen - netzpolitik.org",
-      "score": 153.83,
-      "signal_count": 5,
-      "curators": [
-        "pirati.bsky.social",
-        "netzpolitik_feed@chaos.social",
-        "netzpolitik.org",
-        "rant-ifa-2024.bsky.social"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "Wed, 27 May 2026 06:59:53 +0000",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "rant-ifa-2024.bsky.social",
-          "url": "https://bsky.app/profile/rant-ifa-2024.bsky.social/post/3mmt3talwhc2n",
-          "shared_at": "2026-05-27T08:32:06.681Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "netzpolitik.org",
-          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmszm7drxc2m",
-          "shared_at": "2026-05-27T07:52:23.001Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116645451087572213",
-          "shared_at": "2026-05-27T07:52:13.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmsxpen5fu26",
-          "shared_at": "2026-05-27T07:18:21Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 122,
-        "likes": 164,
-        "replies": 29,
-        "quotes": 4
-      },
-      "tags": [
-        "technologie",
-        "agentische_ki",
-        "azure",
-        "bundesministerium_für_digitales_und_staatsmodernisierung",
-        "digitale_souveränität"
-      ]
-    },
-    {
-      "id": "abc6536022ba",
-      "url": "https://heise.de/-11310619",
-      "title": "Anthropic bringt „ehrlicheres“ Claude Opus 4.8 – und kündigt Mythos an | heise online",
-      "score": 147.71,
-      "signal_count": 1,
-      "curators": [
-        "jag0911.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:43:00.916Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "jag0911.bsky.social",
-          "url": "https://bsky.app/profile/jag0911.bsky.social/post/3mmxtcpr7ts2z",
-          "shared_at": "2026-05-29T05:43:00.916Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "anthropic",
-        "claudeopus48",
-        "mythos",
-        "claude",
-        "claudeopus"
-      ]
-    },
-    {
-      "id": "4686d221603e",
-      "url": "https://netzpolitik.org/2026/strafan...'",
-      "title": "Strafanzeige: Journalist wehrt sich gegen Staatstrojaner-Angriff - netzpolitik.org",
-      "score": 146.08,
-      "signal_count": 1,
-      "curators": [
-        "einatmen.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:32:53.768Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "einatmen.bsky.social",
-          "url": "https://bsky.app/profile/einatmen.bsky.social/post/3mmxsqmqjus2b",
-          "shared_at": "2026-05-29T05:32:53.768Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "datenschutz",
-        "netzpolitik"
-      ]
-    },
-    {
-      "id": "2b43c6a05365",
-      "url": "https://heise.de/-11310743",
-      "title": "Auch in Australien fallen Parlamentarier einer Phishing-Kampagne zum Opfer | heise online",
-      "score": 145.09,
-      "signal_count": 1,
-      "curators": [
-        "jag0911.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:35:15.257Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "jag0911.bsky.social",
-          "url": "https://bsky.app/profile/jag0911.bsky.social/post/3mmxsutohpc2z",
-          "shared_at": "2026-05-29T05:35:15.257Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 1,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "australien",
-        "parlamentarier",
-        "phishing"
-      ]
-    },
-    {
-      "id": "918fd08adf3a",
-      "url": "https://heise.de/-11310683",
-      "title": "Chips Act 2.0: Behörden sollen mehr europäische Chips kaufen | heise online",
-      "score": 143.72,
-      "signal_count": 1,
-      "curators": [
-        "jag0911.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:37:43.643Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "jag0911.bsky.social",
-          "url": "https://bsky.app/profile/jag0911.bsky.social/post/3mmxszb6tvs2z",
-          "shared_at": "2026-05-29T05:37:43.643Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "chipsact",
-        "chips",
-        "eu"
-      ]
-    },
-    {
-      "id": "4d428d45fd4e",
-      "url": "https://www.golem.de/news/plan-der-bundesnetzagentur-solaranlagenbesitzer-sollen-mehr-gebuehren-bezahlen-2605-209113.html",
-      "title": "Golem",
-      "score": 142.09,
-      "signal_count": 1,
-      "curators": [
-        "thomasdiebel.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:35:29.130Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "thomasdiebel.bsky.social",
-          "url": "https://bsky.app/profile/thomasdiebel.bsky.social/post/3mmxsvavtkk2o",
-          "shared_at": "2026-05-29T05:35:29.130Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "planwirtschaft",
-        "markt",
-        "bundesnetzagentur"
-      ]
-    },
-    {
-      "id": "b6586b3c0bae",
-      "url": "https://heise.de/-11310723",
-      "title": "Sechs Zero-Days in sechs Wochen offengelegt: Microsoft reagiert mit Drohung | heise online",
-      "score": 140.89,
-      "signal_count": 1,
-      "curators": [
-        "jag0911.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:33:48.826Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "jag0911.bsky.social",
-          "url": "https://bsky.app/profile/jag0911.bsky.social/post/3mmxssbarhc2z",
-          "shared_at": "2026-05-29T05:33:48.826Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "zerodays",
-        "microsoft",
-        "drohung"
-      ]
-    },
-    {
-      "id": "dc556bc69c6a",
-      "url": "https://stadt-bremerhaven.de/xtool-m2-angekuendigt-bastelmaschine-mit-laser-tintenstrahldrucker-plotter-mehr/",
-      "title": "xTool M2 vorgestellt: Bastelmaschine mit Laser, Tintenstrahldrucker &#038; mehr",
-      "score": 140.59,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 20:00:19 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116654138551711527",
-          "shared_at": "2026-05-28T20:41:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "hardware"
-      ]
-    },
-    {
-      "id": "e06efcd2a19d",
-      "url": "https://stadt-bremerhaven.de/elevenlabs-launcht-music-v2-ki-beherrscht-jetzt-besseren-gesang-filigranere-arrangements-und-mehr/",
-      "title": "ElevenLabs launcht Music v2: KI beherrscht jetzt besseren Gesang, filigranere Arrangements und mehr",
-      "score": 140.59,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 19:00:47 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116654138541698726",
-          "shared_at": "2026-05-28T20:41:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "software__co",
-        "ki"
-      ]
-    },
-    {
-      "id": "a6cb6f034e82",
-      "url": "https://stadt-bremerhaven.de/openai-poliert-gpt-5-5-instant-auf/",
-      "title": "OpenAI poliert GPT-5.5 Instant auf",
-      "score": 140.59,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 18:50:21 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116654138537192122",
-          "shared_at": "2026-05-28T20:41:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "internet",
-        "software__co",
-        "ki"
-      ]
-    },
-    {
-      "id": "ec9e1d7a0054",
-      "url": "https://stadt-bremerhaven.de/spotify-update-ordner-fuer-mobile-playlisten-und-bessere-warteschlangen/",
-      "title": "Spotify-Update: Ordner für mobile Playlisten und bessere Warteschlangen",
-      "score": 140.59,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 18:30:53 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116654138532217102",
-          "shared_at": "2026-05-28T20:41:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "streaming"
-      ]
-    },
-    {
-      "id": "def464d3068c",
-      "url": "https://stadt-bremerhaven.de/claude-opus-4-8-anthropic-schraubt-an-zuverlaessigkeit-und-kontrolle/",
-      "title": "Claude Opus 4.8: Anthropic schraubt an Zuverlässigkeit und Kontrolle",
-      "score": 140.59,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 18:00:12 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116654138525593154",
-          "shared_at": "2026-05-28T20:41:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "internet"
-      ]
-    },
-    {
-      "id": "629ca0d14dc9",
-      "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/xiaomi-tv-s-mini-led-neue-smart-tvs-mit-bis-zu-98-zoll-diagonale-starten-in-deutschland/",
-      "title": "Xiaomi TV S Mini LED: Neue Smart-TVs mit bis zu 98 Zoll Diagonale starten in Deutschland",
-      "score": 138.51,
-      "signal_count": 1,
-      "curators": [
-        "stadt-bremerhaven.de@web.brid.gy"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T05:30:25.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadt-bremerhaven.de@web.brid.gy",
-          "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/xiaomi-tv-s-mini-led-neue-smart-tvs-mit-bis-zu-98-zoll-diagonale-starten-in-deutschland/",
-          "shared_at": "2026-05-29T05:30:25.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "5d96d67a2eb3",
-      "url": "https://stadt-bremerhaven.de/hetzner-server-es-wird-teurer/",
-      "title": "Hetzner Server: Es wird teurer",
-      "score": 136.38,
-      "signal_count": 1,
-      "curators": [
-        "websenat.berlin"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-29T05:07:18.670Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "websenat.berlin",
-          "url": "https://bsky.app/profile/websenat.berlin/post/3mmxrcuvobj2i",
-          "shared_at": "2026-05-29T05:07:18.670Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "84c519396dc3",
-      "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/netflix-kritisiert-deutsche-streaming-plaene/",
-      "title": "Netflix kritisiert deutsche Streaming-Pläne",
-      "score": 119.96,
-      "signal_count": 1,
-      "curators": [
-        "stadt-bremerhaven.de@web.brid.gy"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T05:00:05.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadt-bremerhaven.de@web.brid.gy",
-          "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/netflix-kritisiert-deutsche-streaming-plaene/",
-          "shared_at": "2026-05-29T05:00:05.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "e20e164ca8e7",
-      "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/youtube-premium-erweitert-den-funktionsumfang-fuer-podcasts/",
-      "title": "YouTube Premium erweitert den Funktionsumfang für Podcasts",
-      "score": 105.69,
-      "signal_count": 1,
-      "curators": [
-        "stadt-bremerhaven.de@web.brid.gy"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-29T04:30:39.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadt-bremerhaven.de@web.brid.gy",
-          "url": "https://fed.brid.gy/r/https://stadt-bremerhaven.de/youtube-premium-erweitert-den-funktionsumfang-fuer-podcasts/",
-          "shared_at": "2026-05-29T04:30:39.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": []
-    },
-    {
-      "id": "136350f8417b",
-      "url": "https://stadt-bremerhaven.de/age-of-empires-ii-definitive-edition-fuer-macos-ist-da/",
-      "title": "Age of Empires II: Definitive Edition für macOS ist da",
-      "score": 105.37,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 16:00:53 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116653410505583325",
-          "shared_at": "2026-05-28T17:36:24.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "games"
-      ]
-    },
-    {
-      "id": "143b8be5eb95",
-      "url": "https://stadt-bremerhaven.de/dreame-x60-pro-preise-und-verfuegbarkeiten-bekannt/",
-      "title": "Dreame X60 Pro: Preise und Verfügbarkeiten bekannt",
-      "score": 105.37,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 17:30:01 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116653410525885364",
-          "shared_at": "2026-05-28T17:36:24.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "hardware",
-        "smart_home",
-        "reisen"
-      ]
-    },
-    {
-      "id": "04a00d6e6cfd",
-      "url": "https://stadt-bremerhaven.de/geforce-now-james-bond-und-weitere-neuzugaenge-im-cloud-gaming/",
-      "title": "GeForce NOW: James Bond und weitere Neuzugänge im Cloud-Gaming",
-      "score": 105.37,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 16:15:37 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116653410511258572",
-          "shared_at": "2026-05-28T17:36:24.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "games",
-        "streaming"
-      ]
-    },
-    {
-      "id": "f33c60c6fcfb",
-      "url": "https://stadt-bremerhaven.de/youtube-fuehrt-anpassbare-feeds-per-text-eingabe-ein-usa/",
-      "title": "YouTube führt anpassbare Feeds per Text-Eingabe ein (USA)",
-      "score": 105.37,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "Thu, 28 May 2026 17:00:54 +0000",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116653410520949379",
-          "shared_at": "2026-05-28T17:36:24.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "google",
-        "internet",
-        "streaming"
-      ]
-    },
-    {
-      "id": "d7bc829056e4",
-      "url": "https://netzpolitik.org",
-      "title": "netzpolitik.org - Medium für digitale Freiheitsrechte",
-      "score": 95.32,
-      "signal_count": 2,
-      "curators": [
-        "doob.eurosky.social",
-        "mcse"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:14:14.103Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "mcse",
-          "url": "https://mastodon.social/@mcse/116653323327824218",
-          "shared_at": "2026-05-28T17:14:14.103Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "doob.eurosky.social",
-          "url": "https://bsky.app/profile/doob.eurosky.social/post/3mmu5i6re6c2h",
-          "shared_at": "2026-05-27T18:34:22.885Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 1,
-        "replies": 1,
-        "quotes": 0
-      },
-      "tags": [
-        "freedogru",
-        "netzpolitik"
-      ]
-    },
-    {
-      "id": "ee3ccc20ebca",
-      "url": "https://t3n.de/news/hacker-george-hotz-ki-agenten-unternehmen-schaden-1744019/",
-      "title": "„Agenten können nicht programmieren“: Hacker George Hotz warnt vor dem Einsatz von KI | t3n",
-      "score": 94.5,
-      "signal_count": 2,
-      "curators": [
-        "ingosander.bsky.social",
-        "macst3r"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:02:03.932Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "macst3r",
-          "url": "https://mastodon.social/@macst3r/116652803616169614",
-          "shared_at": "2026-05-28T15:02:03.932Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "ingosander.bsky.social",
-          "url": "https://bsky.app/profile/ingosander.bsky.social/post/3mmrn2gl3qu2v",
-          "shared_at": "2026-05-26T18:35:00.689Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "ki",
-        "ai",
-        "programmierung",
-        "softwareentwicklung",
-        "agenten"
-      ]
-    },
-    {
-      "id": "d3047b7ddb67",
-      "url": "https://t3n.de/news/zwischen-krise-und-ki-boom-warum-otto-den-umbruch-vergleichsweise-gut-hinbekommt-1744714/",
-      "title": "Deutliche Gewinnsteigerung: Warum Otto den Umbruch vergleichsweise gut hinbekommt | t3n",
-      "score": 75.32,
-      "signal_count": 2,
-      "curators": [
-        "ki-news.bsky.social",
-        "t3n.de - News"
-      ],
-      "platforms": [
-        "bluesky",
-        "rss"
-      ],
-      "latest_shared": "Thu, 28 May 2026 13:45:53 +0200",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "ki-news.bsky.social",
-          "url": "https://bsky.app/profile/ki-news.bsky.social/post/3mmw5ig3vga2y",
-          "shared_at": "2026-05-28T13:39:49.859927+00:00"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "kiassistent",
-        "nvidia",
-        "künstliche_intelligenz",
-        "e-commerce",
-        "otto"
-      ]
-    },
-    {
-      "id": "8510b5123aba",
-      "url": "https://t3n.de/news/unabhaengige-studie-belegt-ki-modelle-umgehen-vorgaben-und-verwischen-dabei-ihre-spuren-1744065/",
-      "title": "Unabhängige Studie belegt: KI-Modelle umgehen Vorgaben – und verwischen dabei ihre Spuren | t3n",
-      "score": 73.17,
-      "signal_count": 3,
-      "curators": [
-        "cheesemir.bsky.social",
-        "aellalabrys.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T03:44:02.836Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "aellalabrys.bsky.social",
-          "url": "https://bsky.app/profile/aellalabrys.bsky.social/post/3mmv472vll22o",
-          "shared_at": "2026-05-28T03:44:02.836Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "cheesemir.bsky.social",
-          "url": "https://bsky.app/profile/cheesemir.bsky.social/post/3mmrumnbf7s2y",
-          "shared_at": "2026-05-26T20:50:29.156Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "cheesemir.bsky.social",
-          "url": "https://bsky.app/profile/cheesemir.bsky.social/post/3mmrj2ce7ac2n",
-          "shared_at": "2026-05-26T17:23:22.574Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 6,
-        "likes": 39,
-        "replies": 2,
-        "quotes": 1
-      },
-      "tags": [
-        "ki"
-      ]
-    },
-    {
-      "id": "845a7743ebd6",
-      "url": "http://heise.de/-11309493",
-      "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
-      "score": 72.94,
-      "signal_count": 2,
-      "curators": [
-        "frankstohl",
-        "frankstohl.mastodon.social.ap.brid.gy"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T11:50:04.366Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "frankstohl",
-          "url": "https://mastodon.social/@frankstohl/116652048667756723",
-          "shared_at": "2026-05-28T11:50:04.366Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "frankstohl.mastodon.social.ap.brid.gy",
-          "url": "https://bsky.app/profile/frankstohl.mastodon.social.ap.brid.gy/post/3mmvxemkj4fj2",
-          "shared_at": "2026-05-28T11:50:04.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 3,
-        "likes": 3,
-        "replies": 1,
-        "quotes": 0
-      },
-      "tags": [
-        "ki"
-      ]
-    },
-    {
-      "id": "11b0f64f7e8e",
-      "url": "https://t3n.de/news/per-vibecoding-eine-website-erstellen-welche-prompts-du-brauchst-und-worauf-anfaenger-achten-muessen-1743784/",
-      "title": "Per Vibecoding eine Website erstellen? Welche Prompts du brauchst – und worauf Anfänger achten müssen | t3n",
-      "score": 64.65,
-      "signal_count": 2,
-      "curators": [
-        "ramichaelseidlitz@legal.social",
-        "ramichaelseidlitz.bsky.social"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T11:14:33.016Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "ramichaelseidlitz.bsky.social",
-          "url": "https://bsky.app/profile/ramichaelseidlitz.bsky.social/post/3mmvvemv7q22e",
-          "shared_at": "2026-05-28T11:14:33.016Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "ramichaelseidlitz@legal.social",
-          "url": "https://legal.social/@ramichaelseidlitz/116651908128161155",
-          "shared_at": "2026-05-28T11:14:19.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 2,
-        "replies": 0,
-        "quotes": 1
-      },
-      "tags": []
     }
   ]
 }
