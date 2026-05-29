@@ -43,6 +43,11 @@ Preview the built site:
 npm run preview
 ```
 
+## GitHub Actions Schedule
+
+The crawler workflow runs daily at 06:17 Europe/Berlin. It intentionally avoids
+minute 0 because scheduled GitHub workflows can be delayed at busy times.
+
 ## Local Feedback And Ratings
 
 Interactive feed and curator ratings only work in local dev. Start the feedback
