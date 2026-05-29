@@ -3,7 +3,7 @@ name: Crawl & Deploy
 on:
   schedule:
     # Avoiding minute 0 reduces scheduled workflow delays.
-    - cron: "17 6 * * *"
+    - cron: "0 10 * * *"
       timezone: "Europe/Berlin"
   workflow_dispatch:
   push:
