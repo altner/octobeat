@@ -11,7 +11,23 @@ interface Article {
   curators: string[];
   platforms: string[];
   latest_shared: string;
+  syndications?: Syndication[];
+  engagement?: Engagement;
   tags?: string[];
+}
+
+interface Engagement {
+  boosts: number;
+  likes: number;
+  replies: number;
+  quotes: number;
+}
+
+interface Syndication {
+  platform: string;
+  curator: string;
+  url: string;
+  shared_at: string;
 }
 
 interface FeedData {
@@ -29,33 +45,81 @@ try {
 }
 
 const articles = feedData.articles ?? [];
+const isDev = import.meta.env.DEV;
 
 const genTime = feedData.generated_at
-  ? new Date(feedData.generated_at).toLocaleString('de-DE', {
+  ? new Date(feedData.generated_at).toLocaleString('en-GB', {
       day: '2-digit', month: 'short', year: 'numeric',
       hour: '2-digit', minute: '2-digit',
-    }) + ' UTC'
+      timeZone: 'Europe/Berlin',
+      timeZoneName: 'short',
+    })
   : '';
 
 function domain(url: string) {
   try { return new URL(url).hostname.replace('www.', ''); } catch { return ''; }
 }
 
-const PLATFORM_LABELS: Record<string, string> = {
-  hackernews: 'Hacker News',
-  mastodon:   'Mastodon',
-  bluesky:    'Bluesky',
-  rss:        'RSS',
-};
+function profileUrl(platform: string, curator: string, postUrl: string) {
+  try {
+    const url = new URL(postUrl);
+    if (platform === 'bluesky' && url.hostname === 'bsky.app') {
+      const parts = url.pathname.split('/').filter(Boolean);
+      if (parts[0] === 'profile' && parts[1]) {
+        return `https://bsky.app/profile/${parts[1]}`;
+      }
+    }
+    if (platform === 'mastodon') {
+      const match = url.pathname.match(/^\/@[^/]+/);
+      if (match) return `${url.origin}${match[0]}`;
+    }
+  } catch {
+    // Fall through to handle-based Bluesky fallback.
+  }
+
+  if (platform === 'bluesky' && curator) {
+    return `https://bsky.app/profile/${curator}`;
+  }
+  return '';
+}
+
+function engagementLabel(engagement?: Engagement) {
+  if (!engagement) return '';
+  const parts = [
+    engagement.boosts > 0 ? `${engagement.boosts} Boosts` : '',
+    engagement.likes > 0 ? `${engagement.likes} Likes` : '',
+    engagement.replies > 0 ? `${engagement.replies} Replies` : '',
+    engagement.quotes > 0 ? `${engagement.quotes} Quotes` : '',
+  ].filter(Boolean);
+  return parts.join(' · ');
+}
+
+function socialRows(article: Article) {
+  if ((article.syndications ?? []).length > 0) {
+    return (article.syndications ?? []).slice(0, 6).map(s => ({
+      platform: s.platform,
+      curator: s.curator,
+      url: s.url,
+      profileUrl: profileUrl(s.platform, s.curator, s.url),
+    }));
+  }
+
+  if (article.platforms.length !== 1) return [];
+  return article.curators.slice(0, 6).map(curator => ({
+    platform: article.platforms[0],
+    curator,
+    url: '',
+    profileUrl: profileUrl(article.platforms[0], curator, ''),
+  }));
+}
 ---
 
 <BaseLayout title="OctoBeat – Debug">
-  <Header currentPage="debug" genTime={genTime}>
-    <input class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
-  </Header>
+  <Header currentPage="debug" genTime={genTime} />
 
+  {isDev ? (
   <main>
-    <p class="count-line">{articles.length} Artikel</p>
+    <p class="count-line">{articles.length} article{articles.length !== 1 ? 's' : ''}</p>
 
     <div class="articles" id="articleList">
       {articles.map(a => (
@@ -67,11 +131,6 @@ const PLATFORM_LABELS: Record<string, string> = {
         >
           <div class="card-left">
             <div class="card-top">
-              {a.platforms.length > 1 ? (
-                <span class="platform-tag platform-multi">Multi-Platform</span>
-              ) : a.platforms.map(p => (
-                <span class={`platform-tag platform-${p}`}>{PLATFORM_LABELS[p] ?? p}</span>
-              ))}
               <span class="time" data-ts={a.latest_shared}></span>
             </div>
 
@@ -81,10 +140,70 @@ const PLATFORM_LABELS: Record<string, string> = {
 
             <div class="article-footer">
               <span class="article-domain">{domain(a.url)}</span>
-              {a.curators.length > 0 && (
-                <span class="curators">👥 {a.curators.slice(0, 4).join(', ')}</span>
+              {engagementLabel(a.engagement) && (
+                <span class="engagement">{engagementLabel(a.engagement)}</span>
               )}
             </div>
+
+            {socialRows(a).length > 0 && (
+              <div class="social-signal-list" aria-label="Social posts">
+                {socialRows(a).map(s => (
+                  <div class="social-signal-row">
+                    {s.profileUrl ? (
+                      <a
+                        class="social-profile"
+                        href={s.profileUrl}
+                        target="_blank"
+                        rel="noopener"
+                        title={`${s.platform}:${s.curator}`}
+                      >
+                        {s.curator}
+                      </a>
+                    ) : (
+                      <span class="social-profile" title={`${s.platform}:${s.curator}`}>{s.curator}</span>
+                    )}
+                    {s.url ? (
+                      <a
+                        class="social-url"
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        {s.url}
+                      </a>
+                    ) : (
+                      <span class="social-url muted">No post link</span>
+                    )}
+                    <span class="feedback-actions">
+                    <button
+                      class="feedback-button"
+                      type="button"
+                      data-platform={s.platform}
+                      data-curator={s.curator}
+                      data-rating="1"
+                      title="Increase curator weight"
+                    >+</button>
+                    <button
+                      class="feedback-button"
+                      type="button"
+                      data-platform={s.platform}
+                      data-curator={s.curator}
+                      data-rating="-1"
+                      title="Decrease curator weight"
+                    >-</button>
+                    <button
+                      class="feedback-button danger"
+                      type="button"
+                      data-platform={s.platform}
+                      data-curator={s.curator}
+                      data-blocked="true"
+                      title="Block curator"
+                    >Block</button>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {(a.tags ?? []).length > 0 && (
               <div class="article-tags">
@@ -98,16 +217,25 @@ const PLATFORM_LABELS: Record<string, string> = {
           <div class="article-score">
             <div class="score-value">{Math.round(a.score)}</div>
             <div class="score-label">Score</div>
-            <div class="signal-count">{a.signal_count} Signal{a.signal_count !== 1 ? 'e' : ''}</div>
+            <div class="signal-count">{a.signal_count} signal{a.signal_count !== 1 ? 's' : ''}</div>
           </div>
         </article>
       ))}
     </div>
   </main>
+  ) : (
+  <main>
+    <p class="count-line">Debug is only available locally in dev mode.</p>
+  </main>
+  )}
 </BaseLayout>
 
 <style>
-  main { max-width: 780px; margin: 0 auto; padding: 20px 24px 60px; }
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 32px 72px;
+  }
 
   .count-line { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
 
@@ -117,14 +245,16 @@ const PLATFORM_LABELS: Record<string, string> = {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 14px 16px;
+    padding: 16px 18px;
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) 86px;
+    gap: 18px;
+    align-items: start;
     transition: border-color 0.2s, transform 0.1s;
   }
   .article-card:hover { border-color: var(--accent); transform: translateY(-1px); }
   .article-card[hidden] { display: none; }
+  .card-left { min-width: 0; }
 
   .card-top {
     display: flex;
@@ -133,20 +263,6 @@ const PLATFORM_LABELS: Record<string, string> = {
     margin-bottom: 7px;
     flex-wrap: wrap;
   }
-
-  .platform-tag {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
-  .platform-hackernews { background: rgba(255,102,0,0.15);   color: var(--hn); }
-  .platform-mastodon   { background: rgba(99,100,255,0.15);  color: var(--mastodon); }
-  .platform-bluesky    { background: rgba(2,133,255,0.15);   color: var(--bluesky); }
-  .platform-rss        { background: rgba(246,166,35,0.15);  color: var(--rss); }
-  .platform-multi      { background: rgba(167,139,250,0.15); color: var(--accent2); }
 
   .time { font-size: 12px; color: var(--muted); }
 
@@ -162,12 +278,87 @@ const PLATFORM_LABELS: Record<string, string> = {
     font-size: 12px;
     color: var(--muted);
   }
-  .curators {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+  .engagement {
     font-size: 11px;
+    color: var(--accent2);
+  }
+
+  .social-signal-list {
+    border: 1px solid rgba(46,51,84,0.8);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .social-signal-row {
+    background: rgba(34,38,58,0.55);
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+    min-width: 0;
+    padding: 7px 8px;
+  }
+  .social-signal-row + .social-signal-row {
+    border-top: 1px solid rgba(46,51,84,0.8);
+  }
+  .social-profile {
+    color: var(--muted);
+    font-size: 11px;
+    min-width: 0;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  a.social-profile:hover { color: var(--accent); }
+  .social-url {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.4;
+    min-width: 0;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .social-url:hover { color: var(--accent); }
+  .social-url.muted {
+    color: rgba(136,146,176,0.55);
+    font-style: italic;
+  }
+  .feedback-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .feedback-button {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 11px;
+    min-width: 26px;
+    padding: 2px 6px;
+  }
+  .feedback-button:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  .feedback-button.danger:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+  .feedback-button.saved {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .feedback-button.failed {
+    border-color: var(--danger);
+    color: var(--danger);
   }
 
   .article-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
@@ -193,40 +384,50 @@ const PLATFORM_LABELS: Record<string, string> = {
   .signal-count { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
   @media (max-width: 600px) {
+    main { padding: 18px 14px 56px; }
     .article-card { grid-template-columns: 1fr; }
+    .article-score { text-align: left; }
+    .social-signal-row {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+    .feedback-actions { justify-content: flex-start; }
   }
 </style>
 
-<script>
-  // Relative timestamps
-  document.querySelectorAll<HTMLElement>('.time[data-ts]').forEach(el => {
-    const ts = el.dataset.ts;
-    if (!ts) return;
-    const diff = (Date.now() - new Date(ts).getTime()) / 1000;
-    if (diff < 3600)       el.textContent = `vor ${Math.round(diff / 60)} Min`;
-    else if (diff < 86400) el.textContent = `vor ${Math.round(diff / 3600)} Std`;
-    else                   el.textContent = `vor ${Math.round(diff / 86400)} Tagen`;
-  });
-
-  // Search
-  const searchBox  = document.getElementById('searchBox') as HTMLInputElement;
-  const allCards   = Array.from(document.querySelectorAll<HTMLElement>('.article-card'));
-  const countLine  = document.querySelector<HTMLElement>('.count-line')!;
-  const total      = allCards.length;
-
-  searchBox?.addEventListener('input', () => {
-    const q = searchBox.value.trim().toLowerCase();
-    let visible = 0;
-
-    allCards.forEach(card => {
-      const match = !q
-        || (card.dataset.title ?? '').toLowerCase().includes(q)
-        || (card.dataset.url   ?? '').toLowerCase().includes(q)
-        || (card.dataset.tags  ?? '').toLowerCase().includes(q);
-      card.hidden = !match;
-      if (match) visible++;
+{isDev && (
+  <script>
+    document.querySelectorAll<HTMLElement>('.time[data-ts]').forEach(el => {
+      const ts = el.dataset.ts;
+      if (!ts) return;
+      const diff = (Date.now() - new Date(ts).getTime()) / 1000;
+      if (diff < 3600)       el.textContent = `${Math.round(diff / 60)} min ago`;
+      else if (diff < 86400) el.textContent = `${Math.round(diff / 3600)} h ago`;
+      else                   el.textContent = `${Math.round(diff / 86400)} days ago`;
     });
 
-    countLine.textContent = q ? `${visible} Treffer` : `${total} Artikel`;
-  });
-</script>
+    document.querySelectorAll<HTMLButtonElement>('.feedback-button').forEach(button => {
+      button.addEventListener('click', async () => {
+        const payload = {
+          platform: button.dataset.platform,
+          curator_handle: button.dataset.curator,
+          rating: button.dataset.rating ? Number(button.dataset.rating) : undefined,
+          blocked: button.dataset.blocked === 'true' ? true : button.dataset.rating ? false : undefined,
+        };
+
+        button.classList.remove('saved', 'failed');
+        try {
+          const response = await fetch('http://127.0.0.1:8765/feedback/curator', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!response.ok) throw new Error('feedback failed');
+          button.classList.add('saved');
+        } catch {
+          button.classList.add('failed');
+        }
+      });
+    });
+  </script>
+)}

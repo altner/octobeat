@@ -1,0 +1,534 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+interface FeedsData {
+  feeds?: string[];
+}
+
+let feeds: string[] = [];
+const isDev = import.meta.env.DEV;
+try {
+  const mod = await import('../../data/feeds.json');
+  const data = mod.default as FeedsData | string[];
+  feeds = Array.isArray(data) ? data : (data.feeds ?? []);
+} catch {
+  // feeds.json not yet generated
+}
+
+function domainFromUrl(url: string) {
+  try { return new URL(url).hostname.replace('www.', ''); } catch { return url; }
+}
+
+const NAMES: Record<string, string> = {
+  'heise.de':             'Heise Online',
+  'golem.de':             'Golem',
+  'netzpolitik.org':      'Netzpolitik',
+  't3n.de':               't3n',
+  'basicthinking.de':     'Basic Thinking',
+  'mixed.de':             'Mixed',
+  'stadt-bremerhaven.de': 'Caschys Blog',
+  'ifun.de':              'ifun',
+  'winfuture.de':         'WinFuture',
+  'kuketz-blog.de':       'Kuketz Blog',
+  'mobiflip.de':          'Mobiflip',
+  'nextpit.de':           'NextPit',
+  'carta.info':           'Carta',
+  'irights.info':         'iRights',
+  'travelbook.de':        'Travelbook',
+  'reisereporter.de':     'Reisereporter',
+  'reisehappen.de':       'Reisehappen',
+  'fernwehking.de':       'Fernwehking',
+  'nomadblogger.de':      'Nomadblogger',
+  'reisefreiheit.org':    'Reisefreiheit',
+};
+
+function nameFromUrl(url: string) {
+  return NAMES[domainFromUrl(url)] ?? domainFromUrl(url);
+}
+
+function isTravel(url: string) {
+  const d = domainFromUrl(url);
+  return ['reise', 'travel', 'fernweh', 'nomad'].some(k => d.includes(k));
+}
+---
+
+<BaseLayout title="OctoBeat – Settings">
+  <Header currentPage="settings" />
+  <main>
+    {!isDev ? (
+      <p class="empty">Settings are only available locally in dev mode.</p>
+    ) : (
+      <>
+        <div class="settings-head">
+          <div>
+            <h2>Feed URLs <span class="count">{feeds.length} source{feeds.length !== 1 ? 's' : ''}</span></h2>
+            <span class="api-state" id="feedbackApiState">Checking feedback API...</span>
+          </div>
+          <form class="add-feed-form" id="addFeedForm">
+            <input
+              class="feed-input"
+              id="feedUrlInput"
+              name="feed_url"
+              type="url"
+              placeholder="https://example.org/feed.xml"
+              autocomplete="off"
+              required
+            />
+            <button class="add-feed-button" type="submit">Add</button>
+          </form>
+        </div>
+
+        {feeds.length === 0 ? (
+          <p class="empty">No feeds yet. Run <code>python crawler/main.py</code>.</p>
+        ) : (
+          <ul class="feed-list">
+            {feeds.map(url => (
+              <li class="feed-card">
+                <div class="feed-icon">{isTravel(url) ? 'TR' : 'RSS'}</div>
+                <div class="feed-info">
+                  <div class="feed-name">{nameFromUrl(url)}</div>
+                  <a class="feed-url" href={url} target="_blank" rel="noopener" title={url}>{url}</a>
+                </div>
+                <div class="feed-actions" aria-label={`Rating for ${nameFromUrl(url)}`}>
+                  <span
+                    class="rating-state"
+                    data-rating-state={url}
+                    title="Saved feed rating"
+                  >Neutral</span>
+                  <button
+                    class="feedback-button"
+                    type="button"
+                    data-feed-url={url}
+                    data-rating-button="up"
+                    title="Increase feed weight"
+                  >+</button>
+                  <button
+                    class="feedback-button"
+                    type="button"
+                    data-feed-url={url}
+                    data-rating-button="down"
+                    title="Decrease feed weight"
+                  >-</button>
+                  <button
+                    class="feedback-button neutral"
+                    type="button"
+                    data-feed-url={url}
+                    data-rating-button="neutral"
+                    title="Reset feed rating"
+                  >Neutral</button>
+                  <button
+                    class="feedback-button danger"
+                    type="button"
+                    data-feed-url={url}
+                    data-blocked="true"
+                    data-rating-button="block"
+                    title="Block feed"
+                  >Block</button>
+                  <button
+                    class="feedback-button delete"
+                    type="button"
+                    data-delete-feed-url={url}
+                    title="Remove feed URL"
+                  >Delete</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </>
+    )}
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+
+  .settings-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 7px 0 0;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .count {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+
+  .api-state {
+    color: var(--muted);
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .api-state.online { color: var(--accent); }
+  .api-state.offline { color: var(--danger); }
+
+  .empty { color: var(--muted); }
+  .empty code { color: var(--accent); }
+
+  .add-feed-form {
+    display: flex;
+    gap: 8px;
+    min-width: 0;
+    width: min(430px, 100%);
+  }
+
+  .feed-input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    flex: 1;
+    font: inherit;
+    font-size: 13px;
+    min-width: 0;
+    padding: 8px 10px;
+  }
+  .feed-input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .add-feed-button {
+    background: rgba(108,142,255,0.12);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 12px;
+  }
+  .add-feed-button.saved {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .add-feed-button.failed {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  .feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .feed-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.2s;
+  }
+  .feed-card:hover { border-color: var(--accent); }
+
+  .feed-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .feed-info { flex: 1; min-width: 0; }
+
+  .feed-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .feed-url {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-decoration: none;
+  }
+  .feed-url:hover { color: var(--accent); }
+
+  .feed-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .rating-state {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 11px;
+    min-width: 58px;
+    padding: 3px 8px;
+    text-align: center;
+  }
+  .rating-state.positive {
+    border-color: rgba(108,142,255,0.6);
+    color: var(--accent);
+  }
+  .rating-state.negative {
+    border-color: rgba(167,139,250,0.55);
+    color: var(--accent2);
+  }
+  .rating-state.blocked {
+    border-color: rgba(255,107,107,0.65);
+    color: var(--danger);
+  }
+
+  .feedback-button {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 11px;
+    min-width: 28px;
+    padding: 3px 7px;
+  }
+  .feedback-button:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  .feedback-button.danger:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+  .feedback-button.delete:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+  .feedback-button.neutral:hover {
+    border-color: var(--muted);
+    color: var(--text);
+  }
+  .feedback-button.saved {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .feedback-button.active {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(108,142,255,0.12);
+  }
+  .feedback-button.danger.active {
+    border-color: var(--danger);
+    color: var(--danger);
+    background: rgba(255,107,107,0.08);
+  }
+  .feedback-button.failed {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  @media (max-width: 620px) {
+    .settings-head { flex-direction: column; }
+    h2 { white-space: normal; }
+    .add-feed-form { width: 100%; }
+    .feed-card { align-items: flex-start; }
+    .feed-actions {
+      width: 100%;
+      justify-content: flex-start;
+      padding-left: 50px;
+    }
+    .feed-card { flex-wrap: wrap; }
+  }
+</style>
+
+{isDev && (
+  <script>
+    const postJson = async (path: string, payload: Record<string, unknown>) => {
+      const response = await fetch(`http://127.0.0.1:8765${path}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error('request failed');
+      return response.json();
+    };
+
+    const apiState = document.getElementById('feedbackApiState');
+    const setApiState = (online: boolean) => {
+      if (!apiState) return;
+      apiState.textContent = online ? 'Feedback API online' : 'Feedback API offline';
+      apiState.classList.toggle('online', online);
+      apiState.classList.toggle('offline', !online);
+    };
+
+    type FeedFeedback = {
+      feed_url: string;
+      rating: number;
+      blocked: boolean;
+    };
+
+    const feedFeedback = new Map<string, FeedFeedback>();
+
+    const normalizedFeedback = (feedUrl: string, rating = 0, blocked = false): FeedFeedback => ({
+      feed_url: feedUrl,
+      rating: Math.max(-5, Math.min(5, rating)),
+      blocked,
+    });
+
+    const ratingLabel = (feedback?: FeedFeedback) => {
+      if (!feedback) return 'Neutral';
+      if (feedback.blocked) return 'Block';
+      if (feedback.rating > 0) return `+${feedback.rating}`;
+      if (feedback.rating < 0) return String(feedback.rating);
+      return 'Neutral';
+    };
+
+    const applyRatingState = (feedback?: FeedFeedback) => {
+      const feedUrl = feedback?.feed_url;
+      if (!feedUrl) return;
+
+      const state = document.querySelector<HTMLElement>(
+        `[data-rating-state="${CSS.escape(feedUrl)}"]`
+      );
+      state?.classList.remove('positive', 'negative', 'blocked');
+      if (state) state.textContent = ratingLabel(feedback);
+      if (feedback) feedFeedback.set(feedUrl, feedback);
+
+      document
+        .querySelectorAll<HTMLButtonElement>(`[data-feed-url="${CSS.escape(feedUrl)}"]`)
+        .forEach(button => button.classList.remove('active'));
+
+      if (feedback.blocked) {
+        state?.classList.add('blocked');
+        document
+          .querySelector<HTMLButtonElement>(
+            `[data-feed-url="${CSS.escape(feedUrl)}"][data-rating-button="block"]`
+          )
+          ?.classList.add('active');
+      } else if (feedback.rating > 0) {
+        state?.classList.add('positive');
+        document
+          .querySelector<HTMLButtonElement>(
+            `[data-feed-url="${CSS.escape(feedUrl)}"][data-rating-button="up"]`
+          )
+          ?.classList.add('active');
+      } else if (feedback.rating < 0) {
+        state?.classList.add('negative');
+        document
+          .querySelector<HTMLButtonElement>(
+            `[data-feed-url="${CSS.escape(feedUrl)}"][data-rating-button="down"]`
+          )
+          ?.classList.add('active');
+      } else if (feedback.rating === 0) {
+        document
+          .querySelector<HTMLButtonElement>(
+            `[data-feed-url="${CSS.escape(feedUrl)}"][data-rating-button="neutral"]`
+          )
+          ?.classList.add('active');
+      }
+    };
+
+    const loadRatingStates = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8765/feedback/feeds');
+        if (!response.ok) {
+          setApiState(false);
+          return;
+        }
+        setApiState(true);
+        const payload = await response.json();
+        payload.feedback?.forEach((feedback: FeedFeedback) => applyRatingState(feedback));
+      } catch {
+        setApiState(false);
+        // Feedback server is optional; ratings just stay neutral if it is not running.
+      }
+    };
+
+    loadRatingStates();
+
+    document.getElementById('addFeedForm')?.addEventListener('submit', async event => {
+      event.preventDefault();
+      const form = event.currentTarget as HTMLFormElement;
+      const input = form.elements.namedItem('feed_url') as HTMLInputElement;
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+      button?.classList.remove('saved', 'failed');
+      try {
+        await postJson('/feeds/add', { feed_url: input.value });
+        button?.classList.add('saved');
+        window.location.reload();
+      } catch {
+        button?.classList.add('failed');
+      }
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.feedback-button').forEach(button => {
+      button.addEventListener('click', async () => {
+        if (button.dataset.deleteFeedUrl) {
+          button.classList.remove('saved', 'failed');
+          try {
+            await postJson('/feeds/delete', { feed_url: button.dataset.deleteFeedUrl });
+            button.classList.add('saved');
+            window.location.reload();
+          } catch {
+            button.classList.add('failed');
+          }
+          return;
+        }
+
+        const feedUrl = button.dataset.feedUrl ?? '';
+        const current = feedFeedback.get(feedUrl) ?? normalizedFeedback(feedUrl);
+        const action = button.dataset.ratingButton;
+        const nextRating =
+          action === 'up'
+            ? Math.min(5, current.rating + 1)
+            : action === 'down'
+              ? Math.max(-5, current.rating - 1)
+              : 0;
+
+        const payload = {
+          feed_url: feedUrl,
+          rating: nextRating,
+          blocked: button.dataset.blocked === 'true' ? true : false,
+        };
+
+        button.classList.remove('saved', 'failed');
+        try {
+          const result = await postJson('/feedback/feed', payload);
+          button.classList.add('saved');
+          applyRatingState(result.feedback);
+        } catch {
+          button.classList.add('failed');
+        }
+      });
+    });
+  </script>
+)}

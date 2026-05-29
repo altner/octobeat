@@ -1,20 +1,24 @@
 ---
 interface Props {
-  currentPage: 'main' | 'feeds' | 'debug';
+  currentPage: 'main' | 'settings' | 'debug';
   genTime?: string;
 }
 const { currentPage, genTime = '' } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const isDev = import.meta.env.DEV;
 
 const navItems = [
-  { page: 'main', label: 'Aktuell', href: `${base}/` },
-  { page: 'feeds', label: 'Settings', href: `${base}/feeds.html` },
-  { page: 'debug', label: 'Debug', href: `${base}/debug.html` },
-] as const;
+  { page: 'main', label: 'Feeds', href: base },
+  ...(isDev ? [{ page: 'debug', label: 'Debug', href: `${base}debug/` }] : []),
+];
+
+const isSettings = currentPage === 'settings';
 ---
 <header>
-  <a class="logo" href={`${base}/`}>OctoBeat</a>
-  {currentPage === 'debug' && <span class="debug-badge">Debug</span>}
+  <a class="logo" href={base}>OctoBeat</a>
+  {isDev && currentPage === 'debug' && <span class="debug-badge">Debug</span>}
   {genTime && <span class="meta">{genTime}</span>}
   <div class="spacer"></div>
   <nav class="nav-links">
@@ -29,6 +33,20 @@ const navItems = [
     ))}
   </nav>
   <slot />
+  {isDev && (
+    <a
+      class:list={['settings-link', { active: isSettings }]}
+      href={`${base}settings/`}
+      aria-label="Settings"
+      aria-current={isSettings ? 'page' : undefined}
+      title="Settings"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z" />
+        <path d="M19.4 15a1.8 1.8 0 0 0 .36 2l.05.05a2.1 2.1 0 0 1-2.97 2.97l-.05-.05a1.8 1.8 0 0 0-2-.36 1.8 1.8 0 0 0-1.1 1.65V21.4a2.1 2.1 0 0 1-4.2 0v-.08a1.8 1.8 0 0 0-1.18-1.66 1.8 1.8 0 0 0-2 .36l-.05.05a2.1 2.1 0 0 1-2.97-2.97l.05-.05a1.8 1.8 0 0 0 .36-2 1.8 1.8 0 0 0-1.65-1.1H2a2.1 2.1 0 0 1 0-4.2h.08a1.8 1.8 0 0 0 1.66-1.18 1.8 1.8 0 0 0-.36-2l-.05-.05a2.1 2.1 0 0 1 2.97-2.97l.05.05a1.8 1.8 0 0 0 2 .36h.08A1.8 1.8 0 0 0 9.5 2.3V2.2a2.1 2.1 0 0 1 4.2 0v.08a1.8 1.8 0 0 0 1.1 1.65 1.8 1.8 0 0 0 2-.36l.05-.05a2.1 2.1 0 0 1 2.97 2.97l-.05.05a1.8 1.8 0 0 0-.36 2v.08a1.8 1.8 0 0 0 1.65 1.1h.08a2.1 2.1 0 0 1 0 4.2h-.08A1.8 1.8 0 0 0 19.4 15Z" />
+      </svg>
+    </a>
+  )}
 </header>
 
 <style>
@@ -94,9 +112,40 @@ const navItems = [
     background: rgba(108,142,255,0.12);
   }
 
+  .settings-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .settings-link:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+  .settings-link.active {
+    color: var(--text);
+    border-color: var(--accent);
+    background: rgba(108,142,255,0.12);
+  }
+  .settings-link svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
   @media (max-width: 600px) {
     header { flex-wrap: wrap; }
-    .nav-links { order: 3; width: 100%; }
+    .nav-links { order: 3; flex: 1; }
     .nav-link { flex: 1; text-align: center; }
   }
 </style>

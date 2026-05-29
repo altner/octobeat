@@ -1,10 +1,13 @@
 """
-main.py — Feedbeat Einstiegspunkt.
-Führt alle Module zusammen: sammeln → filtern → bewerten → speichern.
+main.py — Feedbeat entrypoint.
+Combines all modules: collect -> filter -> score -> store.
 """
+
+from __future__ import annotations
 
 import asyncio
 import hashlib
+import re
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
@@ -15,14 +18,25 @@ from dateutil import parser as dateparser
 
 from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
 from curator  import is_valid_curator, calc_weight
+from database import apply_curator_learning, apply_feed_learning, record_run
 from scorer   import score_article
 from storage  import write_feed, push_to_github
 
 
+CRAWLER_DIR = Path(__file__).parent
+
+
 def load_config() -> dict:
-    cfg_path = Path(__file__).parent / "config.yaml"
+    cfg_path = CRAWLER_DIR / "config.yaml"
     with open(cfg_path) as f:
         return yaml.safe_load(f)
+
+
+def resolve_config_path(path: str) -> Path:
+    configured = Path(path)
+    if configured.is_absolute():
+        return configured
+    return (CRAWLER_DIR / configured).resolve()
 
 
 def domain_ok(url: str, blacklist: set) -> bool:
@@ -61,44 +75,107 @@ def newest_signal_time(signals: list[dict]) -> tuple[str, datetime | None]:
     return newest_raw, newest_at
 
 
+def normalize_tag(tag: str) -> str:
+    """Lowercase tags and keep them stable for section ids."""
+    tag = tag.strip().lower()
+    tag = re.sub(r"\s+", "-", tag)
+    return re.sub(r"[^a-z0-9äöüß_-]", "", tag)
+
+
+def infer_article_tags(title: str, url: str, signals: list[dict], tag_rules: dict) -> list[str]:
+    """Build qualified tags from signal tags and configured keyword rules."""
+    tag_counts: Counter[str] = Counter()
+
+    for signal in signals:
+        for tag in signal.get("tags", []):
+            normalized = normalize_tag(tag)
+            if normalized:
+                tag_counts[normalized] += 2
+
+    text = f"{title} {url}".casefold()
+    for tag, keywords in tag_rules.items():
+        normalized = normalize_tag(tag)
+        if not normalized:
+            continue
+        for keyword in keywords:
+            if str(keyword).casefold() in text:
+                tag_counts[normalized] += 1
+                break
+
+    return [tag for tag, _ in tag_counts.most_common(5)]
+
+
+def collect_syndications(signals: list[dict]) -> list[dict]:
+    """Return unique social post links that syndicated an article."""
+    seen: set[str] = set()
+    syndications = []
+
+    for signal in signals:
+        url = signal.get("syndication_url", "")
+        if not url or url in seen:
+            continue
+
+        seen.add(url)
+        syndications.append({
+            "platform": signal.get("platform", ""),
+            "curator": signal.get("curator_handle", ""),
+            "url": url,
+            "shared_at": signal.get("shared_at", ""),
+        })
+
+    syndications.sort(key=lambda item: item.get("shared_at", ""), reverse=True)
+    return syndications
+
+
+def aggregate_engagement(signals: list[dict]) -> dict:
+    """Aggregate engagement counts across all signals for transparency."""
+    totals = {"boosts": 0, "likes": 0, "replies": 0, "quotes": 0}
+    for signal in signals:
+        engagement = signal.get("engagement", {})
+        for key in totals:
+            totals[key] += int(engagement.get(key, 0) or 0)
+    return totals
+
+
 async def run():
+    run_started_at = datetime.now(timezone.utc)
     cfg       = load_config()
     blacklist = set(cfg.get("domain_blacklist", []))
     all_signals: list[dict] = []
 
     # ── 1. Mastodon ────────────────────────────────────────────────────────
-    print("→ Mastodon crawlen...")
+    print("→ Crawling Mastodon...")
     for domain in cfg["seed_domains"]:
         sigs = await collect_mastodon(domain, cfg.get("mastodon_instances", []))
         all_signals.extend(sigs)
-        print(f"  {domain}: {len(sigs)} Signale")
+        print(f"  {domain}: {len(sigs)} signals")
 
     # ── 2. Bluesky ─────────────────────────────────────────────────────────
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
-        print("→ Bluesky crawlen...")
+        print("→ Crawling Bluesky...")
         for domain in cfg["seed_domains"]:
             sigs = await collect_bluesky(domain, bsky_cfg.get("limit", 25))
             all_signals.extend(sigs)
-            print(f"  {domain}: {len(sigs)} Signale")
+            print(f"  {domain}: {len(sigs)} signals")
 
     # ── 3. RSS ─────────────────────────────────────────────────────────────
     rss_urls = cfg.get("rss_feeds", [])
     if rss_urls:
-        print("→ RSS-Feeds crawlen...")
+        print("→ Crawling RSS feeds...")
         sigs = collect_rss(rss_urls)
         all_signals.extend(sigs)
-        print(f"  {len(sigs)} Signale aus {len(rss_urls)} Feeds")
+        print(f"  {len(sigs)} signals from {len(rss_urls)} feeds")
 
     # ── 2. Hacker News ─────────────────────────────────────────────────────
     hn_cfg = cfg.get("hackernews", {})
     if hn_cfg.get("enabled", True):
-        print("→ Hacker News crawlen...")
+        print("→ Crawling Hacker News...")
         sigs = await collect_hackernews(hn_cfg.get("top_n", 100), hn_cfg.get("min_score", 10))
         all_signals.extend(sigs)
-        print(f"  HN: {len(sigs)} Signale")
+        print(f"  HN: {len(sigs)} signals")
 
-    # ── 4. Filter: Domain-Blacklist + Kuratoren-Validierung ────────────────
+    # ── 4. Filter: domain blacklist + curator validation ──────────────────
     valid_signals = []
     for s in all_signals:
         if not domain_ok(s["url"], blacklist):
@@ -108,25 +185,40 @@ async def run():
         s["weight"] = calc_weight(s["curator_meta"], s["platform"])
         valid_signals.append(s)
 
-    print(f"→ {len(valid_signals)} gültige Signale (von {len(all_signals)})")
+    print(f"→ {len(valid_signals)} valid signals (of {len(all_signals)})")
 
-    # ── 5. Titel nachladen wo nötig ────────────────────────────────────────
-    print("→ Fehlende Titel nachladen...")
+    learning_cfg = cfg.get("learning", {})
+    learning_db_path = resolve_config_path(learning_cfg.get("db_path", "../data/octobeat.sqlite3"))
+    if learning_cfg.get("enabled", True):
+        learned = apply_curator_learning(
+            valid_signals,
+            learning_db_path,
+            learning_cfg.get("min_curator_signals", 3),
+            learning_cfg.get("max_curator_bonus", 0.25),
+        )
+        if learned:
+            print(f"→ Applied learning bonus to {learned} signals")
+        feed_learned = apply_feed_learning(valid_signals, learning_db_path)
+        if feed_learned:
+            print(f"→ Applied feed ratings to {feed_learned} RSS signals")
+
+    # ── 5. Fetch missing titles where needed ───────────────────────────────
+    print("→ Fetching missing titles...")
     valid_signals = await enrich_titles(valid_signals)
 
-    # ── 6. Signale nach URL gruppieren ─────────────────────────────────────
+    # ── 6. Group signals by URL ────────────────────────────────────────────
     by_url: dict[str, list] = {}
     for s in valid_signals:
         by_url.setdefault(s["url"], []).append(s)
 
-    # ── 7. Artikel bauen + scoren ──────────────────────────────────────────
+    # ── 7. Build and score articles ────────────────────────────────────────
     articles = []
     max_age_h = cfg["article_filter"].get("max_age_hours", 48)
     now = datetime.now(timezone.utc)
     too_old_count = 0
 
     for url, sigs in by_url.items():
-        # Neuestes shared_at bestimmt, ob ein Artikel noch ins Feed darf.
+        # The newest shared_at decides whether the article may stay in the feed.
         latest_shared, latest_at = newest_signal_time(sigs)
         if latest_at is not None:
             age_hours = (now - latest_at).total_seconds() / 3600
@@ -137,14 +229,8 @@ async def run():
         score = score_article(sigs)
         title = next((s.get("title") for s in sigs if s.get("title")), "")
 
-        # Tags aus Signalen aggregieren; Domain-Fallback für ungetaggte Artikel
-        all_tags: list[str] = []
-        for s in sigs:
-            all_tags.extend(s.get("tags", []))
-        article_tags = [t for t, _ in Counter(all_tags).most_common(5)]
-        if not article_tags:
-            domain = urlparse(url).netloc.replace("www.", "")
-            article_tags = cfg.get("domain_tags", {}).get(domain, [])
+        # Derive tags from signals and qualified keyword rules.
+        article_tags = infer_article_tags(title, url, sigs, cfg.get("tag_rules", {}))
 
         articles.append({
             "id":            hashlib.md5(url.encode()).hexdigest()[:12],
@@ -155,54 +241,60 @@ async def run():
             "curators":      list(set(s["curator_handle"] for s in sigs)),
             "platforms":     list(set(s["platform"]       for s in sigs)),
             "latest_shared": latest_shared,
+            "syndications":  collect_syndications(sigs),
+            "engagement":    aggregate_engagement(sigs),
             "tags":          article_tags,
         })
 
     if too_old_count:
-        print(f"→ {too_old_count} Artikel älter als {max_age_h}h verworfen")
+        print(f"→ Dropped {too_old_count} articles older than {max_age_h}h")
 
-    # ── 8. Nur Artikel mit sozialem Signal behalten ────────────────────────
+    # ── 8. Keep only articles with social signal ───────────────────────────
     social_platforms = {"mastodon", "bluesky"}
     articles = [
         a for a in articles
         if social_platforms & set(a["platforms"])
     ]
-    print(f"→ {len(articles)} Artikel mit sozialem Signal (Mastodon/Bluesky)")
+    print(f"→ {len(articles)} articles with social signal (Mastodon/Bluesky)")
 
-    # ── 9. Sortieren + Top N ───────────────────────────────────────────────
+    # ── 9. Sort and keep top N ─────────────────────────────────────────────
     articles.sort(key=lambda a: a["score"], reverse=True)
     top_n = cfg["article_filter"]["top_n"]
     top   = articles[:top_n]
 
-    print(f"→ Top {len(top)} Artikel selektiert (von {len(articles)} unique URLs)")
+    print(f"→ Selected top {len(top)} articles (from {len(articles)} unique URLs)")
 
-    # ── 9. Kuratoren-Übersicht ─────────────────────────────────────────────
+    if learning_cfg.get("enabled", True):
+        run_id = record_run(learning_db_path, run_started_at, top, valid_signals)
+        print(f"✓ Stored run #{run_id} in SQLite → {learning_db_path}")
+
+    # ── 9. Curator overview ────────────────────────────────────────────────
     for platform in ("mastodon", "bluesky"):
         counts = Counter(
             s["curator_handle"] for s in valid_signals if s["platform"] == platform
         )
         if counts:
-            print(f"\n→ Top Kuratoren ({platform.capitalize()}):")
+            print(f"\n→ Top curators ({platform.capitalize()}):")
             for handle, count in counts.most_common(10):
-                print(f"  {handle:<40} {count} Artikel geteilt")
+                print(f"  {handle:<40} shared {count} articles")
         else:
-            print(f"\n→ Keine {platform.capitalize()}-Kuratoren gefunden.")
+            print(f"\n→ No {platform.capitalize()} curators found.")
 
-    # ── 10. Schreiben + pushen ─────────────────────────────────────────────
+    # ── 10. Write and push ─────────────────────────────────────────────────
     out = cfg["output"]
-    write_feed(top, out["data_dir"])
+    data_dir = resolve_config_path(out["data_dir"])
+    write_feed(top, data_dir)
 
-    # feeds.json für die Unterseite
+    # feeds.json for the settings page
     import json as _json
-    from pathlib import Path as _Path
-    feeds_path = _Path(out["data_dir"]) / "feeds.json"
+    feeds_path = data_dir / "feeds.json"
     feeds_path.write_text(
         _json.dumps(cfg.get("rss_feeds", []), ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
-    print(f"✓ {len(cfg.get('rss_feeds', []))} Feeds → {feeds_path}")
+    print(f"✓ {len(cfg.get('rss_feeds', []))} feeds → {feeds_path}")
     if out.get("github_push", False):
-        push_to_github(out["data_dir"], out["commit_message"])
+        push_to_github(str(data_dir), out["commit_message"])
 
 
 if __name__ == "__main__":

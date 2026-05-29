@@ -58,7 +58,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "feed: ${{ github.run_id }}"
-          file_pattern: "data/feed.json data/feeds.json data/archive/*.json"
+          file_pattern: "data/feed.json data/feeds.json data/archive/*.json data/octobeat.sqlite3"
 
       - name: Build Astro site
         run: npm run build

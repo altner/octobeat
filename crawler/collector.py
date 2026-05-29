@@ -1,6 +1,6 @@
 """
-collector.py — Signale von Mastodon, Bluesky, Hacker News und RSS sammeln.
-Jedes Signal = {url, platform, curator_handle, curator_meta, shared_at, title?}
+collector.py — collect signals from Mastodon, Bluesky, Hacker News, and RSS.
+Each signal = {url, platform, curator_handle, curator_meta, shared_at, title?}
 """
 
 import os
@@ -13,18 +13,18 @@ from datetime import datetime, timezone
 from dateutil import parser as dateparser
 from dotenv import load_dotenv
 
-# .env aus dem Projekt-Root laden (eine Ebene über crawler/)
+# Load .env from the project root (one level above crawler/).
 load_dotenv(Path(__file__).parent.parent / ".env")
 
 HEADERS = {"User-Agent": "FeedbeatAgent/1.0 (open source news aggregator)"}
 
 
 # ---------------------------------------------------------------------------
-# Hilfsfunktionen
+# Helpers
 # ---------------------------------------------------------------------------
 
 def normalize_url(url: str) -> str:
-    """UTM-Parameter und Tracking-Anhänge entfernen."""
+    """Remove UTM parameters and tracking suffixes."""
     tracked = {"utm_source", "utm_medium", "utm_campaign",
                "utm_content", "utm_term", "ref", "source", "fbclid"}
     p = urlparse(url)
@@ -34,23 +34,33 @@ def normalize_url(url: str) -> str:
 
 
 def extract_urls(text: str) -> list[str]:
-    """Alle http(s)-URLs aus einem Text extrahieren."""
+    """Extract all http(s) URLs from text."""
     pattern = r'https?://[^\s<>"{}|\\^`\[\]]+'
     return [normalize_url(u) for u in re.findall(pattern, text)]
 
 
 def strip_html(text: str) -> str:
-    """Einfaches HTML-Stripping ohne externe Library."""
+    """Simple HTML stripping without an external library."""
     return re.sub(r"<[^>]+>", "", text or "").strip()
 
 
 def extract_hashtags(text: str) -> list[str]:
-    """Hashtags aus Text extrahieren (dedupliziert, lowercase)."""
+    """Extract hashtags from text (deduplicated, lowercase)."""
     return list(dict.fromkeys(t.lower() for t in re.findall(r'#(\w{2,})', text)))
 
 
+def bluesky_post_url(post_uri: str, handle: str) -> str:
+    """Convert an at:// post URI to its public bsky.app URL."""
+    if not post_uri.startswith("at://") or not handle:
+        return ""
+    parts = post_uri.split("/")
+    if len(parts) < 5:
+        return ""
+    return f"https://bsky.app/profile/{handle}/post/{parts[-1]}"
+
+
 async def fetch_title(url: str, client: httpx.AsyncClient) -> str:
-    """<title>-Tag einer URL abrufen. Gibt leeren String zurück bei Fehler."""
+    """Fetch the <title> tag from a URL. Returns an empty string on failure."""
     try:
         r = await client.get(url, timeout=8, follow_redirects=True)
         m = re.search(r"<title[^>]*>(.*?)</title>", r.text, re.IGNORECASE | re.DOTALL)
@@ -67,9 +77,9 @@ async def fetch_title(url: str, client: httpx.AsyncClient) -> str:
 
 async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
     """
-    Authentifizierte Mastodon-Suche nach einer Domain.
-    Token + Instanz werden aus .env geladen (MASTODON_TOKEN, MASTODON_INSTANCE).
-    Die eigene Instanz wird bevorzugt durchsucht; weitere Instanzen als Fallback.
+    Authenticated Mastodon search for a domain.
+    Token and instance are loaded from .env (MASTODON_TOKEN, MASTODON_INSTANCE).
+    The own instance is searched first; other instances are used as fallbacks.
     """
     token    = os.getenv("MASTODON_TOKEN", "")
     own_inst = os.getenv("MASTODON_INSTANCE", "").rstrip("/")
@@ -93,7 +103,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
                     params={"q": domain, "type": "statuses", "limit": 40},
                 )
                 if r.status_code == 401 or r.status_code == 422:
-                    # Auth fehlt auf dieser Instanz — Fallback Tag-Timeline
+                    # Missing auth on this instance — fall back to tag timeline.
                     tag = domain.split(".")[0]
                     r = await client.get(
                         f"{instance}/api/v1/timelines/tag/{tag}",
@@ -121,6 +131,13 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
                                     "created_at": acc.get("created_at", ""),
                                 },
                                 "shared_at": status.get("created_at", ""),
+                                "syndication_url": status.get("url", ""),
+                                "engagement": {
+                                    "boosts":  status.get("reblogs_count", 0),
+                                    "likes":   status.get("favourites_count", 0),
+                                    "replies": status.get("replies_count", 0),
+                                    "quotes":  0,
+                                },
                                 "tags":       tags,
                             })
             except Exception as e:
@@ -133,7 +150,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 async def _bluesky_token() -> str:
-    """Einmalig mit App Password einloggen und Access Token holen."""
+    """Log in once with the app password and return an access token."""
     handle   = os.getenv("BLUESKY_HANDLE", "")
     password = os.getenv("BLUESKY_APP_PASSWORD", "")
     if not handle or not password:
@@ -146,14 +163,14 @@ async def _bluesky_token() -> str:
             )
             if r.status_code == 200:
                 return r.json().get("accessJwt", "")
-            print(f"  Bluesky Login fehlgeschlagen: HTTP {r.status_code}")
+            print(f"  Bluesky login failed: HTTP {r.status_code}")
     except Exception as e:
-        print(f"  Bluesky Login: {e}")
+        print(f"  Bluesky login: {e}")
     return ""
 
 
 async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
-    """Authentifizierte Bluesky-Suche. Token wird aus .env geladen."""
+    """Authenticated Bluesky search. Token is loaded from .env."""
     token = await _bluesky_token()
     headers = {**HEADERS}
     if token:
@@ -174,7 +191,7 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                 facets  = record.get("facets", [])
                 text    = record.get("text", "")
 
-                # URLs + Tags aus Facets
+                # URLs and tags from facets.
                 urls = []
                 tags = []
                 for facet in facets:
@@ -186,7 +203,7 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                                 urls.append(normalize_url(uri))
                         elif ftype == "app.bsky.richtext.facet#tag":
                             tags.append(feat.get("tag", "").lower())
-                # Fallback: Regex auf Text
+                # Fallback: regex over text.
                 if not urls:
                     urls = extract_urls(text)
                 if not tags:
@@ -195,9 +212,11 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                 followers = author.get("followersCount", 0)
                 following = author.get("followsCount", 0)
                 posts_cnt = author.get("postsCount", 0)
+                author_handle = author.get("handle", "")
+                syndication_url = bluesky_post_url(post.get("uri", ""), author_handle)
 
-                # Bluesky-Suche liefert oft keine Follower-Zahlen →
-                # Fallback damit der Kuratoren-Filter nicht alles wegwirft
+                # Bluesky search often does not return follower counts.
+                # Fallback so the curator filter does not drop everything.
                 if followers == 0 and posts_cnt == 0:
                     followers = 100
                     posts_cnt = 50
@@ -208,7 +227,7 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                             "url":            url,
                             "title":          "",
                             "platform":       "bluesky",
-                            "curator_handle": author.get("handle", ""),
+                            "curator_handle": author_handle,
                             "curator_meta": {
                                 "followers":  followers,
                                 "following":  following,
@@ -216,6 +235,13 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
                                 "created_at": author.get("createdAt", ""),
                             },
                             "shared_at": record.get("createdAt", ""),
+                            "syndication_url": syndication_url,
+                            "engagement": {
+                                "boosts":  post.get("repostCount", 0),
+                                "likes":   post.get("likeCount", 0),
+                                "replies": post.get("replyCount", 0),
+                                "quotes":  post.get("quoteCount", 0),
+                            },
                             "tags":       tags,
                         })
         except Exception as e:
@@ -228,7 +254,7 @@ async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 async def collect_hackernews(top_n: int = 100, min_score: int = 10) -> list[dict]:
-    """Hacker News Top Stories — vollständig öffentlich."""
+    """Hacker News top stories — fully public."""
     signals = []
     async with httpx.AsyncClient(headers=HEADERS, timeout=10) as client:
         try:
@@ -262,6 +288,12 @@ async def collect_hackernews(top_n: int = 100, min_score: int = 10) -> list[dict
                         "created_at": "",
                     },
                     "hn_score":  item["score"],
+                    "engagement": {
+                        "boosts":  0,
+                        "likes":   item.get("score", 0),
+                        "replies": item.get("descendants", 0),
+                        "quotes":  0,
+                    },
                     "shared_at": datetime.fromtimestamp(
                         item.get("time", 0), tz=timezone.utc
                     ).isoformat(),
@@ -276,7 +308,7 @@ async def collect_hackernews(top_n: int = 100, min_score: int = 10) -> list[dict
 # ---------------------------------------------------------------------------
 
 def collect_rss(feed_urls: list[str]) -> list[dict]:
-    """Direkte RSS/Atom-Feeds parsen."""
+    """Parse direct RSS/Atom feeds."""
     signals = []
     for url in feed_urls:
         try:
@@ -296,6 +328,7 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
                     "title":          entry.get("title", ""),
                     "platform":       "rss",
                     "curator_handle": feed_title,
+                    "feed_url":        url,
                     "curator_meta":   {
                         "followers":  1000,
                         "following":  0,
@@ -306,6 +339,12 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
                         "published",
                         datetime.now(timezone.utc).isoformat()
                     ),
+                    "engagement": {
+                        "boosts":  0,
+                        "likes":   0,
+                        "replies": 0,
+                        "quotes":  0,
+                    },
                     "tags": rss_tags,
                 })
         except Exception as e:
@@ -314,16 +353,16 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Titel nachladen
+# Fetch missing titles
 # ---------------------------------------------------------------------------
 
 async def enrich_titles(signals: list[dict]) -> list[dict]:
-    """Fehlende Titel durch Abruf der Artikel-URL nachfüllen."""
+    """Fill missing titles by fetching the article URL."""
     missing = [s for s in signals if not s.get("title")]
     if not missing:
         return signals
 
-    # URLs deduplizieren
+    # Deduplicate URLs.
     url_to_title: dict[str, str] = {}
     urls_needed = list({s["url"] for s in missing})
 

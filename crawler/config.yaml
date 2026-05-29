@@ -1,4 +1,4 @@
-# Ausgangspunkte: Domains die wir kennen und vertrauen
+# Seed domains we know and trust
 seed_domains:
   - netzpolitik.org
   - heise.de
@@ -8,26 +8,26 @@ seed_domains:
   - faz.net
   - sueddeutsche.de
 
-# RSS-Feeds — deutsche Blogs & Tech-Medien
+# RSS feeds — German blogs and tech media
 rss_feeds:
-  # Tech & Netz
+  # Tech and web
   - https://www.heise.de/rss/heise-atom.xml
   - https://www.golem.de/rss.php
   - https://netzpolitik.org/feed/
   - https://t3n.de/rss.xml
   - https://www.basicthinking.de/blog/feed/
   - https://mixed.de/feed/
-  - https://www.stadt-bremerhaven.de/feed/   # Caschys Blog
+  - https://www.stadt-bremerhaven.de/feed/   # Caschy's Blog
   - https://www.ifun.de/feed/
   - https://www.winfuture.de/rss.xml
-  - https://www.kuketz-blog.de/feed/          # Datenschutz & Sicherheit
+  - https://www.kuketz-blog.de/feed/          # Privacy and security
   - https://www.mobiflip.de/feed/
   - https://www.nextpit.de/feed/rss           # Android & Mobile
   - https://www.heise.de/tp/news-atom.xml     # Telepolis
-  - https://carta.info/feed/                  # Medien & Digitales
-  - https://irights.info/feed                 # Recht im Netz
+  - https://carta.info/feed/                  # Media and digital
+  - https://irights.info/feed                 # Digital rights
 
-  # Reisen
+  # Travel
   - https://www.travelbook.de/feed/
   - https://www.reisereporter.de/feed/
   - https://reisehappen.de/feed/
@@ -35,29 +35,38 @@ rss_feeds:
   - https://nomadblogger.de/feed/
   - https://www.reisefreiheit.org/feed/
 
+  - https://www.metacheles.de/rss/
+
 # Bluesky
 bluesky:
   enabled: true
   limit: 25
 
-# Hacker News einbeziehen?
+# Include Hacker News?
 hackernews:
   enabled: false
   min_score: 10
   top_n: 100
 
-# Spam-Filter für Kuratoren
+# Spam filter for curators
 curator_filter:
   min_followers: 10
   max_following: 5000
   min_posts: 5
 
-# Artikel-Filter
+# Article filter
 article_filter:
-  max_age_hours: 48  # Artikel älter als 48h ignorieren
-  top_n: 50          # Wie viele Artikel ins feed.json
+  max_age_hours: 48  # Ignore articles older than 48h
+  top_n: 50          # Number of articles in feed.json
 
-# Domains die nie ins Feed kommen
+# Persistent crawler memory.
+learning:
+  enabled: true
+  db_path: ../data/octobeat.sqlite3
+  min_curator_signals: 3
+  max_curator_bonus: 0.25
+
+# Domains that never enter the feed
 domain_blacklist:
   - t.co
   - bit.ly
@@ -66,32 +75,87 @@ domain_blacklist:
   - facebook.com
   - tiktok.com
 
-# Domain → Kategorie-Tags (Fallback für RSS-Artikel ohne Social-Hashtags)
-domain_tags:
-  heise.de:             [tech]
-  golem.de:             [tech]
-  netzpolitik.org:      [netzpolitik, datenschutz]
-  t3n.de:               [tech, startups]
-  basicthinking.de:     [tech]
-  mixed.de:             [tech, ki]
-  stadt-bremerhaven.de: [tech]
-  ifun.de:              [tech, apple]
-  winfuture.de:         [tech]
-  kuketz-blog.de:       [datenschutz, sicherheit]
-  mobiflip.de:          [tech]
-  nextpit.de:           [tech]
-  carta.info:           [medien]
-  irights.info:         [datenschutz, recht]
-  travelbook.de:        [reisen]
-  reisereporter.de:     [reisen]
-  reisehappen.de:       [reisen]
-  fernwehking.de:       [reisen]
-  nomadblogger.de:      [reisen]
-  reisefreiheit.org:    [reisen]
-  spiegel.de:           [politik]
-  faz.net:              [wirtschaft, politik]
-  sueddeutsche.de:      [politik]
-  taz.de:               [politik]
+# Qualified tags from title, URL slug, and existing signal tags.
+# Do not assign tags solely from the source domain.
+tag_rules:
+  ki:
+    - künstliche intelligenz
+    - kuenstliche intelligenz
+    - artificial intelligence
+    - grokipedia
+    - chatgpt
+    - openai
+    - llm
+    - ki-
+  datenschutz:
+    - datenschutz
+    - tracking
+    - überwachung
+    - ueberwachung
+    - spyware
+    - staatstrojaner
+    - privatsphäre
+    - privatsphaere
+  sicherheit:
+    - sicherheit
+    - cyber
+    - hack
+    - malware
+    - sicherheitslücke
+    - sicherheitsluecke
+    - schwachstelle
+  netzpolitik:
+    - netzpolitik
+    - digitale freiheitsrechte
+    - plattformregulierung
+    - desinformation
+    - moderation
+  politik:
+    - bundesregierung
+    - kanzler
+    - bundestag
+    - partei
+    - wahl
+    - abschiebung
+    - iran
+    - israel
+    - nahost
+  wirtschaft:
+    - börse
+    - boerse
+    - aktie
+    - markt
+    - unternehmen
+    - übernahme
+    - uebernahme
+    - temu
+    - strafe
+  arbeit:
+    - arbeitszeit
+    - arbeitsrecht
+    - gewerkschaft
+    - job
+    - beruf
+  kultur:
+    - ausstellung
+    - kunst
+    - musik
+    - tour
+    - film
+    - marke
+    - fashion
+  rechtsextremismus:
+    - rechtsextrem
+    - rechtsruck
+    - neonazi
+    - rassismus
+  reisen:
+    - reise
+    - reisen
+    - travel
+    - hotel
+    - flug
+    - outdoor
 
 # Output
 output:

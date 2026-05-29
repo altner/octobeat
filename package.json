@@ -4,6 +4,7 @@
   "description": "Social news aggregator powered by Mastodon, Bluesky & RSS",
   "scripts": {
     "dev": "astro dev",
+    "feedback": "python3 crawler/feedback_server.py",
     "build": "astro build",
     "preview": "astro preview"
   },

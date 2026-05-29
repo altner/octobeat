@@ -31,10 +31,12 @@ try {
 const articles = feedData.articles ?? [];
 
 const genTime = feedData.generated_at
-  ? new Date(feedData.generated_at).toLocaleString('de-DE', {
+  ? new Date(feedData.generated_at).toLocaleString('en-GB', {
       day: '2-digit', month: 'short', year: 'numeric',
       hour: '2-digit', minute: '2-digit',
-    }) + ' UTC'
+      timeZone: 'Europe/Berlin',
+      timeZoneName: 'short',
+    })
   : '';
 
 // ── Build sections ────────────────────────────────────────────────────────────
@@ -43,25 +45,27 @@ const MIN_SECTION = 2;
 const tagCount: Record<string, number> = {};
 articles.forEach(a => (a.tags ?? []).forEach(t => { tagCount[t] = (tagCount[t] ?? 0) + 1; }));
 
-const sectionTags = Object.entries(tagCount)
+const candidateSectionTags = Object.entries(tagCount)
   .filter(([, c]) => c >= MIN_SECTION)
   .sort((a, b) => b[1] - a[1])
   .map(([t]) => t);
 
 const sections: Record<string, Article[]> = {};
 const assigned = new Set<string>();
-sectionTags.forEach(t => { sections[t] = []; });
+candidateSectionTags.forEach(t => { sections[t] = []; });
 
 articles.forEach(a => {
-  const primary = (a.tags ?? []).find(t => sectionTags.includes(t));
+  const primary = (a.tags ?? []).find(t => candidateSectionTags.includes(t));
   if (primary) {
     sections[primary].push(a);
     assigned.add(a.id);
   }
 });
 
-sectionTags.forEach(t => sections[t].sort((a, b) => b.score - a.score));
+candidateSectionTags.forEach(t => sections[t].sort((a, b) => b.score - a.score));
+const sectionTags = candidateSectionTags.filter(t => sections[t].length > 0);
 const remaining = articles.filter(a => !assigned.has(a.id)).sort((a, b) => b.score - a.score);
+const remainingLabel = sectionTags.length > 0 ? 'More' : 'All feeds';
 
 function domain(url: string) {
   try { return new URL(url).hostname.replace('www.', ''); } catch { return ''; }
@@ -69,37 +73,28 @@ function domain(url: string) {
 ---
 
 <BaseLayout title="OctoBeat">
-  <Header currentPage="main" genTime={genTime}>
-    <input class="search-box" id="searchBox" type="text" placeholder="Suchen…" autocomplete="off" />
-  </Header>
+  <Header currentPage="main" genTime={genTime} />
 
   {sectionTags.length > 0 && (
-    <nav id="tagNav" aria-label="Kategorien">
+    <nav id="tagNav" aria-label="Categories">
       {sectionTags.map(tag => (
         <a class="tag-pill" href={`#sec-${tag}`}>
           #{tag} <span class="pill-count">{sections[tag].length}</span>
         </a>
       ))}
       {remaining.length > 0 && (
-        <a class="tag-pill" href="#sec-weitere">
-          Weitere <span class="pill-count">{remaining.length}</span>
+        <a class="tag-pill" href="#sec-more">
+          {remainingLabel} <span class="pill-count">{remaining.length}</span>
         </a>
       )}
     </nav>
   )}
 
   <main>
-    {/* Search results (hidden until user types) */}
-    <div id="searchView" hidden>
-      <p class="count-line" id="searchCount"></p>
-      <div class="articles" id="searchResults"></div>
-    </div>
-
-    {/* Pre-rendered sections */}
     <div id="sectionsView">
       {articles.length === 0 && (
         <div class="state">
-          <p>Noch keine Artikel — bitte <code>python crawler/main.py</code> ausführen.</p>
+          <p>No articles yet. Run <code>python crawler/main.py</code>.</p>
         </div>
       )}
 
@@ -107,7 +102,7 @@ function domain(url: string) {
         <section>
           <div class="section-header" id={`sec-${tag}`}>
             <span class="section-title">#{tag}</span>
-            <span class="section-count">{sections[tag].length} Artikel</span>
+            <span class="section-count">{sections[tag].length} article{sections[tag].length !== 1 ? 's' : ''}</span>
           </div>
           <div class="articles">
             {sections[tag].map(a => (
@@ -123,7 +118,7 @@ function domain(url: string) {
                 </div>
                 <div class="article-score">
                   <div class="score-value">{Math.round(a.score)}</div>
-                  <div class="score-sub">{a.signal_count} Signal{a.signal_count !== 1 ? 'e' : ''}</div>
+                  <div class="score-sub">{a.signal_count} signal{a.signal_count !== 1 ? 's' : ''}</div>
                 </div>
               </article>
             ))}
@@ -133,9 +128,9 @@ function domain(url: string) {
 
       {remaining.length > 0 && (
         <section>
-          <div class="section-header" id="sec-weitere">
-            <span class="section-title">Weitere</span>
-            <span class="section-count">{remaining.length} Artikel</span>
+          <div class="section-header" id="sec-more">
+            <span class="section-title">{remainingLabel}</span>
+            <span class="section-count">{remaining.length} article{remaining.length !== 1 ? 's' : ''}</span>
           </div>
           <div class="articles">
             {remaining.map(a => (
@@ -158,7 +153,7 @@ function domain(url: string) {
                 </div>
                 <div class="article-score">
                   <div class="score-value">{Math.round(a.score)}</div>
-                  <div class="score-sub">{a.signal_count} Signal{a.signal_count !== 1 ? 'e' : ''}</div>
+                  <div class="score-sub">{a.signal_count} signal{a.signal_count !== 1 ? 's' : ''}</div>
                 </div>
               </article>
             ))}
@@ -209,8 +204,6 @@ function domain(url: string) {
 
   /* ── Main ── */
   main { max-width: 780px; margin: 0 auto; padding: 24px 24px 60px; }
-
-  .count-line { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
 
   /* ── Sections ── */
   .section-header {
@@ -298,55 +291,8 @@ function domain(url: string) {
     const ts = el.dataset.ts;
     if (!ts) return;
     const diff = (Date.now() - new Date(ts).getTime()) / 1000;
-    if (diff < 3600)       el.textContent = `vor ${Math.round(diff / 60)} Min`;
-    else if (diff < 86400) el.textContent = `vor ${Math.round(diff / 3600)} Std`;
-    else                   el.textContent = `vor ${Math.round(diff / 86400)} Tagen`;
-  });
-
-  // ── Search ────────────────────────────────────────────────────────────────
-  const searchBox     = document.getElementById('searchBox') as HTMLInputElement;
-  const tagNav        = document.getElementById('tagNav');
-  const sectionsView  = document.getElementById('sectionsView')!;
-  const searchView    = document.getElementById('searchView')!;
-  const searchResults = document.getElementById('searchResults')!;
-  const searchCount   = document.getElementById('searchCount')!;
-
-  // Collect all pre-rendered cards for search
-  const allCards = Array.from(
-    document.querySelectorAll<HTMLElement>('#sectionsView .article-card')
-  );
-
-  function relativeTime(iso: string) {
-    const diff = (Date.now() - new Date(iso).getTime()) / 1000;
-    if (diff < 3600)       return `vor ${Math.round(diff / 60)} Min`;
-    if (diff < 86400)      return `vor ${Math.round(diff / 3600)} Std`;
-    return `vor ${Math.round(diff / 86400)} Tagen`;
-  }
-
-  searchBox?.addEventListener('input', () => {
-    const q = searchBox.value.trim().toLowerCase();
-
-    if (!q) {
-      sectionsView.hidden = false;
-      searchView.hidden   = true;
-      if (tagNav) tagNav.hidden = false;
-      return;
-    }
-
-    sectionsView.hidden = true;
-    if (tagNav) tagNav.hidden = true;
-    searchView.hidden   = false;
-
-    const matches = allCards.filter(card => {
-      const title = (card.dataset.title ?? '').toLowerCase();
-      const url   = (card.dataset.url   ?? '').toLowerCase();
-      const tags  = (card.dataset.tags  ?? '').toLowerCase();
-      return title.includes(q) || url.includes(q) || tags.includes(q);
-    });
-
-    searchCount.textContent = matches.length > 0 ? `${matches.length} Treffer` : '';
-    searchResults.innerHTML = matches.length === 0
-      ? '<p style="color:var(--muted);padding:40px 0;text-align:center">Keine Artikel gefunden.</p>'
-      : matches.map(c => c.outerHTML).join('');
+    if (diff < 3600)       el.textContent = `${Math.round(diff / 60)} min ago`;
+    else if (diff < 86400) el.textContent = `${Math.round(diff / 3600)} h ago`;
+    else                   el.textContent = `${Math.round(diff / 86400)} days ago`;
   });
 </script>

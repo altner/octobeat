@@ -1,6 +1,6 @@
 """
-curator.py — Kuratorgewicht automatisch aus öffentlichen Account-Daten ableiten.
-Kein manuelles Eingreifen nötig.
+curator.py — derive curator weight automatically from public account data.
+No manual intervention required.
 """
 
 import math
@@ -9,7 +9,7 @@ from dateutil import parser as dateparser
 
 
 def is_valid_curator(meta: dict, cfg: dict) -> bool:
-    """Spam- und Bot-Filter."""
+    """Spam and bot filter."""
     f = cfg["curator_filter"]
     if meta.get("followers", 0) < f["min_followers"]:
         return False
@@ -22,19 +22,19 @@ def is_valid_curator(meta: dict, cfg: dict) -> bool:
 
 def calc_weight(meta: dict, platform: str) -> float:
     """
-    Gewicht aus öffentlichen Account-Daten berechnen.
+    Calculate weight from public account data.
 
-    Faktoren:
-    - Follower-Anzahl (logarithmisch skaliert)
-    - Follower/Following-Verhältnis
-    - Account-Alter
-    - Plattform-Basis
+    Factors:
+    - follower count (logarithmic scale)
+    - follower/following ratio
+    - account age
+    - platform baseline
 
-    Rückgabe: float im Bereich [0.1, 3.0]
+    Returns a float in the range [0.1, 3.0].
     """
     weight = 1.0
 
-    # Follower: logarithmisch
+    # Followers: logarithmic.
     # 100 Follower  → +0.0
     # 1.000         → +0.20
     # 10.000        → +0.40
@@ -43,15 +43,15 @@ def calc_weight(meta: dict, platform: str) -> float:
     if followers > 100:
         weight += math.log10(followers / 100) * 0.2
 
-    # Follower/Following-Verhältnis
+    # Follower/following ratio.
     following = max(meta.get("following", 1), 1)
     ratio = followers / following
     if ratio > 2:
-        weight *= 1.2   # mehr Follower als Following → gutes Signal
+        weight *= 1.2   # more followers than following -> good signal
     elif ratio < 0.1:
-        weight *= 0.4   # folgt viel mehr als Follower → schwaches Signal
+        weight *= 0.4   # follows far more accounts than followers -> weak signal
 
-    # Account-Alter
+    # Account age.
     created = meta.get("created_at")
     if created:
         try:
@@ -60,18 +60,18 @@ def calc_weight(meta: dict, platform: str) -> float:
                 - dateparser.parse(created).astimezone(timezone.utc)
             ).days
             if age_days < 30:
-                weight *= 0.3   # sehr neuer Account
+                weight *= 0.3   # very new account
             elif age_days < 180:
-                weight *= 0.7   # junger Account
+                weight *= 0.7   # young account
         except Exception:
             pass
 
-    # Plattform-Basis
+    # Platform baseline.
     platform_base = {
         "mastodon":   1.0,
         "bluesky":    1.0,
-        "hackernews": 1.5,  # HN-Community = hohe redaktionelle Qualität
-        "rss":        0.8,  # RSS ist kein soziales Signal
+        "hackernews": 1.5,  # HN community = high editorial quality
+        "rss":        0.8,  # RSS is not a social signal
     }
     weight *= platform_base.get(platform, 1.0)
 

@@ -4,7 +4,8 @@ export default defineConfig({
   output: 'static',
   site: 'https://altner.github.io',
   base: '/octobeat',
+  trailingSlash: 'always',
   build: {
-    format: 'file',
+    format: 'directory',
   },
 });

@@ -5,7 +5,7 @@ interface Props {
 const { title = 'OctoBeat' } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,23 +38,6 @@ const { title = 'OctoBeat' } = Astro.props;
       min-height: 100vh;
     }
 
-    .search-box {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 14px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      outline: none;
-      width: 200px;
-      transition: border-color 0.2s;
-    }
-    .search-box:focus { border-color: var(--accent); }
-    .search-box::placeholder { color: var(--muted); }
-
-    @media (max-width: 600px) {
-      .search-box { width: 100%; }
-    }
   </style>
 </head>
 <body>

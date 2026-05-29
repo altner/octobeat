@@ -1,70 +1,297 @@
 {
-  "generated_at": "2026-05-28T20:52:38.983889+00:00",
+  "generated_at": "2026-05-28T23:59:31.007353+00:00",
   "article_count": 50,
   "articles": [
     {
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt - netzpolitik.org",
-      "score": 9346.69,
+      "score": 4038.99,
       "signal_count": 6,
       "curators": [
-        "peterru.eurosky.social",
-        "PeterRu@climatejustice.social",
         "netzpolitik_feed@chaos.social",
+        "peterru.eurosky.social",
+        "pirati.bsky.social",
         "netzpolitik.org",
-        "pirati.bsky.social"
+        "PeterRu@climatejustice.social"
       ],
       "platforms": [
-        "bluesky",
+        "rss",
         "mastodon",
-        "rss"
+        "bluesky"
       ],
-      "latest_shared": "Thu, 28 May 2026 14:24:36 +0000"
+      "latest_shared": "Thu, 28 May 2026 14:24:36 +0000",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmwvgt647k2e",
+          "shared_at": "2026-05-28T20:48:26.447Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116654149657203473",
+          "shared_at": "2026-05-28T20:44:22.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "peterru.eurosky.social",
+          "url": "https://bsky.app/profile/peterru.eurosky.social/post/3mmwd3io4tc2h",
+          "shared_at": "2026-05-28T15:19:58.986Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "PeterRu@climatejustice.social",
+          "url": "https://climatejustice.social/@PeterRu/116652871575232206",
+          "shared_at": "2026-05-28T15:19:20.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmwahelxas2h",
+          "shared_at": "2026-05-28T14:32:56Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 24,
+        "likes": 50,
+        "replies": 1,
+        "quotes": 1
+      },
+      "tags": [
+        "öffentlichkeit",
+        "1789_capital",
+        "binance",
+        "brasilien",
+        "brian_quintenz"
+      ]
     },
     {
       "id": "d6153a56195d",
       "url": "https://netzpolitik.org/2026/strafanzeige-journalist-wehrt-sich-gegen-staatstrojaner-angriff/",
       "title": "Strafanzeige: Journalist wehrt sich gegen Staatstrojaner-Angriff - netzpolitik.org",
-      "score": 2257.4,
+      "score": 2350.43,
       "signal_count": 8,
       "curators": [
-        "andre_meister@chaos.social",
         "netzpolitik_feed@chaos.social",
-        "theunicornxxl.bsky.social",
-        "netzpolitik.org",
         "Ollital@nrw.social",
+        "theunicornxxl.bsky.social",
         "andre.netzpolitik.org",
-        "pirati.bsky.social"
+        "pirati.bsky.social",
+        "andre_meister@chaos.social",
+        "netzpolitik.org"
       ],
       "platforms": [
-        "bluesky",
+        "rss",
         "mastodon",
-        "rss"
+        "bluesky"
       ],
-      "latest_shared": "Thu, 28 May 2026 06:17:11 +0000"
+      "latest_shared": "Thu, 28 May 2026 06:17:11 +0000",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "theunicornxxl.bsky.social",
+          "url": "https://bsky.app/profile/theunicornxxl.bsky.social/post/3mmwbl5nq7c2w",
+          "shared_at": "2026-05-28T14:52:56.824Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "Ollital@nrw.social",
+          "url": "https://nrw.social/@Ollital/116651857847786955",
+          "shared_at": "2026-05-28T11:01:32.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "andre.netzpolitik.org",
+          "url": "https://bsky.app/profile/andre.netzpolitik.org/post/3mmvjgrpxvk2x",
+          "shared_at": "2026-05-28T07:41:00.294Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "andre_meister@chaos.social",
+          "url": "https://chaos.social/@andre_meister/116651065320371468",
+          "shared_at": "2026-05-28T07:39:59.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116650831574884736",
+          "shared_at": "2026-05-28T06:40:32.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmvfzd46mg24",
+          "shared_at": "2026-05-28T06:39:47Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmvfrf4n7c2e",
+          "shared_at": "2026-05-28T06:35:21.209Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 170,
+        "likes": 281,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [
+        "überwachung",
+        "finfisher",
+        "gff",
+        "intellexa",
+        "predator"
+      ]
     },
     {
       "id": "f2c212c14831",
       "url": "https://taz.de/Magdeburger-Rechtsextremist-stach-zu/!6182753/",
       "title": "Magdeburger Rechtsextremist stach zu: Gut sieben Jahre Haft für Messerangriff auf Rentner | taz.de",
-      "score": 1699.54,
-      "signal_count": 3,
+      "score": 2138.83,
+      "signal_count": 4,
       "curators": [
-        "sebastianberlin030.eurosky.social",
+        "linksfilter.bsky.social",
         "litschko.bsky.social",
+        "sebastianberlin030.eurosky.social",
         "lsa-rechtsaussen.net"
       ],
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T20:04:22.709Z"
+      "latest_shared": "2026-05-28T21:56:47.465Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "linksfilter.bsky.social",
+          "url": "https://bsky.app/profile/linksfilter.bsky.social/post/3mmwzb2axuo2z",
+          "shared_at": "2026-05-28T21:56:47.465Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "sebastianberlin030.eurosky.social",
+          "url": "https://bsky.app/profile/sebastianberlin030.eurosky.social/post/3mmwsxzvmt22g",
+          "shared_at": "2026-05-28T20:04:22.709Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "litschko.bsky.social",
+          "url": "https://bsky.app/profile/litschko.bsky.social/post/3mmwo3wtz6k2m",
+          "shared_at": "2026-05-28T18:37:05.016Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "lsa-rechtsaussen.net",
+          "url": "https://bsky.app/profile/lsa-rechtsaussen.net/post/3mmwmfmbgk22m",
+          "shared_at": "2026-05-28T18:06:41.977Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 21,
+        "likes": 46,
+        "replies": 3,
+        "quotes": 1
+      },
+      "tags": [
+        "magdeburg",
+        "rechtegewalt",
+        "rechtsextremismus"
+      ]
+    },
+    {
+      "id": "8b79e13411bd",
+      "url": "https://netzpolitik.org/2026/breakpoint-das-internet-verrottet/",
+      "title": "Breakpoint: Das Internet verrottet - netzpolitik.org",
+      "score": 1361.71,
+      "signal_count": 9,
+      "curators": [
+        "netzpolitik_feed@chaos.social",
+        "doener.eurosky.social",
+        "DigitalNaiv",
+        "bkalhaus.bsky.social",
+        "zulauf@nrw.social",
+        "netzpolitik.org",
+        "zulauf.eu",
+        "teezeh@ieji.de",
+        "Mons1serrata"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "Sun, 24 May 2026 06:29:54 +0000",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "zulauf@nrw.social",
+          "url": "https://nrw.social/@zulauf/116651316018945065",
+          "shared_at": "2026-05-28T08:43:44.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "zulauf.eu",
+          "url": "https://bsky.app/profile/zulauf.eu/post/3mmvmmrjvis26",
+          "shared_at": "2026-05-28T08:38:02.648Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "DigitalNaiv",
+          "url": "https://mastodon.social/@DigitalNaiv/116645100292491006",
+          "shared_at": "2026-05-27T06:23:00.543Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "Mons1serrata",
+          "url": "https://mastodon.social/@Mons1serrata/116628636990593961",
+          "shared_at": "2026-05-24T08:36:10.490Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "bkalhaus.bsky.social",
+          "url": "https://bsky.app/profile/bkalhaus.bsky.social/post/3mmljltohgk25",
+          "shared_at": "2026-05-24T08:17:12.731Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "teezeh@ieji.de",
+          "url": "https://ieji.de/@teezeh/116628478387263495",
+          "shared_at": "2026-05-24T07:55:50.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "doener.eurosky.social",
+          "url": "https://bsky.app/profile/doener.eurosky.social/post/3mmlgyt66rs2b",
+          "shared_at": "2026-05-24T07:30:47.179Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116628354869529475",
+          "shared_at": "2026-05-24T07:24:25.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 48,
+        "likes": 56,
+        "replies": 9,
+        "quotes": 1
+      },
+      "tags": [
+        "ki",
+        "links",
+        "netzpolitik",
+        "linkrot",
+        "internetarchive"
+      ]
     },
     {
       "id": "4b9a9e47036e",
       "url": "https://taz.de/Heizungsinstallateure-gegen-Abschiebung/!6181866/",
       "title": "Heizungsinstallateure gegen Abschiebung: Fouad darf bleiben | taz.de",
-      "score": 1305.74,
+      "score": 634.36,
       "signal_count": 3,
       "curators": [
         "HHD",
@@ -72,90 +299,411 @@
         "AnitaWorks9698"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T19:00:16.567Z"
-    },
-    {
-      "id": "8b79e13411bd",
-      "url": "https://netzpolitik.org/2026/breakpoint-das-internet-verrottet/",
-      "title": "Breakpoint: Das Internet verrottet - netzpolitik.org",
-      "score": 1174.4,
-      "signal_count": 9,
-      "curators": [
-        "Mons1serrata",
-        "zulauf@nrw.social",
-        "netzpolitik_feed@chaos.social",
-        "doener.eurosky.social",
-        "zulauf.eu",
-        "netzpolitik.org",
-        "bkalhaus.bsky.social",
-        "DigitalNaiv",
-        "teezeh@ieji.de"
-      ],
-      "platforms": [
-        "bluesky",
         "mastodon",
-        "rss"
+        "bluesky"
       ],
-      "latest_shared": "Sun, 24 May 2026 06:29:54 +0000"
+      "latest_shared": "2026-05-28T19:00:16.567Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "elfengleich.de",
+          "url": "https://bsky.app/profile/elfengleich.de/post/3mmwpffwqq22f",
+          "shared_at": "2026-05-28T19:00:16.567Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "HHD",
+          "url": "https://mastodon.social/@HHD/116652644842072351",
+          "shared_at": "2026-05-28T14:21:41.231Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "AnitaWorks9698",
+          "url": "https://mastodon.social/@AnitaWorks9698/116652622869229828",
+          "shared_at": "2026-05-28T14:16:05.953Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 4,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "hamburg",
+        "abschiebung",
+        "solidarität",
+        "heizungsinstallateure",
+        "politik"
+      ]
     },
     {
       "id": "8a4300ff5bbf",
       "url": "https://netzpolitik.org/2026/unsichere-billigimporte-eu-kommission-ueberzieht-temu-mit-einer-satten-strafe/",
       "title": "Unsichere Billigimporte: EU-Kommission überzieht Temu mit einer satten Strafe - netzpolitik.org",
-      "score": 542.37,
+      "score": 605.59,
       "signal_count": 4,
       "curators": [
-        "netzpolitik_feed@chaos.social",
         "pirati.bsky.social",
+        "netzpolitik_feed@chaos.social",
         "netzpolitik.org"
       ],
       "platforms": [
-        "bluesky",
+        "rss",
         "mastodon",
-        "rss"
+        "bluesky"
       ],
-      "latest_shared": "Thu, 28 May 2026 12:20:27 +0000"
+      "latest_shared": "Thu, 28 May 2026 12:20:27 +0000",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmw224w6kb2h",
+          "shared_at": "2026-05-28T12:38:09Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmvzf56ac227",
+          "shared_at": "2026-05-28T12:26:25.056Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116652190844627118",
+          "shared_at": "2026-05-28T12:26:13.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 22,
+        "likes": 70,
+        "replies": 1,
+        "quotes": 3
+      },
+      "tags": [
+        "nutzerrechte",
+        "billigimporte",
+        "china",
+        "digital_services_act",
+        "dsa"
+      ]
     },
     {
-      "id": "e20ad4d36d22",
-      "url": "https://taz.de/Geruechte-ueber-Ersatzkanzler/!6182552/",
-      "title": "Gerüchte über Ersatzkanzler: Keine K-Frage, bitte | taz.de",
-      "score": 499.05,
-      "signal_count": 3,
+      "id": "7c6b7b4d9851",
+      "url": "https://netzpolitik.org/2026/tiere-und-kuenstliche-intelligenz-wie-die-ki-in-unser-hackfleisch-kommt/",
+      "title": "Tiere und künstliche Intelligenz: Wie die KI in unser Hackfleisch kommt - netzpolitik.org",
+      "score": 358.44,
+      "signal_count": 4,
       "curators": [
-        "jklute.bsky.social",
-        "rastadler.bsky.social",
-        "juergenklute.digitalcourage.social.ap.brid.gy"
+        "pirati.bsky.social",
+        "netzpolitik_feed@chaos.social",
+        "netzpolitik.org",
+        "teezeh@ieji.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "Wed, 27 May 2026 16:19:01 +0000",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "teezeh@ieji.de",
+          "url": "https://ieji.de/@teezeh/116650462126316112",
+          "shared_at": "2026-05-28T05:06:35.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116647517859967849",
+          "shared_at": "2026-05-27T16:37:49.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmtwppwzml2q",
+          "shared_at": "2026-05-27T16:33:19Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 18,
+        "likes": 19,
+        "replies": 3,
+        "quotes": 0
+      },
+      "tags": [
+        "technologie",
+        "anthropic",
+        "baidu",
+        "bitkom",
+        "ceti"
+      ]
+    },
+    {
+      "id": "52f01f2bc221",
+      "url": "https://taz.de/Rechte-Gewalt/!6170328/",
+      "title": "Rechte Gewalt: Erst Neonazi-Sticker verklebt, dann zugestochen | taz.de",
+      "score": 242.89,
+      "signal_count": 1,
+      "curators": [
+        "mariokroschewski.bsky.social"
       ],
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T16:08:52.176Z"
+      "latest_shared": "2026-05-28T22:48:43.904Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mariokroschewski.bsky.social",
+          "url": "https://bsky.app/profile/mariokroschewski.bsky.social/post/3mmx45wbh222l",
+          "shared_at": "2026-05-28T22:48:43.904Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "rechtsextremismus"
+      ]
     },
     {
       "id": "5d47f1a765af",
       "url": "https://taz.de/570-Forscherinnen-gegen-Rechtsruck/!6182556/",
       "title": "570 For­sche­r*in­nen gegen Rechtsruck: Hoch die interdisziplinäre Solidarität! | taz.de",
-      "score": 377.13,
+      "score": 238.26,
       "signal_count": 2,
       "curators": [
         "peterru.eurosky.social",
         "PeterRu@climatejustice.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon"
+        "mastodon",
+        "bluesky"
       ],
-      "latest_shared": "2026-05-28T17:02:55.714Z"
+      "latest_shared": "2026-05-28T17:02:55.714Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "peterru.eurosky.social",
+          "url": "https://bsky.app/profile/peterru.eurosky.social/post/3mmwitlavrc2x",
+          "shared_at": "2026-05-28T17:02:55.714Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "PeterRu@climatejustice.social",
+          "url": "https://climatejustice.social/@PeterRu/116653277372460579",
+          "shared_at": "2026-05-28T17:02:32.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 3,
+        "likes": 2,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "rechtsextremismus"
+      ]
+    },
+    {
+      "id": "d7bc829056e4",
+      "url": "https://netzpolitik.org",
+      "title": "netzpolitik.org - Medium für digitale Freiheitsrechte",
+      "score": 203.07,
+      "signal_count": 2,
+      "curators": [
+        "doob.eurosky.social",
+        "mcse"
+      ],
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T17:14:14.103Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "mcse",
+          "url": "https://mastodon.social/@mcse/116653323327824218",
+          "shared_at": "2026-05-28T17:14:14.103Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "doob.eurosky.social",
+          "url": "https://bsky.app/profile/doob.eurosky.social/post/3mmu5i6re6c2h",
+          "shared_at": "2026-05-27T18:34:22.885Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 1,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [
+        "freedogru",
+        "netzpolitik"
+      ]
+    },
+    {
+      "id": "114ab5a69aaa",
+      "url": "https://netzpolitik.org/2026/fuer-250-millionen-euro-bund-schafft-neue-abhaengigkeiten-von-it-konzernen/",
+      "title": "Für 250 Millionen Euro: Bund schafft neue Abhängigkeiten von IT-Konzernen - netzpolitik.org",
+      "score": 186.38,
+      "signal_count": 5,
+      "curators": [
+        "pirati.bsky.social",
+        "netzpolitik_feed@chaos.social",
+        "netzpolitik.org",
+        "rant-ifa-2024.bsky.social"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "Wed, 27 May 2026 06:59:53 +0000",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "rant-ifa-2024.bsky.social",
+          "url": "https://bsky.app/profile/rant-ifa-2024.bsky.social/post/3mmt3talwhc2n",
+          "shared_at": "2026-05-27T08:32:06.681Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmszm7drxc2m",
+          "shared_at": "2026-05-27T07:52:23.001Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116645451087572213",
+          "shared_at": "2026-05-27T07:52:13.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmsxpen5fu26",
+          "shared_at": "2026-05-27T07:18:21Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 120,
+        "likes": 162,
+        "replies": 29,
+        "quotes": 4
+      },
+      "tags": [
+        "technologie",
+        "agentische_ki",
+        "azure",
+        "bundesministerium_für_digitales_und_staatsmodernisierung",
+        "digitale_souveränität"
+      ]
+    },
+    {
+      "id": "4772c720d62c",
+      "url": "https://taz.de/Gesetzentwurf-zur-Cybersicherheit/!6182259/",
+      "title": "Gesetzentwurf zur Cybersicherheit: Don’t call it Hackback | taz.de",
+      "score": 185.9,
+      "signal_count": 1,
+      "curators": [
+        "ccc.de"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T21:24:18.318Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "ccc.de",
+          "url": "https://bsky.app/profile/ccc.de/post/3mmwxgz6olp26",
+          "shared_at": "2026-05-28T21:24:18.318Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 13,
+        "likes": 26,
+        "replies": 2,
+        "quotes": 0
+      },
+      "tags": [
+        "dobrindt",
+        "hackback",
+        "sicherheit"
+      ]
+    },
+    {
+      "id": "ca2abc7543dc",
+      "url": "https://heise.de/-11310370",
+      "title": "SAP: Nur gut die Hälfte der Angestellten vertraut Vorstand | heise online",
+      "score": 159.21,
+      "signal_count": 1,
+      "curators": [
+        "mattdrayton.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T21:21:23.252Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mattdrayton.bsky.social",
+          "url": "https://bsky.app/profile/mattdrayton.bsky.social/post/3mmwxbqfhsc2s",
+          "shared_at": "2026-05-28T21:21:23.252Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "e2164212645e",
+      "url": "https://heise.de/-11310165",
+      "title": "Pentagon: US-Militär über Standortdaten aus Smartphones ins Visier genommen | heise online",
+      "score": 148.84,
+      "signal_count": 1,
+      "curators": [
+        "mattdrayton.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T21:07:40.810Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mattdrayton.bsky.social",
+          "url": "https://bsky.app/profile/mattdrayton.bsky.social/post/3mmwwja2qmk2s",
+          "shared_at": "2026-05-28T21:07:40.810Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
       "id": "f96723660c41",
       "url": "https://taz.de/Wikipedia-Alternative-von-Elon-Musk-Grokipedia-infiziert-das-Internet-mit-falschen-KI-Inhalten/!6182452/",
       "title": "Wikipedia-Alternative von Elon Musk: Grokipedia infiziert das Internet mit falschen KI-Inhalten | taz.de",
-      "score": 374.82,
+      "score": 145.36,
       "signal_count": 1,
       "curators": [
         "aellalabrys.bsky.social"
@@ -163,62 +711,550 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T20:34:53.429Z"
+      "latest_shared": "2026-05-28T20:34:53.429Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "aellalabrys.bsky.social",
+          "url": "https://bsky.app/profile/aellalabrys.bsky.social/post/3mmwuolsscc2r",
+          "shared_at": "2026-05-28T20:34:53.429Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 11,
+        "likes": 23,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "ki"
+      ]
     },
     {
-      "id": "d7bc829056e4",
-      "url": "https://netzpolitik.org",
-      "title": "netzpolitik.org - Medium für digitale Freiheitsrechte",
-      "score": 355.9,
-      "signal_count": 2,
-      "curators": [
-        "doob.eurosky.social",
-        "mcse"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:14:14.103Z"
-    },
-    {
-      "id": "db7430ff1898",
-      "url": "https://taz.de/-Nachrichten-zum-Nahostkonflikt-/!6182429/",
-      "title": "+++ Nachrichten zum Nahostkonflikt +++: Israel greift in Südlibanon weiter an | taz.de",
-      "score": 293.5,
+      "id": "f64ff04ebd6d",
+      "url": "https://heise.de/-11310469",
+      "title": "Arc G3: Intel bringt Panther-Lake-Ableger für Gaming-Handhelds | heise online",
+      "score": 138.77,
       "signal_count": 1,
       "curators": [
-        "hh-news.bsky.social"
+        "mattdrayton.bsky.social"
       ],
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T20:45:29.409381+00:00"
+      "latest_shared": "2026-05-28T20:52:42.273Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mattdrayton.bsky.social",
+          "url": "https://bsky.app/profile/mattdrayton.bsky.social/post/3mmwvoh5g722p",
+          "shared_at": "2026-05-28T20:52:42.273Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
-      "id": "7c6b7b4d9851",
-      "url": "https://netzpolitik.org/2026/tiere-und-kuenstliche-intelligenz-wie-die-ki-in-unser-hackfleisch-kommt/",
-      "title": "Tiere und künstliche Intelligenz: Wie die KI in unser Hackfleisch kommt - netzpolitik.org",
-      "score": 289.23,
-      "signal_count": 4,
+      "id": "3074a23808fc",
+      "url": "https://taz.de/Report-zu-Superreichen-in-Deutschland/!6182184/",
+      "title": "Report zu Superreichen in Deutschland: Sei kein Idiot! | taz.de",
+      "score": 124.87,
+      "signal_count": 1,
       "curators": [
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
-        "teezeh@ieji.de",
-        "netzpolitik.org"
+        "m-f-k-m.bsky.social"
       ],
       "platforms": [
-        "bluesky",
-        "mastodon",
-        "rss"
+        "bluesky"
       ],
-      "latest_shared": "Wed, 27 May 2026 16:19:01 +0000"
+      "latest_shared": "2026-05-28T20:57:27.317Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "m-f-k-m.bsky.social",
+          "url": "https://bsky.app/profile/m-f-k-m.bsky.social/post/3mmwvwwy7jk2t",
+          "shared_at": "2026-05-28T20:57:27.317Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "e269e0b0a441",
+      "url": "https://taz.de/Reform-der-Netzentgelte/!6182435/",
+      "title": "Reform der Netzentgelte: Haushalte mit Solaranlage zahlen mehr | taz.de",
+      "score": 123.38,
+      "signal_count": 1,
+      "curators": [
+        "mostrosolo.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T20:54:51.623Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mostrosolo.bsky.social",
+          "url": "https://bsky.app/profile/mostrosolo.bsky.social/post/3mmwvscivjs2b",
+          "shared_at": "2026-05-28T20:54:51.623Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "fa3946b488d5",
+      "url": "https://taz.de/Ausstellung-ueber-Rembrandt-als-Marke/!6182255/?amp%3Butm_medium=activitypub",
+      "title": "Ausstellung über Rembrandt als Marke: Eine Art kühner Andy-Warhol-Vorgriff | taz.de",
+      "score": 122.92,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:58:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-1EvyoHWOREmVAYjFrORXtw%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:58:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "kultur"
+      ]
+    },
+    {
+      "id": "3da9ea28351b",
+      "url": "https://taz.de/Fashion-Statements-bei-der-French-Open-Osaka-serviert/!6182313/?amp%3Butm_medium=activitypub",
+      "title": "Fashion Statements bei der French Open: Osaka serviert | taz.de",
+      "score": 122.92,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:58:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-CgG6c7WeQ9Kx1FzyX1rvXA%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:58:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "kultur"
+      ]
+    },
+    {
+      "id": "fbca38a9030e",
+      "url": "https://taz.de/Wikipedia-Alternative-von-Elon-Musk-Grokipedia-infiziert-das-Internet-mit-falschen-KI-Inhalten/!6182452/?amp%3Butm_medium=activitypub",
+      "title": "Wikipedia-Alternative von Elon Musk: Grokipedia infiziert das Internet mit falschen KI-Inhalten | taz.de",
+      "score": 122.56,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:57:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-1_SXLEfxQCisfR6xyUJbqg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:57:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "ki"
+      ]
+    },
+    {
+      "id": "941afdf62ab8",
+      "url": "https://taz.de/Outdoor-Marke-Patagonia-verklagt-Drag-Queen/!6182549/?amp%3Butm_medium=activitypub",
+      "title": "Outdoor-Marke Patagonia verklagt Drag Queen | taz.de",
+      "score": 122.2,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:56:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-4IdAjR7sSYCWCE4c5VbHcw%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:56:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "kultur",
+        "reisen"
+      ]
+    },
+    {
+      "id": "f9cbe1b8017c",
+      "url": "https://taz.de/Krieg-trotz-Waffenruhe/!6182467/?amp%3Butm_medium=activitypub",
+      "title": "Krieg trotz Waffenruhe: Trump fürchtet sich und Iran triumphiert – noch | taz.de",
+      "score": 119.43,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:48:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-Fhze33BZSEWlm3CDAtx6Ig%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:48:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "politik"
+      ]
+    },
+    {
+      "id": "845a7743ebd6",
+      "url": "http://heise.de/-11309493",
+      "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
+      "score": 118.08,
+      "signal_count": 2,
+      "curators": [
+        "frankstohl",
+        "frankstohl.mastodon.social.ap.brid.gy"
+      ],
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-28T11:50:04.366Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "frankstohl",
+          "url": "https://mastodon.social/@frankstohl/116652048667756723",
+          "shared_at": "2026-05-28T11:50:04.366Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "frankstohl.mastodon.social.ap.brid.gy",
+          "url": "https://bsky.app/profile/frankstohl.mastodon.social.ap.brid.gy/post/3mmvxemkj4fj2",
+          "shared_at": "2026-05-28T11:50:04.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 3,
+        "likes": 3,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [
+        "ki"
+      ]
+    },
+    {
+      "id": "26f98784dfd1",
+      "url": "https://taz.de/Moegliches-neues-Arbeitszeitgesetz-Die-wichtigsten-Fragen-und-Antworten/!6182544/?amp%3Butm_medium=activitypub",
+      "title": "Mögliches neues Arbeitszeitgesetz: Die wichtigsten Fragen und Antworten | taz.de",
+      "score": 112.65,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:51:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-PmvD6__HRCKEi0CMW2K6fw%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:51:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "arbeit"
+      ]
+    },
+    {
+      "id": "2e0c4fec2640",
+      "url": "https://taz.de/Magdeburger-Rechtsextremist-stach-zu/!6182753/?amp%3Butm_medium=activitypub",
+      "title": "Magdeburger Rechtsextremist stach zu: Gut sieben Jahre Haft für Messerangriff auf Rentner | taz.de",
+      "score": 110.75,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:57:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-pZkTvrUmQgmORc_kYX38SA%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:57:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 3,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "rechtsextremismus"
+      ]
+    },
+    {
+      "id": "fd7933b6c535",
+      "url": "https://taz.de/Der-Staatsbewohner-von-Andrej-Platonow/!6177646/?amp%3Butm_medium=activitypub",
+      "title": "„Der Staatsbewohner“ von Andrej Platonow: Wir alle kochen im selben Klassenkessel | taz.de",
+      "score": 100.37,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:43:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-WxBCe7b3R1CzgHP6BTC__Q%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:43:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "b132a3ff0cc8",
+      "url": "https://taz.de/Baustelle-in-Berlin-Charlottenburg/!6181874/?amp%3Butm_medium=activitypub",
+      "title": "Baustelle in Berlin-Charlottenburg: Lauf Jonas, lauf | taz.de",
+      "score": 98.14,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:34:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-LLHBlz6cQQ2Z30enu3Im6g%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:34:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "c0368f774e25",
+      "url": "https://taz.de/Popkultur-im-Wahlkampf/!6182137/?amp%3Butm_medium=activitypub",
+      "title": "Popkultur im Wahlkampf: Pop oder Flop | taz.de",
+      "score": 98.03,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T17:00:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/berlin-k17dspc2z/-/a-eEWN6eWmSMC6tiwmDIn-Bg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T17:00:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "politik"
+      ]
+    },
+    {
+      "id": "6c87922d2e86",
+      "url": "https://taz.de/Russland-und-Armenien/!6182534/?amp%3Butm_medium=activitypub",
+      "title": "Russland und Armenien: Säbelrasseln im Südkaukasus | taz.de",
+      "score": 94.61,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:19:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-mLCE2COSTnO_erKgCaJYlA%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:19:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "fda9c5071aac",
+      "url": "https://taz.de/Streit-in-der-CSU/!6182605/?amp%3Butm_medium=activitypub",
+      "title": "Streit in der CSU: Webers missglücktes Pfingstwunder | taz.de",
+      "score": 93.93,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:16:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-zWUazdyISXmGLncuo48yTQ%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:16:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "9825f44520d6",
+      "url": "https://taz.de/Judenhass-in-Schleswig-Holstein/!6182606/?amp%3Butm_medium=activitypub",
+      "title": "Judenhass in Schleswig-Holstein: Antisemitismus bis zur Ermüdung | taz.de",
+      "score": 93.87,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:00:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/nord-dcpflp4pz/-/a-SqupDLG1QM-PAZ6V8dychg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:00:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 2,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
       "id": "9645654b5ca9",
       "url": "https://taz.de/Jubilaeumstour-der-Undertones/!6176070/",
       "title": "Jubiläumstour der Undertones: Sie geben Vollgas auf der Memory Lane | taz.de",
-      "score": 238.25,
+      "score": 91.47,
       "signal_count": 1,
       "curators": [
         "americanarena.bsky.social"
@@ -226,13 +1262,59 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T19:42:14.445Z"
+      "latest_shared": "2026-05-28T19:42:14.445Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "americanarena.bsky.social",
+          "url": "https://bsky.app/profile/americanarena.bsky.social/post/3mmwrqh6ayc2g",
+          "shared_at": "2026-05-28T19:42:14.445Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "kultur"
+      ]
+    },
+    {
+      "id": "3c29deb578c5",
+      "url": "https://taz.de/Oeffnungszeiten-am-Sonntag/!6182643/?amp%3Butm_medium=activitypub",
+      "title": "Öffnungszeiten am Sonntag: Spätibesitzer plant Volksbegehren | taz.de",
+      "score": 90.44,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T16:00:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/berlin-k17dspc2z/-/a-GJBFCLGJSfu9NBWCOBUaXg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T16:00:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
       "id": "176f2f73114a",
       "url": "https://taz.de/Essay-ueber-die-Linke-und-die-Shoah/!6049770/",
       "title": "Essay über die Linke und die Shoah: Neue Verdammte gesucht | taz.de",
-      "score": 193.89,
+      "score": 90.43,
       "signal_count": 1,
       "curators": [
         "stillapossibility.bsky.social"
@@ -240,13 +1322,28 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T19:12:03.206Z"
+      "latest_shared": "2026-05-28T19:12:03.206Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "stillapossibility.bsky.social",
+          "url": "https://bsky.app/profile/stillapossibility.bsky.social/post/3mmwq2htlwc2l",
+          "shared_at": "2026-05-28T19:12:03.206Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 7,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
-      "id": "fa3946b488d5",
-      "url": "https://taz.de/Ausstellung-ueber-Rembrandt-als-Marke/!6182255/?amp%3Butm_medium=activitypub",
-      "title": "Ausstellung über Rembrandt als Marke: Eine Art kühner Andy-Warhol-Vorgriff | taz.de",
-      "score": 186.18,
+      "id": "7dab3c31ba83",
+      "url": "https://taz.de/Davide-Piganzoli-beim-Giro-dItalia/!6182492/?amp%3Butm_medium=activitypub",
+      "title": "Davide Piganzoli beim Giro d&#39;Italia: Erlaubnis zur Attacke | taz.de",
+      "score": 85.22,
       "signal_count": 1,
       "curators": [
         "taz_de@flipboard.com"
@@ -254,13 +1351,28 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-28T17:58:00.000Z"
+      "latest_shared": "2026-05-28T15:34:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/sport-23bu6vm5z/-/a-WUq9ZoZmRHKVsYWq_282pQ%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:34:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
-      "id": "3da9ea28351b",
-      "url": "https://taz.de/Fashion-Statements-bei-der-French-Open-Osaka-serviert/!6182313/?amp%3Butm_medium=activitypub",
-      "title": "Fashion Statements bei der French Open: Osaka serviert | taz.de",
-      "score": 186.18,
+      "id": "e4a8d5707465",
+      "url": "https://taz.de/570-Forscherinnen-gegen-Rechtsruck/!6182556/?amp%3Butm_medium=activitypub",
+      "title": "570 For­sche­r*in­nen gegen Rechtsruck: Hoch die interdisziplinäre Solidarität! | taz.de",
+      "score": 84.65,
       "signal_count": 1,
       "curators": [
         "taz_de@flipboard.com"
@@ -268,83 +1380,90 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-28T17:58:00.000Z"
+      "latest_shared": "2026-05-28T15:31:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-V6Euo7hmTAeM-uQe3GDTYg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:31:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "rechtsextremismus"
+      ]
     },
     {
-      "id": "fbca38a9030e",
-      "url": "https://taz.de/Wikipedia-Alternative-von-Elon-Musk-Grokipedia-infiziert-das-Internet-mit-falschen-KI-Inhalten/!6182452/?amp%3Butm_medium=activitypub",
-      "title": "Wikipedia-Alternative von Elon Musk: Grokipedia infiziert das Internet mit falschen KI-Inhalten | taz.de",
-      "score": 185.3,
+      "id": "db7430ff1898",
+      "url": "https://taz.de/-Nachrichten-zum-Nahostkonflikt-/!6182429/",
+      "title": "+++ Nachrichten zum Nahostkonflikt +++: Israel greift in Südlibanon weiter an | taz.de",
+      "score": 82.78,
       "signal_count": 1,
       "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:57:00.000Z"
-    },
-    {
-      "id": "941afdf62ab8",
-      "url": "https://taz.de/Outdoor-Marke-Patagonia-verklagt-Drag-Queen/!6182549/?amp%3Butm_medium=activitypub",
-      "title": "Outdoor-Marke Patagonia verklagt Drag Queen | taz.de",
-      "score": 184.42,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:56:00.000Z"
-    },
-    {
-      "id": "26f98784dfd1",
-      "url": "https://taz.de/Moegliches-neues-Arbeitszeitgesetz-Die-wichtigsten-Fragen-und-Antworten/!6182544/?amp%3Butm_medium=activitypub",
-      "title": "Mögliches neues Arbeitszeitgesetz: Die wichtigsten Fragen und Antworten | taz.de",
-      "score": 180.16,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:51:00.000Z"
-    },
-    {
-      "id": "f9cbe1b8017c",
-      "url": "https://taz.de/Krieg-trotz-Waffenruhe/!6182467/?amp%3Butm_medium=activitypub",
-      "title": "Krieg trotz Waffenruhe: Trump fürchtet sich und Iran triumphiert – noch | taz.de",
-      "score": 177.68,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:48:00.000Z"
-    },
-    {
-      "id": "083360db4718",
-      "url": "https://taz.de/Brandenburg/!5141913/",
-      "title": "Brandenburg: Neonazis am Bahnhof blockiert | taz.de",
-      "score": 162.33,
-      "signal_count": 1,
-      "curators": [
-        "kellerkinderob.bsky.social"
+        "hh-news.bsky.social"
       ],
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T18:42:12.116Z"
+      "latest_shared": "2026-05-28T20:45:29.409381+00:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "hh-news.bsky.social",
+          "url": "https://bsky.app/profile/hh-news.bsky.social/post/3mmwvbkjpob2s",
+          "shared_at": "2026-05-28T20:45:29.409381+00:00"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "politik"
+      ]
+    },
+    {
+      "id": "600a760258ca",
+      "url": "https://taz.de/Umgang-mit-Kritik/!6182596/?amp%3Butm_medium=activitypub",
+      "title": "Umgang mit Kritik: Wird die Meinungsfreiheit zu sehr eingeschränkt? | taz.de",
+      "score": 82.26,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T15:48:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/nahost-konflikt-pr13k99jz/-/a-5Tv1recHQZarNAMR9_saVw%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:48:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
       "id": "63211d92526f",
       "url": "https://taz.de/Union-Busting-bei-Thoughtworks/!6182289/",
       "title": "Union Busting bei Thoughtworks: Frontalangriff auf den Betriebsrat | taz.de",
-      "score": 160.42,
+      "score": 80.65,
       "signal_count": 1,
       "curators": [
         "glamcode.openbiblio.social.ap.brid.gy"
@@ -352,13 +1471,33 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T18:40:05.000Z"
+      "latest_shared": "2026-05-28T18:40:05.000Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "glamcode.openbiblio.social.ap.brid.gy",
+          "url": "https://bsky.app/profile/glamcode.openbiblio.social.ap.brid.gy/post/3mmwobsntmtt2",
+          "shared_at": "2026-05-28T18:40:05.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 2,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "union",
+        "unionbusting",
+        "berlin",
+        "gewerkschaft"
+      ]
     },
     {
       "id": "607c428e8008",
       "url": "https://taz.de/Union-Busting-bei-Thoughtworks/!6182289/@thoughtworks",
       "title": "404 Not Found",
-      "score": 151.6,
+      "score": 79.5,
       "signal_count": 1,
       "curators": [
         "glamcode@openbiblio.social"
@@ -366,13 +1505,185 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-28T18:40:05.000Z"
+      "latest_shared": "2026-05-28T18:40:05.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "glamcode@openbiblio.social",
+          "url": "https://openbiblio.social/@glamcode/116653660925976609",
+          "shared_at": "2026-05-28T18:40:05.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 3,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "union",
+        "unionbusting",
+        "berlin",
+        "gewerkschaft",
+        "thoughtworks"
+      ]
+    },
+    {
+      "id": "313d785da93e",
+      "url": "https://taz.de/Menschenrechte-in-Iran/!6182704/?amp%3Butm_medium=activitypub",
+      "title": "Menschenrechte in Iran: Mehr als 6.000 Festnahmen seit Kriegsbeginn | taz.de",
+      "score": 79.47,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T15:02:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-4P8XnSDETLOoskfm5xsu_Q%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:02:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "politik"
+      ]
+    },
+    {
+      "id": "c100dc9caf39",
+      "url": "https://taz.de/Reform-der-Netzentgelte/!6182435/?amp%3Butm_medium=activitypub",
+      "title": "Reform der Netzentgelte: Haushalte mit Solaranlage zahlen mehr | taz.de",
+      "score": 79.34,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T15:32:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/klimawandel-u390c8l6z/-/a-5klu6lbtRwaw_MtEbwlF-A%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:32:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "77ff2ba4647c",
+      "url": "https://taz.de/Arbeitsrecht-fuer-Lehrerinnen/!6182604/?amp%3Butm_medium=activitypub",
+      "title": "Arbeitsrecht für Leh­re­r*in­nen: GEW kritisiert Gesetzesnovelle | taz.de",
+      "score": 79.13,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T15:00:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/berlin-k17dspc2z/-/a--9ezP3i2R8-KT1cFU-iAuQ%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:00:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "arbeit"
+      ]
+    },
+    {
+      "id": "34a29ffb6bad",
+      "url": "https://taz.de/Lobbytreffen-der-Bundesregierung/!6182464/?amp%3Butm_medium=activitypub",
+      "title": "Lobbytreffen der Bundesregierung: Vonovia willkommen als Gast | taz.de",
+      "score": 78.99,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T15:30:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/politik-7q8h8pgaz/-/a-YdK0awrnR4CtbZDF_R0vDA%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T15:30:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "politik"
+      ]
+    },
+    {
+      "id": "7c84350c367c",
+      "url": "https://taz.de/Plan-fuer-Restitutionsgesetz/!6182050/?amp%3Butm_medium=activitypub",
+      "title": "Plan für Restitutionsgesetz: Steht alles still, wird es schwer mit der Gerechtigkeit | taz.de",
+      "score": 77.32,
+      "signal_count": 1,
+      "curators": [
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T14:49:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/gesellschaft-und-kultur-fq223i0dz/-/a-ZU2NCktKRKmcVkB1QZRj1Q%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T14:49:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     },
     {
       "id": "9b038103bb9a",
       "url": "https://taz.de/Klage-gegen-Ruecknahme-der-Einbuergerung/!6181676/",
       "title": "Klage gegen Rücknahme der Einbürgerung: Nur zwei Monate Deutscher | taz.de",
-      "score": 151.23,
+      "score": 76.35,
       "signal_count": 1,
       "curators": [
         "stuttgartandi.bsky.social"
@@ -380,99 +1691,90 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T18:29:12.626Z"
+      "latest_shared": "2026-05-28T18:29:12.626Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "stuttgartandi.bsky.social",
+          "url": "https://bsky.app/profile/stuttgartandi.bsky.social/post/3mmwnnudzns2j",
+          "shared_at": "2026-05-28T18:29:12.626Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "istandwithisrael"
+      ]
     },
     {
-      "id": "6cc3159bc2ff",
-      "url": "https://taz.de/U-Bahn-Station-Lukjaniwka-in-Kyjiw/!6181976/",
-      "title": "U-Bahn-Station Lukjaniwka in Kyjiw: Sechs Stockwerke voller verkohlter Leere | taz.de",
-      "score": 144.96,
+      "id": "11967daddd61",
+      "url": "https://taz.de/Bestsellerautor-ueber-Einzeller/!6180122/?amp%3Butm_medium=activitypub",
+      "title": "Bestsellerautor über Einzeller: „Bakterien können hochintelligent sein“ | taz.de",
+      "score": 75.17,
       "signal_count": 1,
       "curators": [
-        "darbales.bsky.social"
+        "taz_de@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-28T14:30:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "taz_de@flipboard.com",
+          "url": "https://flipboard.com/@taz_de/nord-dcpflp4pz/-/a-PEXH2fcETUiOgGqWBbtfyg%3Aa%3A2741305549-%2F0",
+          "shared_at": "2026-05-28T14:30:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "083360db4718",
+      "url": "https://taz.de/Brandenburg/!5141913/",
+      "title": "Brandenburg: Neonazis am Bahnhof blockiert | taz.de",
+      "score": 74.38,
+      "signal_count": 1,
+      "curators": [
+        "kellerkinderob.bsky.social"
       ],
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T18:21:07.534Z"
-    },
-    {
-      "id": "c0368f774e25",
-      "url": "https://taz.de/Popkultur-im-Wahlkampf/!6182137/?amp%3Butm_medium=activitypub",
-      "title": "Popkultur im Wahlkampf: Pop oder Flop | taz.de",
-      "score": 144.77,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
+      "latest_shared": "2026-05-28T18:42:12.116Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "kellerkinderob.bsky.social",
+          "url": "https://bsky.app/profile/kellerkinderob.bsky.social/post/3mmwof3puls2o",
+          "shared_at": "2026-05-28T18:42:12.116Z"
+        }
       ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T17:00:00.000Z"
-    },
-    {
-      "id": "845a7743ebd6",
-      "url": "http://heise.de/-11309493",
-      "title": "KI-Code führt vermehrt zu Produktionsausfällen | heise online",
-      "score": 143.42,
-      "signal_count": 2,
-      "curators": [
-        "frankstohl",
-        "frankstohl.mastodon.social.ap.brid.gy"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T11:50:04.366Z"
-    },
-    {
-      "id": "2e0c4fec2640",
-      "url": "https://taz.de/Magdeburger-Rechtsextremist-stach-zu/!6182753/?amp%3Butm_medium=activitypub",
-      "title": "Magdeburger Rechtsextremist stach zu: Gut sieben Jahre Haft für Messerangriff auf Rentner | taz.de",
-      "score": 143.06,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:57:00.000Z"
-    },
-    {
-      "id": "6e1effd2cd7a",
-      "url": "https://taz.de/Schwerer-Vorwurf-gegen-Fondation-Beyeler/!6181599/",
-      "title": "Schwerer Vorwurf gegen Fondation Beyeler: Stellt das Museum NS-Raubkunst aus? | taz.de",
-      "score": 135.95,
-      "signal_count": 1,
-      "curators": [
-        "provenance-updates.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T18:08:22.655Z"
-    },
-    {
-      "id": "fd7933b6c535",
-      "url": "https://taz.de/Der-Staatsbewohner-von-Andrej-Platonow/!6177646/?amp%3Butm_medium=activitypub",
-      "title": "„Der Staatsbewohner“ von Andrej Platonow: Wir alle kochen im selben Klassenkessel | taz.de",
-      "score": 135.53,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:43:00.000Z"
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "rechtsextremismus"
+      ]
     },
     {
       "id": "9f5923fbe87c",
       "url": "https://heise.de/-11306715",
       "title": "Pro &amp; Contra: Hat der Mac Pro ein Comeback verdient? | heise online",
-      "score": 134.59,
+      "score": 72.01,
       "signal_count": 1,
       "curators": [
         "macandi.bsky.social"
@@ -480,278 +1782,22 @@
       "platforms": [
         "bluesky"
       ],
-      "latest_shared": "2026-05-28T18:06:20.032Z"
-    },
-    {
-      "id": "b132a3ff0cc8",
-      "url": "https://taz.de/Baustelle-in-Berlin-Charlottenburg/!6181874/?amp%3Butm_medium=activitypub",
-      "title": "Baustelle in Berlin-Charlottenburg: Lauf Jonas, lauf | taz.de",
-      "score": 131.05,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
+      "latest_shared": "2026-05-28T18:06:20.032Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "macandi.bsky.social",
+          "url": "https://bsky.app/profile/macandi.bsky.social/post/3mmwmexpdbc2h",
+          "shared_at": "2026-05-28T18:06:20.032Z"
+        }
       ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:34:00.000Z"
-    },
-    {
-      "id": "6c87922d2e86",
-      "url": "https://taz.de/Russland-und-Armenien/!6182534/?amp%3Butm_medium=activitypub",
-      "title": "Russland und Armenien: Säbelrasseln im Südkaukasus | taz.de",
-      "score": 124.11,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:19:00.000Z"
-    },
-    {
-      "id": "fda9c5071aac",
-      "url": "https://taz.de/Streit-in-der-CSU/!6182605/?amp%3Butm_medium=activitypub",
-      "title": "Streit in der CSU: Webers missglücktes Pfingstwunder | taz.de",
-      "score": 122.8,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:16:00.000Z"
-    },
-    {
-      "id": "114ab5a69aaa",
-      "url": "https://netzpolitik.org/2026/fuer-250-millionen-euro-bund-schafft-neue-abhaengigkeiten-von-it-konzernen/",
-      "title": "Für 250 Millionen Euro: Bund schafft neue Abhängigkeiten von IT-Konzernen - netzpolitik.org",
-      "score": 121.16,
-      "signal_count": 5,
-      "curators": [
-        "rant-ifa-2024.bsky.social",
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
-        "netzpolitik.org"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "Wed, 27 May 2026 06:59:53 +0000"
-    },
-    {
-      "id": "9825f44520d6",
-      "url": "https://taz.de/Judenhass-in-Schleswig-Holstein/!6182606/?amp%3Butm_medium=activitypub",
-      "title": "Judenhass in Schleswig-Holstein: Antisemitismus bis zur Ermüdung | taz.de",
-      "score": 116.18,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:00:00.000Z"
-    },
-    {
-      "id": "3c29deb578c5",
-      "url": "https://taz.de/Oeffnungszeiten-am-Sonntag/!6182643/?amp%3Butm_medium=activitypub",
-      "title": "Öffnungszeiten am Sonntag: Spätibesitzer plant Volksbegehren | taz.de",
-      "score": 116.18,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T16:00:00.000Z"
-    },
-    {
-      "id": "c5d25cb6d2e1",
-      "url": "https://taz.de/Rechtsradikale-Bewegung/!6181437/",
-      "title": "Rechtsradikale Bewegung: Hollands Hassbürgertum | taz.de",
-      "score": 113.54,
-      "signal_count": 1,
-      "curators": [
-        "rebellin161.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T17:29:21.229Z"
-    },
-    {
-      "id": "600a760258ca",
-      "url": "https://taz.de/Umgang-mit-Kritik/!6182596/?amp%3Butm_medium=activitypub",
-      "title": "Umgang mit Kritik: Wird die Meinungsfreiheit zu sehr eingeschränkt? | taz.de",
-      "score": 111.61,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:48:00.000Z"
-    },
-    {
-      "id": "7dab3c31ba83",
-      "url": "https://taz.de/Davide-Piganzoli-beim-Giro-dItalia/!6182492/?amp%3Butm_medium=activitypub",
-      "title": "Davide Piganzoli beim Giro d&#39;Italia: Erlaubnis zur Attacke | taz.de",
-      "score": 106.66,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:34:00.000Z"
-    },
-    {
-      "id": "c100dc9caf39",
-      "url": "https://taz.de/Reform-der-Netzentgelte/!6182435/?amp%3Butm_medium=activitypub",
-      "title": "Reform der Netzentgelte: Haushalte mit Solaranlage zahlen mehr | taz.de",
-      "score": 105.98,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:32:00.000Z"
-    },
-    {
-      "id": "e4a8d5707465",
-      "url": "https://taz.de/570-Forscherinnen-gegen-Rechtsruck/!6182556/?amp%3Butm_medium=activitypub",
-      "title": "570 For­sche­r*in­nen gegen Rechtsruck: Hoch die interdisziplinäre Solidarität! | taz.de",
-      "score": 105.64,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:31:00.000Z"
-    },
-    {
-      "id": "34a29ffb6bad",
-      "url": "https://taz.de/Lobbytreffen-der-Bundesregierung/!6182464/?amp%3Butm_medium=activitypub",
-      "title": "Lobbytreffen der Bundesregierung: Vonovia willkommen als Gast | taz.de",
-      "score": 105.31,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:30:00.000Z"
-    },
-    {
-      "id": "1821376b2a9a",
-      "url": "https://heise.de/-11310434",
-      "title": "Starship erhält nach Zwischenfall Startverbot von der FAA | heise online",
-      "score": 99.11,
-      "signal_count": 1,
-      "curators": [
-        "mattdrayton.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T16:56:23.445Z"
-    },
-    {
-      "id": "e76846e23472",
-      "url": "https://heise.de/-11310149",
-      "title": "Bundesregierung legt Entwurf für Kritis-Verordnung vor | heise online",
-      "score": 98.15,
-      "signal_count": 1,
-      "curators": [
-        "mattdrayton.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T16:53:54.551Z"
-    },
-    {
-      "id": "b9e8eef0d646",
-      "url": "https://heise.de/-11310019",
-      "title": "EU verhängt Rekordstrafe gegen Temu wegen mangelhafter Risikobewertung | heise online",
-      "score": 97.55,
-      "signal_count": 1,
-      "curators": [
-        "mattdrayton.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T16:52:20.083Z"
-    },
-    {
-      "id": "313d785da93e",
-      "url": "https://taz.de/Menschenrechte-in-Iran/!6182704/?amp%3Butm_medium=activitypub",
-      "title": "Menschenrechte in Iran: Mehr als 6.000 Festnahmen seit Kriegsbeginn | taz.de",
-      "score": 96.64,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:02:00.000Z"
-    },
-    {
-      "id": "77ff2ba4647c",
-      "url": "https://taz.de/Arbeitsrecht-fuer-Lehrerinnen/!6182604/?amp%3Butm_medium=activitypub",
-      "title": "Arbeitsrecht für Leh­re­r*in­nen: GEW kritisiert Gesetzesnovelle | taz.de",
-      "score": 96.07,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T15:00:00.000Z"
-    },
-    {
-      "id": "26c4ec444675",
-      "url": "https://heise.de/-11309941",
-      "title": "Übernahme von MediaMarktSaturn durch JD.com: EU-Kommission leitet Prüfung ein | heise online",
-      "score": 95.93,
-      "signal_count": 1,
-      "curators": [
-        "mattdrayton.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-28T16:47:58.776Z"
-    },
-    {
-      "id": "7c84350c367c",
-      "url": "https://taz.de/Plan-fuer-Restitutionsgesetz/!6182050/?amp%3Butm_medium=activitypub",
-      "title": "Plan für Restitutionsgesetz: Steht alles still, wird es schwer mit der Gerechtigkeit | taz.de",
-      "score": 93.03,
-      "signal_count": 1,
-      "curators": [
-        "taz_de@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-28T14:49:00.000Z"
+      "engagement": {
+        "boosts": 1,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": []
     }
   ]
 }
