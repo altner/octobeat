@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-31T18:28:13.212653+00:00",
-  "article_count": 29,
+  "generated_at": "2026-05-31T18:37:19.242768+00:00",
+  "article_count": 34,
   "top_curators": {
     "mastodon": [
       {
         "handle": "uberblogr@troet.uberblogr.de",
-        "articles": 22
+        "articles": 28
       },
       {
         "handle": "netzpolitik_feed@chaos.social",
@@ -84,20 +84,20 @@
       "id": "5b3bfe5938e0",
       "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
       "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
-      "score": 18516.9,
+      "score": 17167.42,
       "signal_count": 7,
       "curators": [
+        "netzpolitik.org",
         "karlbaer@gruene.social",
-        "modlogan.bsky.social",
+        "pirati.bsky.social",
         "netzpolitik_feed@chaos.social",
         "fxneumann.bonn.social.ap.brid.gy",
-        "pirati.bsky.social",
-        "netzpolitik.org"
+        "modlogan.bsky.social"
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-31T18:17:10.836Z",
       "syndications": [
@@ -213,10 +213,50 @@
       }
     },
     {
+      "id": "8d6e7f48a553",
+      "url": "https://status.z428.eu/%E2%98%81%EF%B8%8F-stadtwolken-stadtstra%C3%9Fen-zusammenk%C3%BCnfte-auf-dem-b%C3%BCrgers",
+      "title": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und weit offene... | z428",
+      "score": 4257.35,
+      "signal_count": 3,
+      "curators": [
+        "z428.eu",
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "bluesky",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T19:40:03+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mn64cqblnu2x",
+          "shared_at": "2026-05-31T19:40:03+02:00"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e37-569a-c6e9-b137-c3fc42c4ec21.json",
+          "shared_at": "2026-05-31T18:30:15.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 9,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
       "id": "e93ecd4cbf0f",
       "url": "https://moviescape.blog/2026/05/31/projekt-52-2026-22-sehnsucht/",
       "title": "Projekt 52 – 2026 #22: Sehnsucht | Moviescape",
-      "score": 2388.63,
+      "score": 2226.68,
       "signal_count": 3,
       "curators": [
         "moviescape.bsky.social",
@@ -225,8 +265,8 @@
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:31:19.000Z",
       "syndications": [
@@ -305,7 +345,7 @@
       "id": "09521959711b",
       "url": "https://moviescape.blog/2026/05/31/run-fatboy-run-2336/",
       "title": "Run, Fatboy, Run (2336) | Moviescape",
-      "score": 2377.64,
+      "score": 2216.94,
       "signal_count": 3,
       "curators": [
         "moviescape.bsky.social",
@@ -314,8 +354,8 @@
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:30:44.000Z",
       "syndications": [
@@ -354,7 +394,7 @@
       "id": "e50d53dbf76f",
       "url": "https://daoweg.wordpress.com/2026/05/31/in-eigener-sache-2/",
       "title": "In eigener Sache | Blütensthaub",
-      "score": 2069.07,
+      "score": 1927.74,
       "signal_count": 3,
       "curators": [
         "Elkeringhausen",
@@ -393,7 +433,7 @@
       "id": "aaddde795e2e",
       "url": "https://status.z428.eu/these-colours-in-the-afternoon-shadows-%F0%9F%93%B7-lost-in-moments%C2%A0",
       "title": "These colours in the afternoon shadows. 📷 lost-in-moments  #outerworld #lost_in_moments... | z428",
-      "score": 1902.03,
+      "score": 1808.75,
       "signal_count": 3,
       "curators": [
         "z428.eu",
@@ -402,8 +442,8 @@
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-31T18:20:02+02:00",
       "syndications": [
@@ -422,7 +462,7 @@
       ],
       "engagement": {
         "boosts": 1,
-        "likes": 20,
+        "likes": 21,
         "replies": 1,
         "quotes": 0
       },
@@ -472,10 +512,216 @@
       ]
     },
     {
+      "id": "158ca17a9c1a",
+      "url": "https://fischr.org/regenpause/",
+      "title": "Regenpause | René Fischer",
+      "score": 1808.66,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T18:31:16.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e74-5d36-211e-b0ea-41119b93dcda.json",
+          "shared_at": "2026-05-31T18:31:16.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "1fdf7fa0c512",
+      "url": "https://www.apfailkuchen.de/switch/neuigkeiten/kurz-gebloggt-do-a-barrel-roll",
+      "title": "Kurz gebloggt: Do a barrel roll! | ApfailKuchen.de | Technik, Gaming & Apps im Check",
+      "score": 1806.99,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T18:31:11.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e6f-aac1-150b-863c-d5d652036fb3.json",
+          "shared_at": "2026-05-31T18:31:11.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "gaming"
+      ],
+      "tag_debug": [
+        {
+          "category": "gaming",
+          "source": "keyword",
+          "via": "gaming",
+          "weight": 1
+        },
+        {
+          "category": "gaming",
+          "source": "embedding",
+          "via": "sim=0.43",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "091a8faadc76",
+      "url": "https://auswanderer.blog/2026/05/31/die-22-woche-2026/",
+      "title": "Die 22. Woche 2026 | Auswandererblog – Unser Alltag in Frankreich",
+      "score": 1803.32,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T18:31:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e64-6bc9-6046-90a5-39dffb94c613.json",
+          "shared_at": "2026-05-31T18:31:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [
+        "blog",
+        "politik",
+        "reisen"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.52",
+          "weight": 2
+        },
+        {
+          "category": "politik",
+          "source": "embedding",
+          "via": "sim=0.46",
+          "weight": 2
+        },
+        {
+          "category": "reisen",
+          "source": "embedding",
+          "via": "sim=0.39",
+          "weight": 2
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "de501ec3939b",
+      "url": "https://maik.io/notes/2026-05-31-eine-orientierung-bietet/",
+      "title": "Eine Orientierung bietet | Maik (maik.io)",
+      "score": 1792.38,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T18:30:27.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e43-a689-4ac1-92c7-42fd5094c052.json",
+          "shared_at": "2026-05-31T18:30:27.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "1dc109398e8f",
+      "url": "https://www.lupus-live.de/2026/05/31/im-mai-2026/",
+      "title": "Im Mai 2026 | lupus-live",
+      "score": 1783.84,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
+      ],
+      "latest_shared": "2026-05-31T18:30:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7e29-5b7a-6247-8ad8-1c367d6a5000.json",
+          "shared_at": "2026-05-31T18:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [],
+      "tag_debug": [],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
       "id": "a643c32349e1",
       "url": "https://benedikt.io/2026/05/laufen-rudern-fahrrad-mai/?mtm_campaign=rss",
       "title": "Kein Lauf im Mai, viel Fahrrad gefahren … und einmal fast überfahren worden | benedikt.io",
-      "score": 1441.71,
+      "score": 1326.34,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -520,7 +766,7 @@
       "id": "521c438c41cf",
       "url": "https://blog.kieselwiese.de/?p=271",
       "title": "2026-05-27: Hautkrebsscreening, Summer in the City | Kieselblog",
-      "score": 1376.84,
+      "score": 1306.43,
       "signal_count": 3,
       "curators": [
         "flumen_calculi@ruhr.social",
@@ -556,42 +802,10 @@
       "tag_debug": []
     },
     {
-      "id": "8d6e7f48a553",
-      "url": "https://status.z428.eu/%E2%98%81%EF%B8%8F-stadtwolken-stadtstra%C3%9Fen-zusammenk%C3%BCnfte-auf-dem-b%C3%BCrgers",
-      "title": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und weit offene... | z428",
-      "score": 1350.1,
-      "signal_count": 2,
-      "curators": [
-        "z428.eu",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-31T19:40:03+02:00",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn64cqblnu2x",
-          "shared_at": "2026-05-31T19:40:03+02:00"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 8,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
       "id": "9e47f1b6bd06",
       "url": "https://www.volker-krause-photographie.de/2026/05/31/wieder-mal-stacking/",
       "title": "Wieder mal Stacking | volker-krause-photographie",
-      "score": 1130.39,
+      "score": 1053.52,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -632,7 +846,7 @@
       "id": "bbe04230919d",
       "url": "https://christiansblog.eu/post/bkf/phillipinos_in_soest/",
       "title": "Warum Fahrer aus Drittstaaten den Fahrermangel nicht lösen | Christians Blog",
-      "score": 1115.01,
+      "score": 1039.88,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -664,7 +878,7 @@
       "id": "9323c2d2826d",
       "url": "https://eay.cc/2026/enzyklika-magnifica-humanitas-des-heiligen-vaters-leo-xiv-ueber-die-bewahrung-des-menschen-im-zeitalter-der-kuenstlichen-intelligenz/",
       "title": "Enzyklika Magnifica Humanitas des heiligen Vaters Leo XIV. über die Bewahrung des Menschen im Zeitalter der Künstlichen Intelligenz | Stefan Grund",
-      "score": 895.67,
+      "score": 843.62,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -700,7 +914,7 @@
       "id": "1b9502f3028d",
       "url": "https://micro.bln41.de/ukraine-zivilisten-in-der-drohnenhoelle/",
       "title": "Ukraine: Zivilisten in der Drohnenhölle | micro // bln41.de – Gedanken, Reaktionen, Zeug … für alles in kurz!",
-      "score": 743.33,
+      "score": 705.28,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -758,7 +972,7 @@
       "id": "26b56d323478",
       "url": "https://kopfzeiler.org/blog/2026/05/31/a-lonely-planet/",
       "title": "A Lonely Planet | Johannes Kuhn (kopfzeiler)",
-      "score": 742.67,
+      "score": 704.68,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -794,7 +1008,7 @@
       "id": "decc7f3e5f68",
       "url": "https://lordjohn75.de/spielenswert-und-spielmagazin/",
       "title": "spielenswert und Spielmagazin | John's Spielwiese",
-      "score": 628.28,
+      "score": 599.62,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
@@ -830,11 +1044,11 @@
       "id": "7b54cf2cf4e0",
       "url": "https://status.z428.eu/r%C3%BCckweg-auch-die-brachiale-energie-mit-der-selten-wahrgen",
       "title": "Rückweg auch die brachiale energie mit der selten wahrgen",
-      "score": 604.36,
+      "score": 579.04,
       "signal_count": 2,
       "curators": [
-        "z428.eu",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "z428.eu"
       ],
       "platforms": [
         "mastodon",
@@ -868,7 +1082,7 @@
       "id": "1260e2a86d75",
       "url": "https://daoweg.wordpress.com/2026/05/31/domburg/",
       "title": "Domburg",
-      "score": 369.69,
+      "score": 356.92,
       "signal_count": 2,
       "curators": [
         "Elkeringhausen",
@@ -905,18 +1119,18 @@
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
-      "score": 224.56,
+      "score": 223.22,
       "signal_count": 5,
       "curators": [
-        "PeterRu@climatejustice.social",
-        "teezeh@ieji.de",
+        "netzpolitik_feed@chaos.social",
         "netzpolitik.org",
-        "netzpolitik_feed@chaos.social"
+        "teezeh@ieji.de",
+        "PeterRu@climatejustice.social"
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-30T07:23:15.000Z",
       "syndications": [
@@ -1185,19 +1399,19 @@
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
       "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
-      "score": 206.52,
+      "score": 205.62,
       "signal_count": 6,
       "curators": [
-        "fernx.bsky.social",
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
         "netzpolitik.org",
-        "matthimon@systemli.social"
+        "matthimon@systemli.social",
+        "pirati.bsky.social",
+        "netzpolitik_feed@chaos.social",
+        "fernx.bsky.social"
       ],
       "platforms": [
         "mastodon",
-        "rss",
-        "bluesky"
+        "bluesky",
+        "rss"
       ],
       "latest_shared": "2026-05-29T19:51:56.244Z",
       "syndications": [
@@ -1316,7 +1530,7 @@
       "id": "76c0fb9a04f4",
       "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
       "title": "Jackson C. Frank – Golden Mirror",
-      "score": 164.97,
+      "score": 161.52,
       "signal_count": 2,
       "curators": [
         "Elkeringhausen",
@@ -1353,7 +1567,7 @@
       "id": "30cc40f98ec5",
       "url": "https://blog.kieselwiese.de/?p=248",
       "title": "Netzfunde – Kieselblog",
-      "score": 131.58,
+      "score": 129.28,
       "signal_count": 2,
       "curators": [
         "flumen_calculi@ruhr.social",
@@ -1399,7 +1613,7 @@
       "id": "aab6ba82d073",
       "url": "https://blog.kieselwiese.de/?p=270",
       "title": "2026-05-26: Pfingstochsentour Bremen Tag 4 (Heimfahrt) – Kieselblog",
-      "score": 47.74,
+      "score": 46.83,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1438,7 +1652,7 @@
       "id": "8e7c47f893ce",
       "url": "https://fischr.org/i-stopped-tracking-my-life/",
       "title": "I stopped tracking my life",
-      "score": 45.25,
+      "score": 45.89,
       "signal_count": 3,
       "curators": [
         "fischr.org",
@@ -1492,7 +1706,7 @@
       "id": "45379436d6b6",
       "url": "https://reisehappen.de/lublin-tipps/",
       "title": "Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen",
-      "score": 39.9,
+      "score": 39.67,
       "signal_count": 2,
       "curators": [
         "Reiseblog und Foodblog Reisehappen",
@@ -1551,7 +1765,7 @@
       "id": "310304982b3f",
       "url": "https://eay.cc/2026/status-2026-05-30-2336/",
       "title": "Status 2026-05-30 23:36",
-      "score": 17.21,
+      "score": 17.05,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1585,7 +1799,7 @@
       "id": "c09ec73e9abe",
       "url": "https://fischr.org/mal-wieder-piepmatz-rettung/",
       "title": "Mal wieder Piepmatz-Rettung 🐦‍⬛🛟",
-      "score": 12.87,
+      "score": 12.77,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1624,7 +1838,7 @@
       "id": "eb7be6d22f87",
       "url": "https://kopfzeiler.org/blog/2026/05/30/queens-of-the-yard-act/",
       "title": "Queens of the Yard Act – kopfzeiler.org",
-      "score": 12.25,
+      "score": 12.16,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1658,7 +1872,7 @@
       "id": "0b3e450d8e45",
       "url": "https://eay.cc/2020/1017-jahre-eay-cc/",
       "title": "1017 Jahre eay.cc",
-      "score": 11.81,
+      "score": 11.77,
       "signal_count": 1,
       "curators": [
         "eay@eay.social"
@@ -1692,7 +1906,7 @@
       "id": "9d08041f0e08",
       "url": "https://github.com/stefangrund/eay.cc-static-archive",
       "title": "GitHub - stefangrund/eay.cc-static-archive: Static Archive of eay.cc",
-      "score": 11.81,
+      "score": 11.77,
       "signal_count": 1,
       "curators": [
         "eay@eay.social"
@@ -1731,7 +1945,7 @@
       "id": "8d7e5ab2ec38",
       "url": "https://benedikt.io/2026/05/kritik-outlander-serie-2014-2026/?mtm_campaign=rss",
       "title": "Kritik: »Outlander« – die komplette Serie (2014–2026)",
-      "score": 10.91,
+      "score": 10.84,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1776,6 +1990,464 @@
       "wp_engagement": {
         "comments": 0
       }
+    }
+  ],
+  "fresh": [
+    {
+      "id": "e70a4b53cf4b",
+      "url": "https://www.klaus-janowitz.de/wordpress/technogenese-sinn-und-nutzen-des-konzepts/",
+      "title": "Technogenese – Sinn und Nutzen des Konzepts | Netnographie & Digitaler Wandel",
+      "score": 363.31,
+      "signal_count": 1,
+      "curators": [
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 19:56:49 +0200",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "ki"
+      ],
+      "tag_debug": [
+        {
+          "category": "ki",
+          "source": "embedding",
+          "via": "sim=0.44",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "5d4d1f79c027",
+      "url": "https://www.blogspiele.de/2026/05/31/swams-kids-12-viele-schluessel-und-ein-farmer/",
+      "title": "SWAMS Kids #12: Viele Schlüssel und ein Farmer | Sneakfilm - Kino mal anders",
+      "score": 198.3,
+      "signal_count": 1,
+      "curators": [
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 18:30:00 +0200",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.41",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "9151ef517995",
+      "url": "https://www.mobiflip.de/apple-muss-naechsten-monat-endlich-abliefern/",
+      "title": "Apple muss nächsten Monat endlich abliefern",
+      "score": 152.52,
+      "signal_count": 1,
+      "curators": [
+        "mobiFlip"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 16:00:38 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "apple",
+        "kommentar"
+      ],
+      "tag_debug": [
+        {
+          "category": "kommentar",
+          "source": "raw_tag",
+          "via": "kommentar",
+          "weight": 2
+        },
+        {
+          "category": "apple",
+          "source": "tag_map",
+          "via": "apple",
+          "weight": 3
+        },
+        {
+          "category": "apple",
+          "source": "tag_map",
+          "via": "ios",
+          "weight": 3
+        },
+        {
+          "category": "apple",
+          "source": "embedding",
+          "via": "sim=0.47",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "1d56b10dd2ed",
+      "url": "https://www.mobiflip.de/google-von-fitbit-ist-kaum-noch-etwas-uebrig/",
+      "title": "Google: Von Fitbit ist kaum noch etwas übrig",
+      "score": 63.57,
+      "signal_count": 1,
+      "curators": [
+        "mobiFlip"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 12:00:21 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "marktgeschehen",
+        "news",
+        "fitbit",
+        "google"
+      ],
+      "tag_debug": [
+        {
+          "category": "marktgeschehen",
+          "source": "raw_tag",
+          "via": "marktgeschehen",
+          "weight": 2
+        },
+        {
+          "category": "news",
+          "source": "raw_tag",
+          "via": "news",
+          "weight": 2
+        },
+        {
+          "category": "fitbit",
+          "source": "raw_tag",
+          "via": "fitbit",
+          "weight": 2
+        },
+        {
+          "category": "google",
+          "source": "raw_tag",
+          "via": "google",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "85c710b039c4",
+      "url": "https://www.basicthinking.de/blog/2026/05/31/neu-auf-netflix-im-juni-2026/",
+      "title": "Neu auf Netflix: Poldi, J.Lo und Avatar starten im Juni 2026",
+      "score": 54.35,
+      "signal_count": 1,
+      "curators": [
+        "BASIC thinking"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 10:59:10 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "streaming",
+        "entertain",
+        "news"
+      ],
+      "tag_debug": [
+        {
+          "category": "entertain",
+          "source": "raw_tag",
+          "via": "entertain",
+          "weight": 2
+        },
+        {
+          "category": "streaming",
+          "source": "tag_map",
+          "via": "netflix",
+          "weight": 3
+        },
+        {
+          "category": "news",
+          "source": "raw_tag",
+          "via": "news",
+          "weight": 2
+        },
+        {
+          "category": "streaming",
+          "source": "tag_map",
+          "via": "streaming",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "14a8604ec085",
+      "url": "https://www.mobiflip.de/mein-tipp-der-woche-midea-portasplit-klimaanlage/",
+      "title": "Mein Tipp der Woche: Midea PortaSplit Klimaanlage",
+      "score": 37.3,
+      "signal_count": 1,
+      "curators": [
+        "mobiFlip"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 08:00:52 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "kommentar",
+        "aff",
+        "klima"
+      ],
+      "tag_debug": [
+        {
+          "category": "kommentar",
+          "source": "raw_tag",
+          "via": "kommentar",
+          "weight": 2
+        },
+        {
+          "category": "aff",
+          "source": "raw_tag",
+          "via": "aff",
+          "weight": 2
+        },
+        {
+          "category": "klima",
+          "source": "raw_tag",
+          "via": "klima",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "8c9d0271c7e6",
+      "url": "https://www.metacheles.de/spacex-boersengang-der-groesste-bankraub-geschichte/",
+      "title": "SpaceX Boersengang – Der groesste Bankraub Geschichte",
+      "score": 25.65,
+      "signal_count": 1,
+      "curators": [
+        "MeTacheles"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 04:08:53 GMT",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "wirtschaft"
+      ],
+      "tag_debug": [
+        {
+          "category": "wirtschaft",
+          "source": "keyword",
+          "via": "boerse",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "fcc45d91310e",
+      "url": "https://www.basicthinking.de/blog/2026/05/31/strassen-hawaii-fischernetze-plastik/",
+      "title": "Plastikflut: Hawaii baut Straßen aus alten Fischernetzen und Müll",
+      "score": 24.84,
+      "signal_count": 1,
+      "curators": [
+        "BASIC thinking"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 03:45:51 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "good_news",
+        "green",
+        "nachhaltigkeit",
+        "news"
+      ],
+      "tag_debug": [
+        {
+          "category": "good_news",
+          "source": "raw_tag",
+          "via": "good_news",
+          "weight": 2
+        },
+        {
+          "category": "green",
+          "source": "raw_tag",
+          "via": "green",
+          "weight": 2
+        },
+        {
+          "category": "nachhaltigkeit",
+          "source": "raw_tag",
+          "via": "nachhaltigkeit",
+          "weight": 2
+        },
+        {
+          "category": "news",
+          "source": "raw_tag",
+          "via": "news",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ab37f8693571",
+      "url": "https://altner.github.io/blog/octobeat/",
+      "title": "OctoBeat – ein sozialer Nachrichtenaggregator für unabhängige deutschsprachige Blogs",
+      "score": 18.56,
+      "signal_count": 1,
+      "curators": [
+        "Adrian Altner"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sun, 31 May 2026 00:00:00 GMT",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "blog",
+        "netzpolitik"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.56",
+          "weight": 2
+        },
+        {
+          "category": "netzpolitik",
+          "source": "embedding",
+          "via": "sim=0.42",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "46b6c186a3a5",
+      "url": "https://www.basicthinking.de/blog/2026/05/30/cloud-edge-enhancement-wolken-effekt-solaranlagen/",
+      "title": "Cloud Edge Enhancement: Wolken-Effekt pusht Solaranlagen über Nennleistung",
+      "score": 10.77,
+      "signal_count": 1,
+      "curators": [
+        "BASIC thinking"
+      ],
+      "platforms": [
+        "rss"
+      ],
+      "latest_shared": "Sat, 30 May 2026 14:00:39 +0000",
+      "syndications": [],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "green",
+        "tech",
+        "energie",
+        "erneuerbare_energie",
+        "evergreen"
+      ],
+      "tag_debug": [
+        {
+          "category": "green",
+          "source": "raw_tag",
+          "via": "green",
+          "weight": 2
+        },
+        {
+          "category": "tech",
+          "source": "raw_tag",
+          "via": "tech",
+          "weight": 2
+        },
+        {
+          "category": "energie",
+          "source": "raw_tag",
+          "via": "energie",
+          "weight": 2
+        },
+        {
+          "category": "erneuerbare_energie",
+          "source": "raw_tag",
+          "via": "erneuerbare_energie",
+          "weight": 2
+        },
+        {
+          "category": "evergreen",
+          "source": "raw_tag",
+          "via": "evergreen",
+          "weight": 2
+        },
+        {
+          "category": "solarenergie",
+          "source": "raw_tag",
+          "via": "solarenergie",
+          "weight": 2
+        }
+      ]
     }
   ]
 }

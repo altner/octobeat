@@ -490,16 +490,19 @@ async def run():
             if wp_likes:
                 a["engagement"]["wp_likes"] = wp_likes
 
-    # ── 9. Keep only articles with social signal + meaningful title ────────
+    # ── 9. Split into social finds and "fresh" (RSS-only, no social signal) ─
     social_platforms = {"mastodon", "bluesky"}
     _numeric_title = re.compile(r"^\d+$")
-    articles = [
-        a for a in articles
-        if social_platforms & set(a["platforms"])
-        and (a.get("title") or "").strip()
-        and not _numeric_title.match((a.get("title") or "").strip())
-    ]
+
+    def _has_title(a: dict) -> bool:
+        t = (a.get("title") or "").strip()
+        return bool(t) and not _numeric_title.match(t)
+
+    titled = [a for a in articles if _has_title(a)]
+    fresh_pool = [a for a in titled if not (social_platforms & set(a["platforms"]))]
+    articles   = [a for a in titled if social_platforms & set(a["platforms"])]
     print(f"→ {len(articles)} finds with social signal (Mastodon/Bluesky)")
+    print(f"→ {len(fresh_pool)} fresh finds (RSS-only, no social signal yet)")
 
     # ── 9. Sort and keep top N (with per-domain cap) ──────────────────────
     articles.sort(key=lambda a: a["score"], reverse=True)
@@ -517,6 +520,20 @@ async def run():
             break
 
     print(f"→ Selected top {len(top)} finds (from {len(articles)} unique URLs, max {domain_cap}/domain)")
+
+    # ── Fresh / Undiscovered: newest RSS-only finds, domain-capped ─────────
+    fresh_n = cfg["article_filter"].get("fresh_n", 20)
+    fresh_pool.sort(key=lambda a: a.get("latest_shared") or "", reverse=True)
+    fresh: list[dict] = []
+    fresh_domain_counts: Counter[str] = Counter()
+    for a in fresh_pool:
+        d = domain_from_url(a["url"])
+        if fresh_domain_counts[d] < domain_cap:
+            fresh.append(a)
+            fresh_domain_counts[d] += 1
+        if len(fresh) >= fresh_n:
+            break
+    print(f"→ Selected {len(fresh)} fresh finds (max {domain_cap}/domain)")
 
     # ── Build curator ranking from top articles ────────────────────────────
     curator_stats: dict[str, dict] = {}
@@ -589,7 +606,7 @@ async def run():
     # ── 10. Write and push ─────────────────────────────────────────────────
     out = cfg["output"]
     data_dir = data_dir_from_config(cfg)
-    write_feed(top, data_dir, top_curators=top_curators)
+    write_feed(top, data_dir, top_curators=top_curators, fresh=fresh)
 
     # Export learned data to computed.json (DB backup / restore source)
     if learning_cfg.get("enabled", True):

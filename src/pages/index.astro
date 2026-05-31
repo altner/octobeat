@@ -18,9 +18,10 @@ interface FeedData {
   generated_at: string;
   article_count: number;
   articles: Article[];
+  fresh?: Article[];
 }
 
-let feedData: FeedData = { generated_at: '', article_count: 0, articles: [] };
+let feedData: FeedData = { generated_at: '', article_count: 0, articles: [], fresh: [] };
 try {
   const mod = await import('../../data/feed.json');
   feedData = mod.default as FeedData;
@@ -29,6 +30,7 @@ try {
 }
 
 const articles = feedData.articles ?? [];
+const fresh = feedData.fresh ?? [];
 
 const genTime = feedData.generated_at
   ? new Date(feedData.generated_at).toLocaleString('en-GB', {
@@ -91,6 +93,11 @@ function domain(url: string) {
       {remaining.length > 0 && (
         <a class="tag-pill" href="#sec-more">
           {remainingLabel} <span class="pill-count">{remaining.length}</span>
+        </a>
+      )}
+      {fresh.length > 0 && (
+        <a class="tag-pill" href="#sec-fresh">
+          Fresh <span class="pill-count">{fresh.length}</span>
         </a>
       )}
     </nav>
@@ -166,6 +173,38 @@ function domain(url: string) {
           </div>
         </section>
       )}
+
+      {fresh.length > 0 && (
+        <section>
+          <div class="section-header" id="sec-fresh">
+            <span class="section-title">Fresh / Undiscovered</span>
+            <span class="section-count">{fresh.length} find{fresh.length !== 1 ? 's' : ''}</span>
+          </div>
+          <p class="section-note">Newly published — not yet shared on Mastodon or Bluesky.</p>
+          <div class="articles">
+            {fresh.map(a => (
+              <article class="article-card fresh-card" data-title={a.title} data-url={a.url} data-tags={(a.tags ?? []).join(' ')}>
+                <div>
+                  <div class="article-title">
+                    <a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a>
+                  </div>
+                  <div class="article-meta">
+                    <span>{domain(a.url)}</span>
+                    <span class="time" data-ts={a.latest_shared}></span>
+                    {(a.tags ?? []).length > 0 && (
+                      <span class="article-tags">
+                        {(a.tags ?? []).slice(0, 3).map(t => (
+                          <span class="article-tag">#{t}</span>
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   </main>
 </BaseLayout>
@@ -231,6 +270,10 @@ function domain(url: string) {
     color: var(--accent);
   }
   .section-count { font-size: 12px; color: var(--muted); }
+  .section-note { font-size: 12px; color: var(--muted); margin: -4px 0 12px; }
+
+  /* ── Fresh cards (no social score yet) ── */
+  .fresh-card { grid-template-columns: 1fr; }
 
   /* ── Cards ── */
   .articles { display: flex; flex-direction: column; gap: 8px; }
