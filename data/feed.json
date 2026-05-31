@@ -1,19 +1,141 @@
 {
-  "generated_at": "2026-05-31T09:47:06.552422+00:00",
+  "generated_at": "2026-05-31T10:46:59.103074+00:00",
   "article_count": 50,
   "articles": [
+    {
+      "id": "5b3bfe5938e0",
+      "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
+      "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
+      "score": 10105.46,
+      "signal_count": 6,
+      "curators": [
+        "fxneumann.bonn.social.ap.brid.gy",
+        "netzpolitik_feed@chaos.social",
+        "karlbaer@gruene.social",
+        "netzpolitik.org",
+        "pirati.bsky.social"
+      ],
+      "platforms": [
+        "bluesky",
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T09:58:02.000Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "fxneumann.bonn.social.ap.brid.gy",
+          "url": "https://bsky.app/profile/fxneumann.bonn.social.ap.brid.gy/post/3mn5cio52mxn2",
+          "shared_at": "2026-05-31T09:58:02.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "karlbaer@gruene.social",
+          "url": "https://gruene.social/@karlbaer/116668060994156670",
+          "shared_at": "2026-05-31T07:42:13.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mn4zuadzbp2y",
+          "shared_at": "2026-05-31T07:23:29Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mn4zn666ps2x",
+          "shared_at": "2026-05-31T07:19:32.708Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116667970135835364",
+          "shared_at": "2026-05-31T07:19:06.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 21,
+        "likes": 43,
+        "replies": 4,
+        "quotes": 2
+      },
+      "tags": [
+        "netzpolitik",
+        "ki",
+        "politik",
+        "technologie",
+        "enzyklika"
+      ],
+      "tag_debug": [
+        {
+          "category": "technologie",
+          "source": "raw_tag",
+          "via": "technologie",
+          "weight": 2
+        },
+        {
+          "category": "enzyklika",
+          "source": "raw_tag",
+          "via": "enzyklika",
+          "weight": 2
+        },
+        {
+          "category": "ki",
+          "source": "tag_map",
+          "via": "künstliche_intelligenz",
+          "weight": 3
+        },
+        {
+          "category": "papst_leo_xiv",
+          "source": "raw_tag",
+          "via": "papst_leo_xiv",
+          "weight": 2
+        },
+        {
+          "category": "netzpolitik",
+          "source": "tag_map",
+          "via": "urheberrecht",
+          "weight": 3
+        },
+        {
+          "category": "vatikan",
+          "source": "raw_tag",
+          "via": "vatikan",
+          "weight": 2
+        },
+        {
+          "category": "netzpolitik",
+          "source": "keyword",
+          "via": "netzpolitik",
+          "weight": 1
+        },
+        {
+          "category": "netzpolitik",
+          "source": "embedding",
+          "via": "sim=0.44",
+          "weight": 2
+        },
+        {
+          "category": "politik",
+          "source": "embedding",
+          "via": "sim=0.42",
+          "weight": 2
+        }
+      ]
+    },
     {
       "id": "7522079773cc",
       "url": "https://winfuture.de/news,159002.html",
       "title": "Niederlande: Microsoft gibt Daten unliebsamer Beamter an USA weiter",
-      "score": 9733.03,
-      "signal_count": 6,
+      "score": 7918.25,
+      "signal_count": 7,
       "curators": [
         "kubikpixel@chaos.social",
-        "fuenfuhrteefix.bsky.social",
         "jottomat.eurosky.social",
-        "ramichaelseidlitz.bsky.social",
+        "fuenfuhrteefix.bsky.social",
         "matzekult@chaos.social",
+        "ramichaelseidlitz.bsky.social",
+        "ramichaelseidlitz@legal.social",
         "BjoernBeck@amt.social"
       ],
       "platforms": [
@@ -33,6 +155,12 @@
           "curator": "ramichaelseidlitz.bsky.social",
           "url": "https://bsky.app/profile/ramichaelseidlitz.bsky.social/post/3mn52nvq3vc23",
           "shared_at": "2026-05-31T07:37:51.153Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "ramichaelseidlitz@legal.social",
+          "url": "https://legal.social/@ramichaelseidlitz/116668043201035926",
+          "shared_at": "2026-05-31T07:37:41.000Z"
         },
         {
           "platform": "mastodon",
@@ -60,19 +188,31 @@
         }
       ],
       "engagement": {
-        "boosts": 199,
+        "boosts": 202,
         "likes": 143,
-        "replies": 11,
+        "replies": 12,
         "quotes": 0
       },
       "tags": [
         "windows",
+        "cloudact",
+        "digitalservicesact",
         "software",
-        "netzpolitik",
-        "niederlande",
-        "itsicherheit"
+        "netzpolitik"
       ],
       "tag_debug": [
+        {
+          "category": "cloudact",
+          "source": "raw_tag",
+          "via": "cloudact",
+          "weight": 2
+        },
+        {
+          "category": "digitalservicesact",
+          "source": "raw_tag",
+          "via": "digitalservicesact",
+          "weight": 2
+        },
         {
           "category": "windows",
           "source": "tag_map",
@@ -151,18 +291,18 @@
       "id": "1fadb34b09f1",
       "url": "https://bunte-kuechenabenteuer.de/abenteuer-alltag-25-31-05-2026/",
       "title": "Abenteuer Alltag (25.-31.05.2026) | Bunte Küchenabenteuer",
-      "score": 5839.68,
+      "score": 3917.96,
       "signal_count": 5,
       "curators": [
+        "uberblogr@troet.uberblogr.de",
         "buntkueche@pixelfed.social",
-        "freuwesen.eurosky.social",
-        "buntkueche@bunte-kuechenabenteuer.de",
         "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "freuwesen.eurosky.social",
+        "buntkueche@bunte-kuechenabenteuer.de"
       ],
       "platforms": [
-        "rss",
         "bluesky",
+        "rss",
         "mastodon"
       ],
       "latest_shared": "2026-05-31T08:48:21.000Z",
@@ -238,116 +378,71 @@
       ]
     },
     {
-      "id": "5b3bfe5938e0",
-      "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
-      "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
-      "score": 4637.53,
-      "signal_count": 5,
+      "id": "a7cbaa37c771",
+      "url": "https://stadt-bremerhaven.de/usb-c-whatcable-bringt-licht-ins-kabel-chaos-unter-macos/",
+      "title": "USB-C: WhatCable bringt Licht ins Kabel-Chaos unter macOS",
+      "score": 2098.79,
+      "signal_count": 4,
       "curators": [
-        "pirati.bsky.social",
-        "netzpolitik.org",
-        "netzpolitik_feed@chaos.social",
-        "karlbaer@gruene.social"
+        "stadtbremerhaven@feedmirror.social",
+        "teezeh@ieji.de",
+        "Caschys Blog",
+        "Sascha@bonn.social"
       ],
       "platforms": [
         "rss",
-        "bluesky",
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T07:42:13.000Z",
+      "latest_shared": "2026-05-31T08:05:12.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "karlbaer@gruene.social",
-          "url": "https://gruene.social/@karlbaer/116668060994156670",
-          "shared_at": "2026-05-31T07:42:13.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mn4zuadzbp2y",
-          "shared_at": "2026-05-31T07:23:29Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "netzpolitik.org",
-          "url": "https://bsky.app/profile/netzpolitik.org/post/3mn4zn666ps2x",
-          "shared_at": "2026-05-31T07:19:32.708Z"
+          "curator": "teezeh@ieji.de",
+          "url": "https://ieji.de/@teezeh/116668151381288129",
+          "shared_at": "2026-05-31T08:05:12.000Z"
         },
         {
           "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116667970135835364",
-          "shared_at": "2026-05-31T07:19:06.000Z"
+          "curator": "Sascha@bonn.social",
+          "url": "https://bonn.social/@Sascha/116665694120414494",
+          "shared_at": "2026-05-30T21:40:17.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116665333965773011",
+          "shared_at": "2026-05-30T20:08:41.000Z"
         }
       ],
       "engagement": {
-        "boosts": 17,
-        "likes": 38,
-        "replies": 3,
-        "quotes": 1
+        "boosts": 4,
+        "likes": 2,
+        "replies": 0,
+        "quotes": 0
       },
       "tags": [
-        "netzpolitik",
-        "ki",
-        "politik",
-        "technologie",
-        "enzyklika"
+        "apple",
+        "hardware",
+        "software"
       ],
       "tag_debug": [
         {
-          "category": "technologie",
-          "source": "raw_tag",
-          "via": "technologie",
-          "weight": 2
-        },
-        {
-          "category": "enzyklika",
-          "source": "raw_tag",
-          "via": "enzyklika",
-          "weight": 2
-        },
-        {
-          "category": "ki",
+          "category": "apple",
           "source": "tag_map",
-          "via": "künstliche_intelligenz",
+          "via": "apple",
           "weight": 3
         },
         {
-          "category": "papst_leo_xiv",
-          "source": "raw_tag",
-          "via": "papst_leo_xiv",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitik",
+          "category": "hardware",
           "source": "tag_map",
-          "via": "urheberrecht",
+          "via": "hardware",
           "weight": 3
         },
         {
-          "category": "vatikan",
-          "source": "raw_tag",
-          "via": "vatikan",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "netzpolitik",
-          "source": "embedding",
-          "via": "sim=0.44",
-          "weight": 2
-        },
-        {
-          "category": "politik",
-          "source": "embedding",
-          "via": "sim=0.42",
-          "weight": 2
+          "category": "software",
+          "source": "tag_map",
+          "via": "software__co",
+          "weight": 3
         }
       ]
     },
@@ -355,12 +450,12 @@
       "id": "aa002276ac8e",
       "url": "https://www.auf-kurztrip.de/2026/05/20-episoden-spaeter-ein-rueckblick-auf-meinen-fotopodcast/",
       "title": "20 Episoden später: Ein Rückblick auf meinen Fotopodcast | Auf Kurztrip",
-      "score": 3184.09,
+      "score": 1935.17,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
+        "blog@www.auf-kurztrip.de",
         "UberBlogr - Neueste Beiträge",
-        "blog@www.auf-kurztrip.de"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -406,84 +501,152 @@
       ]
     },
     {
-      "id": "a7cbaa37c771",
-      "url": "https://stadt-bremerhaven.de/usb-c-whatcable-bringt-licht-ins-kabel-chaos-unter-macos/",
-      "title": "USB-C: WhatCable bringt Licht ins Kabel-Chaos unter macOS",
-      "score": 2866.25,
-      "signal_count": 4,
+      "id": "76c0fb9a04f4",
+      "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
+      "title": "Jackson C. Frank – Golden Mirror | Blütensthaub",
+      "score": 1613.09,
+      "signal_count": 2,
       "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "teezeh@ieji.de",
-        "Caschys Blog",
-        "Sascha@bonn.social"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T08:05:12.000Z",
+      "latest_shared": "2026-05-31T10:30:23.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "teezeh@ieji.de",
-          "url": "https://ieji.de/@teezeh/116668151381288129",
-          "shared_at": "2026-05-31T08:05:12.000Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "Sascha@bonn.social",
-          "url": "https://bonn.social/@Sascha/116665694120414494",
-          "shared_at": "2026-05-30T21:40:17.000Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116665333965773011",
-          "shared_at": "2026-05-30T20:08:41.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c0dbf-9b14-2900-b161-db462e499a75.json",
+          "shared_at": "2026-05-31T10:30:23.000Z"
         }
       ],
       "engagement": {
-        "boosts": 3,
-        "likes": 1,
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "6e829d83de18",
+      "url": "https://codeundkram.de/passkeys-passworter-waren-eine-schlechte-idee-die-wir-viel-zu-lange-ertragen-haben/",
+      "title": "Passkeys: Passwörter waren eine schlechte Idee, die wir viel zu lange ertragen haben | CODEundKRAM",
+      "score": 1611.44,
+      "signal_count": 2,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:30:17.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c0db9-94a6-345a-aa17-3c908c375ae5.json",
+          "shared_at": "2026-05-31T10:30:17.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
         "replies": 0,
         "quotes": 0
       },
       "tags": [
-        "apple",
-        "hardware",
-        "software"
+        "sicherheit"
       ],
       "tag_debug": [
         {
-          "category": "apple",
-          "source": "tag_map",
-          "via": "apple",
-          "weight": 3
-        },
-        {
-          "category": "hardware",
-          "source": "tag_map",
-          "via": "hardware",
-          "weight": 3
-        },
-        {
-          "category": "software",
-          "source": "tag_map",
-          "via": "software__co",
-          "weight": 3
+          "category": "sicherheit",
+          "source": "embedding",
+          "via": "sim=0.40",
+          "weight": 2
         }
       ]
+    },
+    {
+      "id": "a7b567497110",
+      "url": "https://www.heldenhaushalt.de/sari02/index.php/2026/05/31/30-marmeladenglasmomente-im-mai-2026/",
+      "title": "30 Marmeladenglasmomente im Mai 2026 | Heldenhaushalt.de",
+      "score": 1609.51,
+      "signal_count": 2,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:30:10.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c0db2-12f2-2bd7-8e9f-56c9558d83cb.json",
+          "shared_at": "2026-05-31T10:30:10.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "873f3ee70bb7",
+      "url": "https://51nord.me/naechtlicher-besucher/",
+      "title": "Nächtlicher Besucher | Martin",
+      "score": 1607.32,
+      "signal_count": 2,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:30:02.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c0daa-4cb3-4d7e-b081-a247ed732cad.json",
+          "shared_at": "2026-05-31T10:30:02.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
     },
     {
       "id": "f5509fd72572",
       "url": "https://nerdjunk.de/mein-ersteindruck-von-den-shokz-openrun-pro-2-knochenschall-sportkopfhoerern/",
       "title": "Mein Ersteindruck von den SHOKZ OpenRun Pro 2 Knochenschall Sportkopfhörern | Nerdjunk.de",
-      "score": 2435.8,
+      "score": 1589.07,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge",
         "nerdjunkblog@nerdjunk.de",
-        "UberBlogr - Neueste Beiträge"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -560,12 +723,12 @@
       "id": "30cc40f98ec5",
       "url": "https://blog.kieselwiese.de/?p=248",
       "title": "Netzfunde | Kieselblog",
-      "score": 1777.03,
+      "score": 1229.04,
       "signal_count": 3,
       "curators": [
+        "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de",
-        "flumen_calculi@ruhr.social",
-        "UberBlogr - Neueste Beiträge"
+        "flumen_calculi@ruhr.social"
       ],
       "platforms": [
         "rss",
@@ -605,14 +768,54 @@
       ]
     },
     {
+      "id": "8ab705252594",
+      "url": "https://status.z428.eu/%E2%98%80%EF%B8%8F-out-in-the-sun-and-already-very-much-feeling-the-day-eve",
+      "title": "☀️ Out in the sun and already very much feeling... | z428",
+      "score": 1193.02,
+      "signal_count": 3,
+      "curators": [
+        "z428.eu",
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "bluesky",
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T08:40:04+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mn4xgloz5y2d",
+          "shared_at": "2026-05-31T08:40:04+02:00"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1be379-83e8-6a54-b08e-4639728d6912.json",
+          "shared_at": "2026-05-31T07:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 10,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
       "id": "1c3cf0b648b2",
       "url": "https://queergedacht.de/2026/05/kein-sport/",
       "title": "Kein Sport | QueerGedacht",
-      "score": 1612.14,
+      "score": 969.34,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -640,11 +843,11 @@
       "id": "aab6ba82d073",
       "url": "https://blog.kieselwiese.de/?p=270",
       "title": "2026-05-26: Pfingstochsentour Bremen Tag 4 (Heimfahrt) | Kieselblog",
-      "score": 1610.49,
+      "score": 968.65,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -681,11 +884,11 @@
       "id": "e90e844a7f69",
       "url": "https://ohrenschmaus.blog/2026/05/31/5521/",
       "title": "5521 | Ohrenschmaus",
-      "score": 1608.84,
+      "score": 967.96,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -713,11 +916,11 @@
       "id": "bd7f7494d88f",
       "url": "https://gruebelnundsinnieren.de/2026/05/31/chillen-und-buchhalten-samstag-30-5-2026/",
       "title": "Chillen und buchhalten, Samstag 30.5.2026 | Grübeln und Sinnieren",
-      "score": 1607.2,
+      "score": 967.28,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -751,54 +954,14 @@
       ]
     },
     {
-      "id": "8ab705252594",
-      "url": "https://status.z428.eu/%E2%98%80%EF%B8%8F-out-in-the-sun-and-already-very-much-feeling-the-day-eve",
-      "title": "☀️ Out in the sun and already very much feeling... | z428",
-      "score": 1588.45,
-      "signal_count": 3,
-      "curators": [
-        "z428.eu",
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T08:40:04+02:00",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn4xgloz5y2d",
-          "shared_at": "2026-05-31T08:40:04+02:00"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1be379-83e8-6a54-b08e-4639728d6912.json",
-          "shared_at": "2026-05-31T07:30:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 9,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
       "id": "8ff65b507d7b",
       "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/",
       "title": "Mrs. Klein | Blütensthaub",
-      "score": 969.06,
+      "score": 667.86,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -826,11 +989,11 @@
       "id": "7fbd9f543264",
       "url": "https://minorherba.wordpress.com/2026/05/31/outbreak/",
       "title": "Outbreak – Lautlose Killer | Unkraut vergeht nicht...oder doch?",
-      "score": 968.49,
+      "score": 667.55,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -858,11 +1021,11 @@
       "id": "671855bcc8e0",
       "url": "https://silberpixel.net/2026/05/31/vermischtes-ende-mai/",
       "title": "Vermischtes Ende Mai | Silberpixel",
-      "score": 967.57,
+      "score": 667.07,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -890,11 +1053,11 @@
       "id": "c33e8e46b8ff",
       "url": "https://kniebes.photo/photo/2521",
       "title": "Hindernisse gibt es immer | Photoblog von Markus Kniebes",
-      "score": 967.0,
+      "score": 666.77,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -931,7 +1094,7 @@
       "id": "8c4da870c467",
       "url": "https://stadt-bremerhaven.de/ugreen-magflow-air-ausprobiert-schlanker-akku-fuer-die-hosentasche/",
       "title": "UGREEN MagFlow Air ausprobiert: Schlanker Akku für die Hosentasche",
-      "score": 803.62,
+      "score": 582.71,
       "signal_count": 2,
       "curators": [
         "stadtbremerhaven@feedmirror.social",
@@ -985,7 +1148,7 @@
       "id": "1385ab91baed",
       "url": "https://stadt-bremerhaven.de/qnap-quts-hero-h6-0-vorgestellt-das-steckt-drin-im-nas-system/",
       "title": "QNAP QuTS hero h6.0 vorgestellt: Das steckt drin im NAS-System",
-      "score": 803.62,
+      "score": 582.71,
       "signal_count": 2,
       "curators": [
         "stadtbremerhaven@feedmirror.social",
@@ -1032,7 +1195,7 @@
       "id": "c99e453fe673",
       "url": "https://stadt-bremerhaven.de/creative-sound-blaster-ae-x-neue-high-fidelity-soundkarte-fuer-pc-nutzer/",
       "title": "Creative Sound Blaster AE-X: Neue High-Fidelity-Soundkarte für PC-Nutzer",
-      "score": 803.62,
+      "score": 582.71,
       "signal_count": 2,
       "curators": [
         "stadtbremerhaven@feedmirror.social",
@@ -1077,14 +1240,66 @@
       ]
     },
     {
+      "id": "d9922b4fb2f1",
+      "url": "https://t3n.de/news/ki-abos-chatgpt-claude-gemini-features-codex-cowork-spark-1744155/?amp%3Butm_medium=activitypub",
+      "title": "Codex, Cowork, Spark: Was hinter den KI-Abos von ChatGPT, Claude und Gemini steckt",
+      "score": 540.98,
+      "signal_count": 1,
+      "curators": [
+        "t3n@flipboard.com"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:05:00.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "t3n@flipboard.com",
+          "url": "https://flipboard.com/@t3n/k%C3%BCnstliche-intelligenz-%7C-t3n-e7t54l1nz/-/a-mLUhsaO8SRiEJp5kknvN0w%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-31T10:05:00.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "ki",
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "ki",
+          "source": "keyword",
+          "via": "chatgpt",
+          "weight": 1
+        },
+        {
+          "category": "ki",
+          "source": "embedding",
+          "via": "sim=0.60",
+          "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.41",
+          "weight": 2
+        }
+      ]
+    },
+    {
       "id": "a79615a2f546",
       "url": "https://tatjliebt.de/mai-2026-ein-monat-voller-nebenquests/",
       "title": "Mai 2026 – Ein Monat voller Nebenquests | TatjLiebt.",
-      "score": 665.89,
+      "score": 496.66,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "rss",
@@ -1118,14 +1333,83 @@
       ]
     },
     {
+      "id": "cf65d508c5c6",
+      "url": "https://heise.de/-11312659",
+      "title": "Bildungsexperten für Social Media-Verbot an Grundschulen",
+      "score": 470.45,
+      "signal_count": 1,
+      "curators": [
+        "mattdrayton.bsky.social"
+      ],
+      "platforms": [
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-31T10:36:01.853Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "mattdrayton.bsky.social",
+          "url": "https://bsky.app/profile/mattdrayton.bsky.social/post/3mn5emj6hk22d",
+          "shared_at": "2026-05-31T10:36:01.853Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "netzpolitik"
+      ],
+      "tag_debug": [
+        {
+          "category": "netzpolitik",
+          "source": "embedding",
+          "via": "sim=0.49",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "da44d7b26000",
+      "url": "https://t3n.de/news/solaranlage-bei-stromausfall-1724099/",
+      "title": "Solaranlage bei Stromausfall? Warum dich das nicht immer schützt – und wie du das änderst",
+      "score": 459.91,
+      "signal_count": 1,
+      "curators": [
+        "techreview_de@social.heise.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:20:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "techreview_de@social.heise.de",
+          "url": "https://social.heise.de/@techreview_de/116668681504006212",
+          "shared_at": "2026-05-31T10:20:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
       "id": "d68ab5489dde",
       "url": "https://status.z428.eu/bewusstwerdung-nach-der-nacht-heute-ohne-traumbilder-oder-e",
-      "title": "status",
-      "score": 578.78,
+      "title": "Bewusstwerdung nach der nacht heute ohne traumbilder oder e",
+      "score": 454.46,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "z428.eu"
+        "z428.eu",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "bluesky",
@@ -1159,19 +1443,18 @@
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
-      "score": 541.36,
-      "signal_count": 7,
+      "score": 410.83,
+      "signal_count": 6,
       "curators": [
-        "netzpolitik.org",
         "netzpolitik_feed@chaos.social",
         "PeterRu@climatejustice.social",
-        "pirati.bsky.social",
-        "peterru.eurosky.social",
-        "teezeh@ieji.de"
+        "netzpolitik.org",
+        "teezeh@ieji.de",
+        "peterru.eurosky.social"
       ],
       "platforms": [
-        "rss",
         "bluesky",
+        "rss",
         "mastodon"
       ],
       "latest_shared": "2026-05-30T07:23:15.000Z",
@@ -1205,12 +1488,6 @@
           "curator": "PeterRu@climatejustice.social",
           "url": "https://climatejustice.social/@PeterRu/116652871575232206",
           "shared_at": "2026-05-28T15:19:20.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmwahelxas2h",
-          "shared_at": "2026-05-28T14:32:56Z"
         }
       ],
       "engagement": {
@@ -1440,207 +1717,24 @@
       ]
     },
     {
-      "id": "6994245dfd56",
-      "url": "https://wolfwitte.de/warum-hat-donkey-republic-in-meiner-ecke-denn-so-gar-nichts-stehen/",
-      "title": "Warum hat „Donkey Republic“ in meiner Ecke denn so gar nichts stehen? | Wolf Witte",
-      "score": 497.19,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:30:29.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bd585-6572-a980-8c75-1416595f811e.json",
-          "shared_at": "2026-05-31T06:30:29.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "3ccae6f3e6b0",
-      "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/",
-      "title": "Von der Einsamkeit intelligenter Menschen | Blütensthaub",
-      "score": 496.97,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:30:23.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bd57f-e897-47b1-82b1-d2fc504b0b93.json",
-          "shared_at": "2026-05-31T06:30:23.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "1fb46f422168",
-      "url": "https://annuschkasnorthernstar.blog/2026/05/31/lost-in-bielefeld/",
-      "title": "Lost in Bielefeld | Annuschka",
-      "score": 496.79,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:30:18.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bd57a-ac81-889e-ae8a-c243bca8a7bd.json",
-          "shared_at": "2026-05-31T06:30:18.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "4419fe9f2ece",
-      "url": "https://buggisch.wordpress.com/2026/05/31/sind-sie-schon-da/",
-      "title": "Sind Sie schon da? | Christian Buggischs Blog",
-      "score": 496.54,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:30:11.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bd573-36e5-41b0-8b52-112b76abd07c.json",
-          "shared_at": "2026-05-31T06:30:11.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.51",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "87012446ae05",
-      "url": "https://t3n.de/news/vibecoding-prompts-website-erstellen-ki-1743784/?amp%3Butm_medium=activitypub",
-      "title": "Vibecoding: Mit den richtigen Prompts zur fertigen Website",
-      "score": 441.36,
+      "id": "1f9965b6294c",
+      "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/?amp%3Butm_medium=jetpack_social",
+      "title": "Jackson C. Frank &#8211; Golden Mirror",
+      "score": 325.96,
       "signal_count": 1,
       "curators": [
-        "t3n@flipboard.com"
+        "Elkeringhausen"
       ],
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T08:35:00.000Z",
+      "latest_shared": "2026-05-31T10:12:36.180Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "t3n@flipboard.com",
-          "url": "https://flipboard.com/@t3n/k%C3%BCnstliche-intelligenz-%7C-t3n-e7t54l1nz/-/a-fdVtGDL1QHObPB9TY88leA%3Aa%3A128306677-%2F0",
-          "shared_at": "2026-05-31T08:35:00.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 2,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog",
-        "ki"
-      ],
-      "tag_debug": [
-        {
-          "category": "ki",
-          "source": "keyword",
-          "via": "ki-",
-          "weight": 1
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.55",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "9249e96874bf",
-      "url": "https://hmbl.blog/31-5-2026-recap/?pk_campaign=feed&amp%3Bpk_kwd=31-5-2026-recap",
-      "title": "31.5.2026 – recap | In jawls humble opinion.",
-      "score": 429.97,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T09:30:32.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bffb8-b141-745e-bc87-506a40494e3c.json",
-          "shared_at": "2026-05-31T09:30:32.000Z"
+          "curator": "Elkeringhausen",
+          "url": "https://mastodon.social/@Elkeringhausen/116668652334409508",
+          "shared_at": "2026-05-31T10:12:36.180Z"
         }
       ],
       "engagement": {
@@ -1649,27 +1743,18 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "keyword",
-          "via": "recap",
-          "weight": 1
-        }
-      ]
+      "tags": [],
+      "tag_debug": []
     },
     {
       "id": "764502b81208",
       "url": "https://t3n.de/news/google-exploit-nutzer-angreifbar-1744153/",
       "title": "Google verrät versehentlich Exploit: Millionen Internetnutzer potenziell angreifbar | t3n",
-      "score": 397.93,
+      "score": 316.64,
       "signal_count": 2,
       "curators": [
-        "scripter.social.tchncs.de.ap.brid.gy",
-        "scripter.bsky.social"
+        "scripter.bsky.social",
+        "scripter.social.tchncs.de.ap.brid.gy"
       ],
       "platforms": [
         "bluesky"
@@ -1793,7 +1878,7 @@
       "id": "5e45d0a80571",
       "url": "https://stadt-bremerhaven.de/immer-wieder-sonntags-kw-22-raspberry-pi-preiserhoehungen-und-smarte-kaffeemaschinen/",
       "title": "Immer wieder sonntags KW 22: Raspberry Pi, Preiserhöhungen und smarte Kaffeemaschinen",
-      "score": 369.37,
+      "score": 304.12,
       "signal_count": 2,
       "curators": [
         "stadtbremerhaven@feedmirror.social",
@@ -1831,10 +1916,10 @@
       ]
     },
     {
-      "id": "eaa2fcb6a0ea",
-      "url": "https://t3n.de/news/bitcoin-wallet-verzweiflung-claude-passwort-1742871/?amp%3Butm_medium=activitypub",
-      "title": "Claude knackt Bitcoin-Wallet-Passwort nach 11 Jahren – 400.000 Dollar gerettet",
-      "score": 360.12,
+      "id": "87012446ae05",
+      "url": "https://t3n.de/news/vibecoding-prompts-website-erstellen-ki-1743784/?amp%3Butm_medium=activitypub",
+      "title": "Vibecoding: Mit diesen Prompts wird aus KI-Code wirklich eine Website",
+      "score": 302.47,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -1842,40 +1927,56 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T08:00:00.000Z",
+      "latest_shared": "2026-05-31T08:35:00.000Z",
       "syndications": [
         {
           "platform": "mastodon",
           "curator": "t3n@flipboard.com",
-          "url": "https://flipboard.com/@t3n/software-entwicklung-%7C-t3n-rm9frs1dz/-/a-QyjYEDoaTgClgidJ8fKrVA%3Aa%3A128306677-%2F0",
-          "shared_at": "2026-05-31T08:00:00.000Z"
+          "url": "https://flipboard.com/@t3n/k%C3%BCnstliche-intelligenz-%7C-t3n-e7t54l1nz/-/a-fdVtGDL1QHObPB9TY88leA%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-31T08:35:00.000Z"
         }
       ],
       "engagement": {
-        "boosts": 3,
-        "likes": 1,
+        "boosts": 2,
+        "likes": 0,
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
+      "tags": [
+        "blog",
+        "ki"
+      ],
+      "tag_debug": [
+        {
+          "category": "ki",
+          "source": "keyword",
+          "via": "ki-",
+          "weight": 1
+        },
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.55",
+          "weight": 2
+        }
+      ]
     },
     {
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
       "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
-      "score": 270.41,
+      "score": 261.86,
       "signal_count": 6,
       "curators": [
         "fernx.bsky.social",
-        "netzpolitik.org",
         "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
-        "matthimon@systemli.social"
+        "matthimon@systemli.social",
+        "netzpolitik.org",
+        "pirati.bsky.social"
       ],
       "platforms": [
-        "rss",
         "bluesky",
+        "rss",
         "mastodon"
       ],
       "latest_shared": "2026-05-29T19:51:56.244Z",
@@ -1912,7 +2013,7 @@
         }
       ],
       "engagement": {
-        "boosts": 49,
+        "boosts": 50,
         "likes": 46,
         "replies": 3,
         "quotes": 6
@@ -1988,10 +2089,10 @@
       ]
     },
     {
-      "id": "40faf541a8f5",
-      "url": "https://t3n.de/news/stromausfall-solaranlage-schutz-1724099/?amp%3Butm_medium=activitypub",
-      "title": "Solaranlage bei Stromausfall? Warum dich das nicht durchgehend schützt – und wie du das änderst | t3n",
-      "score": 268.06,
+      "id": "eaa2fcb6a0ea",
+      "url": "https://t3n.de/news/bitcoin-wallet-verzweiflung-claude-passwort-1742871/?amp%3Butm_medium=activitypub",
+      "title": "Nach 11 Jahren Verzweiflung: Claude knackt Passwort einer Bitcoin-Wallet mit 400.000 Dollar",
+      "score": 260.03,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -1999,18 +2100,18 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T07:20:00.000Z",
+      "latest_shared": "2026-05-31T08:00:00.000Z",
       "syndications": [
         {
           "platform": "mastodon",
           "curator": "t3n@flipboard.com",
-          "url": "https://flipboard.com/@t3n/future-science-ut96tr78z/-/a-3GU6iAemR72t49vsFd5upA%3Aa%3A128306677-%2F0",
-          "shared_at": "2026-05-31T07:20:00.000Z"
+          "url": "https://flipboard.com/@t3n/software-entwicklung-%7C-t3n-rm9frs1dz/-/a-QyjYEDoaTgClgidJ8fKrVA%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-31T08:00:00.000Z"
         }
       ],
       "engagement": {
-        "boosts": 1,
-        "likes": 0,
+        "boosts": 3,
+        "likes": 1,
         "replies": 0,
         "quotes": 0
       },
@@ -2018,20 +2119,59 @@
       "tag_debug": []
     },
     {
+      "id": "9249e96874bf",
+      "url": "https://hmbl.blog/31-5-2026-recap/?pk_campaign=feed&amp%3Bpk_kwd=31-5-2026-recap",
+      "title": "31.5.2026 – recap | In jawls humble opinion.",
+      "score": 258.46,
+      "signal_count": 1,
+      "curators": [
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T09:30:32.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1bffb8-b141-745e-bc87-506a40494e3c.json",
+          "shared_at": "2026-05-31T09:30:32.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "keyword",
+          "via": "recap",
+          "weight": 1
+        }
+      ]
+    },
+    {
       "id": "85b5986dd451",
       "url": "https://netzpolitik.org/2026/kw-22-die-woche-als-die-databroker-files-weiter-kreise-zogen/",
       "title": "KW 22: Die Woche, als die Databroker Files weiter Kreise zogen",
-      "score": 265.69,
+      "score": 253.11,
       "signal_count": 4,
       "curators": [
+        "netzpolitik.org",
         "sebmeineck.bsky.social",
         "pirati.bsky.social",
-        "netzpolitik.org",
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
-        "rss",
         "bluesky",
+        "rss",
         "mastodon"
       ],
       "latest_shared": "2026-05-30T08:06:09.000Z",
@@ -2095,28 +2235,28 @@
       ]
     },
     {
-      "id": "4fd67387d45b",
-      "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/?amp%3Butm_medium=jetpack_social",
-      "title": "Mrs. Klein | Blütensthaub",
-      "score": 202.57,
+      "id": "40faf541a8f5",
+      "url": "https://t3n.de/news/stromausfall-solaranlage-schutz-1724099/?amp%3Butm_medium=activitypub",
+      "title": "Solaranlage bei Stromausfall? Warum dich das nicht immer schützt – und wie du das änderst",
+      "score": 202.35,
       "signal_count": 1,
       "curators": [
-        "Elkeringhausen"
+        "t3n@flipboard.com"
       ],
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T08:10:23.291Z",
+      "latest_shared": "2026-05-31T07:20:00.000Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116668171766279620",
-          "shared_at": "2026-05-31T08:10:23.291Z"
+          "curator": "t3n@flipboard.com",
+          "url": "https://flipboard.com/@t3n/future-science-ut96tr78z/-/a-3GU6iAemR72t49vsFd5upA%3Aa%3A128306677-%2F0",
+          "shared_at": "2026-05-31T07:20:00.000Z"
         }
       ],
       "engagement": {
-        "boosts": 0,
+        "boosts": 1,
         "likes": 0,
         "replies": 0,
         "quotes": 0
@@ -2127,8 +2267,8 @@
     {
       "id": "acf090419af4",
       "url": "https://t3n.de/news/tiefseetauchen-wasserstoffatmung-forscher-1627920/?amp%3Butm_medium=activitypub",
-      "title": "Tauchen mit Wasserstoff: Der Durchbruch in der Tiefsee-Erforschung",
-      "score": 193.51,
+      "title": "Durchbruch in der Tiefsee: Wasserstoffatmung bringt Forscher in unvorstellbare Tiefen",
+      "score": 154.23,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -2157,8 +2297,8 @@
     {
       "id": "85d0830f970c",
       "url": "https://t3n.de/news/smartwatch-check-datensammeln-handgelenk-reicht-nicht-1741251/?amp%3Butm_medium=activitypub",
-      "title": "Smartwatch-Check: Warum reines Datensammeln nicht reicht",
-      "score": 185.75,
+      "title": "Acht Stunden Schlaf und trotzdem müde? Was deine Smartwatch dir bisher verschwiegen hat",
+      "score": 148.95,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -2194,24 +2334,24 @@
       ]
     },
     {
-      "id": "f5c02bbda834",
-      "url": "https://winfuture.de/news,159002.htmlvia",
-      "title": "Inhalt nicht gefunden - WinFuture.de",
-      "score": 172.65,
+      "id": "4fd67387d45b",
+      "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/?amp%3Butm_medium=jetpack_social",
+      "title": "Mrs. Klein",
+      "score": 144.08,
       "signal_count": 1,
       "curators": [
-        "ramichaelseidlitz@legal.social"
+        "Elkeringhausen"
       ],
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-31T07:37:41.000Z",
+      "latest_shared": "2026-05-31T08:10:23.291Z",
       "syndications": [
         {
           "platform": "mastodon",
-          "curator": "ramichaelseidlitz@legal.social",
-          "url": "https://legal.social/@ramichaelseidlitz/116668043201035926",
-          "shared_at": "2026-05-31T07:37:41.000Z"
+          "curator": "Elkeringhausen",
+          "url": "https://mastodon.social/@Elkeringhausen/116668171766279620",
+          "shared_at": "2026-05-31T08:10:23.291Z"
         }
       ],
       "engagement": {
@@ -2220,37 +2360,14 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [
-        "blog",
-        "cloudact",
-        "digitalservicesact"
-      ],
-      "tag_debug": [
-        {
-          "category": "cloudact",
-          "source": "raw_tag",
-          "via": "cloudact",
-          "weight": 2
-        },
-        {
-          "category": "digitalservicesact",
-          "source": "raw_tag",
-          "via": "digitalservicesact",
-          "weight": 2
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.41",
-          "weight": 2
-        }
-      ]
+      "tags": [],
+      "tag_debug": []
     },
     {
       "id": "b81054fdcef0",
       "url": "https://t3n.de/news/ki-agenten-alltag-unternehmen-genauer-hinschauen-1741167/?amp%3Butm_medium=activitypub",
-      "title": "KI-Agenten im Alltag: Warum fehlende Kontrolle zum Risiko wird",
-      "score": 154.23,
+      "title": "Zu viele KI-Agenten, zu wenig Überblick? Das wird für Firmen zum Problem",
+      "score": 127.52,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -2302,16 +2419,16 @@
       "id": "b570a0ad0bf5",
       "url": "https://netzpolitik.org/2026/tiktok-instagram-youtube-plattformen-schludern-bei-hassrede-und-accountsperren/",
       "title": "TikTok, Instagram, Youtube: Plattformen schludern bei Hassrede und Accountsperren",
-      "score": 130.75,
+      "score": 126.45,
       "signal_count": 4,
       "curators": [
-        "pirati.bsky.social",
         "netzpolitik.org",
+        "pirati.bsky.social",
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
-        "rss",
         "bluesky",
+        "rss",
         "mastodon"
       ],
       "latest_shared": "2026-05-29T18:08:39.000Z",
@@ -2448,10 +2565,78 @@
       ]
     },
     {
+      "id": "3ccae6f3e6b0",
+      "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/",
+      "title": "Von der Einsamkeit intelligenter Menschen",
+      "score": 103.92,
+      "signal_count": 1,
+      "curators": [
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T06:30:23.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1bd57f-e897-47b1-82b1-d2fc504b0b93.json",
+          "shared_at": "2026-05-31T06:30:23.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "5d51f23af68a",
+      "url": "https://status.z428.eu/later-again-and-returning-to-a-temporary-home-with-the-passi",
+      "title": "Later again and returning to a temporary home with the passi",
+      "score": 103.78,
+      "signal_count": 2,
+      "curators": [
+        "z428.eu",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "bluesky",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-30T21:00:02+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mn3qcts35u2z",
+          "shared_at": "2026-05-30T21:00:02+02:00"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1b3ab9-3d3e-ceac-a99a-e06f41d3fc86.json",
+          "shared_at": "2026-05-30T19:30:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 7,
+        "replies": 1,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
       "id": "3e80393a87c3",
       "url": "https://t3n.de/news/kleinanzeigen-betrug-fake-zahlung-mitleidsstory-phishing-erkennen-1724757/?amp%3Butm_medium=activitypub",
-      "title": "Kleinanzeigen-Betrug erkennen: Fake-Zahlung, Mitleidsstory, Phishing",
-      "score": 116.37,
+      "title": "Fake-Zahlung, Mitleidsstory, Phishing: So erkennst du Betrug auf Kleinanzeigen schnell",
+      "score": 98.31,
       "signal_count": 1,
       "curators": [
         "t3n@flipboard.com"
@@ -2478,232 +2663,15 @@
       "tag_debug": []
     },
     {
-      "id": "5d51f23af68a",
-      "url": "https://status.z428.eu/later-again-and-returning-to-a-temporary-home-with-the-passi",
-      "title": "status",
-      "score": 111.94,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "z428.eu"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T21:00:02+02:00",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn3qcts35u2z",
-          "shared_at": "2026-05-30T21:00:02+02:00"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1b3ab9-3d3e-ceac-a99a-e06f41d3fc86.json",
-          "shared_at": "2026-05-30T19:30:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 6,
-        "replies": 1,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "e049f10ba705",
-      "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/?amp%3Butm_medium=jetpack_social",
-      "title": "Von der Einsamkeit intelligenter Menschen | Blütensthaub",
-      "score": 105.04,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:00:40.174Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116667661691032035",
-          "shared_at": "2026-05-31T06:00:40.174Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "4fecd09fcaeb",
-      "url": "https://stadt-bremerhaven.de/umfrage-auswertung-so-plant-unsere-community-in-sachen-e-auto/",
-      "title": "Umfrage-Auswertung: So plant unsere Community in Sachen E-Auto",
-      "score": 101.24,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T18:38:37.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116664979815519611",
-          "shared_at": "2026-05-30T18:38:37.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "e-mobility"
-      ],
-      "tag_debug": [
-        {
-          "category": "e-mobility",
-          "source": "raw_tag",
-          "via": "e-mobility",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "a75a9c8ade86",
-      "url": "https://stadt-bremerhaven.de/neues-outlook-unified-inbox-kommt-im-sommer-2026/",
-      "title": "Neues Outlook: Unified Inbox kommt im Sommer 2026",
-      "score": 101.24,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T18:38:37.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116664979810087892",
-          "shared_at": "2026-05-30T18:38:37.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "software",
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "software",
-          "source": "tag_map",
-          "via": "software__co",
-          "weight": 3
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.41",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "8020f425a9bf",
-      "url": "https://stadt-bremerhaven.de/turtle-beach-pacific-skyline-wireless-controller-mit-tmr-sticks-fuer-xbox-und-pc/",
-      "title": "Turtle Beach Pacific Skyline Wireless Controller: Mit TMR-Sticks für Xbox und PC",
-      "score": 101.24,
-      "signal_count": 2,
-      "curators": [
-        "stadtbremerhaven@feedmirror.social",
-        "Caschys Blog"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T18:38:37.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116664979803163030",
-          "shared_at": "2026-05-30T18:38:37.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "gaming",
-        "hardware"
-      ],
-      "tag_debug": [
-        {
-          "category": "gaming",
-          "source": "tag_map",
-          "via": "games",
-          "weight": 3
-        },
-        {
-          "category": "hardware",
-          "source": "tag_map",
-          "via": "hardware",
-          "weight": 3
-        },
-        {
-          "category": "gaming",
-          "source": "keyword",
-          "via": "xbox",
-          "weight": 1
-        },
-        {
-          "category": "gaming",
-          "source": "embedding",
-          "via": "sim=0.59",
-          "weight": 2
-        }
-      ]
-    },
-    {
       "id": "2fbfde1f2d62",
       "url": "https://heise.de/-11311895",
-      "title": "Wie SSD-Zugriffszeiten zum digitalen Fingerabdruck werden | heise online",
-      "score": 98.15,
+      "title": "Wie SSD-Zugriffszeiten zum digitalen Fingerabdruck werden",
+      "score": 93.33,
       "signal_count": 3,
       "curators": [
         "offenenetze.de",
-        "theunicornxxl.bsky.social",
-        "jag0911.bsky.social"
+        "jag0911.bsky.social",
+        "theunicornxxl.bsky.social"
       ],
       "platforms": [
         "bluesky"
@@ -2788,48 +2756,10 @@
       ]
     },
     {
-      "id": "cfecf5402306",
-      "url": "https://status.z428.eu/eine-mauer-steile-treppe-rostendes-gel%C3%A4nder-palme-und-ol",
-      "title": "status",
-      "score": 86.06,
-      "signal_count": 2,
-      "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "z428.eu"
-      ],
-      "platforms": [
-        "bluesky",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T17:50:03+02:00",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn3fp46ksf2z",
-          "shared_at": "2026-05-30T17:50:03+02:00"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1b108f-3fca-0592-9c52-f2c945d9399b.json",
-          "shared_at": "2026-05-30T16:30:07.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 5,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "6bd9f75cdcd8",
-      "url": "https://stadt-bremerhaven.de/werbemarkt-2026-streaming-zieht-an-klassisches-tv-und-radio-unter-druck/",
-      "title": "Werbemarkt 2026: Streaming zieht an, klassisches TV und Radio unter Druck",
-      "score": 85.18,
+      "id": "4fecd09fcaeb",
+      "url": "https://stadt-bremerhaven.de/umfrage-auswertung-so-plant-unsere-community-in-sachen-e-auto/",
+      "title": "Umfrage-Auswertung: So plant unsere Community in Sachen E-Auto",
+      "score": 93.28,
       "signal_count": 2,
       "curators": [
         "stadtbremerhaven@feedmirror.social",
@@ -2839,13 +2769,13 @@
         "rss",
         "mastodon"
       ],
-      "latest_shared": "2026-05-30T16:23:32.000Z",
+      "latest_shared": "2026-05-30T18:38:37.000Z",
       "syndications": [
         {
           "platform": "mastodon",
           "curator": "stadtbremerhaven@feedmirror.social",
-          "url": "https://feedmirror.social/@stadtbremerhaven/116664448586947898",
-          "shared_at": "2026-05-30T16:23:32.000Z"
+          "url": "https://feedmirror.social/@stadtbremerhaven/116664979815519611",
+          "shared_at": "2026-05-30T18:38:37.000Z"
         }
       ],
       "engagement": {
@@ -2855,60 +2785,124 @@
         "quotes": 0
       },
       "tags": [
-        "streaming"
+        "e-mobility"
       ],
       "tag_debug": [
         {
-          "category": "streaming",
-          "source": "tag_map",
-          "via": "streaming",
-          "weight": 3
-        },
-        {
-          "category": "streaming",
-          "source": "embedding",
-          "via": "sim=0.53",
+          "category": "e-mobility",
+          "source": "raw_tag",
+          "via": "e-mobility",
           "weight": 2
         }
       ]
     },
     {
-      "id": "56d95bbe3da0",
-      "url": "https://status.z428.eu/eine-bank-unter-eichen-staubwolken-tr%C3%A4nendes-auge-vorsich",
-      "title": "status",
-      "score": 84.44,
+      "id": "a75a9c8ade86",
+      "url": "https://stadt-bremerhaven.de/neues-outlook-unified-inbox-kommt-im-sommer-2026/",
+      "title": "Neues Outlook: Unified Inbox kommt im Sommer 2026",
+      "score": 93.28,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "z428.eu"
+        "stadtbremerhaven@feedmirror.social",
+        "Caschys Blog"
       ],
       "platforms": [
-        "bluesky",
+        "rss",
         "mastodon"
       ],
-      "latest_shared": "2026-05-30T17:00:03+02:00",
+      "latest_shared": "2026-05-30T18:38:37.000Z",
       "syndications": [
         {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn3cvp5y7y2o",
-          "shared_at": "2026-05-30T17:00:03+02:00"
-        },
-        {
           "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1b0279-a82b-886b-9528-1b845a2cb329.json",
-          "shared_at": "2026-05-30T15:30:01.000Z"
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116664979810087892",
+          "shared_at": "2026-05-30T18:38:37.000Z"
         }
       ],
       "engagement": {
         "boosts": 0,
-        "likes": 12,
+        "likes": 0,
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
+      "tags": [
+        "software",
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "software",
+          "source": "tag_map",
+          "via": "software__co",
+          "weight": 3
+        },
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.41",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "8020f425a9bf",
+      "url": "https://stadt-bremerhaven.de/turtle-beach-pacific-skyline-wireless-controller-mit-tmr-sticks-fuer-xbox-und-pc/",
+      "title": "Turtle Beach Pacific Skyline Wireless Controller: Mit TMR-Sticks für Xbox und PC",
+      "score": 93.28,
+      "signal_count": 2,
+      "curators": [
+        "stadtbremerhaven@feedmirror.social",
+        "Caschys Blog"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-30T18:38:37.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "stadtbremerhaven@feedmirror.social",
+          "url": "https://feedmirror.social/@stadtbremerhaven/116664979803163030",
+          "shared_at": "2026-05-30T18:38:37.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "gaming",
+        "hardware"
+      ],
+      "tag_debug": [
+        {
+          "category": "gaming",
+          "source": "tag_map",
+          "via": "games",
+          "weight": 3
+        },
+        {
+          "category": "hardware",
+          "source": "tag_map",
+          "via": "hardware",
+          "weight": 3
+        },
+        {
+          "category": "gaming",
+          "source": "keyword",
+          "via": "xbox",
+          "weight": 1
+        },
+        {
+          "category": "gaming",
+          "source": "embedding",
+          "via": "sim=0.59",
+          "weight": 2
+        }
+      ]
     }
   ]
 }
