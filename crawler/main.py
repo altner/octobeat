@@ -475,12 +475,22 @@ async def run():
     ]
     print(f"→ {len(articles)} finds with social signal (Mastodon/Bluesky)")
 
-    # ── 9. Sort and keep top N ─────────────────────────────────────────────
+    # ── 9. Sort and keep top N (with per-domain cap) ──────────────────────
     articles.sort(key=lambda a: a["score"], reverse=True)
-    top_n = cfg["article_filter"]["top_n"]
-    top   = articles[:top_n]
+    top_n      = cfg["article_filter"]["top_n"]
+    domain_cap = cfg["article_filter"].get("max_per_domain", 3)
 
-    print(f"→ Selected top {len(top)} finds (from {len(articles)} unique URLs)")
+    top: list[dict] = []
+    domain_counts: Counter[str] = Counter()
+    for a in articles:
+        d = domain_from_url(a["url"])
+        if domain_counts[d] < domain_cap:
+            top.append(a)
+            domain_counts[d] += 1
+        if len(top) >= top_n:
+            break
+
+    print(f"→ Selected top {len(top)} finds (from {len(articles)} unique URLs, max {domain_cap}/domain)")
 
     if learning_cfg.get("enabled", True):
         run_id = record_run(learning_db_path, run_started_at, top, valid_signals, rss_urls)

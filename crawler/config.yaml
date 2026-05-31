@@ -22,6 +22,7 @@ curator_filter:
 article_filter:
   max_age_hours: 48  # Ignore articles older than 48h
   top_n: 50          # Number of articles in feed.json
+  max_per_domain: 3  # Max articles per domain in top N (prevents one blog flooding the feed)
 
 # Persistent crawler memory.
 embeddings:

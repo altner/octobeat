@@ -30,14 +30,16 @@ _URL_TRAILING_JUNK = re.compile(
 
 
 def normalize_url(url: str) -> str:
-    """Remove UTM parameters, tracking suffixes, and trailing junk words."""
+    """Remove UTM parameters, tracking suffixes, AMP/Jetpack params, and trailing junk."""
     # Strip trailing punctuation and common appended words (e.g. "htmlvia")
     url = re.sub(r'[.,;:!?)]+$', '', url)
     # Split off trailing non-path words glued without separator (e.g. "htmlvia" → "html")
     url = re.sub(r'(\.html?|\.php|\.aspx?)(via|per|from|durch|quelle|cc|ht).*$',
                  r'\1', url, flags=re.IGNORECASE)
-    tracked = {"utm_source", "utm_medium", "utm_campaign",
-               "utm_content", "utm_term", "ref", "source", "fbclid"}
+    # Decode encoded semicolons used by WordPress Jetpack (?amp%3Butm_medium=jetpack_social)
+    url = url.replace('%3B', '&').replace('%3b', '&')
+    tracked = {"utm_source", "utm_medium", "utm_campaign", "utm_content",
+               "utm_term", "ref", "source", "fbclid", "amp"}
     p = urlparse(url)
     params = {k: v for k, v in parse_qs(p.query).items()
               if k.lower() not in tracked}
