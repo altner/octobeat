@@ -50,6 +50,8 @@ domain_blacklist:
   - instagram.com
   - facebook.com
   - tiktok.com
+  - widgets.wp.com
+  - s2.wp.com
 
 # Maps source tags (from RSS <category> or social hashtags) to OctoBeat categories.
 # Weight: +3 per match (stronger than keyword rules).

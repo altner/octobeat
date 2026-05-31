@@ -39,7 +39,8 @@ def normalize_url(url: str) -> str:
     # Decode encoded semicolons used by WordPress Jetpack (?amp%3Butm_medium=jetpack_social)
     url = url.replace('%3B', '&').replace('%3b', '&')
     tracked = {"utm_source", "utm_medium", "utm_campaign", "utm_content",
-               "utm_term", "ref", "source", "fbclid", "amp"}
+               "utm_term", "ref", "source", "fbclid", "amp",
+               "like_comment", "_wpnonce", "replytocom"}
     p = urlparse(url)
     params = {k: v for k, v in parse_qs(p.query).items()
               if k.lower() not in tracked}
