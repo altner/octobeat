@@ -114,6 +114,12 @@ tag_map:
     - testberichte
     - test
     - review
+    - headset
+    - kopfhörer
+    - kopfhoerer
+    - knochenschall
+    - lautsprecher
+    - earphones
   software:
     - software
     - apps
@@ -155,6 +161,11 @@ tag_map:
     - ipo
     - übernahme
     - investition
+    - banking
+    - bank
+    - öffentlichkeit
+    - prognose
+    - markt
   gaming:
     - games
     - gaming
@@ -192,6 +203,11 @@ tag_map:
     - outdoor
     - fahrrad
     - urlaub
+    - seen
+    - weg
+    - pfingsten
+    - trail
+    - trekking
   kultur:
     - kultur
     - buch
@@ -199,6 +215,22 @@ tag_map:
     - musik
     - kunst
     - ausstellung
+    - konzert
+    - album
+    - song
+    - künstler
+    - literatur
+    - serie
+    - tatort
+  blog:
+    - alltagsgedanken
+    - tagebuch
+    - wochenrückblick
+    - monatsrückblick
+    - marmeladenglas
+    - momentaufnahme
+    - gedanken
+    - linksammlung
   politik:
     - politik
     - bundesregierung
@@ -256,7 +288,11 @@ tag_anchors:
     Video on Demand Musik Serien Filme Content Creator
   reisen: >
     Reisen Urlaub Tourismus Reiseziel Hotel Flug Wandern
-    Outdoor Fahrrad Radreise Backpacking Abenteuer
+    Outdoor Fahrrad Radreise Backpacking Abenteuer Seen Wanderweg
+  kultur: >
+    Musik Konzert Album Künstler Song Band Film Kino Serie Tatort
+    Buch Literatur Kunst Ausstellung Kultur Kreativität Theater
+    Jazz Rock Pop Folk Klassik Lesen Review Filmkritik
   politik: >
     Politik Bundesregierung Bundestag Koalition Partei Wahl
     Gesetzentwurf Demokratie Europa EU-Politik Außenpolitik
@@ -319,6 +355,10 @@ tag_rules:
     - uebernahme
     - temu
     - strafe
+    - banking
+    - prognose
+    - finanz
+    - simpelbanking
   arbeit:
     - arbeitszeit
     - arbeitsrecht
@@ -333,6 +373,11 @@ tag_rules:
     - film
     - marke
     - fashion
+    - tatort
+    - konzert
+    - album
+    - literatur
+    - serie
   rechtsextremismus:
     - rechtsextrem
     - rechtsruck
@@ -349,6 +394,17 @@ tag_rules:
     - linksammlung
     - lesenswert
     - wochenende
+    - tagebuch
+    - gedanken
+    - alltagsgedanken
+    - momentaufnahme
+    - marmeladenglas
+    - momente
+    - kw 20
+    - kw 21
+    - kw 22
+    - kw 23
+    - kw 24
   reisen:
     - reise
     - reisen
@@ -356,6 +412,11 @@ tag_rules:
     - hotel
     - flug
     - outdoor
+    - seen
+    - wanderweg
+    - pfingsten
+    - trekking
+    - trail
   gaming:
     - xbox
     - playstation
