@@ -10,7 +10,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 
-def write_feed(articles: list[dict], data_dir: str, top_curators: dict | None = None) -> Path:
+def write_feed(articles: list[dict], data_dir: str, top_curators=None) -> Path:
     """Write feed.json and the daily archive."""
     base = Path(data_dir)
     base.mkdir(parents=True, exist_ok=True)
