@@ -22,7 +22,7 @@ const isSettings = currentPage === 'settings';
     <img src={`${base}logo.png`} alt="OctoBeat" class="logo-img" />
   </a>
   {isDev && currentPage === 'inspector' && <span class="debug-badge">Debug</span>}
-  {genTime && <span class="meta">{genTime}</span>}
+  {genTime && <span class="meta"><span class="meta-label">Updated:</span> {genTime}</span>}
   <div class="spacer"></div>
   <nav class="nav-links">
     {navItems.map(item => (
@@ -90,6 +90,7 @@ const isSettings = currentPage === 'settings';
   }
 
   .meta { font-size: 12px; color: var(--muted); flex-shrink: 0; }
+  .meta-label { color: var(--muted); opacity: 0.6; margin-right: 2px; }
   .spacer { flex: 1; }
 
   .nav-links {
