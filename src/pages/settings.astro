@@ -56,92 +56,108 @@ function isTravel(url: string) {
 <BaseLayout title="OctoBeat – Settings">
   <Header currentPage="settings" />
   <main>
-    {!isDev ? (
-      <p class="empty">Settings are only available locally in dev mode.</p>
-    ) : (
-      <>
-        <div class="settings-head">
-          <div>
-            <h2>Feed URLs <span class="count">{feeds.length} source{feeds.length !== 1 ? 's' : ''}</span></h2>
-            <span class="api-state" id="feedbackApiState">Checking feedback API...</span>
-          </div>
-          <form class="add-feed-form" id="addFeedForm">
-            <input
-              class="feed-input"
-              id="feedUrlInput"
-              name="feed_url"
-              type="url"
-              placeholder="https://example.org/feed.xml"
-              autocomplete="off"
-              required
-            />
-            <button class="add-feed-button" type="submit">Add</button>
-          </form>
+    {!isDev && (
+      <div class="api-offline-banner">
+        <span class="api-offline-icon">⚙</span>
+        <div>
+          <strong>API offline</strong> — feed management is only available in local dev mode.
+          Ratings and changes made here will not be saved.
         </div>
+      </div>
+    )}
 
-        {feeds.length === 0 ? (
-          <p class="empty">No feeds yet. Run <code>python crawler/main.py</code>.</p>
-        ) : (
-          <ul class="feed-list">
-            {feeds.map(url => (
-              <li class="feed-card">
-                <div class="feed-icon">{isTravel(url) ? 'TR' : 'RSS'}</div>
-                <div class="feed-info">
-                  <div class="feed-name">{nameFromUrl(url)}</div>
-                  <a class="feed-url" href={url} target="_blank" rel="noopener" title={url}>{url}</a>
-                  <div
-                    class="source-status"
-                    data-source-status={url}
-                    title="Source learning status"
-                  >Not observed yet</div>
-                </div>
-                <div class="feed-actions" aria-label={`Rating for ${nameFromUrl(url)}`}>
-                  <span
-                    class="rating-state"
-                    data-rating-state={url}
-                    title="Saved feed rating"
-                  >Neutral</span>
-                  <button
-                    class="feedback-button"
-                    type="button"
-                    data-feed-url={url}
-                    data-rating-button="up"
-                    title="Increase feed weight"
-                  >+</button>
-                  <button
-                    class="feedback-button"
-                    type="button"
-                    data-feed-url={url}
-                    data-rating-button="down"
-                    title="Decrease feed weight"
-                  >-</button>
-                  <button
-                    class="feedback-button neutral"
-                    type="button"
-                    data-feed-url={url}
-                    data-rating-button="neutral"
-                    title="Reset feed rating"
-                  >Neutral</button>
-                  <button
-                    class="feedback-button danger"
-                    type="button"
-                    data-feed-url={url}
-                    data-blocked="true"
-                    data-rating-button="block"
-                    title="Block feed"
-                  >Block</button>
-                  <button
-                    class="feedback-button delete"
-                    type="button"
-                    data-delete-feed-url={url}
-                    title="Remove feed URL"
-                  >Delete</button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </>
+    <div class="settings-head">
+      <div>
+        <h2>Feed URLs <span class="count">{feeds.length} source{feeds.length !== 1 ? 's' : ''}</span></h2>
+        {isDev && <span class="api-state" id="feedbackApiState">Checking feedback API...</span>}
+      </div>
+      <form class="add-feed-form" id="addFeedForm">
+        <input
+          class="feed-input"
+          id="feedUrlInput"
+          name="feed_url"
+          type="url"
+          placeholder="https://example.org/feed.xml"
+          autocomplete="off"
+          required
+          disabled={!isDev || undefined}
+          title={!isDev ? "API offline — only available in dev mode" : undefined}
+        />
+        <button
+          class="add-feed-button"
+          type="submit"
+          disabled={!isDev || undefined}
+          title={!isDev ? "API offline — only available in dev mode" : undefined}
+        >Add</button>
+      </form>
+    </div>
+
+    {feeds.length === 0 ? (
+      <p class="empty">No feeds yet. Run <code>python crawler/main.py</code>.</p>
+    ) : (
+      <ul class="feed-list">
+        {feeds.map(url => (
+          <li class="feed-card">
+            <div class="feed-icon">{isTravel(url) ? 'TR' : 'RSS'}</div>
+            <div class="feed-info">
+              <div class="feed-name">{nameFromUrl(url)}</div>
+              <a class="feed-url" href={url} target="_blank" rel="noopener" title={url}>{url}</a>
+              <div
+                class="source-status"
+                data-source-status={isDev ? url : undefined}
+                title="Source learning status"
+              >{isDev ? 'Not observed yet' : '—'}</div>
+            </div>
+            <div class="feed-actions" aria-label={`Rating for ${nameFromUrl(url)}`}>
+              <span
+                class="rating-state"
+                data-rating-state={isDev ? url : undefined}
+                title="Saved feed rating"
+              >Neutral</span>
+              <button
+                class="feedback-button"
+                type="button"
+                data-feed-url={isDev ? url : undefined}
+                data-rating-button="up"
+                title={isDev ? "Increase feed weight" : "API offline"}
+                disabled={!isDev || undefined}
+              >+</button>
+              <button
+                class="feedback-button"
+                type="button"
+                data-feed-url={isDev ? url : undefined}
+                data-rating-button="down"
+                title={isDev ? "Decrease feed weight" : "API offline"}
+                disabled={!isDev || undefined}
+              >-</button>
+              <button
+                class="feedback-button neutral"
+                type="button"
+                data-feed-url={isDev ? url : undefined}
+                data-rating-button="neutral"
+                title={isDev ? "Reset feed rating" : "API offline"}
+                disabled={!isDev || undefined}
+              >Neutral</button>
+              <button
+                class="feedback-button danger"
+                type="button"
+                data-feed-url={isDev ? url : undefined}
+                data-blocked="true"
+                data-rating-button="block"
+                title={isDev ? "Block feed" : "API offline"}
+                disabled={!isDev || undefined}
+              >Block</button>
+              <button
+                class="feedback-button delete"
+                type="button"
+                data-delete-feed-url={isDev ? url : undefined}
+                title={isDev ? "Remove feed URL" : "API offline"}
+                disabled={!isDev || undefined}
+              >Delete</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     )}
   </main>
 </BaseLayout>
@@ -151,6 +167,34 @@ function isTravel(url: string) {
     max-width: 700px;
     margin: 0 auto;
     padding: 32px 24px 60px;
+  }
+
+  .api-offline-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(160, 80, 0, 0.12);
+    border: 1px solid rgba(160, 80, 0, 0.4);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #c8884a;
+    line-height: 1.5;
+  }
+
+  .api-offline-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .api-offline-banner strong { color: #e0a060; }
+
+  button:disabled, input:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   .settings-head {
