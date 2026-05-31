@@ -32,6 +32,8 @@ interface Article {
 }
 
 const articles: Article[] = (feedData as any).articles ?? [];
+const topCurators: Record<string, {handle: string; articles: number}[]> =
+  (feedData as any).top_curators ?? {};
 
 // ── Category distribution ──────────────────────────────────────────────────
 const MIN_SECTION = 2;
@@ -213,6 +215,34 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
       </section>
     )}
 
+    <!-- ── Top Curators ─────────────────────────────────────────────────── -->
+    {Object.keys(topCurators).length > 0 && (
+      <section class="panel">
+        <h2>Top Curators</h2>
+        <p class="hint">Curators who contributed most articles to this feed, ranked by article count.</p>
+        <div class="curator-grid">
+          {(['mastodon', 'bluesky'] as const).map(platform => (
+            topCurators[platform]?.length > 0 && (
+              <div class="curator-col">
+                <h3 class={`curator-platform curator-${platform}`}>
+                  {platform === 'mastodon' ? '🐘 Mastodon' : '🦋 Bluesky'}
+                </h3>
+                <ol class="curator-list">
+                  {topCurators[platform].map((c, i) => (
+                    <li class="curator-row">
+                      <span class="curator-rank">#{i + 1}</span>
+                      <span class="curator-handle">{c.handle}</span>
+                      <span class="curator-count">{c.articles} article{c.articles !== 1 ? 's' : ''}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- ── Per-section article detail ───────────────────────────────────── -->
     {sectionTags.map(tag => (
       <section class="panel" id={`sec-${tag}`}>
@@ -262,6 +292,17 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
   .panel.warn { border-color: #a05000; }
 
   h2 { font-size: 1rem; font-weight: 600; margin: 0 0 1rem; color: var(--accent, #e8e8e8); }
+
+  .curator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .curator-col h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .curator-platform { text-transform: capitalize; }
+  .curator-mastodon { color: var(--mastodon, #6364ff); }
+  .curator-bluesky  { color: var(--bluesky, #0285ff); }
+  .curator-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+  .curator-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; }
+  .curator-rank { color: #555; width: 24px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .curator-handle { color: var(--text); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: monospace; font-size: 0.78rem; }
+  .curator-count { color: #888; font-size: 0.75rem; flex-shrink: 0; }
 
   .hint { font-size: 0.8rem; color: #888; margin: -0.5rem 0 0.75rem; }
 

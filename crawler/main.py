@@ -510,6 +510,34 @@ async def run():
 
     print(f"→ Selected top {len(top)} finds (from {len(articles)} unique URLs, max {domain_cap}/domain)")
 
+    # ── Build curator ranking from top articles ────────────────────────────
+    curator_stats: dict[str, dict] = {}
+    for a in top:
+        for sig in by_url.get(a["url"], []):
+            handle   = sig.get("curator_handle", "")
+            platform = sig.get("platform", "")
+            if not handle or platform == "rss":
+                continue
+            key = f"{platform}:{handle}"
+            if key not in curator_stats:
+                curator_stats[key] = {
+                    "handle":        handle,
+                    "platform":      platform,
+                    "articles":      0,
+                    "score_sum":     0.0,
+                }
+            curator_stats[key]["articles"]  += 1
+            curator_stats[key]["score_sum"] += a["score"]
+
+    top_curators: dict[str, list] = {"mastodon": [], "bluesky": []}
+    for entry in sorted(curator_stats.values(), key=lambda x: (-x["articles"], -x["score_sum"])):
+        plat = entry["platform"]
+        if plat in top_curators and len(top_curators[plat]) < 10:
+            top_curators[plat].append({
+                "handle":   entry["handle"],
+                "articles": entry["articles"],
+            })
+
     if learning_cfg.get("enabled", True):
         run_id = record_run(learning_db_path, run_started_at, top, valid_signals, rss_urls)
         print(f"✓ Stored run #{run_id} in SQLite → {learning_db_path}")
@@ -553,7 +581,7 @@ async def run():
     # ── 10. Write and push ─────────────────────────────────────────────────
     out = cfg["output"]
     data_dir = data_dir_from_config(cfg)
-    write_feed(top, data_dir)
+    write_feed(top, data_dir, top_curators=top_curators)
 
     # Export learned data to computed.json (DB backup / restore source)
     if learning_cfg.get("enabled", True):
