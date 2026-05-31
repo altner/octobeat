@@ -53,8 +53,9 @@ def extract_urls(text: str) -> list[str]:
 
 
 def strip_html(text: str) -> str:
-    """Simple HTML stripping without an external library."""
-    return re.sub(r"<[^>]+>", "", text or "").strip()
+    """Strip HTML tags and decode HTML entities."""
+    from html import unescape
+    return unescape(re.sub(r"<[^>]+>", "", text or "")).strip()
 
 
 def extract_hashtags(text: str) -> list[str]:
