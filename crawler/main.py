@@ -468,6 +468,7 @@ async def run():
     articles = [
         a for a in articles
         if social_platforms & set(a["platforms"])
+        and (a.get("title") or "").strip()
         and not _numeric_title.match((a.get("title") or "").strip())
     ]
     print(f"→ {len(articles)} finds with social signal (Mastodon/Bluesky)")
