@@ -4,77 +4,127 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-OctoBeat is a German-language social news aggregator. It crawls Mastodon, Bluesky, RSS feeds (and optionally Hacker News), scores articles by social signal strength, and produces a ranked `data/feed.json` that a static frontend reads.
+OctoBeat is a German-language social news aggregator focused on independent blogs and non-profit media. It crawls Mastodon (including trending links), Bluesky, and RSS feeds, scores articles by social signal strength, and produces a ranked `data/feed.json` that a static Astro frontend reads.
 
 ## Commands
 
-### Python crawler
+### Python crawler (runs locally — not in CI)
 ```bash
 # Install dependencies (run once, from repo root)
-pip install -r crawler/requirements.txt
+pip3 install -r crawler/requirements.txt
 
 # Run the crawler
-python crawler/main.py
+python3 crawler/main.py
+
+# Push results to GitHub (triggers deploy)
+git add data/feed.json data/feeds.json data/computed.json data/octobeat.sqlite3
+git commit -m "feed: $(date +%Y-%m-%d)"
+git push
 ```
 
 ### Astro frontend
 ```bash
-npm install      # einmalig
-npm run dev      # dev server → http://localhost:4321/octobeat/
-npm run build    # statischen Build in dist/ erzeugen
-npm run preview  # gebauten Build lokal prüfen
+npm install       # once
+npm run dev       # dev server → http://localhost:4321/octobeat/
+npm run build     # static build → dist/
+npm run preview   # preview built output locally
 ```
 
 ## Architecture
 
-There are two independent subsystems that share the `data/` directory:
+Two independent subsystems share the `data/` directory.
 
-### 1. Crawler (`crawler/`) — Python pipeline
-Runs as a one-shot script (locally or via GitHub Actions daily at 06:00 UTC).
+### 1. Crawler (`crawler/`) — Python pipeline, runs locally
 
-Pipeline: `main.py` orchestrates these steps in order:
-1. **Collect** (`collector.py`) — fetches signals from Mastodon, Bluesky, RSS, and optionally HN. Each signal is `{url, platform, curator_handle, curator_meta, shared_at, title?}`.
-2. **Filter** — domain blacklist + curator spam filter (`curator.py:is_valid_curator`).
-3. **Weight** — `curator.py:calc_weight` derives a float `[0.1, 3.0]` from follower count, follower/following ratio, account age, and platform base.
-4. **Enrich** — `collector.py:enrich_titles` fetches `<title>` tags for signals missing a title.
-5. **Score** (`scorer.py`) — groups signals by URL, computes: `raw_weight × log2(unique_curators+1) × platform_bonus × 1/(age_hours+2)^1.4 × 1000`.
-6. **Filter** — drops articles with no Mastodon/Bluesky signal (RSS-only articles don't make the cut).
-7. **Write** (`storage.py`) — writes `data/feed.json` and `data/archive/YYYY-MM-DD.json`.
+`main.py` orchestrates these steps:
 
-Config is in `crawler/config.yaml`: seed domains, RSS feed URLs, Bluesky/HN toggles, curator filter thresholds, article filter (max age 48h, top 50), domain blacklist, and output path.
+1. **RSS** (`collector.py:collect_rss`) — fetches 13 independent German blogs/non-profits from `sources.yaml`
+2. **Mastodon Trending** (`collector.py:collect_mastodon_trends`) — fetches trending article links from 8 Fediverse instances via `/api/v1/trends/links`
+3. **Mastodon search** (`collector.py:collect_mastodon`) — searches instances for links to RSS article domains (parallel per domain)
+4. **Bluesky search** (`collector.py:collect_bluesky`) — same domains on Bluesky (token fetched once, shared across parallel calls)
+5. **Filter** — domain blacklist + curator spam filter (`curator.py:is_valid_curator`)
+6. **Weight** — `curator.py:calc_weight` derives a float `[0.1, 3.0]` from follower count, ratio, account age, platform base
+7. **Enrich titles** — `collector.py:enrich_titles` fetches `<title>`/`og:title` for missing titles; falls back to URL slug for useless titles like "status"
+8. **Group by URL** — signals grouped per article URL
+9. **Embeddings** (`embedder.py`) — semantic classification via `paraphrase-multilingual-MiniLM-L12-v2`; embeddings cached in SQLite
+10. **Score** (`scorer.py`) — `raw_weight × log2(unique_curators+1) × platform_bonus × engagement_bonus × time_decay × 1000`
+11. **WordPress enrichment** (`collector.py:enrich_wordpress_engagement`) — fetches comment/like counts via WP REST API where available; cached in SQLite
+12. **Filter** — drops articles without Mastodon/Bluesky signal, empty titles, numeric-only titles
+13. **Top N** — sort by score, max `max_per_domain` (default 3) per domain, keep top 50
+14. **Tag inference** (`main.py:infer_article_tags`) — three-layer system: `tag_map` (+3), embeddings (+2–4), `tag_rules` keywords (+1); corrections from DB/YAML override all
+15. **SQLite** (`database.py:record_run`) — stores run history, curator stats, tag history, unmapped tags
+16. **Export** (`database.py:export_computed`) — writes `data/computed.json` (DB backup/restore source)
+17. **Write** (`storage.py:write_feed`) — writes `data/feed.json` (incl. `top_curators`) and `data/archive/YYYY-MM-DD.json`
 
-Secrets go in `.env` at the repo root (loaded via `python-dotenv`):
-- `MASTODON_TOKEN`, `MASTODON_INSTANCE`
-- `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD`
+### Key config files
+
+| File | Purpose |
+|------|---------|
+| `crawler/config.yaml` | Technical settings: scoring, filters, embeddings, tag rules |
+| `crawler/sources.yaml` | Community-maintained RSS feeds + Mastodon instances |
+| `crawler/corrections.yaml` | Manual tag overrides (URL → [categories]) |
+| `.env` | Secrets: `MASTODON_TOKEN`, `MASTODON_INSTANCE`, `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` |
 
 ### 2. Frontend (`src/`) — Astro 5, static output
-Three pages built with Astro. Data is read at **build time** from `data/feed.json` and `data/feeds.json` — no client-side JSON fetch. Search uses pre-rendered cards + DOM show/hide.
 
-- `src/pages/index.astro` — main page: sections grouped by hashtag, client-side search
-- `src/pages/feeds.astro` — RSS sources list
-- `src/pages/debug.astro` — full article list with platform labels, curators, tags
-- `src/layouts/BaseLayout.astro` — HTML shell, global CSS variables
-- `src/components/Header.astro` — sticky header, logo, nav links
+Data read at **build time** from `data/feed.json` — no client-side fetch.
 
-Sections are built server-side in `index.astro` frontmatter: articles are assigned to their first matching tag that has `≥ 2` articles; unassigned articles → "Weitere".
+| Page | Description |
+|------|-------------|
+| `src/pages/index.astro` | Main feed: sections by category, client-side search |
+| `src/pages/inspector.astro` | All articles with platform labels, curators, tags (read-only in prod) |
+| `src/pages/metrics.astro` | Tag classifier stats, curator rankings, unmapped RSS tags |
+| `src/pages/settings.astro` | RSS source list (API offline banner in prod, interactive in dev) |
+| `src/pages/doc.astro` | Public documentation for visitors |
+| `src/layouts/BaseLayout.astro` | HTML shell, global CSS, footer |
+| `src/components/Header.astro` | Sticky header, logo, nav links, update timestamp |
 
-Config: `astro.config.mjs` — `base: '/octobeat'` (GitHub Pages sub-path), `build.format: 'file'` (no trailing slashes). Build output → `dist/`.
+### 3. GitHub Actions (`.github/workflows/deploy.yml`)
 
-### 3. GitHub Actions (`.github/workflows/crawl.yml`)
-Single job that crawls, commits data, then deploys to GitHub Pages:
-1. Runs `python crawler/main.py` (secrets injected via repo Secrets)
-2. Commits `data/feed.json`, `data/feeds.json`, `data/archive/*.json` back to main via `stefanzweifel/git-auto-commit-action` (commits with `GITHUB_TOKEN` do not retrigger the workflow)
-3. Runs `npm run build` (Astro SSG → `dist/`) and deploys via `actions/deploy-pages`
+Triggered on push to `main` when `data/feed.json` changes. Does **not** run the crawler.
 
-When `GITHUB_ACTIONS=true`, `storage.py:push_to_github` is a no-op since the action handles the commit.
+1. `npm ci` + `npm run build` (Astro SSG → `dist/`)
+2. Deploy to GitHub Pages via `actions/deploy-pages`
 
-**One-time repo setup required:** Go to repo Settings → Pages → Source → set to **"GitHub Actions"**. Then add the secrets `MASTODON_TOKEN`, `MASTODON_INSTANCE`, `BLUESKY_HANDLE`, `BLUESKY_APP_PASSWORD` under Settings → Secrets → Actions.
+**Deploy time: ~2 minutes** (no Python, no crawler).
+
+### 4. GitHub Actions (`.github/workflows/triage-suggestion.yml`)
+
+Triggered when an issue gets labeled `feed-suggestion` or `instance-suggestion`.
+Automatically creates a PR adding the suggested URL to `crawler/sources.yaml`.
 
 ## Data flow summary
 
 ```
-config.yaml → main.py → collector.py → curator.py → scorer.py → storage.py → data/feed.json
-                                                                             → data/feeds.json
-                                                                             → data/archive/
-src/ (Astro build → dist/) ←────────────────────────────────────── data/feed.json
+sources.yaml ──┐
+config.yaml ───┤
+               ├─→ main.py → collector.py → scorer.py → storage.py → data/feed.json
+.env ──────────┘                                                    → data/feeds.json
+                        ↓                                           → data/computed.json
+                  database.py → data/octobeat.sqlite3               → data/archive/
+
+git push → GitHub Actions (deploy.yml) → npm build → GitHub Pages
 ```
+
+## Tag classification system
+
+Three layers, combined by weighted score:
+
+| Source | Weight | Example |
+|--------|--------|---------|
+| `tag_map` (RSS source tag → category) | +3 | `#hardware` → `hardware` |
+| Embedding similarity (semantic) | +2–4 | "Turtle Beach Controller" → `gaming` |
+| `tag_rules` keyword match on title/URL | +1 | `xbox` in title → `gaming` |
+| `corrections.yaml` / DB override | +99 | manual fix |
+
+## SQLite tables (data/octobeat.sqlite3)
+
+- `runs`, `run_articles`, `signals` — crawl history
+- `curator_stats`, `curator_feedback` — per-curator learning
+- `feed_feedback` — per-feed ratings
+- `source_stats`, `source_runs` — feed performance over time
+- `tag_history` — tag assignments per run
+- `tag_corrections` — manual tag overrides (editable via /metrics)
+- `unmapped_tags` — RSS tags not yet in tag_map (feeds /metrics suggestions)
+- `article_embeddings` — cached title vectors (model: paraphrase-multilingual-MiniLM-L12-v2)
+- `wp_engagement` — WordPress REST API comment/like cache
