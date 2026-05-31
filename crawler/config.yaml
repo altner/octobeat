@@ -1,25 +1,15 @@
 # Default RSS feeds. data/feeds.json is the active source list.
 rss_feeds:
-  # Tech and web
-  - https://www.heise.de/rss/heise-atom.xml
-  - https://www.golem.de/rss.php
+  # Independent blogs & non-profit media
   - https://netzpolitik.org/feed/
-  - https://t3n.de/rss.xml
   - https://www.basicthinking.de/blog/feed/
-  - https://mixed.de/feed/
   - https://www.stadt-bremerhaven.de/feed/   # Caschy's Blog
-  - https://www.ifun.de/feed/
-  - https://www.winfuture.de/rss.xml
   - https://www.kuketz-blog.de/feed/          # Privacy and security
   - https://www.mobiflip.de/feed/
-  - https://www.nextpit.de/feed/rss           # Android & Mobile
-  - https://www.heise.de/tp/news-atom.xml     # Telepolis
   - https://carta.info/feed/                  # Media and digital
   - https://irights.info/feed                 # Digital rights
 
-  # Travel
-  - https://www.travelbook.de/feed/
-  - https://www.reisereporter.de/feed/
+  # Travel blogs
   - https://reisehappen.de/feed/
   - https://www.fernwehking.de/feed/
   - https://nomadblogger.de/feed/
