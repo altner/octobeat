@@ -70,16 +70,47 @@ def bluesky_post_url(post_uri: str, handle: str) -> str:
     return f"https://bsky.app/profile/{handle}/post/{parts[-1]}"
 
 
+def _title_from_slug(url: str) -> str:
+    """Derive a readable title from the URL slug as last resort."""
+    from urllib.parse import unquote
+    path = urlparse(url).path.rstrip("/")
+    slug = path.split("/")[-1] if path else ""
+    if not slug:
+        return ""
+    # Remove leading date patterns like 2026-05-31-
+    slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", slug)
+    return unquote(slug).replace("-", " ").replace("_", " ").strip().capitalize()
+
+
+_USELESS_TITLES = re.compile(
+    r"^(status|blog|home|index|untitled|feed|news|artikel|post)$", re.IGNORECASE
+)
+
+
 async def fetch_title(url: str, client: httpx.AsyncClient) -> str:
-    """Fetch the <title> tag from a URL. Returns an empty string on failure."""
+    """Fetch the <title> tag from a URL. Falls back to URL slug for useless titles."""
     try:
         r = await client.get(url, timeout=8, follow_redirects=True)
+        # Try og:title first
+        m_og = re.search(
+            r'(?:property=["\']og:title["\'][^>]*content|content[^>]*property=["\']og:title["\'])'
+            r'[^>]*=["\']([^"\']{4,})',
+            r.text, re.IGNORECASE,
+        )
+        if m_og:
+            t = strip_html(m_og.group(1)).strip()
+            if t and not _USELESS_TITLES.match(t):
+                return t
+        # Fall back to <title>
         m = re.search(r"<title[^>]*>(.*?)</title>", r.text, re.IGNORECASE | re.DOTALL)
         if m:
-            return strip_html(m.group(1)).strip()
+            t = strip_html(m.group(1)).strip()
+            if t and not _USELESS_TITLES.match(t):
+                return t
     except Exception:
         pass
-    return ""
+    # Last resort: derive from URL slug
+    return _title_from_slug(url)
 
 
 # ---------------------------------------------------------------------------
