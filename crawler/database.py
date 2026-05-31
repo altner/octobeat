@@ -964,3 +964,131 @@ def export_feed_json(db_path: Path, data_dir: Path) -> Path:
 
     print(f"✓ Exported {len(articles)} articles from SQLite run #{run['id']} → {feed_path}")
     return feed_path
+
+
+# ── computed.json export / restore ───────────────────────────────────────────
+
+def export_computed(db_path: Path, data_dir: Path) -> Path:
+    """
+    Export all learned/computed data to data/computed.json.
+    This file is committed to git and used to restore the DB if it's lost.
+    """
+    if not db_path.exists():
+        return data_dir / "computed.json"
+
+    with connect(db_path) as con:
+        curator_stats = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM curator_stats ORDER BY platform, curator_handle"
+            ).fetchall()
+        ]
+        curator_feedback = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM curator_feedback ORDER BY platform, curator_handle"
+            ).fetchall()
+        ]
+        feed_feedback = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM feed_feedback ORDER BY feed_url"
+            ).fetchall()
+        ]
+        source_stats = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM source_stats ORDER BY feed_url"
+            ).fetchall()
+        ]
+        tag_corrections = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM tag_corrections ORDER BY url"
+            ).fetchall()
+        ]
+        unmapped_tags = [
+            dict(r) for r in con.execute(
+                "SELECT * FROM unmapped_tags ORDER BY count DESC, tag"
+            ).fetchall()
+        ]
+        runs_count = con.execute("SELECT COUNT(*) FROM runs").fetchone()[0]
+
+    now = datetime.now(timezone.utc).isoformat()
+    payload = {
+        "exported_at":      now,
+        "runs_count":       runs_count,
+        "curator_stats":    curator_stats,
+        "curator_feedback": curator_feedback,
+        "feed_feedback":    feed_feedback,
+        "source_stats":     source_stats,
+        "tag_corrections":  tag_corrections,
+        "unmapped_tags":    unmapped_tags,
+    }
+
+    data_dir.mkdir(parents=True, exist_ok=True)
+    out = data_dir / "computed.json"
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"✓ Exported computed data ({runs_count} runs) → {out}")
+    return out
+
+
+def restore_from_computed(db_path: Path, computed_path: Path) -> bool:
+    """
+    Restore learned data from computed.json into a fresh DB.
+    Called automatically when DB is missing but computed.json exists.
+    """
+    if not computed_path.exists():
+        return False
+
+    try:
+        data = json.loads(computed_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"⚠ Could not read computed.json: {e}")
+        return False
+
+    init_db(db_path)
+    now = datetime.now(timezone.utc).isoformat()
+
+    with connect(db_path) as con:
+        for r in data.get("curator_stats", []):
+            con.execute(
+                """INSERT OR REPLACE INTO curator_stats
+                   (platform, curator_handle, total_signals, top_articles,
+                    score_sum, first_seen, last_seen)
+                   VALUES (:platform, :curator_handle, :total_signals, :top_articles,
+                           :score_sum, :first_seen, :last_seen)""", r
+            )
+        for r in data.get("curator_feedback", []):
+            con.execute(
+                """INSERT OR REPLACE INTO curator_feedback
+                   (platform, curator_handle, rating, blocked, note, updated_at)
+                   VALUES (:platform, :curator_handle, :rating, :blocked, :note, :updated_at)""", r
+            )
+        for r in data.get("feed_feedback", []):
+            con.execute(
+                """INSERT OR REPLACE INTO feed_feedback
+                   (feed_url, rating, blocked, note, updated_at)
+                   VALUES (:feed_url, :rating, :blocked, :note, :updated_at)""", r
+            )
+        for r in data.get("source_stats", []):
+            con.execute(
+                """INSERT OR REPLACE INTO source_stats
+                   (feed_url, domain, first_seen, last_seen, runs_seen,
+                    rss_signal_sum, social_signal_sum, top_article_sum,
+                    last_rss_signal_at, last_social_signal_at)
+                   VALUES (:feed_url, :domain, :first_seen, :last_seen, :runs_seen,
+                           :rss_signal_sum, :social_signal_sum, :top_article_sum,
+                           :last_rss_signal_at, :last_social_signal_at)""", r
+            )
+        for r in data.get("tag_corrections", []):
+            con.execute(
+                """INSERT OR REPLACE INTO tag_corrections
+                   (url, tags_json, note, updated_at)
+                   VALUES (:url, :tags_json, :note, :updated_at)""", r
+            )
+        for r in data.get("unmapped_tags", []):
+            con.execute(
+                """INSERT OR REPLACE INTO unmapped_tags
+                   (tag, domain, count, last_seen)
+                   VALUES (:tag, :domain, :count, :last_seen)""", r
+            )
+
+    runs_count = data.get("runs_count", 0)
+    print(f"✓ Restored computed data ({runs_count} previous runs) from {computed_path}")
+    return True

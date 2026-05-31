@@ -22,6 +22,7 @@ from curator  import is_valid_curator, calc_weight
 from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
     record_tag_history, record_unmapped_tags, load_corrections_from_db,
+    export_computed, restore_from_computed,
 )
 try:
     from embedder import build_anchor_embeddings, classify_articles as embed_classify
@@ -360,6 +361,16 @@ async def run():
 
     learning_cfg = cfg.get("learning", {})
     learning_db_path = resolve_config_path(learning_cfg.get("db_path", "../data/octobeat.sqlite3"))
+    data_dir = data_dir_from_config(cfg)
+    computed_path = Path(data_dir) / "computed.json"
+
+    # Auto-restore from computed.json if DB is missing or empty
+    if not learning_db_path.exists():
+        print("⚠ SQLite DB not found — attempting restore from computed.json...")
+        restored = restore_from_computed(learning_db_path, computed_path)
+        if not restored:
+            print("  No computed.json found — starting fresh.")
+
     if learning_cfg.get("enabled", True):
         learned = apply_curator_learning(
             valid_signals,
@@ -505,6 +516,10 @@ async def run():
     out = cfg["output"]
     data_dir = data_dir_from_config(cfg)
     write_feed(top, data_dir)
+
+    # Export learned data to computed.json (DB backup / restore source)
+    if learning_cfg.get("enabled", True):
+        export_computed(learning_db_path, Path(data_dir))
 
     # feeds.json for the settings page
     feeds_path = write_feed_urls(cfg, rss_urls)
