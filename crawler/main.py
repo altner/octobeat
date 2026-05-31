@@ -8,6 +8,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import math
 import re
 from collections import Counter
 from pathlib import Path
@@ -17,7 +18,7 @@ from datetime import datetime, timezone
 import yaml
 from dateutil import parser as dateparser
 
-from collector import collect_mastodon, collect_bluesky, collect_rss, enrich_titles, _bluesky_token, collect_mastodon_trends
+from collector import collect_mastodon, collect_bluesky, collect_rss, enrich_titles, enrich_wordpress_engagement, _bluesky_token, collect_mastodon_trends
 from curator  import is_valid_curator, calc_weight
 from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
@@ -464,7 +465,24 @@ async def run():
     if too_old_count:
         print(f"→ Dropped {too_old_count} finds older than {max_age_h}h")
 
-    # ── 8. Keep only articles with social signal + meaningful title ────────
+    # ── 8. WordPress engagement enrichment ────────────────────────────────
+    print("→ Fetching WordPress engagement...")
+    articles = await enrich_wordpress_engagement(articles, db_path=learning_db_path)
+
+    # Rescore articles that got WP engagement data
+    for a in articles:
+        wp = a.get("wp_engagement", {})
+        if wp:
+            comments = wp.get("comments", 0)
+            wp_likes = wp.get("likes", 0)
+            # Small logarithmic bonus — doesn't dominate social signals
+            wp_bonus = 1 + math.log1p(comments * 0.5 + wp_likes * 0.25) / 20
+            a["score"] = round(a["score"] * wp_bonus, 2)
+            a["engagement"]["comments"] = comments
+            if wp_likes:
+                a["engagement"]["wp_likes"] = wp_likes
+
+    # ── 9. Keep only articles with social signal + meaningful title ────────
     social_platforms = {"mastodon", "bluesky"}
     _numeric_title = re.compile(r"^\d+$")
     articles = [

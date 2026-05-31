@@ -171,6 +171,13 @@ def init_db(db_path: Path) -> None:
               last_seen TEXT NOT NULL,
               PRIMARY KEY (tag, domain)
             );
+
+            -- WordPress REST API engagement cache
+            CREATE TABLE IF NOT EXISTS wp_engagement (
+              url TEXT PRIMARY KEY,
+              data_json TEXT NOT NULL,
+              fetched_at TEXT NOT NULL
+            );
             """
         )
         con.execute(

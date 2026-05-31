@@ -530,3 +530,134 @@ async def enrich_titles(signals: list[dict]) -> list[dict]:
             s["title"] = url_to_title[s["url"]]
 
     return signals
+
+
+# ---------------------------------------------------------------------------
+# WordPress REST API engagement enrichment
+# ---------------------------------------------------------------------------
+
+def _wp_slug_from_url(url: str) -> str:
+    """Extract the post slug from a WordPress URL path."""
+    path = urlparse(url).path.rstrip("/")
+    return path.split("/")[-1] if path else ""
+
+
+async def _fetch_wp_engagement(
+    url: str, client: httpx.AsyncClient
+) -> tuple[str, dict]:
+    """
+    Try to fetch comment count (and likes if available) from the WP REST API.
+    Returns (url, {comments, likes}) or (url, {}) on failure.
+    """
+    parsed = urlparse(url)
+    base   = f"{parsed.scheme}://{parsed.netloc}"
+    slug   = _wp_slug_from_url(url)
+    if not slug:
+        return url, {}
+    try:
+        r = await client.get(
+            f"{base}/wp-json/wp/v2/posts",
+            params={"slug": slug, "_fields": "id,comment_count,jetpack_likes_enabled"},
+            timeout=6,
+            follow_redirects=True,
+        )
+        if r.status_code != 200:
+            return url, {}
+        posts = r.json()
+        if not posts:
+            return url, {}
+        post = posts[0]
+        result = {"comments": int(post.get("comment_count", 0) or 0)}
+
+        # Try Jetpack likes if post ID available
+        post_id = post.get("id")
+        if post_id and post.get("jetpack_likes_enabled"):
+            lr = await client.get(
+                f"https://public-api.wordpress.com/rest/v1.1/sites/{parsed.netloc}/posts/{post_id}/likes",
+                timeout=6,
+            )
+            if lr.status_code == 200:
+                result["likes"] = int(lr.json().get("found", 0))
+
+        return url, result
+    except Exception:
+        return url, {}
+
+
+async def enrich_wordpress_engagement(
+    articles: list[dict], db_path=None
+) -> list[dict]:
+    """
+    Enrich articles from WordPress sites with comment/like counts via REST API.
+    Results are cached in SQLite (wp_engagement table).
+    """
+    import sqlite3
+    from datetime import datetime, timezone
+
+    # Load cache from DB
+    cache: dict[str, dict] = {}
+    if db_path and Path(str(db_path)).exists():
+        try:
+            con = sqlite3.connect(str(db_path))
+            con.row_factory = sqlite3.Row
+            rows = con.execute("SELECT url, data_json FROM wp_engagement").fetchall()
+            con.close()
+            for row in rows:
+                import json as _json
+                cache[row["url"]] = _json.loads(row["data_json"])
+        except Exception:
+            pass
+
+    # Identify WordPress URLs not yet cached
+    wp_articles = [
+        a for a in articles
+        if ("wordpress.com" in a["url"] or _wp_slug_from_url(a["url"]))
+        and a["url"] not in cache
+    ]
+
+    if wp_articles:
+        sem = asyncio.Semaphore(10)
+
+        async def _fetch(a: dict, client: httpx.AsyncClient):
+            async with sem:
+                return await _fetch_wp_engagement(a["url"], client)
+
+        async with httpx.AsyncClient(headers=HEADERS) as client:
+            results = await asyncio.gather(*[_fetch(a, client) for a in wp_articles])
+
+        # Save to cache and DB
+        import json as _json
+        now = datetime.now(timezone.utc).isoformat()
+        if db_path:
+            try:
+                con = sqlite3.connect(str(db_path))
+                con.execute("PRAGMA journal_mode=DELETE")
+                for url, data in results:
+                    if data:
+                        cache[url] = data
+                        con.execute(
+                            """INSERT OR REPLACE INTO wp_engagement(url, data_json, fetched_at)
+                               VALUES (?, ?, ?)""",
+                            (url, _json.dumps(data), now),
+                        )
+                con.commit()
+                con.close()
+            except Exception:
+                pass
+        else:
+            for url, data in results:
+                if data:
+                    cache[url] = data
+
+    # Apply to articles
+    enriched = 0
+    for a in articles:
+        wp_data = cache.get(a["url"], {})
+        if wp_data:
+            a["wp_engagement"] = wp_data
+            enriched += 1
+
+    if enriched:
+        print(f"  {enriched} articles enriched with WordPress engagement data")
+
+    return articles
