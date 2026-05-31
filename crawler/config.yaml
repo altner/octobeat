@@ -92,6 +92,159 @@ domain_blacklist:
   - facebook.com
   - tiktok.com
 
+# Maps source tags (from RSS <category> or social hashtags) to OctoBeat categories.
+# Weight: +3 per match (stronger than keyword rules).
+# Add new source tags here as you discover them in the feed.
+tag_map:
+  ki:
+    - ki
+    - ai
+    - künstliche_intelligenz
+    - artificial_intelligence
+    - llm
+    - chatgpt
+    - openai
+    - machine_learning
+    - deep_learning
+    - gpt
+    - claude
+    - gemini
+  apple:
+    - apple
+    - mac
+    - macos
+    - ios
+    - iphone
+    - ipad
+    - watchos
+    - visionos
+    - swift
+    - xcode
+  unix:
+    - linux
+    - unix
+    - shell
+    - bash
+    - zsh
+    - sysadmin
+    - freebsd
+    - opensuse
+    - debian
+    - ubuntu
+    - fedora
+    - arch
+    - terminal
+    - cli
+  windows:
+    - windows
+    - microsoft
+    - powershell
+    - wsl
+  hardware:
+    - hardware
+    - cpu
+    - gpu
+    - nas
+    - usb
+    - raspberry_pi
+    - prozessor
+    - speicher
+    - grafikkarte
+    - testberichte
+    - test
+    - review
+  software:
+    - software
+    - apps
+    - open_source
+    - foss
+    - github
+    - developer
+    - entwicklung
+    - programmierung
+    - code
+    - software__co
+  sicherheit:
+    - security
+    - sicherheit
+    - exploit
+    - malware
+    - hacking
+    - datenschutz
+    - privacy
+    - cvss
+    - cve
+    - vulnerability
+  netzpolitik:
+    - netzpolitik
+    - digitalrecht
+    - urheberrecht
+    - regulierung
+    - eu
+    - dsgvo
+    - gdpr
+    - zensur
+    - netzneutralität
+  wirtschaft:
+    - wirtschaft
+    - startup
+    - börse
+    - aktien
+    - finanzen
+    - ipo
+    - übernahme
+    - investition
+  gaming:
+    - games
+    - gaming
+    - playstation
+    - xbox
+    - nintendo
+    - steam
+    - esport
+  mobile:
+    - android
+    - smartphone
+    - mobile
+    - samsung
+    - pixel
+    - oneplus
+  streaming:
+    - streaming
+    - netflix
+    - youtube
+    - spotify
+    - podcast
+    - video
+  soziale_medien:
+    - mastodon
+    - bluesky
+    - fediverse
+    - twitter
+    - instagram
+    - tiktok
+    - social_media
+  reisen:
+    - reisen
+    - travel
+    - wandern
+    - outdoor
+    - fahrrad
+    - urlaub
+  kultur:
+    - kultur
+    - buch
+    - film
+    - musik
+    - kunst
+    - ausstellung
+  politik:
+    - politik
+    - bundesregierung
+    - wahl
+    - parteien
+    - eu_politik
+
 # Qualified tags from title, URL slug, and existing signal tags.
 # Do not assign tags solely from the source domain.
 tag_rules:

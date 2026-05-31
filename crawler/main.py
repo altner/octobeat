@@ -172,29 +172,54 @@ def normalize_tag(tag: str) -> str:
     return re.sub(r"[^a-z0-9äöüß_-]", "", tag)
 
 
-def infer_article_tags(title: str, url: str, signals: list[dict], tag_rules: dict) -> list[str]:
-    """Build qualified tags from signal tags and configured keyword rules."""
-    tag_counts: Counter[str] = Counter()
+def infer_article_tags(
+    title: str, url: str, signals: list[dict], tag_rules: dict, tag_map: dict
+) -> list[str]:
+    """Build section tags from three sources, highest to lowest weight:
+    1. tag_map: source tags from RSS/social directly mapped to a category  (+3)
+    2. tag_rules: keyword match on title+URL                               (+1)
+    3. raw source tags that survive as-is when no mapping exists           (+2, kept separate)
+    """
+    category_counts: Counter[str] = Counter()
+    raw_tag_counts: Counter[str] = Counter()
+
+    # Build reverse lookup: source_tag → category
+    source_to_category: dict[str, str] = {}
+    for category, source_tags in tag_map.items():
+        cat_norm = normalize_tag(category)
+        if not cat_norm:
+            continue
+        for st in source_tags:
+            source_to_category[str(st).casefold().replace(" ", "_")] = cat_norm
+
+    _noise = re.compile(r"^(uberblogr|uberbot|blogrhaus\d+|linktipp)$")
 
     for signal in signals:
         for tag in signal.get("tags", []):
-            normalized = normalize_tag(tag)
-            if normalized:
-                tag_counts[normalized] += 2
+            tag_norm = normalize_tag(tag)
+            if not tag_norm or _noise.match(tag_norm):
+                continue
+            category = source_to_category.get(tag_norm)
+            if category:
+                category_counts[category] += 3
+            else:
+                raw_tag_counts[tag_norm] += 2
 
     text = f"{title} {url}".casefold()
     for tag, keywords in tag_rules.items():
-        normalized = normalize_tag(tag)
-        if not normalized:
+        cat_norm = normalize_tag(tag)
+        if not cat_norm:
             continue
         for keyword in keywords:
             kw = str(keyword).casefold()
             pattern = rf"(?<![a-zäöüß]){re.escape(kw)}"
             if re.search(pattern, text):
-                tag_counts[normalized] += 1
+                category_counts[cat_norm] += 1
                 break
 
-    return [tag for tag, _ in tag_counts.most_common(5)]
+    # Merge: mapped categories first, then raw tags as fallback
+    combined: Counter[str] = category_counts + raw_tag_counts
+    return [tag for tag, _ in combined.most_common(5)]
 
 
 def collect_syndications(signals: list[dict]) -> list[dict]:
@@ -339,7 +364,9 @@ async def run():
         title = next((s.get("title") for s in sigs if s.get("title")), "")
 
         # Derive tags from signals and qualified keyword rules.
-        article_tags = infer_article_tags(title, url, sigs, cfg.get("tag_rules", {}))
+        article_tags = infer_article_tags(
+            title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {})
+        )
 
         articles.append({
             "id":            hashlib.md5(url.encode()).hexdigest()[:12],
