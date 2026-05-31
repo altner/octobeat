@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-05-31T11:33:53.285226+00:00",
-  "article_count": 50,
+  "generated_at": "2026-05-31T12:00:42.715675+00:00",
+  "article_count": 33,
   "articles": [
     {
       "id": "5b3bfe5938e0",
       "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
       "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
-      "score": 7370.08,
+      "score": 6301.23,
       "signal_count": 6,
       "curators": [
         "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
         "netzpolitik.org",
         "fxneumann.bonn.social.ap.brid.gy",
-        "karlbaer@gruene.social"
+        "karlbaer@gruene.social",
+        "pirati.bsky.social"
       ],
       "platforms": [
+        "rss",
         "mastodon",
-        "bluesky",
-        "rss"
+        "bluesky"
       ],
       "latest_shared": "2026-05-31T09:58:02.000Z",
       "syndications": [
@@ -54,10 +54,11 @@
         }
       ],
       "engagement": {
-        "boosts": 22,
-        "likes": 46,
+        "boosts": 24,
+        "likes": 49,
         "replies": 4,
-        "quotes": 2
+        "quotes": 2,
+        "comments": 0
       },
       "tags": [
         "netzpolitik",
@@ -121,80 +122,28 @@
           "via": "sim=0.42",
           "weight": 2
         }
-      ]
-    },
-    {
-      "id": "6947c4764e0d",
-      "url": "https://pixelboomer.de/heute-zum-ersten/",
-      "title": "Mastodon 2026-05-31 12:39:34 | Pixelboomer",
-      "score": 3161.3,
-      "signal_count": 3,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "blog@pixelboomer.de",
-        "uberblogr@troet.uberblogr.de"
       ],
-      "platforms": [
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "2026-05-31T11:15:02.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c1836-9626-30a1-a11b-15f44be4894d.json",
-          "shared_at": "2026-05-31T11:15:02.000Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "blog@pixelboomer.de",
-          "url": "https://pixelboomer.de/heute-zum-ersten/",
-          "shared_at": "2026-05-31T10:39:34.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "maenner",
-        "rasieren"
-      ],
-      "tag_debug": [
-        {
-          "category": "maenner",
-          "source": "raw_tag",
-          "via": "maenner",
-          "weight": 2
-        },
-        {
-          "category": "rasieren",
-          "source": "raw_tag",
-          "via": "rasieren",
-          "weight": 2
-        }
-      ]
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "1fadb34b09f1",
       "url": "https://bunte-kuechenabenteuer.de/abenteuer-alltag-25-31-05-2026/",
       "title": "Abenteuer Alltag (25.-31.05.2026) | Bunte Küchenabenteuer",
-      "score": 3058.8,
+      "score": 2699.07,
       "signal_count": 5,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "buntkueche@pixelfed.social",
+        "freuwesen.eurosky.social",
         "buntkueche@bunte-kuechenabenteuer.de",
         "uberblogr@troet.uberblogr.de",
-        "freuwesen.eurosky.social"
+        "buntkueche@pixelfed.social",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
+        "rss",
         "mastodon",
-        "bluesky",
-        "rss"
+        "bluesky"
       ],
       "latest_shared": "2026-05-31T08:48:21.000Z",
       "syndications": [
@@ -227,7 +176,8 @@
         "boosts": 5,
         "likes": 5,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "blog",
@@ -266,37 +216,179 @@
           "via": "sim=0.46",
           "weight": 2
         }
-      ]
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
-      "id": "7fbd9f543264",
-      "url": "https://minorherba.wordpress.com/2026/05/31/outbreak/",
-      "title": "Outbreak – Lautlose Killer | Unkraut vergeht nicht...oder doch?",
-      "score": 2762.22,
+      "id": "6947c4764e0d",
+      "url": "https://pixelboomer.de/heute-zum-ersten/",
+      "title": "Mastodon 2026-05-31 12:39:34 | Pixelboomer",
+      "score": 2471.49,
       "signal_count": 3,
       "curators": [
-        "herbaminor.bsky.social",
+        "UberBlogr - Neueste Beiträge",
+        "blog@pixelboomer.de",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T11:15:02.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c1836-9626-30a1-a11b-15f44be4894d.json",
+          "shared_at": "2026-05-31T11:15:02.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "blog@pixelboomer.de",
+          "url": "https://pixelboomer.de/heute-zum-ersten/",
+          "shared_at": "2026-05-31T10:39:34.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [
+        "maenner",
+        "rasieren"
+      ],
+      "tag_debug": [
+        {
+          "category": "maenner",
+          "source": "raw_tag",
+          "via": "maenner",
+          "weight": 2
+        },
+        {
+          "category": "rasieren",
+          "source": "raw_tag",
+          "via": "rasieren",
+          "weight": 2
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "f1190a9b7471",
+      "url": "https://happybuddha1975.de/22-kw-2026-umsteigen-aussteigen-und-das-innere-gleichgewicht/",
+      "title": "22 KW 2026 Umsteigen, Aussteigen und das innere Gleichgewicht | happybudddha1975",
+      "score": 1746.9,
+      "signal_count": 2,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "Juergen@happybuddha1975.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "Sun, 31 May 2026 13:57:17 +0200",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "Juergen@happybuddha1975.de",
+          "url": "https://happybuddha1975.de/22-kw-2026-umsteigen-aussteigen-und-das-innere-gleichgewicht/",
+          "shared_at": "2026-05-31T11:57:17.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 2,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [],
+      "tag_debug": [],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "547a68bfe8e7",
+      "url": "https://www.henning-uhle.eu/allgemein/mecklenburgische-seenplatte-und-ploetzlich-bist-du-wieder-kind?pk_campaign=feed&pk_kwd=mecklenburgische-seenplatte-und-ploetzlich-bist-du-wieder-kind",
+      "title": "Mecklenburgische Seenplatte: Und plötzlich bist du wieder Kind | Henning Uhle",
+      "score": 1630.98,
+      "signal_count": 2,
+      "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "bluesky",
-        "rss"
+        "rss",
+        "mastodon"
       ],
-      "latest_shared": "2026-05-31T10:54:53.953Z",
+      "latest_shared": "2026-05-31T11:45:01.000Z",
       "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "herbaminor.bsky.social",
-          "url": "https://bsky.app/profile/herbaminor.bsky.social/post/3mn5foatdyk2s",
-          "shared_at": "2026-05-31T10:54:53.953Z"
-        },
         {
           "platform": "mastodon",
           "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bf1a3-7f79-a4eb-b96f-9494e1a181d5.json",
-          "shared_at": "2026-05-31T08:30:27.000Z"
+          "url": "https://troet.uberblogr.de/posts/6a1c1f3d-201b-c0f8-952d-e4b5e10961d2.json",
+          "shared_at": "2026-05-31T11:45:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.46",
+          "weight": 2
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "76c0fb9a04f4",
+      "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
+      "title": "Jackson C. Frank – Golden Mirror | Blütensthaub",
+      "score": 1604.79,
+      "signal_count": 3,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T10:30:23.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c0dbf-9b14-2900-b161-db462e499a75.json",
+          "shared_at": "2026-05-31T10:30:23.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "Elkeringhausen",
+          "url": "https://mastodon.social/@Elkeringhausen/116668652334409508",
+          "shared_at": "2026-05-31T10:12:36.180Z"
         }
       ],
       "engagement": {
@@ -305,59 +397,22 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [
-        "renerusso",
-        "donaldsutherland",
-        "movie",
-        "thriller",
-        "rewatch"
-      ],
-      "tag_debug": [
-        {
-          "category": "renerusso",
-          "source": "raw_tag",
-          "via": "renerusso",
-          "weight": 2
-        },
-        {
-          "category": "donaldsutherland",
-          "source": "raw_tag",
-          "via": "donaldsutherland",
-          "weight": 2
-        },
-        {
-          "category": "movie",
-          "source": "raw_tag",
-          "via": "movie",
-          "weight": 2
-        },
-        {
-          "category": "thriller",
-          "source": "raw_tag",
-          "via": "thriller",
-          "weight": 2
-        },
-        {
-          "category": "rewatch",
-          "source": "raw_tag",
-          "via": "rewatch",
-          "weight": 2
-        }
-      ]
+      "tags": [],
+      "tag_debug": []
     },
     {
       "id": "a61fb77deb8d",
       "url": "https://thorsten-konigorski.de/journal/31-05-2026/",
       "title": "Mentionstest | Thorsten Konigorski",
-      "score": 1806.85,
+      "score": 1411.62,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T11:30:17.000Z",
       "syndications": [
@@ -381,15 +436,15 @@
       "id": "53945724b746",
       "url": "https://blog.donswelt.de/2026/05/31/schmerzhafte-nostalgie-mit-gradius-notizen-eines-amateur-baristas-und-pragmatische-liebe.html",
       "title": "Schmerzhafte Nostalgie mit Gradius, Notizen eines Amateur-Baristas und eine pragmatische Beziehung | Torsten (donswelt)",
-      "score": 1806.85,
+      "score": 1410.52,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T11:30:12.000Z",
       "syndications": [
@@ -422,15 +477,15 @@
       "id": "c727fa2f19b2",
       "url": "https://flashtaig.wordpress.com/2026/05/31/tatort-oder-taschentuch-4/",
       "title": "Tatort oder Taschentuch | Rina",
-      "score": 1806.85,
+      "score": 1409.43,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T11:30:07.000Z",
       "syndications": [
@@ -454,15 +509,15 @@
       "id": "24055405a4e6",
       "url": "https://jonas-haller.de/2026/05/urlaub-juist/",
       "title": "Meine 8 Urlaubs-Highlights auf der autofreien Nordseeinsel Juist. | Jonas‘ Blog",
-      "score": 1806.85,
+      "score": 1408.34,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T11:30:02.000Z",
       "syndications": [
@@ -477,7 +532,8 @@
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "blog",
@@ -496,13 +552,16 @@
           "via": "sim=0.50",
           "weight": 2
         }
-      ]
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "aa002276ac8e",
       "url": "https://www.auf-kurztrip.de/2026/05/20-episoden-spaeter-ein-rueckblick-auf-meinen-fotopodcast/",
       "title": "20 Episoden später: Ein Rückblick auf meinen Fotopodcast | Auf Kurztrip",
-      "score": 1438.4,
+      "score": 1243.72,
       "signal_count": 3,
       "curators": [
         "UberBlogr - Neueste Beiträge",
@@ -510,8 +569,8 @@
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:30:02.000Z",
       "syndications": [
@@ -532,7 +591,8 @@
         "boosts": 1,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "blog"
@@ -550,13 +610,16 @@
           "via": "sim=0.42",
           "weight": 2
         }
-      ]
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "f5509fd72572",
       "url": "https://nerdjunk.de/mein-ersteindruck-von-den-shokz-openrun-pro-2-knochenschall-sportkopfhoerern/",
       "title": "Mein Ersteindruck von den SHOKZ OpenRun Pro 2 Knochenschall Sportkopfhörern | Nerdjunk.de",
-      "score": 1222.16,
+      "score": 1084.76,
       "signal_count": 3,
       "curators": [
         "UberBlogr - Neueste Beiträge",
@@ -564,8 +627,8 @@
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:00:02.000Z",
       "syndications": [
@@ -584,9 +647,10 @@
       ],
       "engagement": {
         "boosts": 1,
-        "likes": 0,
+        "likes": 1,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "kultur",
@@ -632,53 +696,24 @@
           "via": "shokz",
           "weight": 2
         }
-      ]
-    },
-    {
-      "id": "76c0fb9a04f4",
-      "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
-      "title": "Jackson C. Frank – Golden Mirror | Blütensthaub",
-      "score": 1067.43,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
       ],
-      "platforms": [
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "2026-05-31T10:30:23.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c0dbf-9b14-2900-b161-db462e499a75.json",
-          "shared_at": "2026-05-31T10:30:23.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "6e829d83de18",
       "url": "https://codeundkram.de/passkeys-passworter-waren-eine-schlechte-idee-die-wir-viel-zu-lange-ertragen-haben/",
       "title": "Passkeys: Passwörter waren eine schlechte Idee, die wir viel zu lange ertragen haben | CODEundKRAM",
-      "score": 1066.62,
+      "score": 882.02,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T10:30:17.000Z",
       "syndications": [
@@ -711,15 +746,15 @@
       "id": "a7b567497110",
       "url": "https://www.heldenhaushalt.de/sari02/index.php/2026/05/31/30-marmeladenglasmomente-im-mai-2026/",
       "title": "30 Marmeladenglasmomente im Mai 2026 | Heldenhaushalt.de",
-      "score": 1065.67,
+      "score": 881.34,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T10:30:10.000Z",
       "syndications": [
@@ -743,15 +778,15 @@
       "id": "873f3ee70bb7",
       "url": "https://51nord.me/naechtlicher-besucher/",
       "title": "Nächtlicher Besucher | Martin",
-      "score": 1064.59,
+      "score": 880.56,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T10:30:02.000Z",
       "syndications": [
@@ -766,24 +801,73 @@
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [],
-      "tag_debug": []
+      "tag_debug": [],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
-      "id": "1c3cf0b648b2",
-      "url": "https://queergedacht.de/2026/05/kein-sport/",
-      "title": "Kein Sport | QueerGedacht",
-      "score": 718.62,
+      "id": "a4d8d3178049",
+      "url": "https://hmbl.blog/31-5-2026-recap/?pk_campaign=feed&pk_kwd=31-5-2026-recap",
+      "title": "31.5.2026 – recap | Christian Fischer (jawl)",
+      "score": 621.48,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T09:30:32.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1bffb8-b141-745e-bc87-506a40494e3c.json",
+          "shared_at": "2026-05-31T09:30:32.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "keyword",
+          "via": "recap",
+          "weight": 1
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "1c3cf0b648b2",
+      "url": "https://queergedacht.de/2026/05/kein-sport/",
+      "title": "Kein Sport | QueerGedacht",
+      "score": 621.22,
+      "signal_count": 2,
+      "curators": [
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:30:27.000Z",
       "syndications": [
@@ -798,24 +882,28 @@
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [],
-      "tag_debug": []
+      "tag_debug": [],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "aab6ba82d073",
       "url": "https://blog.kieselwiese.de/?p=270",
       "title": "2026-05-26: Pfingstochsentour Bremen Tag 4 (Heimfahrt) | Kieselblog",
-      "score": 718.21,
+      "score": 620.89,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:30:21.000Z",
       "syndications": [
@@ -848,15 +936,15 @@
       "id": "e90e844a7f69",
       "url": "https://ohrenschmaus.blog/2026/05/31/5521/",
       "title": "5521 | Ohrenschmaus",
-      "score": 717.8,
+      "score": 620.57,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:30:15.000Z",
       "syndications": [
@@ -880,15 +968,15 @@
       "id": "bd7f7494d88f",
       "url": "https://gruebelnundsinnieren.de/2026/05/31/chillen-und-buchhalten-samstag-30-5-2026/",
       "title": "Chillen und buchhalten, Samstag 30.5.2026 | Grübeln und Sinnieren",
-      "score": 717.39,
+      "score": 620.25,
       "signal_count": 2,
       "curators": [
         "UberBlogr - Neueste Beiträge",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T09:30:09.000Z",
       "syndications": [
@@ -903,7 +991,8 @@
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "blog"
@@ -915,45 +1004,16 @@
           "via": "sim=0.54",
           "weight": 2
         }
-      ]
-    },
-    {
-      "id": "8ff65b507d7b",
-      "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/",
-      "title": "Mrs. Klein | Blütensthaub",
-      "score": 528.1,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
       ],
-      "platforms": [
-        "mastodon",
-        "rss"
-      ],
-      "latest_shared": "2026-05-31T08:30:32.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bf1a8-34c9-740a-b7f6-b3c77376fcb2.json",
-          "shared_at": "2026-05-31T08:30:32.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "30cc40f98ec5",
       "url": "https://blog.kieselwiese.de/?p=248",
-      "title": "Netzfunde &#8211; Kieselblog",
-      "score": 435.71,
+      "title": "Netzfunde – Kieselblog",
+      "score": 388.14,
       "signal_count": 2,
       "curators": [
         "flumen_calculi@ruhr.social",
@@ -999,19 +1059,19 @@
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
-      "score": 396.3,
+      "score": 388.1,
       "signal_count": 6,
       "curators": [
-        "peterru.eurosky.social",
-        "teezeh@ieji.de",
         "netzpolitik_feed@chaos.social",
+        "peterru.eurosky.social",
         "PeterRu@climatejustice.social",
+        "teezeh@ieji.de",
         "netzpolitik.org"
       ],
       "platforms": [
+        "rss",
         "mastodon",
-        "bluesky",
-        "rss"
+        "bluesky"
       ],
       "latest_shared": "2026-05-30T07:23:15.000Z",
       "syndications": [
@@ -1050,7 +1110,8 @@
         "boosts": 57,
         "likes": 99,
         "replies": 7,
-        "quotes": 2
+        "quotes": 2,
+        "comments": 0
       },
       "tags": [
         "öffentlichkeit",
@@ -1270,25 +1331,65 @@
           "via": "netzpolitik",
           "weight": 1
         }
-      ]
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
+      "id": "8ff65b507d7b",
+      "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/",
+      "title": "Mrs. Klein",
+      "score": 378.21,
+      "signal_count": 2,
+      "curators": [
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T08:30:32.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1bf1a8-34c9-740a-b7f6-b3c77376fcb2.json",
+          "shared_at": "2026-05-31T08:30:32.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "Elkeringhausen",
+          "url": "https://mastodon.social/@Elkeringhausen/116668171766279620",
+          "shared_at": "2026-05-31T08:10:23.291Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
     },
     {
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
       "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
-      "score": 255.61,
+      "score": 251.99,
       "signal_count": 6,
       "curators": [
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
         "fernx.bsky.social",
+        "netzpolitik_feed@chaos.social",
         "netzpolitik.org",
-        "matthimon@systemli.social"
+        "matthimon@systemli.social",
+        "pirati.bsky.social"
       ],
       "platforms": [
+        "rss",
         "mastodon",
-        "bluesky",
-        "rss"
+        "bluesky"
       ],
       "latest_shared": "2026-05-29T19:51:56.244Z",
       "syndications": [
@@ -1327,7 +1428,8 @@
         "boosts": 50,
         "likes": 46,
         "replies": 3,
-        "quotes": 6
+        "quotes": 6,
+        "comments": 0
       },
       "tags": [
         "irini",
@@ -1397,340 +1499,19 @@
           "via": "sim=0.44",
           "weight": 2
         }
-      ]
-    },
-    {
-      "id": "85b5986dd451",
-      "url": "https://netzpolitik.org/2026/kw-22-die-woche-als-die-databroker-files-weiter-kreise-zogen/",
-      "title": "KW 22: Die Woche, als die Databroker Files weiter Kreise zogen",
-      "score": 244.16,
-      "signal_count": 4,
-      "curators": [
-        "sebmeineck.bsky.social",
-        "netzpolitik.org",
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social"
       ],
-      "platforms": [
-        "mastodon",
-        "bluesky",
-        "rss"
-      ],
-      "latest_shared": "2026-05-30T08:06:09.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116662492836334778",
-          "shared_at": "2026-05-30T08:06:09.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "sebmeineck.bsky.social",
-          "url": "https://bsky.app/profile/sebmeineck.bsky.social/post/3mn2ljvge722l",
-          "shared_at": "2026-05-30T08:01:51.011Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mn2grkgt4x2y",
-          "shared_at": "2026-05-30T06:36:39Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 33,
-        "likes": 52,
-        "replies": 3,
-        "quotes": 1
-      },
-      "tags": [
-        "öffentlichkeit",
-        "netzpolitischer_wochenrückblick",
-        "databrokerfiles",
-        "netzpolitik"
-      ],
-      "tag_debug": [
-        {
-          "category": "öffentlichkeit",
-          "source": "raw_tag",
-          "via": "öffentlichkeit",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitischer_wochenrückblick",
-          "source": "raw_tag",
-          "via": "netzpolitischer_wochenrückblick",
-          "weight": 2
-        },
-        {
-          "category": "databrokerfiles",
-          "source": "raw_tag",
-          "via": "databrokerfiles",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        }
-      ]
-    },
-    {
-      "id": "1f9965b6294c",
-      "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/?amp%3Butm_medium=jetpack_social",
-      "title": "Jackson C. Frank &#8211; Golden Mirror",
-      "score": 226.12,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T10:12:36.180Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116668652334409508",
-          "shared_at": "2026-05-31T10:12:36.180Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "9249e96874bf",
-      "url": "https://hmbl.blog/31-5-2026-recap/?pk_campaign=feed&amp%3Bpk_kwd=31-5-2026-recap",
-      "title": "31.5.2026 – recap | In jawls humble opinion.",
-      "score": 191.66,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T09:30:32.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bffb8-b141-745e-bc87-506a40494e3c.json",
-          "shared_at": "2026-05-31T09:30:32.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "keyword",
-          "via": "recap",
-          "weight": 1
-        }
-      ]
-    },
-    {
-      "id": "b570a0ad0bf5",
-      "url": "https://netzpolitik.org/2026/tiktok-instagram-youtube-plattformen-schludern-bei-hassrede-und-accountsperren/",
-      "title": "TikTok, Instagram, Youtube: Plattformen schludern bei Hassrede und Accountsperren",
-      "score": 123.25,
-      "signal_count": 4,
-      "curators": [
-        "netzpolitik.org",
-        "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social"
-      ],
-      "platforms": [
-        "mastodon",
-        "bluesky",
-        "rss"
-      ],
-      "latest_shared": "2026-05-29T18:08:39.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116659199629944609",
-          "shared_at": "2026-05-29T18:08:39.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "netzpolitik.org",
-          "url": "https://bsky.app/profile/netzpolitik.org/post/3mmz4qixk6s2c",
-          "shared_at": "2026-05-29T18:04:26.960Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mmyr53e5il2h",
-          "shared_at": "2026-05-29T14:36:43Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 30,
-        "likes": 69,
-        "replies": 1,
-        "quotes": 1
-      },
-      "tags": [
-        "soziale_medien",
-        "streaming",
-        "blog",
-        "nutzerrechte",
-        "appeals_centre_europe"
-      ],
-      "tag_debug": [
-        {
-          "category": "nutzerrechte",
-          "source": "raw_tag",
-          "via": "nutzerrechte",
-          "weight": 2
-        },
-        {
-          "category": "appeals_centre_europe",
-          "source": "raw_tag",
-          "via": "appeals_centre_europe",
-          "weight": 2
-        },
-        {
-          "category": "dsa",
-          "source": "raw_tag",
-          "via": "dsa",
-          "weight": 2
-        },
-        {
-          "category": "gewalt_im_netz",
-          "source": "raw_tag",
-          "via": "gewalt_im_netz",
-          "weight": 2
-        },
-        {
-          "category": "hassrede",
-          "source": "raw_tag",
-          "via": "hassrede",
-          "weight": 2
-        },
-        {
-          "category": "hatespeech",
-          "source": "raw_tag",
-          "via": "hatespeech",
-          "weight": 2
-        },
-        {
-          "category": "hetze",
-          "source": "raw_tag",
-          "via": "hetze",
-          "weight": 2
-        },
-        {
-          "category": "löschen",
-          "source": "raw_tag",
-          "via": "löschen",
-          "weight": 2
-        },
-        {
-          "category": "meta",
-          "source": "raw_tag",
-          "via": "meta",
-          "weight": 2
-        },
-        {
-          "category": "moderation",
-          "source": "raw_tag",
-          "via": "moderation",
-          "weight": 2
-        },
-        {
-          "category": "plattformregulierung",
-          "source": "raw_tag",
-          "via": "plattformregulierung",
-          "weight": 2
-        },
-        {
-          "category": "soziale_medien",
-          "source": "tag_map",
-          "via": "tiktok",
-          "weight": 3
-        },
-        {
-          "category": "transparenzbericht",
-          "source": "raw_tag",
-          "via": "transparenzbericht",
-          "weight": 2
-        },
-        {
-          "category": "streaming",
-          "source": "tag_map",
-          "via": "youtube",
-          "weight": 3
-        },
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.52",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "4fd67387d45b",
-      "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/?amp%3Butm_medium=jetpack_social",
-      "title": "Mrs. Klein",
-      "score": 116.37,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T08:10:23.291Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116668171766279620",
-          "shared_at": "2026-05-31T08:10:23.291Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "3ccae6f3e6b0",
       "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/",
       "title": "Von der Einsamkeit intelligenter Menschen",
-      "score": 88.24,
-      "signal_count": 1,
+      "score": 244.89,
+      "signal_count": 2,
       "curators": [
+        "Elkeringhausen",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
@@ -1743,31 +1524,7 @@
           "curator": "uberblogr@troet.uberblogr.de",
           "url": "https://troet.uberblogr.de/posts/6a1bd57f-e897-47b1-82b1-d2fc504b0b93.json",
           "shared_at": "2026-05-31T06:30:23.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "e049f10ba705",
-      "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/?amp%3Butm_medium=jetpack_social",
-      "title": "Von der Einsamkeit intelligenter Menschen",
-      "score": 72.58,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:00:40.174Z",
-      "syndications": [
+        },
         {
           "platform": "mastodon",
           "curator": "Elkeringhausen",
@@ -1785,131 +1542,69 @@
       "tag_debug": []
     },
     {
-      "id": "a791a72f9793",
-      "url": "https://minorherba.wordpress.com/2026/05/30/musik-am-samstag-366/",
-      "title": "Musik am Samstag #366",
-      "score": 44.02,
+      "id": "45379436d6b6",
+      "url": "https://reisehappen.de/lublin-tipps/",
+      "title": "Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen",
+      "score": 52.85,
       "signal_count": 2,
       "curators": [
-        "herbaminor.bsky.social",
-        "uberblogr@troet.uberblogr.de"
+        "Couchflucht@flipboard.com",
+        "Reiseblog und Foodblog Reisehappen"
       ],
       "platforms": [
-        "mastodon",
-        "bluesky"
+        "rss",
+        "mastodon"
       ],
-      "latest_shared": "2026-05-30T08:23:06.146Z",
+      "latest_shared": "2026-05-30T10:07:55.000Z",
       "syndications": [
         {
-          "platform": "bluesky",
-          "curator": "herbaminor.bsky.social",
-          "url": "https://bsky.app/profile/herbaminor.bsky.social/post/3mn2mpvij4s2m",
-          "shared_at": "2026-05-30T08:23:06.146Z"
-        },
-        {
           "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1a83f6-250a-a1f5-b0d7-1a44e9555572.json",
-          "shared_at": "2026-05-30T06:30:14.000Z"
+          "curator": "Couchflucht@flipboard.com",
+          "url": "https://flipboard.com/@couchflucht/reiseinspirationen-weltweit-0s44gtuhz/-/a-rEkP7_oaSKmOl-e5YJncJg%3Aa%3A3093074148-%2F0",
+          "shared_at": "2026-05-30T10:07:55.000Z"
         }
       ],
       "engagement": {
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
-        "366neuer",
-        "366",
-        "kultur"
+        "polen_reiseblog",
+        "städtereisen",
+        "reisen"
       ],
       "tag_debug": [
         {
-          "category": "366neuer",
+          "category": "polen_reiseblog",
           "source": "raw_tag",
-          "via": "366neuer",
+          "via": "polen_reiseblog",
           "weight": 2
         },
         {
-          "category": "366",
+          "category": "städtereisen",
           "source": "raw_tag",
-          "via": "366",
+          "via": "städtereisen",
           "weight": 2
         },
         {
-          "category": "kultur",
+          "category": "reisen",
           "source": "keyword",
-          "via": "musik",
+          "via": "reise",
           "weight": 1
         }
-      ]
-    },
-    {
-      "id": "262118245717",
-      "url": "https://daoweg.wordpress.com/2026/05/30/oiseaux-tempete-live-in-paris/",
-      "title": "OISEAUX-TEMPÊTE &#8211; Live in Paris",
-      "score": 23.68,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
       ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T19:30:07.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1b3abf-f5a2-f8bf-8e18-276a0d92e7a3.json",
-          "shared_at": "2026-05-30T19:30:07.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "ef0aa2a62d5b",
-      "url": "https://daoweg.wordpress.com/2026/05/30/oiseaux-tempete-live-in-paris/?amp%3Butm_medium=jetpack_social",
-      "title": "OISEAUX-TEMPÊTE &#8211; Live in Paris",
-      "score": 21.08,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T19:00:17.039Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116665064949626450",
-          "shared_at": "2026-05-30T19:00:17.039Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 1,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "120403e0493c",
       "url": "https://blog.kieselwiese.de/?p=251",
-      "title": "2026-05-25: Pfingstochsentour Bremen Tag 3 &#8211; Kieselblog",
-      "score": 20.43,
+      "title": "2026-05-25: Pfingstochsentour Bremen Tag 3 – Kieselblog",
+      "score": 20.2,
       "signal_count": 2,
       "curators": [
         "flumen_calculi@ruhr.social",
@@ -1952,108 +1647,10 @@
       ]
     },
     {
-      "id": "34f3ff2f83c5",
-      "url": "https://netzpolitik.org/2025/databroker-files-targeting-the-eu/",
-      "title": "Targeting the EU",
-      "score": 19.73,
-      "signal_count": 1,
-      "curators": [
-        "noaasm.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-30T14:05:44.329Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "noaasm.bsky.social",
-          "url": "https://bsky.app/profile/noaasm.bsky.social/post/3mn37ulcbu22a",
-          "shared_at": "2026-05-30T14:05:44.329Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 7,
-        "likes": 15,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "netzpolitik",
-        "politik"
-      ],
-      "tag_debug": [
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "netzpolitik",
-          "source": "embedding",
-          "via": "sim=0.54",
-          "weight": 2
-        },
-        {
-          "category": "politik",
-          "source": "embedding",
-          "via": "sim=0.50",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "e9429181af7e",
-      "url": "https://reisehappen.de/lublin-tipps/?amp%3Butm_medium=activitypub",
-      "title": "Lublin: 12 Sehenswürdigkeiten &amp; Geheimtipps für die unbekannte Stadt in Ostpolen",
-      "score": 17.02,
-      "signal_count": 1,
-      "curators": [
-        "Couchflucht@flipboard.com"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T10:07:55.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Couchflucht@flipboard.com",
-          "url": "https://flipboard.com/@couchflucht/reiseinspirationen-weltweit-0s44gtuhz/-/a-rEkP7_oaSKmOl-e5YJncJg%3Aa%3A3093074148-%2F0",
-          "shared_at": "2026-05-30T10:07:55.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog",
-        "reisen"
-      ],
-      "tag_debug": [
-        {
-          "category": "reisen",
-          "source": "keyword",
-          "via": "reise",
-          "weight": 1
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.44",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "dcfe1228f845",
-      "url": "https://daoweg.wordpress.com/2026/05/30/tanzer-der-luft/",
-      "title": "Tänzer der Luft",
-      "score": 16.82,
+      "id": "26187b11d485",
+      "url": "https://happybuddha1975.de/simpelbanking/",
+      "title": "Simpelbanking – HappyBuddha",
+      "score": 16.62,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -2061,302 +1658,33 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-30T14:30:13.000Z",
+      "latest_shared": "2026-05-30T14:45:01.000Z",
       "syndications": [
         {
           "platform": "mastodon",
           "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1af475-9316-596a-a125-08606e575fd7.json",
-          "shared_at": "2026-05-30T14:30:13.000Z"
+          "url": "https://troet.uberblogr.de/posts/6a1af7ed-6503-f0cf-aba4-35592d40fa01.json",
+          "shared_at": "2026-05-30T14:45:01.000Z"
         }
       ],
       "engagement": {
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "f2370b5a0197",
-      "url": "https://netzpolitik.org/2024/databroker-files-die-grosse-datenhaendler-recherche-im-ueberblick/",
-      "title": "Die große Datenhändler-Recherche im Überblick",
-      "score": 16.21,
-      "signal_count": 1,
-      "curators": [
-        "alterskompetenz.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-30T12:38:11.997Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "alterskompetenz.bsky.social",
-          "url": "https://bsky.app/profile/alterskompetenz.bsky.social/post/3mn32y2btf223",
-          "shared_at": "2026-05-30T12:38:11.997Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 4,
-        "replies": 0,
-        "quotes": 1
-      },
-      "tags": [
-        "sicherheit",
-        "netzpolitik"
-      ],
-      "tag_debug": [
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "sicherheit",
-          "source": "embedding",
-          "via": "sim=0.39",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "995c9d80413c",
-      "url": "https://netzpolitik.org/2026/widerstand-gegen-big-tech-ki-wollen-wir-in-unserer-befreiten-welt-nicht-haben/",
-      "title": "„KI wollen wir in unserer befreiten Welt nicht haben“",
-      "score": 16.09,
-      "signal_count": 1,
-      "curators": [
-        "malteengeler@legal.social"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T07:52:08.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "malteengeler@legal.social",
-          "url": "https://legal.social/@malteengeler/116662437687302962",
-          "shared_at": "2026-05-30T07:52:08.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 1,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "netzpolitik",
-        "ki"
-      ],
-      "tag_debug": [
-        {
-          "category": "ki",
-          "source": "keyword",
-          "via": "ki-",
-          "weight": 1
-        },
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "netzpolitik",
-          "source": "embedding",
-          "via": "sim=0.41",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "1f69cb02ce1c",
-      "url": "https://netzpolitik.org/2020/paypal-setzt-us-embargo-gegen-kuba-weltweit-durch/",
-      "title": "Paypal setzt US-Embargo gegen Kuba weltweit durch",
-      "score": 15.65,
-      "signal_count": 1,
-      "curators": [
-        "rosefeldt.bsky.social"
-      ],
-      "platforms": [
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-30T12:21:56.512Z",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "rosefeldt.bsky.social",
-          "url": "https://bsky.app/profile/rosefeldt.bsky.social/post/3mn322xyiak27",
-          "shared_at": "2026-05-30T12:21:56.512Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 2,
-        "replies": 2,
-        "quotes": 0
-      },
-      "tags": [
-        "netzpolitik"
-      ],
-      "tag_debug": [
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        }
-      ]
-    },
-    {
-      "id": "2712cb1eb205",
-      "url": "https://daoweg.wordpress.com/2026/05/30/tanzer-der-luft/?amp%3Butm_medium=jetpack_social",
-      "title": "Tänzer der Luft",
-      "score": 14.77,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T14:00:43.410Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116663887030139654",
-          "shared_at": "2026-05-30T14:00:43.410Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "dbef3166b785",
-      "url": "https://daoweg.wordpress.com/2026/05/30/katherina-reiche-inkompetenz-oder-plan-klartextmitlilly/",
-      "title": "Katherina Reiche: Inkompetenz oder Plan? | klartextmitlilly",
-      "score": 14.17,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T11:30:07.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1aca3f-a08d-a0bd-ba1b-42a759b92703.json",
-          "shared_at": "2026-05-30T11:30:07.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "6e40b9ce9383",
-      "url": "https://daoweg.wordpress.com/2026/05/30/%e0%b4%95%e0%b4%bf%e0%b5%bc%e0%b4%ae%e0%b5%8d%e0%b4%ae%e0%b5%80%e0%b4%b0%e0%b4%b5%e0%b4%a7%e0%b4%82/",
-      "title": "കിർമ്മീരവധം",
-      "score": 13.45,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T10:30:33.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1abc49-2f19-a828-8b19-77f3396552fd.json",
-          "shared_at": "2026-05-30T10:30:33.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "2dc3094cccc1",
-      "url": "https://daoweg.wordpress.com/2026/05/30/mondoclassicmixtapes-mixtape-74/",
-      "title": "mondoclassicmixtapes &#8211; mixtape 74",
-      "score": 13.45,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T10:30:17.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1abc39-d523-e470-ac82-10db28df6a22.json",
-          "shared_at": "2026-05-30T10:30:17.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "streaming",
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "streaming",
-          "source": "embedding",
-          "via": "sim=0.42",
-          "weight": 2
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.38",
-          "weight": 2
-        }
-      ]
+      "tag_debug": [],
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "ec2deb3cad93",
       "url": "https://gruebelnundsinnieren.de/2026/05/30/krankenlager-freitag-29-5-2026/",
-      "title": "Krankenlager, Freitag 29.5.2026 &#8211; Grübeln und Sinnieren",
-      "score": 13.44,
+      "title": "Krankenlager, Freitag 29.5.2026 – Grübeln und Sinnieren",
+      "score": 13.14,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -2377,7 +1705,8 @@
         "boosts": 0,
         "likes": 0,
         "replies": 0,
-        "quotes": 0
+        "quotes": 0,
+        "comments": 0
       },
       "tags": [
         "blog"
@@ -2389,103 +1718,16 @@
           "via": "sim=0.43",
           "weight": 2
         }
-      ]
-    },
-    {
-      "id": "2f6b9db570e1",
-      "url": "https://daoweg.wordpress.com/2026/05/30/katherina-reiche-inkompetenz-oder-plan-klartextmitlilly/?amp%3Butm_medium=jetpack_social",
-      "title": "Katherina Reiche: Inkompetenz oder Plan? | klartextmitlilly",
-      "score": 12.63,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
       ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T11:13:33.836Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116663229731938777",
-          "shared_at": "2026-05-30T11:13:33.836Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "f906adef30e4",
-      "url": "https://daoweg.wordpress.com/2026/05/30/%e0%b4%95%e0%b4%bf%e0%b5%bc%e0%b4%ae%e0%b5%8d%e0%b4%ae%e0%b5%80%e0%b4%b0%e0%b4%b5%e0%b4%a7%e0%b4%82/?amp%3Butm_medium=jetpack_social",
-      "title": "കിർമ്മീരവധം",
-      "score": 11.85,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T10:00:11.420Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116662941214895728",
-          "shared_at": "2026-05-30T10:00:11.420Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "caadb1d6f02f",
-      "url": "https://daoweg.wordpress.com/2026/05/30/object-shigeki-matsuyama/",
-      "title": "“Object” &#8211; Von Shigeki Matsuyama",
-      "score": 11.6,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T07:30:02.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1a91fa-bca9-42e4-b6e2-76ec3eda0043.json",
-          "shared_at": "2026-05-30T07:30:02.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
+      "wp_engagement": {
+        "comments": 0
+      }
     },
     {
       "id": "9694b3527545",
       "url": "https://www.heldenhaushalt.de/sari02/index.php/2026/05/30/projekt-52-im-juni-2026-teilnehmer/",
       "title": "Projekt 52 im Juni 2026 + Teilnehmer - Heldenhaushalt",
-      "score": 11.6,
+      "score": 11.37,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -2521,56 +1763,10 @@
       ]
     },
     {
-      "id": "6ffd019dcab1",
-      "url": "https://daoweg.wordpress.com/2026/05/30/mondoclassicmixtapes-mixtape-74/?amp%3Butm_medium=jetpack_social",
-      "title": "mondoclassicmixtapes &#8211; mixtape 74",
-      "score": 11.38,
-      "signal_count": 1,
-      "curators": [
-        "Elkeringhausen"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T09:11:24.836Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "Elkeringhausen",
-          "url": "https://mastodon.social/@Elkeringhausen/116662749418392700",
-          "shared_at": "2026-05-30T09:11:24.836Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "streaming",
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "streaming",
-          "source": "embedding",
-          "via": "sim=0.42",
-          "weight": 2
-        },
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.38",
-          "weight": 2
-        }
-      ]
-    },
-    {
       "id": "d9e8d46d1320",
       "url": "https://flashtaig.wordpress.com/2026/05/30/fuell-die-buchluecken-samstags-luecke-stuermisches-norderney/",
-      "title": "Füll die Buchlücken Samstags-Lücke &#8211; Stürmisches Norderney",
-      "score": 11.09,
+      "title": "Füll die Buchlücken Samstags-Lücke – Stürmisches Norderney",
+      "score": 10.87,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -2601,6 +1797,75 @@
           "category": "blog",
           "source": "embedding",
           "via": "sim=0.44",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "cb30c7c6c2f0",
+      "url": "https://ohrenschmaus.blog/2026/05/30/66-seen-weg-pfingsten-2026-6-melchow-falkenberg-23/",
+      "title": "66 Seen Weg, Pfingsten 2026, 6 Melchow – Falkenberg 23",
+      "score": 10.4,
+      "signal_count": 1,
+      "curators": [
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-30T05:30:12.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1a75e4-4435-b26f-98f4-7c7c2247617e.json",
+          "shared_at": "2026-05-30T05:30:12.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "6013fc7e7fab",
+      "url": "https://flashtaig.wordpress.com/2026/05/30/meine-woche-223/",
+      "title": "Meine Woche",
+      "score": 7.92,
+      "signal_count": 1,
+      "curators": [
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-29T22:30:07.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1a136f-9664-bd2a-8534-f2684c63ea94.json",
+          "shared_at": "2026-05-29T22:30:07.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.49",
           "weight": 2
         }
       ]
