@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentPage: 'main' | 'settings' | 'debug';
+  currentPage: 'main' | 'settings' | 'debug' | 'learn';
   genTime?: string;
 }
 const { currentPage, genTime = '' } = Astro.props;
@@ -12,6 +12,7 @@ const isDev = import.meta.env.DEV;
 const navItems = [
   { page: 'main', label: 'Feeds', href: base },
   ...(isDev ? [{ page: 'debug', label: 'Debug', href: `${base}debug/` }] : []),
+  ...(isDev ? [{ page: 'learn', label: 'Learn', href: `${base}learn/` }] : []),
 ];
 
 const isSettings = currentPage === 'settings';

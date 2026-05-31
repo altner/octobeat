@@ -1,0 +1,8 @@
+# Manual tag corrections — overrides the automatic classifier with weight 99.
+# Format: URL: [category1, category2, ...]
+# Categories must match keys in config.yaml tag_rules or tag_map.
+#
+# Example:
+# https://example.com/article: [gaming, hardware]
+#
+# Add corrections here after reviewing the /learn page in dev mode.

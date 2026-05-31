@@ -30,7 +30,16 @@ CRAWLER_DIR = Path(__file__).parent
 def load_config() -> dict:
     cfg_path = CRAWLER_DIR / "config.yaml"
     with open(cfg_path) as f:
-        return yaml.safe_load(f)
+        cfg = yaml.safe_load(f)
+
+    corrections_path = CRAWLER_DIR / "corrections.yaml"
+    if corrections_path.exists():
+        with open(corrections_path) as f:
+            cfg["corrections"] = yaml.safe_load(f) or {}
+    else:
+        cfg["corrections"] = {}
+
+    return cfg
 
 
 def resolve_config_path(path: str) -> Path:
@@ -174,14 +183,17 @@ def normalize_tag(tag: str) -> str:
 
 def infer_article_tags(
     title: str, url: str, signals: list[dict], tag_rules: dict, tag_map: dict
-) -> list[str]:
+) -> tuple[list[str], list[dict]]:
     """Build section tags from three sources, highest to lowest weight:
     1. tag_map: source tags from RSS/social directly mapped to a category  (+3)
     2. tag_rules: keyword match on title+URL                               (+1)
     3. raw source tags that survive as-is when no mapping exists           (+2, kept separate)
+
+    Returns (tags, debug_entries) where debug_entries explain each assignment.
     """
     category_counts: Counter[str] = Counter()
     raw_tag_counts: Counter[str] = Counter()
+    debug: list[dict] = []
 
     # Build reverse lookup: source_tag → category
     source_to_category: dict[str, str] = {}
@@ -202,8 +214,10 @@ def infer_article_tags(
             category = source_to_category.get(tag_norm)
             if category:
                 category_counts[category] += 3
+                debug.append({"category": category, "source": "tag_map", "via": tag_norm, "weight": 3})
             else:
                 raw_tag_counts[tag_norm] += 2
+                debug.append({"category": tag_norm, "source": "raw_tag", "via": tag_norm, "weight": 2})
 
     text = f"{title} {url}".casefold()
     for tag, keywords in tag_rules.items():
@@ -215,11 +229,12 @@ def infer_article_tags(
             pattern = rf"(?<![a-zäöüß]){re.escape(kw)}"
             if re.search(pattern, text):
                 category_counts[cat_norm] += 1
+                debug.append({"category": cat_norm, "source": "keyword", "via": kw, "weight": 1})
                 break
 
-    # Merge: mapped categories first, then raw tags as fallback
     combined: Counter[str] = category_counts + raw_tag_counts
-    return [tag for tag, _ in combined.most_common(5)]
+    tags = [tag for tag, _ in combined.most_common(5)]
+    return tags, debug
 
 
 def collect_syndications(signals: list[dict]) -> list[dict]:
@@ -364,9 +379,17 @@ async def run():
         title = next((s.get("title") for s in sigs if s.get("title")), "")
 
         # Derive tags from signals and qualified keyword rules.
-        article_tags = infer_article_tags(
+        article_tags, tag_debug = infer_article_tags(
             title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {})
         )
+
+        # Apply manual corrections if present.
+        corrections = cfg.get("corrections", {})
+        corrected = corrections.get(url)
+        if corrected is not None:
+            article_tags = [normalize_tag(t) for t in corrected if normalize_tag(t)]
+            tag_debug = [{"category": t, "source": "correction", "via": "corrections.yaml", "weight": 99}
+                         for t in article_tags]
 
         articles.append({
             "id":            hashlib.md5(url.encode()).hexdigest()[:12],
@@ -380,6 +403,7 @@ async def run():
             "syndications":  collect_syndications(sigs),
             "engagement":    aggregate_engagement(sigs),
             "tags":          article_tags,
+            "tag_debug":     tag_debug,
         })
 
     if too_old_count:

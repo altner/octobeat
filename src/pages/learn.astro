@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import feedData from '../../data/feed.json';
+
+interface TagDebug {
+  category: string;
+  source: 'tag_map' | 'keyword' | 'raw_tag' | 'correction';
+  via: string;
+  weight: number;
+}
+
+interface Article {
+  id: string;
+  url: string;
+  title: string;
+  score: number;
+  signal_count: number;
+  tags?: string[];
+  tag_debug?: TagDebug[];
+  platforms?: string[];
+  latest_shared?: string;
+}
+
+const articles: Article[] = (feedData as any).articles ?? [];
+
+// ── Category distribution ──────────────────────────────────────────────────
+const MIN_SECTION = 2;
+const tagCount: Record<string, number> = {};
+articles.forEach(a => (a.tags ?? []).forEach(t => { tagCount[t] = (tagCount[t] ?? 0) + 1; }));
+
+const sectionTags = Object.entries(tagCount)
+  .filter(([, c]) => c >= MIN_SECTION)
+  .sort((a, b) => b[1] - a[1])
+  .map(([t]) => t);
+
+const assigned = new Set<string>();
+const sections: Record<string, Article[]> = {};
+sectionTags.forEach(t => { sections[t] = []; });
+articles.forEach(a => {
+  const primary = (a.tags ?? []).find(t => sectionTags.includes(t));
+  if (primary) { sections[primary].push(a); assigned.add(a.id); }
+});
+const uncategorized = articles.filter(a => !assigned.has(a.id));
+
+// ── Rule effectiveness ─────────────────────────────────────────────────────
+const ruleFireCount: Record<string, number> = {};
+const sourceTypeCount: Record<string, number> = { tag_map: 0, keyword: 0, raw_tag: 0, correction: 0 };
+const unmappedRawTags: Record<string, number> = {};
+
+articles.forEach(a => {
+  (a.tag_debug ?? []).forEach(d => {
+    sourceTypeCount[d.source] = (sourceTypeCount[d.source] ?? 0) + 1;
+    if (d.source === 'keyword') {
+      ruleFireCount[d.via] = (ruleFireCount[d.via] ?? 0) + 1;
+    }
+    if (d.source === 'raw_tag') {
+      unmappedRawTags[d.via] = (unmappedRawTags[d.via] ?? 0) + 1;
+    }
+  });
+});
+
+const topKeywords = Object.entries(ruleFireCount).sort((a, b) => b[1] - a[1]).slice(0, 20);
+const topUnmapped = Object.entries(unmappedRawTags).sort((a, b) => b[1] - a[1]).slice(0, 20);
+const totalArticles = articles.length;
+const categorizedCount = assigned.size;
+const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / totalArticles) * 100) : 0;
+---
+
+<BaseLayout title="OctoBeat · Learn">
+  <Header currentPage="learn" />
+
+  <main class="learn">
+
+    <!-- ── Overview metrics ──────────────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Übersicht</h2>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-value">{totalArticles}</span>
+          <span class="metric-label">Artikel gesamt</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">{categorizedCount}</span>
+          <span class="metric-label">Kategorisiert</span>
+        </div>
+        <div class="metric bad">
+          <span class="metric-value">{uncategorized.length}</span>
+          <span class="metric-label">Ohne Kategorie</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">{coveragePercent}%</span>
+          <span class="metric-label">Coverage</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">{sectionTags.length}</span>
+          <span class="metric-label">Aktive Sektionen</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Signal source breakdown ───────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Tag-Quellen</h2>
+      <p class="hint">Woher kommen die Kategorie-Zuordnungen? tag_map (+3) schlägt keyword (+1).</p>
+      <div class="source-bars">
+        {Object.entries(sourceTypeCount).map(([src, count]) => {
+          const total = Object.values(sourceTypeCount).reduce((a,b) => a+b, 0);
+          const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+          return (
+            <div class="source-row">
+              <span class="source-label">{src}</span>
+              <div class="bar-wrap">
+                <div class="bar" style={`width:${pct}%`} data-src={src}></div>
+              </div>
+              <span class="source-count">{count} ({pct}%)</span>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- ── Category distribution ─────────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Sektionen</h2>
+      <table class="data-table">
+        <thead><tr><th>Sektion</th><th>Artikel</th><th>Anteil</th><th>Bar</th></tr></thead>
+        <tbody>
+          {sectionTags.map(tag => {
+            const count = sections[tag].length;
+            const pct = totalArticles > 0 ? Math.round((count / totalArticles) * 100) : 0;
+            return (
+              <tr>
+                <td><a href={`#sec-${tag}`}>#{tag}</a></td>
+                <td class="num">{count}</td>
+                <td class="num">{pct}%</td>
+                <td><div class="bar-inline" style={`width:${Math.max(pct*3,2)}px`}></div></td>
+              </tr>
+            );
+          })}
+          <tr class="warn-row">
+            <td>— ohne Sektion</td>
+            <td class="num">{uncategorized.length}</td>
+            <td class="num">{totalArticles > 0 ? Math.round((uncategorized.length/totalArticles)*100) : 0}%</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Top firing keywords ───────────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Keyword-Treffer (tag_rules)</h2>
+      <p class="hint">Welche Keywords feuern am häufigsten. Häufige Keywords = gute Regel. Seltene = evtl. zu spezifisch.</p>
+      <table class="data-table">
+        <thead><tr><th>Keyword</th><th>Treffer</th></tr></thead>
+        <tbody>
+          {topKeywords.map(([kw, count]) => (
+            <tr><td><code>{kw}</code></td><td class="num">{count}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Unmapped raw tags ─────────────────────────────────────────────── -->
+    <section class="panel">
+      <h2>Ungemappte RSS-Tags</h2>
+      <p class="hint">Diese Tags kommen aus RSS-Feeds, sind aber noch nicht in <code>tag_map</code>. Häufige Kandidaten für neue Einträge.</p>
+      <table class="data-table">
+        <thead><tr><th>RSS-Tag</th><th>Vorkommen</th><th>→ Aktion</th></tr></thead>
+        <tbody>
+          {topUnmapped.map(([tag, count]) => (
+            <tr>
+              <td><code>{tag}</code></td>
+              <td class="num">{count}</td>
+              <td><button class="copy-btn" data-copy={tag} title="In Zwischenablage">copy</button></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Uncategorized articles ────────────────────────────────────────── -->
+    {uncategorized.length > 0 && (
+      <section class="panel warn">
+        <h2>Ohne Kategorie ({uncategorized.length})</h2>
+        <p class="hint">Diese Artikel landen in "More". Korrekturen in <code>crawler/corrections.yaml</code> eintragen.</p>
+        <table class="data-table">
+          <thead><tr><th>Titel</th><th>Score</th><th>Correction-Snippet</th></tr></thead>
+          <tbody>
+            {uncategorized.map(a => (
+              <tr>
+                <td><a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a></td>
+                <td class="num">{a.score?.toFixed(1)}</td>
+                <td>
+                  <button class="copy-btn" data-copy={`${a.url}: [kategorie]`} title="Correction-Snippet kopieren">
+                    copy yaml
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    )}
+
+    <!-- ── Per-section article detail ───────────────────────────────────── -->
+    {sectionTags.map(tag => (
+      <section class="panel" id={`sec-${tag}`}>
+        <h2>#{tag} <span class="count-badge">{sections[tag].length}</span></h2>
+        <table class="data-table">
+          <thead><tr><th>Titel</th><th>Score</th><th>Zuordnung via</th></tr></thead>
+          <tbody>
+            {sections[tag].map(a => {
+              const reason = (a.tag_debug ?? [])
+                .filter(d => d.category === tag)
+                .map(d => `${d.source}:${d.via}(+${d.weight})`)
+                .join(', ');
+              return (
+                <tr>
+                  <td><a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a></td>
+                  <td class="num">{a.score?.toFixed(1)}</td>
+                  <td class="reason"><code>{reason || '—'}</code></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    ))}
+
+  </main>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy ?? '';
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = '✓';
+        setTimeout(() => { btn.textContent = orig; }, 1200);
+      });
+    });
+  });
+</script>
+
+<style>
+  .learn { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+
+  .panel { background: var(--surface, #1a1a1a); border: 1px solid var(--border, #333);
+           border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .panel.warn { border-color: #a05000; }
+
+  h2 { font-size: 1rem; font-weight: 600; margin: 0 0 1rem; color: var(--accent, #e8e8e8); }
+
+  .hint { font-size: 0.8rem; color: #888; margin: -0.5rem 0 0.75rem; }
+
+  .metrics { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .metric { background: #111; border-radius: 6px; padding: 0.75rem 1rem; min-width: 100px; text-align: center; }
+  .metric.bad .metric-value { color: #e07050; }
+  .metric-value { display: block; font-size: 1.75rem; font-weight: 700; }
+  .metric-label { font-size: 0.75rem; color: #888; }
+
+  .source-bars { display: flex; flex-direction: column; gap: 0.5rem; }
+  .source-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; }
+  .source-label { width: 90px; color: #aaa; font-family: monospace; }
+  .bar-wrap { flex: 1; background: #111; border-radius: 3px; height: 14px; overflow: hidden; }
+  .bar { height: 100%; border-radius: 3px; min-width: 2px; transition: width 0.3s; }
+  .bar[data-src="tag_map"]   { background: #4a9eff; }
+  .bar[data-src="keyword"]   { background: #7ec87e; }
+  .bar[data-src="raw_tag"]   { background: #f0a040; }
+  .bar[data-src="correction"]{ background: #c060c0; }
+  .source-count { width: 80px; color: #888; font-size: 0.8rem; }
+
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table th { text-align: left; color: #666; font-weight: 500;
+                   border-bottom: 1px solid #333; padding: 0.4rem 0.5rem; }
+  .data-table td { padding: 0.35rem 0.5rem; border-bottom: 1px solid #222;
+                   vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table a { color: var(--accent, #e8e8e8); text-decoration: none; }
+  .data-table a:hover { text-decoration: underline; }
+  .warn-row td { color: #e07050; }
+
+  .num { text-align: right; font-variant-numeric: tabular-nums; color: #aaa; }
+  .reason { font-size: 0.75rem; color: #888; max-width: 300px; }
+  .reason code { font-size: 0.75rem; color: #7ec87e; word-break: break-all; }
+
+  .bar-inline { height: 8px; background: #4a9eff; border-radius: 2px; display: inline-block; }
+
+  .count-badge { background: #333; border-radius: 10px; padding: 0 6px;
+                 font-size: 0.75rem; font-weight: 400; color: #aaa; margin-left: 6px; }
+
+  .copy-btn { background: #222; border: 1px solid #444; color: #aaa; border-radius: 4px;
+              padding: 2px 8px; font-size: 0.75rem; cursor: pointer; font-family: monospace; }
+  .copy-btn:hover { background: #333; color: #fff; }
+
+  code { background: #111; padding: 1px 4px; border-radius: 3px; font-size: 0.8rem; }
+</style>
