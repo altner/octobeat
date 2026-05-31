@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 import yaml
 from dateutil import parser as dateparser
 
-from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles, _bluesky_token
+from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles, _bluesky_token, collect_mastodon_trends
 from curator  import is_valid_curator, calc_weight
 from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
@@ -318,7 +318,12 @@ async def run():
     if rss_article_domains:
         print(f"→ Added {len(source_domains) - len(feed_domains)} RSS article domains for social search")
 
-    # ── 2. Mastodon ────────────────────────────────────────────────────────
+    # ── 2. Mastodon Trending Links ─────────────────────────────────────────
+    print("→ Fetching Mastodon trending links...")
+    trend_signals = await collect_mastodon_trends(cfg.get("mastodon_instances", []))
+    all_signals.extend(trend_signals)
+
+    # ── 3. Mastodon domain search ──────────────────────────────────────────
     print("→ Crawling Mastodon...")
     mastodon_results = await asyncio.gather(
         *[collect_mastodon(domain, cfg.get("mastodon_instances", [])) for domain in source_domains]
@@ -327,7 +332,7 @@ async def run():
         all_signals.extend(sigs)
         print(f"  {domain}: {len(sigs)} signals")
 
-    # ── 3. Bluesky ─────────────────────────────────────────────────────────
+    # ── 4. Bluesky ─────────────────────────────────────────────────────────
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
         print("→ Crawling Bluesky...")
@@ -339,7 +344,7 @@ async def run():
             all_signals.extend(sigs)
             print(f"  {domain}: {len(sigs)} signals")
 
-    # ── 4. Hacker News ─────────────────────────────────────────────────────
+    # ── 5. Hacker News ─────────────────────────────────────────────────────
     hn_cfg = cfg.get("hackernews", {})
     if hn_cfg.get("enabled", True):
         print("→ Crawling Hacker News...")
@@ -347,7 +352,7 @@ async def run():
         all_signals.extend(sigs)
         print(f"  HN: {len(sigs)} signals")
 
-    # ── 5. Filter: domain blacklist + curator validation ──────────────────
+    # ── 6. Filter: domain blacklist + curator validation ──────────────────
     valid_signals = []
     for s in all_signals:
         if not domain_ok(s["url"], blacklist):

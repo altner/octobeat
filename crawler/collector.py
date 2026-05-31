@@ -188,6 +188,97 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Mastodon Trending Links
+# ---------------------------------------------------------------------------
+
+async def collect_mastodon_trends(instances: list[str]) -> list[dict]:
+    """
+    Fetch trending article links from Mastodon instances via /api/v1/trends/links.
+    Returns signals with platform='mastodon_trend' and curator_handle=instance domain.
+    The 'accounts' count from the API is used as a synthetic signal multiplier.
+    """
+    token    = os.getenv("MASTODON_TOKEN", "")
+    own_inst = os.getenv("MASTODON_INSTANCE", "").rstrip("/")
+
+    headers = {**HEADERS}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    all_instances = []
+    if own_inst:
+        all_instances.append(own_inst)
+    all_instances += [i for i in instances if i.rstrip("/") != own_inst]
+
+    signals = []
+    now = datetime.now(timezone.utc).isoformat()
+
+    async with httpx.AsyncClient(headers=headers, timeout=10) as client:
+        results = await asyncio.gather(
+            *[_fetch_trends(inst, client, now) for inst in all_instances],
+            return_exceptions=True,
+        )
+
+    for inst, result in zip(all_instances, results):
+        if isinstance(result, Exception):
+            print(f"  Trends {inst}: {result}")
+            continue
+        signals.extend(result)
+
+    # Deduplicate by URL — keep entry with highest accounts count
+    best: dict[str, dict] = {}
+    for s in signals:
+        url = s["url"]
+        existing = best.get(url)
+        if not existing or s["curator_meta"]["followers"] > existing["curator_meta"]["followers"]:
+            best[url] = s
+
+    print(f"  {len(best)} unique trending links from {len(all_instances)} instances")
+    return list(best.values())
+
+
+async def _fetch_trends(instance: str, client: httpx.AsyncClient, now: str) -> list[dict]:
+    signals = []
+    try:
+        r = await client.get(f"{instance}/api/v1/trends/links", params={"limit": 20})
+        if r.status_code != 200:
+            print(f"  Trends {instance}: HTTP {r.status_code}")
+            return signals
+        for item in r.json():
+            url = normalize_url(item.get("url", ""))
+            if not url:
+                continue
+            title   = item.get("title") or item.get("description") or ""
+            accounts = int(item.get("accounts", 1))
+            uses     = int(item.get("uses", 1))
+            inst_domain = instance.replace("https://", "").replace("http://", "")
+            signals.append({
+                "url":            url,
+                "title":          strip_html(title).strip(),
+                "platform":       "mastodon",
+                "curator_handle": f"trends@{inst_domain}",
+                "curator_meta": {
+                    # Use accounts count as synthetic follower proxy for weight calc
+                    "followers":  accounts * 100,
+                    "following":  1,
+                    "posts":      uses,
+                    "created_at": "2020-01-01T00:00:00Z",
+                },
+                "shared_at":       now,
+                "syndication_url": f"{instance}/explore",
+                "engagement": {
+                    "boosts":  uses,
+                    "likes":   accounts,
+                    "replies": 0,
+                    "quotes":  0,
+                },
+                "tags": [],
+            })
+    except Exception as e:
+        print(f"  Trends {instance}: {e}")
+    return signals
+
+
+# ---------------------------------------------------------------------------
 # Bluesky
 # ---------------------------------------------------------------------------
 
