@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "data/feed.json"
+      - "data/feeds.json"
       - "src/**"
       - "astro.config.mjs"
   workflow_dispatch:
