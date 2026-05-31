@@ -23,6 +23,11 @@ from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
     record_tag_history, record_unmapped_tags, load_corrections_from_db,
 )
+try:
+    from embedder import build_anchor_embeddings, classify_articles as embed_classify
+    _EMBEDDER_AVAILABLE = True
+except ImportError:
+    _EMBEDDER_AVAILABLE = False
 from scorer   import score_article
 from storage  import write_feed, push_to_github
 
@@ -185,7 +190,8 @@ def normalize_tag(tag: str) -> str:
 
 
 def infer_article_tags(
-    title: str, url: str, signals: list[dict], tag_rules: dict, tag_map: dict
+    title: str, url: str, signals: list[dict], tag_rules: dict, tag_map: dict,
+    embed_scores: list[tuple[str, float]] | None = None,
 ) -> tuple[list[str], list[dict]]:
     """Build section tags from three sources, highest to lowest weight:
     1. tag_map: source tags from RSS/social directly mapped to a category  (+3)
@@ -234,6 +240,18 @@ def infer_article_tags(
                 category_counts[cat_norm] += 1
                 debug.append({"category": cat_norm, "source": "keyword", "via": kw, "weight": 1})
                 break
+
+    # Embedding-based scores (+2..+4 depending on similarity, weight scale from embedder)
+    if embed_scores:
+        from embedder import WEIGHT_SCALE, SIMILARITY_THRESHOLD
+        for cat, sim in embed_scores:
+            cat_norm = normalize_tag(cat)
+            if not cat_norm:
+                continue
+            weight = round(WEIGHT_SCALE * sim)
+            category_counts[cat_norm] += weight
+            debug.append({"category": cat_norm, "source": "embedding",
+                          "via": f"sim={sim:.2f}", "weight": weight})
 
     combined: Counter[str] = category_counts + raw_tag_counts
     tags = [tag for tag, _ in combined.most_common(5)]
@@ -364,9 +382,24 @@ async def run():
         by_url.setdefault(s["url"], []).append(s)
 
     # ── 7. Build and score articles ────────────────────────────────────────
+    # Pre-compute embedding classifications if available
+    embed_cfg = cfg.get("embeddings", {})
+    embed_results: dict[str, list[tuple[str, float]]] = {}
+    if _EMBEDDER_AVAILABLE and embed_cfg.get("enabled", True):
+        print("→ Computing semantic embeddings...")
+        anchor_embeddings = build_anchor_embeddings(cfg.get("tag_anchors", {}))
+        if anchor_embeddings:
+            proto_articles = [
+                {"url": url, "title": next((s.get("title") for s in sigs if s.get("title")), "")}
+                for url, sigs in by_url.items()
+            ]
+            embed_results = embed_classify(proto_articles, anchor_embeddings, learning_db_path)
+            print(f"  {len(embed_results)} articles classified via embeddings")
+
     articles = []
     max_age_h = cfg["article_filter"].get("max_age_hours", 48)
     now = datetime.now(timezone.utc)
+    corrections = {**cfg.get("corrections", {}), **load_corrections_from_db(learning_db_path)}
     too_old_count = 0
 
     for url, sigs in by_url.items():
@@ -381,13 +414,13 @@ async def run():
         score = score_article(sigs)
         title = next((s.get("title") for s in sigs if s.get("title")), "")
 
-        # Derive tags from signals and qualified keyword rules.
+        # Derive tags: keyword rules + tag_map + embeddings
         article_tags, tag_debug = infer_article_tags(
-            title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {})
+            title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {}),
+            embed_scores=embed_results.get(url),
         )
 
         # Apply manual corrections (YAML file + DB, DB takes precedence).
-        corrections = {**cfg.get("corrections", {}), **load_corrections_from_db(learning_db_path)}
         corrected = corrections.get(url)
         if corrected is not None:
             article_tags = [normalize_tag(t) for t in corrected if normalize_tag(t)]

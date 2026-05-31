@@ -70,6 +70,10 @@ article_filter:
   top_n: 50          # Number of articles in feed.json
 
 # Persistent crawler memory.
+embeddings:
+  enabled: true                    # set false to skip (faster, no sentence-transformers needed)
+  # model: paraphrase-multilingual-MiniLM-L12-v2  # set in embedder.py
+
 learning:
   enabled: true
   db_path: ../data/octobeat.sqlite3
@@ -244,6 +248,61 @@ tag_map:
     - wahl
     - parteien
     - eu_politik
+
+# Semantic category anchors for embedding-based classification (Stufe 2).
+# Each value is a descriptive text that defines the category semantically.
+# The embedder computes cosine similarity between article titles and these texts.
+# Tip: richer, more specific texts → better precision.
+tag_anchors:
+  ki: >
+    Künstliche Intelligenz, Machine Learning, Large Language Models, LLM,
+    ChatGPT, GPT-4, Claude, Gemini, KI-Systeme, neuronale Netze,
+    Sprachmodelle, AI-Tools, Bildgenerierung, Text-zu-Bild
+  hardware: >
+    Computer Hardware, CPU Prozessor, GPU Grafikkarte, RAM Arbeitsspeicher,
+    Mainboard, SSD Festplatte, NAS Netzwerkspeicher, Netzteil, Gehäuse,
+    Raspberry Pi, Mikrocontroller, Elektronik, Chip, Halbleiter
+  gaming: >
+    Videospiele Gaming Spielekonsole Xbox PlayStation Nintendo Switch
+    PC-Gaming Esport Steam Controller Gamepad Headset Joystick
+    Spiele-Review Shooter RPG Action-Game Turtle Beach Razer
+  apple: >
+    Apple Mac iPhone iPad iOS macOS Apple Silicon M-Chip
+    App Store Swift Xcode Vision Pro Watch Siri iCloud
+  unix: >
+    Linux Unix Shell Terminal Bash Zsh Command Line CLI Kernel
+    Systemadministration Sysadmin FreeBSD Debian Ubuntu Fedora Arch
+    Open Source Server DevOps Containerisierung Docker Treiber Kernel-Update
+  windows: >
+    Microsoft Windows PowerShell WSL Active Directory
+    Windows 11 Azure Office Teams Visual Studio
+  software: >
+    Software Anwendung App Entwicklung Programmierung Code
+    Open Source GitHub Framework Bibliothek API Webentwicklung
+    Python JavaScript TypeScript Rust Go
+  sicherheit: >
+    IT-Sicherheit Cybersecurity Hacking Exploit Malware Ransomware
+    Datenschutz Verschlüsselung Schwachstelle CVE Phishing
+    Datenleck Angriff Backdoor Penetrationstesting
+  netzpolitik: >
+    Netzpolitik Digitalpolitik Internetregulierung Urheberrecht
+    Datenschutzgesetz DSGVO Netzneutralität Zensur Überwachung
+    EU-Gesetzgebung Plattformregulierung Digitalrecht Pressefreiheit
+  wirtschaft: >
+    Wirtschaft Startup Technologieunternehmen Börse Aktien Investition
+    Übernahme Fusion IPO Venture Capital Marktentwicklung Umsatz Gewinn
+  mobile: >
+    Smartphone Android iPhone Mobile App Mobilgerät Samsung Google Pixel
+    5G Mobilfunk Tablet Wearable Smartwatch
+  streaming: >
+    Streaming Netflix Amazon Prime YouTube Spotify Podcast
+    Video on Demand Musik Serien Filme Content Creator
+  reisen: >
+    Reisen Urlaub Tourismus Reiseziel Hotel Flug Wandern
+    Outdoor Fahrrad Radreise Backpacking Abenteuer
+  politik: >
+    Politik Bundesregierung Bundestag Koalition Partei Wahl
+    Gesetzentwurf Demokratie Europa EU-Politik Außenpolitik
 
 # Qualified tags from title, URL slug, and existing signal tags.
 # Do not assign tags solely from the source domain.

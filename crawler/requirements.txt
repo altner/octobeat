@@ -3,3 +3,5 @@ feedparser==6.0.11
 pyyaml==6.0.1
 python-dateutil==2.9.0
 python-dotenv==1.0.1
+# Embedding-based classifier (Stufe 2) — only needed locally, not in GitHub Actions
+sentence-transformers>=3.0.0
