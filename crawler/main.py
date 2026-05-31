@@ -19,7 +19,10 @@ from dateutil import parser as dateparser
 
 from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
 from curator  import is_valid_curator, calc_weight
-from database import apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run
+from database import (
+    apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
+    record_tag_history, record_unmapped_tags, load_corrections_from_db,
+)
 from scorer   import score_article
 from storage  import write_feed, push_to_github
 
@@ -383,8 +386,8 @@ async def run():
             title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {})
         )
 
-        # Apply manual corrections if present.
-        corrections = cfg.get("corrections", {})
+        # Apply manual corrections (YAML file + DB, DB takes precedence).
+        corrections = {**cfg.get("corrections", {}), **load_corrections_from_db(learning_db_path)}
         corrected = corrections.get(url)
         if corrected is not None:
             article_tags = [normalize_tag(t) for t in corrected if normalize_tag(t)]
@@ -427,6 +430,8 @@ async def run():
     if learning_cfg.get("enabled", True):
         run_id = record_run(learning_db_path, run_started_at, top, valid_signals, rss_urls)
         print(f"✓ Stored run #{run_id} in SQLite → {learning_db_path}")
+        record_tag_history(learning_db_path, run_id, top)
+        record_unmapped_tags(learning_db_path, top)
 
         pruning_cfg = learning_cfg.get("source_pruning", {})
         if pruning_cfg.get("enabled", True):

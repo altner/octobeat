@@ -1,24 +1,16 @@
-name: Crawl & Deploy
+name: Deploy
 
 on:
-  schedule:
-    # Avoiding minute 0 reduces scheduled workflow delays.
-    - cron: "0 10 * * *"
-      timezone: "Europe/Berlin"
-    # Fallback trigger in case GitHub skips the primary schedule.
-    - cron: "0 14 * * *"
-      timezone: "Europe/Berlin"
-  workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - "crawler/config.yaml"
-      - "crawler/**.py"
+      - "data/feed.json"
       - "src/**"
       - "astro.config.mjs"
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -27,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  crawl-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -35,15 +27,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install Python dependencies
-        run: pip install -r crawler/requirements.txt
 
       - uses: actions/setup-node@v4
         with:
@@ -52,41 +35,6 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
-
-      - name: Run crawler
-        run: python crawler/main.py
-        env:
-          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
-          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
-          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-
-      - name: Commit data files
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add data/feed.json data/feeds.json data/archive/*.json data/octobeat.sqlite3
-          if git diff --cached --quiet; then
-            echo "No data changes to commit."
-            exit 0
-          fi
-
-          git commit -m "feed: ${{ github.run_id }}"
-
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-
-            echo "Push rejected; rebasing onto latest origin/main (attempt ${attempt})..."
-            git fetch origin main
-            git rebase -X theirs origin/main
-          done
-
-          git push origin HEAD:main
 
       - name: Build Astro site
         run: npm run build

@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 def connect(db_path: Path) -> sqlite3.Connection:
@@ -135,6 +135,41 @@ def init_db(db_path: Path) -> None:
               top_article_sum INTEGER NOT NULL DEFAULT 0,
               last_rss_signal_at TEXT,
               last_social_signal_at TEXT
+            );
+
+            -- Embedding-based classification (Stufe 2)
+            CREATE TABLE IF NOT EXISTS article_embeddings (
+              url TEXT PRIMARY KEY,
+              model TEXT NOT NULL,
+              embedding BLOB NOT NULL,
+              updated_at TEXT NOT NULL
+            );
+
+            -- Tag assignment history for learning
+            CREATE TABLE IF NOT EXISTS tag_history (
+              url TEXT NOT NULL,
+              run_id INTEGER NOT NULL,
+              tags_json TEXT NOT NULL,
+              tag_debug_json TEXT NOT NULL,
+              PRIMARY KEY (url, run_id),
+              FOREIGN KEY (run_id) REFERENCES runs(id)
+            );
+
+            -- Manual corrections (mirror of corrections.yaml, editable via /learn)
+            CREATE TABLE IF NOT EXISTS tag_corrections (
+              url TEXT PRIMARY KEY,
+              tags_json TEXT NOT NULL,
+              note TEXT,
+              updated_at TEXT NOT NULL
+            );
+
+            -- Unmapped RSS tag log — feeds the /learn page suggestions
+            CREATE TABLE IF NOT EXISTS unmapped_tags (
+              tag TEXT NOT NULL,
+              domain TEXT NOT NULL,
+              count INTEGER NOT NULL DEFAULT 0,
+              last_seen TEXT NOT NULL,
+              PRIMARY KEY (tag, domain)
             );
             """
         )
@@ -789,3 +824,143 @@ def record_run(
             record_source_stats(con, run_id, feed_urls, signals, top_urls, now_iso)
 
     return run_id
+
+
+# ── Learning helpers ──────────────────────────────────────────────────────────
+
+def record_tag_history(
+    db_path: Path, run_id: int, articles: list[dict]
+) -> None:
+    """Store tag assignments + debug info for every article in this run."""
+    now = datetime.now(timezone.utc).isoformat()
+    with connect(db_path) as con:
+        for a in articles:
+            con.execute(
+                """
+                INSERT OR REPLACE INTO tag_history(url, run_id, tags_json, tag_debug_json)
+                VALUES (?, ?, ?, ?)
+                """,
+                (
+                    a["url"],
+                    run_id,
+                    json.dumps(a.get("tags", []), ensure_ascii=False),
+                    json.dumps(a.get("tag_debug", []), ensure_ascii=False),
+                ),
+            )
+
+
+def record_unmapped_tags(db_path: Path, articles: list[dict]) -> None:
+    """Log raw_tag entries that had no tag_map match — used by /learn suggestions."""
+    from urllib.parse import urlparse as _up
+    now = datetime.now(timezone.utc).isoformat()
+    with connect(db_path) as con:
+        for a in articles:
+            domain = _up(a["url"]).netloc
+            for entry in a.get("tag_debug", []):
+                if entry["source"] != "raw_tag":
+                    continue
+                con.execute(
+                    """
+                    INSERT INTO unmapped_tags(tag, domain, count, last_seen)
+                    VALUES (?, ?, 1, ?)
+                    ON CONFLICT(tag, domain) DO UPDATE SET
+                      count = count + 1,
+                      last_seen = excluded.last_seen
+                    """,
+                    (entry["via"], domain, now),
+                )
+
+
+def load_corrections_from_db(db_path: Path) -> dict[str, list[str]]:
+    """Return {url: [tags]} from tag_corrections table."""
+    if not db_path.exists():
+        return {}
+    with connect(db_path) as con:
+        rows = con.execute("SELECT url, tags_json FROM tag_corrections").fetchall()
+    return {r["url"]: json.loads(r["tags_json"]) for r in rows}
+
+
+def save_correction(db_path: Path, url: str, tags: list[str], note: str = "") -> None:
+    """Upsert a manual correction into the DB."""
+    now = datetime.now(timezone.utc).isoformat()
+    with connect(db_path) as con:
+        con.execute(
+            """
+            INSERT INTO tag_corrections(url, tags_json, note, updated_at)
+            VALUES (?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+              tags_json = excluded.tags_json,
+              note = excluded.note,
+              updated_at = excluded.updated_at
+            """,
+            (url, json.dumps(tags, ensure_ascii=False), note, now),
+        )
+
+
+def export_feed_json(db_path: Path, data_dir: Path) -> Path:
+    """
+    Build feed.json from the latest run stored in SQLite.
+    This is the only step that runs in GitHub Actions — everything else is local.
+    """
+    with connect(db_path) as con:
+        run = con.execute(
+            "SELECT id, finished_at, article_count FROM runs ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+        if not run:
+            raise RuntimeError("No runs found in SQLite — run the crawler locally first.")
+
+        rows = con.execute(
+            """
+            SELECT ra.url, ra.title, ra.rank, ra.score,
+                   ra.platforms_json, ra.tags_json, ra.engagement_json,
+                   th.tag_debug_json
+            FROM run_articles ra
+            LEFT JOIN tag_history th ON th.url = ra.url AND th.run_id = ra.run_id
+            WHERE ra.run_id = ?
+            ORDER BY ra.rank
+            """,
+            (run["id"],),
+        ).fetchall()
+
+        corrections = {
+            r["url"]: json.loads(r["tags_json"])
+            for r in con.execute("SELECT url, tags_json FROM tag_corrections").fetchall()
+        }
+
+    articles = []
+    for r in rows:
+        url = r["url"]
+        tags = corrections.get(url) or json.loads(r["tags_json"] or "[]")
+        articles.append({
+            "id":           __import__("hashlib").md5(url.encode()).hexdigest()[:12],
+            "url":          url,
+            "title":        r["title"] or "",
+            "score":        r["score"],
+            "tags":         tags,
+            "tag_debug":    json.loads(r["tag_debug_json"] or "[]"),
+            "platforms":    json.loads(r["platforms_json"] or "[]"),
+            "engagement":   json.loads(r["engagement_json"] or "{}"),
+            "signal_count": 0,
+            "curators":     [],
+            "latest_shared": "",
+            "syndications": [],
+        })
+
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "archive").mkdir(exist_ok=True)
+
+    output = {
+        "generated_at":  run["finished_at"],
+        "article_count": len(articles),
+        "articles":      articles,
+    }
+    payload = json.dumps(output, ensure_ascii=False, indent=2)
+
+    feed_path = data_dir / "feed.json"
+    feed_path.write_text(payload, encoding="utf-8")
+
+    archive_path = data_dir / "archive" / f"{run['finished_at'][:10]}.json"
+    archive_path.write_text(payload, encoding="utf-8")
+
+    print(f"✓ Exported {len(articles)} articles from SQLite run #{run['id']} → {feed_path}")
+    return feed_path
