@@ -18,7 +18,9 @@ const navItems = [
 const isSettings = currentPage === 'settings';
 ---
 <header>
-  <a class="logo" href={base}>OctoBeat</a>
+  <a class="logo" href={base}>
+    <img src={`${base}logo.png`} alt="OctoBeat" class="logo-img" />
+  </a>
   {isDev && currentPage === 'inspector' && <span class="debug-badge">Debug</span>}
   {genTime && <span class="meta">{genTime}</span>}
   <div class="spacer"></div>
@@ -64,14 +66,16 @@ const isSettings = currentPage === 'settings';
   }
 
   .logo {
-    font-size: 22px;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
     text-decoration: none;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
   .debug-badge {
