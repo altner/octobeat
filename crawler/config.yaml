@@ -30,6 +30,20 @@ embeddings:
   enabled: true                    # set false to skip (faster, no sentence-transformers needed)
   # model: paraphrase-multilingual-MiniLM-L12-v2  # set in embedder.py
 
+# Optional local LLM for sharper section/hashtag assignment (Apple Silicon, mlx-lm).
+# Opt-in: requires `pip install -r crawler/requirements-ml.txt`. When enabled, the
+# LLM runs ONLY on the final feed (top + fresh) and AUGMENTS the existing layers
+# (tag_map / embeddings / tag_rules) with a high-weight vote per category.
+# Runs isolated via os.posix_spawn to avoid the macOS fork crash.
+llm:
+  enabled: false
+  model_id: mlx-community/Qwen2.5-7B-Instruct-4bit   # ~5 GB, good for German
+  max_articles: 80                 # cap on how many final articles to classify
+  batch_size: 10                   # articles per prompt
+  max_tokens: 512
+  weight: 4                        # score added per LLM-assigned category
+  timeout_s: 900
+
 learning:
   enabled: true
   db_path: ../data/octobeat.sqlite3

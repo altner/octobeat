@@ -38,6 +38,9 @@ try:
     _EMBEDDER_AVAILABLE = True
 except ImportError:
     _EMBEDDER_AVAILABLE = False
+# llm_client launches mlx-lm in a subprocess; the import here is lightweight and
+# never pulls in mlx-lm (that happens inside the worker), so it always succeeds.
+from llm_client import classify_articles_llm_subprocess
 from scorer   import score_article
 from storage  import write_feed, push_to_github
 
@@ -212,11 +215,15 @@ def normalize_tag(tag: str) -> str:
 def infer_article_tags(
     title: str, url: str, signals: list[dict], tag_rules: dict, tag_map: dict,
     embed_scores: list[tuple[str, float]] | None = None,
+    llm_categories: list[str] | None = None,
+    llm_weight: int = 4,
 ) -> tuple[list[str], list[dict]]:
-    """Build section tags from three sources, highest to lowest weight:
+    """Build section tags from several sources, highest to lowest weight:
     1. tag_map: source tags from RSS/social directly mapped to a category  (+3)
     2. tag_rules: keyword match on title+URL                               (+1)
     3. raw source tags that survive as-is when no mapping exists           (+2, kept separate)
+    4. embeddings: semantic similarity to category anchors                 (+2..+4)
+    5. llm: local LLM classification (optional)                            (+llm_weight)
 
     Returns (tags, debug_entries) where debug_entries explain each assignment.
     """
@@ -272,6 +279,16 @@ def infer_article_tags(
             category_counts[cat_norm] += weight
             debug.append({"category": cat_norm, "source": "embedding",
                           "via": f"sim={sim:.2f}", "weight": weight})
+
+    # Local LLM classification (optional, high-weight augmenting layer)
+    if llm_categories:
+        for cat in llm_categories:
+            cat_norm = normalize_tag(cat)
+            if not cat_norm:
+                continue
+            category_counts[cat_norm] += llm_weight
+            debug.append({"category": cat_norm, "source": "llm",
+                          "via": "mlx", "weight": llm_weight})
 
     combined: Counter[str] = category_counts + raw_tag_counts
     tags = [tag for tag, _ in combined.most_common(5)]
@@ -534,6 +551,40 @@ async def run():
         if len(fresh) >= fresh_n:
             break
     print(f"→ Selected {len(fresh)} fresh finds (max {domain_cap}/domain)")
+
+    # ── Local LLM section refinement (optional, only on the final feed) ────
+    llm_cfg = cfg.get("llm", {})
+    if llm_cfg.get("enabled", False):
+        print("→ Refining sections with local LLM...")
+        anchors    = cfg.get("tag_anchors", {})
+        categories = {normalize_tag(c): str(h) for c, h in anchors.items() if normalize_tag(c)}
+        llm_weight = int(llm_cfg.get("weight", 4))
+        final_articles = (top + fresh)[: int(llm_cfg.get("max_articles", 80))]
+        llm_input = [{"url": a["url"], "title": a.get("title") or a["url"]} for a in final_articles]
+        llm_results = classify_articles_llm_subprocess(
+            llm_input,
+            categories,
+            llm_cfg.get("model_id", "mlx-community/Qwen2.5-7B-Instruct-4bit"),
+            batch_size=int(llm_cfg.get("batch_size", 10)),
+            max_tokens=int(llm_cfg.get("max_tokens", 512)),
+            timeout_s=int(llm_cfg.get("timeout_s", 900)),
+        )
+        if llm_results:
+            for a in final_articles:
+                cats = llm_results.get(a["url"])
+                if not cats:
+                    continue
+                new_tags, new_debug = infer_article_tags(
+                    a.get("title") or "", a["url"], by_url.get(a["url"], []),
+                    cfg.get("tag_rules", {}), cfg.get("tag_map", {}),
+                    embed_scores=embed_results.get(a["url"]),
+                    llm_categories=cats, llm_weight=llm_weight,
+                )
+                # Manual corrections still win over everything.
+                if corrections.get(a["url"]) is None:
+                    a["tags"] = new_tags
+                    a["tag_debug"] = new_debug
+        print(f"  {len(llm_results)} articles refined via LLM")
 
     # ── Build curator ranking from top articles ────────────────────────────
     curator_stats: dict[str, dict] = {}

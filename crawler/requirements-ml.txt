@@ -1,0 +1,6 @@
+# Optional ML extras — install only for local LLM section classification.
+#   pip install -r crawler/requirements-ml.txt
+#
+# Requires Apple Silicon (M1/M2/M3/M4). Enable in config.yaml: llm.enabled = true
+# The model (~5 GB) downloads on first run to ~/.cache/huggingface/hub/.
+mlx-lm>=0.21.0

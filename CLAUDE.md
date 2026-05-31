@@ -51,12 +51,13 @@ Two independent subsystems share the `data/` directory.
 9. **Embeddings** (`embedder.py`) — semantic classification via `paraphrase-multilingual-MiniLM-L12-v2`; embeddings cached in SQLite
 10. **Score** (`scorer.py`) — `raw_weight × log2(unique_curators+1) × platform_bonus × engagement_bonus × time_decay × 1000`
 11. **WordPress enrichment** (`collector.py:enrich_wordpress_engagement`) — fetches comment/like counts via WP REST API where available; cached in SQLite
-12. **Filter** — drops articles without Mastodon/Bluesky signal, empty titles, numeric-only titles
-13. **Top N** — sort by score, max `max_per_domain` (default 3) per domain, keep top 50
-14. **Tag inference** (`main.py:infer_article_tags`) — three-layer system: `tag_map` (+3), embeddings (+2–4), `tag_rules` keywords (+1); corrections from DB/YAML override all
-15. **SQLite** (`database.py:record_run`) — stores run history, curator stats, tag history, unmapped tags
-16. **Export** (`database.py:export_computed`) — writes `data/computed.json` (DB backup/restore source)
-17. **Write** (`storage.py:write_feed`) — writes `data/feed.json` (incl. `top_curators`) and `data/archive/YYYY-MM-DD.json`
+12. **Split** — separates titled articles into social finds (Mastodon/Bluesky signal) and a **fresh pool** (RSS-only, no social signal yet); drops empty/numeric titles
+13. **Top N + Fresh** — social finds sorted by score, max `max_per_domain` (default 3) per domain, keep top 50; fresh pool sorted by recency, domain-capped, keep `fresh_n` (default 20)
+14. **Tag inference** (`main.py:infer_article_tags`) — weighted layers: `tag_map` (+3), embeddings (+2–4), `tag_rules` keywords (+1); corrections from DB/YAML override all
+15. **LLM section refinement** (optional, `llm_client.py` → `llm_worker.py`) — when `llm.enabled`, a local MLX model re-classifies the final feed (top + fresh) and augments the tags (+`llm.weight`); isolated via `os.posix_spawn`
+16. **SQLite** (`database.py:record_run`) — stores run history, curator stats, tag history, unmapped tags
+17. **Export** (`database.py:export_computed`) — writes `data/computed.json` (DB backup/restore source)
+18. **Write** (`storage.py:write_feed`) — writes `data/feed.json` (incl. `top_curators` and `fresh`) and `data/archive/YYYY-MM-DD.json`
 
 ### Key config files
 
@@ -110,14 +111,22 @@ git push → GitHub Actions (deploy.yml) → npm build → GitHub Pages
 
 ## Tag classification system
 
-Three layers, combined by weighted score:
+Layers combined by weighted score:
 
 | Source | Weight | Example |
 |--------|--------|---------|
 | `tag_map` (RSS source tag → category) | +3 | `#hardware` → `hardware` |
 | Embedding similarity (semantic) | +2–4 | "Turtle Beach Controller" → `gaming` |
 | `tag_rules` keyword match on title/URL | +1 | `xbox` in title → `gaming` |
+| Local LLM (optional, mlx-lm) | +4 (config `llm.weight`) | classifies into the `tag_anchors` category set |
 | `corrections.yaml` / DB override | +99 | manual fix |
+
+**Local LLM layer** (opt-in, `config.yaml` → `llm.enabled`): an Apple-Silicon MLX
+model (`crawler/llm_worker.py`, default `Qwen2.5-7B-Instruct-4bit`) re-classifies
+**only the final feed** (top + fresh) into the canonical categories and augments the
+other layers. It runs isolated via `os.posix_spawn` (`crawler/llm_client.py`) — never
+in the crawler's main process — to avoid the macOS Network-framework fork crash.
+Requires `pip install -r crawler/requirements-ml.txt`; degrades to a no-op if missing.
 
 ## SQLite tables (data/octobeat.sqlite3)
 
