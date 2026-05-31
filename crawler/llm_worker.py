@@ -81,13 +81,18 @@ def _build_messages(categories: dict, batch: list[dict]) -> list[dict]:
 
     article_lines = "\n".join(_fmt(i, a) for i, a in enumerate(batch))
     system = (
-        "Du bist ein präziser Klassifikator für deutschsprachige Tech- und "
-        "News-Artikel. Ordne jeden Artikel den am besten passenden Kategorien zu. "
-        "Nutze Titel, URL-Kontext (Domain + Slug) UND die Beschreibung zur Einordnung. "
-        "Wähle AUSSCHLIESSLICH aus der vorgegebenen Kategorienliste. Pro Artikel "
-        "1 bis 3 Kategorien, oder eine leere Liste, wenn keine wirklich passt. "
-        "Persönliche Blog-Beiträge ohne klares Fachthema erhalten 'blog'. "
-        "Antworte NUR mit einem JSON-Objekt, ohne Erklärung."
+        "Du bist ein präziser Klassifikator für deutschsprachige Artikel aus unabhängigen Blogs "
+        "und Medien. Ordne jeden Artikel den am besten passenden Kategorien zu.\n"
+        "Wähle AUSSCHLIESSLICH aus der vorgegebenen Kategorienliste. Pro Artikel 1–3 Kategorien, "
+        "oder [] wenn wirklich keine passt.\n\n"
+        "Wichtige Regeln:\n"
+        "- Persönliche Rückblicke, Alltagsberichte, Fitness-Updates (Laufen, Radfahren, Rudern…) "
+        "und Linksammlungen → immer 'blog', NICHT nach Aktivität klassifizieren\n"
+        "- 'gaming' NUR für Artikel über Videospiele, Konsolen oder eSport — NICHT für Sport, "
+        "Bewegung oder körperliche Aktivitäten\n"
+        "- Wenn der Artikel ein persönliches Erlebnis beschreibt (auch wenn Technik erwähnt wird) "
+        "→ 'blog'\n"
+        "- Antworte NUR mit dem JSON-Objekt, keine Erklärung"
     )
     user = (
         f"Verfügbare Kategorien:\n{cat_lines}\n\n"

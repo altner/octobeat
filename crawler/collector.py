@@ -594,11 +594,16 @@ def _extract_body_text(html: str, max_chars: int = 500) -> str:
     cleaned = _BOILERPLATE_TAGS.sub(" ", html)
     # Split into chunks on block boundaries
     chunks = _BLOCK_TAGS.split(cleaned)
+    _metrics_noise = re.compile(
+        r'\b(kommentare|retweets?|likes?|shares?|views?|follower)\s*:?\s*\d+',
+        re.IGNORECASE,
+    )
     result_parts: list[str] = []
     total = 0
     for chunk in chunks:
         text = strip_html(chunk)
         text = re.sub(r"\s+", " ", text).strip()
+        text = _metrics_noise.sub("", text).strip()
         # Skip navigation-like noise: too short, or suspiciously many caps/special chars
         if len(text) < 40:
             continue

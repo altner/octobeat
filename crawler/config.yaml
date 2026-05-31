@@ -41,7 +41,7 @@ llm:
   max_articles: 80                 # cap on how many final articles to classify
   batch_size: 10                   # articles per prompt
   max_tokens: 512
-  weight: 4                        # score added per LLM-assigned category
+  weight: 3                        # score added per LLM-assigned category (=tag_map, so embeddings can still win)
   timeout_s: 900
   auto_categories:
     enabled: true
@@ -260,6 +260,9 @@ tag_map:
     - momentaufnahme
     - gedanken
     - linksammlung
+    - alltag
+    - lebensupdate
+    - rückblick
   umwelt:
     - umwelt
     - klima
@@ -350,8 +353,10 @@ tag_anchors:
     Politik Bundesregierung Bundestag Koalition Partei Wahl
     Gesetzentwurf Demokratie Europa EU-Politik Außenpolitik
   blog: >
-    Wochenrückblick Recap Monatsrückblick persönlicher Blog Tagebuch
-    Linksammlung Lesenswert Wochenende Alltag Gedanken Jahresrückblick
+    Persönlicher Blog Tagebuch Wochenrückblick Monatsrückblick Jahresrückblick Recap
+    Linksammlung Lesenswert Wochenende Alltag Gedanken Lebensupdate persönliche Erfahrung
+    Rückblick auf den Monat Notizen aus dem Alltag persönliche Sport- und Fitness-Updates
+    Laufen Radfahren Rudern Schwimmen Wandern als persönliches Erlebnis im Blog festgehalten
   umwelt: >
     Klimawandel Klimaschutz Nachhaltigkeit Erneuerbare Energie Solar Wind
     Recycling Plastik Umweltverschmutzung CO2 Emissionen Elektroauto
@@ -464,11 +469,8 @@ tag_rules:
     - momentaufnahme
     - marmeladenglas
     - momente
-    - kw 20
-    - kw 21
-    - kw 22
-    - kw 23
-    - kw 24
+    - alltag
+    - lebensupdate
   umwelt:
     - klimawandel
     - klimaschutz
@@ -524,6 +526,41 @@ tag_rules:
     - kühlsystem
     - gehäuse
     - nas
+
+# Regex patterns matched against "{title} {url}".casefold().
+# More powerful than tag_rules — one pattern covers many variants.
+# Weight: +2 per match (between keyword rules +1 and tag_map +3).
+# Uses Python re.search(); flags: IGNORECASE already applied by casefold.
+tag_patterns:
+  blog:
+    # Monthly recap: "im Mai", "im Juni", ..., "im Dezember"
+    - '\bim\s+(januar|februar|märz|april|mai|juni|juli|august|september|oktober|november|dezember)\b'
+    # Calendar week: KW22, KW 22, KW22/26, kw22/2026
+    - '\bkw\s*\d{1,2}(/\d{2,4})?\b'
+    # Dated blog URL: /2024/05/ or /2025/11/
+    - '/\d{4}/\d{2}/'
+    # Explicit recap in title/slug
+    - '\b(wochen|monats|jahres)r.ckblick\b'
+    # Personal life update patterns
+    - '\b(was ich .* (gelernt|gemacht|erlebt))\b'
+  ki:
+    # Model names and version patterns
+    - '\bgpt-?\d[\w.]*\b'
+    - '\bclaude[\s-]?\d\b'
+    - '\bgemini[\s-]?\d\b'
+    - '\bllama[\s-]?\d\b'
+  sicherheit:
+    # CVE identifiers
+    - '\bcve-\d{4}-\d+\b'
+    # Zero-day / 0-day
+    - '\b(zero.?day|0.?day)\b'
+  netzpolitik:
+    # EU regulation references
+    - '\b(eu-?ai-?act|dsa|dma|gdpr|dsgvo)\b'
+  wirtschaft:
+    # Financial results patterns
+    - '\b(q[1-4]|quartal)\s*20\d{2}\b'
+    - '\b\d+\s*(mrd|mio|milliarden|millionen)\s*(euro|dollar|usd|eur)\b'
 
 # Output
 output:

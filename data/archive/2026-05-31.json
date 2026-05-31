@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T22:17:55.642895+00:00",
+  "generated_at": "2026-05-31T22:37:36.385457+00:00",
   "article_count": 29,
   "top_curators": {
     "mastodon": [
@@ -24,15 +24,15 @@
         "articles": 1
       },
       {
-        "handle": "elflojo@social.cologne",
-        "articles": 1
-      },
-      {
         "handle": "teezeh@ieji.de",
         "articles": 1
       },
       {
         "handle": "PeterRu@climatejustice.social",
+        "articles": 1
+      },
+      {
+        "handle": "elflojo@social.cologne",
         "articles": 1
       },
       {
@@ -77,19 +77,19 @@
       "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
       "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
       "description": "Papst Leo XIV. und Chris Olah, Mitbegründer von Anthropic.    –   Alle Rechte vorbehalten: IMAGO / ABACAPRESS; Gemeinfrei-ähnlich freigegeben durch unsplash.com: Manuel, Cash Macanaya, Bearbeitung: netzpolitik.org.In seiner Enzyklika erklärt Papst Leo XIV. den Umgang mit KI zur „sozialen Frage“ unse",
-      "score": 4604.97,
+      "score": 4276.97,
       "signal_count": 7,
       "curators": [
-        "modlogan.bsky.social",
-        "netzpolitik.org",
-        "pirati.bsky.social",
         "netzpolitik_feed@chaos.social",
+        "karlbaer@gruene.social",
         "fxneumann.bonn.social.ap.brid.gy",
-        "karlbaer@gruene.social"
+        "pirati.bsky.social",
+        "modlogan.bsky.social",
+        "netzpolitik.org"
       ],
       "platforms": [
-        "mastodon",
         "rss",
+        "mastodon",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T18:17:10.836Z",
@@ -204,7 +204,7 @@
           "category": "netzpolitik",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -217,16 +217,16 @@
       "url": "https://ichsagmal.com/der-linksaussen-geht-vom-platz-weshalb-ein-fussballfan-die-wm-2026-verweigert/",
       "title": "Der Linksaußen geht vom Platz: Weshalb ein Fußballfan die WM 2026 verweigert | Ichsagmal.com",
       "description": "Man kann dem Fußball sehr lange sehr viel verzeihen. Schlechte Schieds...",
-      "score": 2613.27,
+      "score": 2238.49,
       "signal_count": 3,
       "curators": [
+        "ichsagmal.com@ichsagmal.com",
         "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge",
-        "ichsagmal.com@ichsagmal.com"
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T21:30:01.000Z",
       "syndications": [
@@ -271,16 +271,16 @@
       "url": "https://status.z428.eu/evening-and-slowly-reconnecting-the-self-to-the-neighbourhoo",
       "title": "Evening and slowly reconnecting the self to the neighbourhood. Skies... | z428",
       "description": "Evening and slowly reconnecting the self to the neighbourhood. Skies s...",
-      "score": 1894.17,
+      "score": 1686.75,
       "signal_count": 3,
       "curators": [
         "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge",
-        "z428.eu"
+        "z428.eu",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
         "rss",
+        "mastodon",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T21:40:03+02:00",
@@ -322,15 +322,15 @@
       "url": "https://blablog.de/archives/354-Artikelsammlung-Mai-2026.html",
       "title": "Artikelsammlung Mai 2026 | Das BlaBlog",
       "description": "Wenn ich bei der Arbeit, auf'm Sofa oder unterwegs auf einen interessa...",
-      "score": 1599.71,
+      "score": 1326.9,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T22:00:01.000Z",
       "syndications": [
@@ -348,16 +348,9 @@
         "quotes": 0
       },
       "tags": [
-        "blog",
         "politik"
       ],
       "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.53",
-          "weight": 2
-        },
         {
           "category": "politik",
           "source": "embedding",
@@ -372,15 +365,15 @@
       "url": "https://denkfabrikblog.de/2026/05/31/linksdings-aus-der-kalenderwoche-2026-22/",
       "title": "Links+Dings aus der Kalenderwoche 2026/22 | DenkfabrikBlog",
       "description": "Interessantes Zeug, das sich im Laufe der KW 2026/22 angesammelt hat. ...",
-      "score": 1383.92,
+      "score": 1167.96,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T21:45:01.000Z",
       "syndications": [
@@ -404,8 +397,14 @@
       "tag_debug": [
         {
           "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
+          "category": "blog",
           "source": "embedding",
-          "via": "sim=0.57",
+          "via": "sim=0.40",
           "weight": 2
         }
       ],
@@ -419,15 +418,15 @@
       "url": "https://silberkind.de/blog/warhammer-wip-am-meer/",
       "title": "Warhammer WIP am Meer | Nils 'Kojote' Hitze",
       "description": "Ich hab hier vor ein paar Jahren einige Cowboys für Dingstown bestellt...",
-      "score": 1215.49,
+      "score": 1040.51,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T21:30:12.000Z",
       "syndications": [
@@ -446,6 +445,7 @@
         "comments": 0
       },
       "tags": [
+        "gaming",
         "kultur"
       ],
       "tag_debug": [
@@ -454,6 +454,12 @@
           "source": "embedding",
           "via": "sim=0.43",
           "weight": 2
+        },
+        {
+          "category": "gaming",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -466,15 +472,15 @@
       "url": "https://silberkind.de/blog/warum-sind-amis-eigentlich-so/",
       "title": "Warum sind Amis eigentlich so … | Nils 'Kojote' Hitze",
       "description": "Wer sich, wie ich, gelegentlich, beim Lesen von US Nachrichten, fragt ...",
-      "score": 1214.48,
+      "score": 1039.73,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T21:30:06.000Z",
       "syndications": [
@@ -492,8 +498,17 @@
         "quotes": 0,
         "comments": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "wp_engagement": {
         "comments": 0
       },
@@ -504,16 +519,16 @@
       "url": "https://status.z428.eu/%E2%98%81%EF%B8%8F-stadtwolken-stadtstra%C3%9Fen-zusammenk%C3%BCnfte-auf-dem-b%C3%BCrgers",
       "title": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und weit offene... | z428",
       "description": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und w...",
-      "score": 1060.32,
+      "score": 981.68,
       "signal_count": 3,
       "curators": [
         "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge",
-        "z428.eu"
+        "z428.eu",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
         "rss",
+        "mastodon",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T19:40:03+02:00",
@@ -537,8 +552,17 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "content": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und weit offene Fenster hier wie dort. Die Steine des Tages, die Federn des Tages."
     },
     {
@@ -546,15 +570,15 @@
       "url": "https://denkfabrikblog.de/2026/05/31/lesestoff-ausgabe-200/",
       "title": "Lesestoff – Ausgabe 200 | DenkfabrikBlog",
       "description": "Erinnerungen mit, an und durch eine Band. Gedanken anlässlich einer sc...",
-      "score": 869.86,
+      "score": 768.56,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T20:45:01.000Z",
       "syndications": [
@@ -578,9 +602,15 @@
       "tag_debug": [
         {
           "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
+          "category": "blog",
           "source": "embedding",
-          "via": "sim=0.63",
-          "weight": 3
+          "via": "sim=0.41",
+          "weight": 2
         }
       ],
       "wp_engagement": {
@@ -593,15 +623,15 @@
       "url": "https://pressepfarrerin.de/2026/05/31/im-spiegel-der-kunst/",
       "title": "Im Spiegel der Kunst | Pressepfarrerin",
       "description": "Ich bin in Berlin gewesen. Donnerstag Nachmittag hin, Sonntag Morgen z...",
-      "score": 791.79,
+      "score": 705.0,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T20:30:15.000Z",
       "syndications": [
@@ -632,8 +662,8 @@
         },
         {
           "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.48",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
           "weight": 2
         },
         {
@@ -646,7 +676,7 @@
           "category": "kultur",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -659,15 +689,15 @@
       "url": "https://sponselino.de/kw22-2026/",
       "title": "KW22/2026 | sponselino – immer schön sutsche!",
       "description": "Nach drei Tagen Malochen auf Sparflamme – kurz vorm Urlaub fängt man b...",
-      "score": 791.38,
+      "score": 704.67,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T20:30:10.000Z",
       "syndications": [
@@ -685,8 +715,23 @@
         "quotes": 0,
         "comments": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "\\bkw\\s*\\d{1,2}(/\\d{2,4})?\\b",
+          "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "wp_engagement": {
         "comments": 0
       },
@@ -697,16 +742,16 @@
       "url": "https://daoweg.wordpress.com/2026/05/31/in-eigener-sache-2/",
       "title": "In eigener Sache | Blütensthaub",
       "description": "Mal wieder schließe ich kurz die Fensterläden, sodaß kein Staub von Bl...",
-      "score": 641.81,
+      "score": 600.6,
       "signal_count": 3,
       "curators": [
         "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge",
-        "Elkeringhausen"
+        "Elkeringhausen",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T17:32:43.000Z",
       "syndications": [
@@ -729,8 +774,23 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "content": "Mal wieder schließe ich kurz die Fensterläden, sodaß kein Staub von Blüten hereinfällt, nämlich vom Bis dahin wünsche ich all Euch Unbekannten sommerliche Tage Veröffentlicht in 1 | Kommentar verfassen Hinterlasse einen Kommentar Antwort abbrechen Diese Seite verwendet Akismet, um Spam zu reduzieren. Erfahre, wie deine Kommentardaten verarbeitet werden.. Von der Einsamkeit intelligenter Menschen Reingehört: Bill Orcutt &… - KULTURFORUM Photography of the Day - Relax… - Raffaello Palandri's Blog"
     },
     {
@@ -738,15 +798,15 @@
       "url": "https://fischr.org/regenpause/",
       "title": "Regenpause | René Fischer",
       "description": "Ich war 30 Minuten draußen und bin genau zu dem Moment wieder zur Tür ...",
-      "score": 439.2,
+      "score": 406.54,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:31:16.000Z",
       "syndications": [
@@ -763,8 +823,17 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "content": "Ich war 30 Minuten draußen und bin genau zu dem Moment wieder zur Tür rein, als das nächste Gewitter angefangen hat. Das einzige Foto, das ich unterwegs aufgenommen habe, passt auch noch zum heutigen #Fotovorschlag Nahaufnahme Natur. Vielleicht nicht die beste Nahaufnahme, die ich in der Fotobibliothek hätte, aber dafür ist sie von heute, und das war schon Herausforderung genug."
     },
     {
@@ -772,15 +841,15 @@
       "url": "https://www.apfailkuchen.de/switch/neuigkeiten/kurz-gebloggt-do-a-barrel-roll",
       "title": "Kurz gebloggt: Do a barrel roll! | ApfailKuchen.de | Technik, Gaming & Apps im Check",
       "description": "Als ich neulich mal wieder im Nintendo eShop unterwegs war, um einen B...",
-      "score": 439.05,
+      "score": 406.41,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:31:11.000Z",
       "syndications": [
@@ -817,7 +886,7 @@
           "category": "gaming",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Willkommen auf meinem ApfailKuchen-Blog!Hier findest Du interessante Artikel zu digitalen Themen: Apps- und Game-Reviews auf Android, PC sowie Konsolen – plus Highlight-Videos und Reels aus eigener Produktion. Details Kategorie: Neuigkeiten Lesezeit: 3 Minuten Veröffentlicht: 31. Mai 2026 Ansichten: 8 Als ich neulich mal wieder im Nintendo eShop unterwegs war, um einen Blick auf meine Wunschliste zu werfen, ist mir etwas ganz Interessantes aufgefallen, das sich definitiv für einen kurzen"
@@ -827,15 +896,15 @@
       "url": "https://auswanderer.blog/2026/05/31/die-22-woche-2026/",
       "title": "Die 22. Woche 2026 | Auswandererblog – Unser Alltag in Frankreich",
       "description": "Eine der beiden Rosen neben unserer Haustür blüht, wie oben auf dem Fo...",
-      "score": 438.73,
+      "score": 406.12,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:31:00.000Z",
       "syndications": [
@@ -861,8 +930,14 @@
       "tag_debug": [
         {
           "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.52",
+          "source": "keyword",
+          "via": "alltag",
+          "weight": 1
+        },
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
           "weight": 2
         },
         {
@@ -872,10 +947,22 @@
           "weight": 2
         },
         {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.40",
+          "weight": 2
+        },
+        {
           "category": "reisen",
           "source": "embedding",
           "via": "sim=0.39",
           "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -888,15 +975,15 @@
       "url": "https://maik.io/notes/2026-05-31-eine-orientierung-bietet/",
       "title": "Eine Orientierung bietet | Maik (maik.io)",
       "description": "Stefan Krempl schreibt in »Kritik an BSI-Rahmen: Scheinsouveränität fü...",
-      "score": 437.76,
+      "score": 405.27,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:30:27.000Z",
       "syndications": [
@@ -921,7 +1008,7 @@
           "category": "netzpolitik",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Stefan Krempl schreibt in »Kritik an BSI-Rahmen: Scheinsouveränität für die europäische Cloud?« für heise.de Die heise online vorliegende CISPE-Analyse macht große Schlupflöcher im C3A-Katalog aus. So sehe das Framework zwar vor, dass der primäre Cloud-Anbieter unter europäischer Kontrolle stehen müsse. Bei den weitaus wichtigeren Subunternehmern weiche das BSI diese Linie aber drastisch auf: Für sie wird lediglich eine registrierte Hauptniederlassung in Deutschland oder der EU verlangt."
@@ -931,15 +1018,15 @@
       "url": "https://www.lupus-live.de/2026/05/31/im-mai-2026/",
       "title": "Im Mai 2026 | lupus-live",
       "description": "Im Mai 2026   wurde das kleine Kind 16 Jahre alt bekam ich 2 x Rituxim...",
-      "score": 436.99,
+      "score": 404.6,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:30:01.000Z",
       "syndications": [
@@ -957,8 +1044,23 @@
         "quotes": 0,
         "comments": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "\\bim\\s+(januar|februar|märz|april|mai|ju",
+          "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
+        }
+      ],
       "wp_engagement": {
         "comments": 0
       },
@@ -969,15 +1071,15 @@
       "url": "https://benedikt.io/2026/05/laufen-rudern-fahrrad-mai/?mtm_campaign=rss",
       "title": "Kein Lauf im Mai, viel Fahrrad gefahren … und einmal fast überfahren worden | benedikt.io",
       "description": "Wieder starte ich mit »das lief nicht wie geplant«: Kein einziger Lauf...",
-      "score": 389.17,
+      "score": 362.48,
       "signal_count": 2,
       "curators": [
         "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-31T18:00:01.000Z",
       "syndications": [
@@ -996,10 +1098,16 @@
         "comments": 0
       },
       "tags": [
-        "gaming",
+        "blog",
         "reisen"
       ],
       "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "\\bim\\s+(januar|februar|märz|april|mai|ju",
+          "weight": 2
+        },
         {
           "category": "reisen",
           "source": "embedding",
@@ -1007,27 +1115,33 @@
           "weight": 2
         },
         {
-          "category": "gaming",
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.44",
+          "weight": 2
+        },
+        {
+          "category": "blog",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
         "comments": 0
       },
-      "content": "Kein Lauf im Mai, viel am Fahrrad unterwegs (und einmal fast überfahren worden) ‹ benedikt.io Kein Lauf im Mai, viel am Fahrrad unterwegs (und einmal fast überfahren worden) 31.5.2026·Kommentare: 0Retweets: 0Likes: 0 Wieder starte ich mit »das lief nicht wie geplant«: Kein einziger Lauf im Mai und zu Beginn des Monats nur ein paar Rudereinheiten. 🫣 Zu meiner Ehrenrettung: Immerhin 135 Kilometer am Fahrrad waren’s im Wonnemonat. Prinzipiell wären Läufe schon drin gewesen, wenn ich mich mehr am"
+      "content": "Kein Lauf im Mai, viel am Fahrrad unterwegs (und einmal fast überfahren worden) ‹ benedikt.io Kein Lauf im Mai, viel am Fahrrad unterwegs (und einmal fast überfahren worden) Wieder starte ich mit »das lief nicht wie geplant«: Kein einziger Lauf im Mai und zu Beginn des Monats nur ein paar Rudereinheiten. 🫣 Zu meiner Ehrenrettung: Immerhin 135 Kilometer am Fahrrad waren’s im Wonnemonat. Prinzipiell wären Läufe schon drin gewesen, wenn ich mich mehr am Riemen gerissen hätte. Mittagsläufe sind"
     },
     {
       "id": "aaddde795e2e",
       "url": "https://status.z428.eu/these-colours-in-the-afternoon-shadows-%F0%9F%93%B7-lost-in-moments%C2%A0",
       "title": "These colours in the afternoon shadows 📷 lost in moments",
       "description": "",
-      "score": 347.04,
+      "score": 327.59,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "z428.eu"
+        "z428.eu",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -1100,57 +1214,16 @@
       ]
     },
     {
-      "id": "5546cc9e968b",
-      "url": "https://denkfabrikblog.de/2026/05/31/lesestoff-ausgabe-200/Huch",
-      "title": "Die Seite wurde nicht gefunden. - DenkfabrikBlog",
-      "description": "",
-      "score": 208.31,
-      "signal_count": 1,
-      "curators": [
-        "elflojo@social.cologne"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T20:39:41.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "elflojo@social.cologne",
-          "url": "https://social.cologne/@elflojo/116671118136158813",
-          "shared_at": "2026-05-31T20:39:41.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 1,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.53",
-          "weight": 2
-        }
-      ],
-      "content": "Die Seite wurde nicht gefunden. - DenkfabrikBlog Kurzfilme nach Regisseur/in, Sprache und Untertiteln Du willst deinen Kurzfilm hier sehen? / Want to see your short film here? Mail RSS Vimeo Mastodon Anmelden Herzlich willkommen! Melden Sie sich an Haben Sie Ihr Passwort vergessen? Hilfe bekommen Datenschutzerklärung Passwort-Wiederherstellung Passwort zurücksetzen Ein Passwort wird Ihnen per Email zugeschickt. DenkfabrikBlog Kurzfilme nach Regisseur/in, Sprache und Untertiteln Sorry, aber es"
-    },
-    {
       "id": "701f3c6839d8",
       "url": "https://ichsagmal.com/die-sanfte-guillotine-der-guten-formulierung-vom-glueck-buecher-nicht-mehr-lesen-zu-muessen/",
       "title": "Die sanfte Guillotine der guten Formulierung: Vom Glück, Bücher nicht mehr lesen zu müssen - ichsagmal.com",
       "description": "Im Reich Palimpsest war man über die Barbarei hinaus. Bücher zu verbrennen galt als vulgär. Feuer macht Rauch, Rauch macht Bilder, Bilder machen Erinnerung. Die neue Zeit war klüger. Sie löschte ohne Flamme. Sie ließ die Einbände stehen und entfernte nur das Ungehörige zwischen den Deckeln. So entst",
-      "score": 206.22,
+      "score": 200.52,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
+        "ichsagmal.com@ichsagmal.com",
         "humanvoice.bsky.social",
-        "ichsagmal.com@ichsagmal.com"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -1185,21 +1258,14 @@
         "comments": 0
       },
       "tags": [
-        "kultur",
-        "blog"
+        "kultur"
       ],
       "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.52",
-          "weight": 2
-        },
         {
           "category": "kultur",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -1212,17 +1278,17 @@
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
       "description": "Egal ob Krypto- oder Prognosemärkte: Trump dereguliert und profitiert.    –   Gemeinfrei-ähnlich freigegeben durch unsplash.com: Igor OmilaevWährend weltweit immer mehr Länder Prognosemärkte als Glücksspiel behandeln, baut die Trump-Regierung ihre Aufsichtsbehörde zum Anwalt der Branche um. In den U",
-      "score": 195.47,
+      "score": 193.32,
       "signal_count": 5,
       "curators": [
-        "teezeh@ieji.de",
-        "netzpolitik.org",
+        "netzpolitik_feed@chaos.social",
         "PeterRu@climatejustice.social",
-        "netzpolitik_feed@chaos.social"
+        "teezeh@ieji.de",
+        "netzpolitik.org"
       ],
       "platforms": [
-        "mastodon",
         "rss",
+        "mastodon",
         "bluesky"
       ],
       "latest_shared": "2026-05-30T07:23:15.000Z",
@@ -1260,8 +1326,8 @@
         "comments": 0
       },
       "tags": [
-        "netzpolitik",
         "wirtschaft",
+        "netzpolitik",
         "1789_capital",
         "brian_quintenz",
         "caroline_pham"
@@ -1487,7 +1553,7 @@
           "category": "netzpolitik",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -1496,15 +1562,62 @@
       "content": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt - netzpolitik.org X Wir bleiben dran, wo andere aufgeben. Mit deiner Unterstützung. Jetzt spenden Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt Während weltweit immer mehr Länder Prognosemärkte als Glücksspiel behandeln, baut die Trump-Regierung ihre Aufsichtsbehörde zum Anwalt der Branche um. In den USA sollen Krypto- und Prognosemärkte so unreguliert wie möglich wachsen können – und Familie Trump"
     },
     {
+      "id": "5546cc9e968b",
+      "url": "https://denkfabrikblog.de/2026/05/31/lesestoff-ausgabe-200/Huch",
+      "title": "Die Seite wurde nicht gefunden. - DenkfabrikBlog",
+      "description": "",
+      "score": 185.21,
+      "signal_count": 1,
+      "curators": [
+        "elflojo@social.cologne"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-31T20:39:41.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "elflojo@social.cologne",
+          "url": "https://social.cologne/@elflojo/116671118136158813",
+          "shared_at": "2026-05-31T20:39:41.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.39",
+          "weight": 2
+        }
+      ],
+      "content": "Die Seite wurde nicht gefunden. - DenkfabrikBlog Kurzfilme nach Regisseur/in, Sprache und Untertiteln Du willst deinen Kurzfilm hier sehen? / Want to see your short film here? Mail RSS Vimeo Mastodon Anmelden Herzlich willkommen! Melden Sie sich an Haben Sie Ihr Passwort vergessen? Hilfe bekommen Datenschutzerklärung Passwort-Wiederherstellung Passwort zurücksetzen Ein Passwort wird Ihnen per Email zugeschickt. DenkfabrikBlog Kurzfilme nach Regisseur/in, Sprache und Untertiteln Sorry, aber es"
+    },
+    {
       "id": "1260e2a86d75",
       "url": "https://daoweg.wordpress.com/2026/05/31/domburg/",
       "title": "Domburg",
       "description": "Besuche den Beitrag für mehr Info.",
-      "score": 184.73,
+      "score": 176.4,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "Elkeringhausen"
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1531,14 +1644,14 @@
         "quotes": 0
       },
       "tags": [
-        "reisen"
+        "blog"
       ],
       "tag_debug": [
         {
-          "category": "reisen",
-          "source": "llm",
-          "via": "mlx",
-          "weight": 4
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
         }
       ],
       "content": "Veröffentlicht in 1 | Kommentar verfassen Hinterlasse einen Kommentar Antwort abbrechen Diese Seite verwendet Akismet, um Spam zu reduzieren. Erfahre, wie deine Kommentardaten verarbeitet werden.. Von der Einsamkeit intelligenter Menschen Reingehört: Bill Orcutt &… - KULTURFORUM Photography of the Day - Relax… - Raffaello Palandri's Blog Epe | November | 2025 - harrie nijland 2 Interviews mit Nadja Dietrich,… - LiteraturPlanet Alte Musik archive.org ARTE Artikel Bayern 2 Bücher DLF DLF Kultur"
@@ -1548,11 +1661,11 @@
       "url": "https://ichsagmal.com/da-steh-ich-nun-ich-armer-tor-der-recherche-ueber-oeko-blender-bilanzbanausen-und-die-prediger-des-ganzen-ganzen/",
       "title": "Da steh ich nun, ich armer Tor der Recherche: Über Öko-Blender, Bilanzbanausen und die Prediger des ganzen Ganzen - ichsagmal.com",
       "description": "Habe nun, ach, Studien, Siegel, Stoffstromanalysen, Nachhaltigkeitsberichte, Wärmepläne, Verpackungsgesetz, Bürgerdialoge und Ökobilanzen durchaus gelesen mit heißem Bemühen. Da steh ich nun, ich armer Tor der Recherche, und bin so klug wie ungehört zuvor. Ich kenne die Lieferketten, die keiner sehe",
-      "score": 178.04,
+      "score": 170.15,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "ichsagmal.com@ichsagmal.com"
+        "ichsagmal.com@ichsagmal.com",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1580,21 +1693,14 @@
         "comments": 0
       },
       "tags": [
-        "kultur",
-        "blog"
+        "umwelt"
       ],
       "tag_debug": [
         {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.50",
-          "weight": 2
-        },
-        {
-          "category": "kultur",
+          "category": "umwelt",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -1607,17 +1713,17 @@
       "url": "https://netzpolitik.org/2026/kw-22-die-woche-als-die-databroker-files-weiter-kreise-zogen/",
       "title": "KW 22: Die Woche, als die Databroker Files weiter Kreise zogen",
       "description": "Die 22. Kalenderwoche geht zu Ende. Wir haben 8 neue Texte mit insgesamt 58.965 Zeichen veröffentlicht. Willkommen zum netzpolitischen Wochenrückblick.",
-      "score": 156.76,
+      "score": 155.08,
       "signal_count": 4,
       "curators": [
+        "netzpolitik_feed@chaos.social",
         "sebmeineck.bsky.social",
-        "netzpolitik.org",
         "pirati.bsky.social",
-        "netzpolitik_feed@chaos.social"
+        "netzpolitik.org"
       ],
       "platforms": [
-        "mastodon",
         "rss",
+        "mastodon",
         "bluesky"
       ],
       "latest_shared": "2026-05-30T08:06:09.000Z",
@@ -1651,9 +1757,9 @@
       "tags": [
         "netzpolitik",
         "wirtschaft",
+        "blog",
         "netzpolitischer_wochenrückblick",
-        "databrokerfiles",
-        "blog"
+        "databrokerfiles"
       ],
       "tag_debug": [
         {
@@ -1682,15 +1788,15 @@
         },
         {
           "category": "blog",
-          "source": "keyword",
-          "via": "kw 22",
-          "weight": 1
+          "source": "pattern",
+          "via": "\\bkw\\s*\\d{1,2}(/\\d{2,4})?\\b",
+          "weight": 2
         },
         {
           "category": "netzpolitik",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -1703,11 +1809,11 @@
       "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
       "title": "Jackson C. Frank – Golden Mirror",
       "description": "Besuche den Beitrag für mehr Info.",
-      "score": 104.69,
+      "score": 101.31,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "Elkeringhausen"
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1734,32 +1840,39 @@
         "quotes": 0
       },
       "tags": [
-        "kultur"
+        "kultur",
+        "blog"
       ],
       "tag_debug": [
+        {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
         {
           "category": "kultur",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
-      "content": "Jackson C. Frank – Golden Mirror | Blütensthaub Veröffentlicht in Geschichte, Hören&Hörspiel, Kultur, Medien, MUSIK, Persona | Verschlagwortet mit American Troubadour, Folk, Golden Mirror, Jackson C. Frank, MUSIK | Kommentar verfassen Hinterlasse einen Kommentar Antwort abbrechen Diese Seite verwendet Akismet, um Spam zu reduzieren. Erfahre, wie deine Kommentardaten verarbeitet werden.. Von der Einsamkeit intelligenter Menschen Reingehört: Bill Orcutt &… - KULTURFORUM Photography of the Day -"
+      "content": "Jackson C. Frank – Golden Mirror | Blütensthaub Veröffentlicht in Hören&Hörspiel, Geschichte, MUSIK, Medien, Kultur, Persona | Verschlagwortet mit American Troubadour, Folk, Golden Mirror, Jackson C. Frank, MUSIK | Kommentar verfassen Hinterlasse einen Kommentar Antwort abbrechen Diese Seite verwendet Akismet, um Spam zu reduzieren. Erfahre, wie deine Kommentardaten verarbeitet werden.. Von der Einsamkeit intelligenter Menschen Reingehört: Bill Orcutt &… - KULTURFORUM Photography of the Day -"
     },
     {
       "id": "45379436d6b6",
       "url": "https://reisehappen.de/lublin-tipps/",
       "title": "Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen",
       "description": "Highlights, schöne Orte in Lublin und echte (kulinarische) Geheimtipps für die Stadt im Osten Polens.\nDer Beitrag Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen erschien zuerst auf Reiseblog und Foodblog Reisehappen.",
-      "score": 34.48,
+      "score": 34.09,
       "signal_count": 2,
       "curators": [
-        "Couchflucht@flipboard.com",
-        "Reiseblog und Foodblog Reisehappen"
+        "Reiseblog und Foodblog Reisehappen",
+        "Couchflucht@flipboard.com"
       ],
       "platforms": [
-        "mastodon",
-        "rss"
+        "rss",
+        "mastodon"
       ],
       "latest_shared": "2026-05-30T10:07:55.000Z",
       "syndications": [
@@ -1805,7 +1918,7 @@
           "category": "reisen",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
@@ -1818,7 +1931,7 @@
       "url": "https://fischr.org/mal-wieder-piepmatz-rettung/",
       "title": "Mal wieder Piepmatz-Rettung 🐦‍⬛🛟",
       "description": "Ein Duschkopf hängt von der Decke, während ein kleiner Vogel auf der Oberseite sitzt. Die Fliesenwand hinter dem Duschkopf ist hell gehalten.\r\n\r\nGerade war G...",
-      "score": 10.75,
+      "score": 10.6,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1842,21 +1955,14 @@
         "quotes": 0
       },
       "tags": [
-        "kultur",
-        "blog"
+        "kultur"
       ],
       "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.38",
-          "weight": 2
-        },
         {
           "category": "kultur",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Mal wieder Piepmatz-Rettung 🐦‍⬛🛟 | Recycled Words Gerade war Großalarm und viel Geschrei. Ein, so schätze ich zumindest, Jungvogel hat sich in unser Badezimmer verirrt. Im Zweifel für den Angeklagten, gehe ich mal davon aus, dass er bei den aktuellen Temperaturen sicher nur eine erfrischende Dusche nehmen wollte. Im Vögel retten sind wir ja mittlerweile schon geübt, auch wenn es diesmal herausfordernder war, weil der Piepmatz permanent gegen das Fenster geflogen ist, das ich eigentlich öffnen"
@@ -1866,7 +1972,7 @@
       "url": "https://benedikt.io/2026/05/kritik-outlander-serie-2014-2026/?mtm_campaign=rss",
       "title": "Kritik: »Outlander« – die komplette Serie (2014–2026)",
       "description": "Puh, also eigentlich kenne ich weder die Buchreihe, wirklich in der Kernzielgruppe bin ich auch nicht und Schottland, wo die Serie zu einem Großteil spielt, liebe ich, war aber nur selten dort. Und alle 101 Episoden der insgesamt 8 Staffeln in einem vergleichsweise kurzen Post unterzubringen und zu ",
-      "score": 9.29,
+      "score": 9.17,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1903,21 +2009,21 @@
         },
         {
           "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.46",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
           "weight": 2
         },
         {
           "category": "kultur",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "wp_engagement": {
         "comments": 0
       },
-      "content": "Kritik: »Outlander« – die komplette Serie (2014–2026) (spoilerfrei) ‹ benedikt.io Kritik: »Outlander« – die komplette Serie (2014–2026) Spoilerfrei·4.0 / 5Sterne·30.5.2026·Kommentare: 1Retweets: 0Likes: 0 Puh, also eigentlich kenne ich weder die Buchreihe, wirklich in der Kernzielgruppe bin ich auch nicht und Schottland, wo die Serie zu einem Großteil spielt, liebe ich, war aber nur selten dort. Und alle 101 Episoden der insgesamt 8 Staffeln in einem vergleichsweise kurzen Post unterzubringen"
+      "content": "Kritik: »Outlander« – die komplette Serie (2014–2026) (spoilerfrei) ‹ benedikt.io Kritik: »Outlander« – die komplette Serie (2014–2026) Spoilerfrei·4.0 / 5Sterne·30.5.2026·Retweets: 0Likes: 0 Puh, also eigentlich kenne ich weder die Buchreihe, wirklich in der Kernzielgruppe bin ich auch nicht und Schottland, wo die Serie zu einem Großteil spielt, liebe ich, war aber nur selten dort. Und alle 101 Episoden der insgesamt 8 Staffeln in einem vergleichsweise kurzen Post unterzubringen und zu"
     }
   ],
   "fresh": [
@@ -1926,7 +2032,7 @@
       "url": "https://kaesedurst.ch/home/wochenruckblick-kw-22-26",
       "title": "Wochenrückblick KW 22/26 | kaesedurst",
       "description": "Die Frage des Tages: Was schauen wir nun? Eishockey WM ist vorbei. Sch...",
-      "score": 128.25,
+      "score": 118.48,
       "signal_count": 1,
       "curators": [
         "UberBlogr - Neueste Beiträge"
@@ -1954,9 +2060,15 @@
         },
         {
           "category": "blog",
+          "source": "pattern",
+          "via": "\\bkw\\s*\\d{1,2}(/\\d{2,4})?\\b",
+          "weight": 2
+        },
+        {
+          "category": "blog",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Die Frage des Tages: Was schauen wir nun? Eishockey WM ist vorbei. Schweiz hat mega gespielt, leider hat es wieder nicht mit dem Titel geklappt. Mit City Skyline 2 angefangen, Verbesserung zum Vorgänger: Man muss keine Strom- und Wasserleitungen quer durch die ganze Stadt ziehen, sondern sie sind nun direkt in den Strassen integriert. Spiel macht Laune um eine Stadt aufzubauen, bis der Verkehr zu viel wird und es überall Stau gibt. Da nützt auch das grosszügige Velowegnetz nichts."
@@ -1966,7 +2078,7 @@
       "url": "https://www.klaus-janowitz.de/wordpress/technogenese-sinn-und-nutzen-des-konzepts/",
       "title": "Technogenese – Sinn und Nutzen des Konzepts | Netnographie & Digitaler Wandel",
       "description": "Digitale Revolution – Technik  als Zeitgeschichte  Die digitale Revolu...",
-      "score": 108.36,
+      "score": 100.99,
       "signal_count": 1,
       "curators": [
         "UberBlogr - Neueste Beiträge"
@@ -1996,7 +2108,7 @@
           "category": "ki",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Technogenese - Sinn und Nutzen des Konzepts - Netnographie & Digitaler Wandel Digitale Revolution – Technik als Zeitgeschichte Die digitale Revolution kam nicht aus dem Nichts. Sie traf auf bereits veränderte kulturelle Dispositionen. Die komplette Kultur- und Zeitgeschichte des späten 20. und des laufenden 21. Jahrhunderts lässt sich nicht ohne die Geschichte der Digitalisierung erzählen – und Digitalisierung wiederum nicht ohne die kulturellen, sozialen und ökonomischen Voraussetzungen, die"
@@ -2006,7 +2118,7 @@
       "url": "https://www.mobiflip.de/rivian-r2-der-offizielle-us-auslieferungstermin-steht-fest/",
       "title": "Rivian R2: Der offizielle US-Auslieferungstermin steht fest",
       "description": "Der US-amerikanische Elektroautobauer Rivian hat eine erfreuliche Nachricht zu verkünden: Ab dem 9. Juni wird der Kompakt-SUV R2 offiziell in den USA ausgeliefert und die ersten Kunden werden das Fahrzeug …",
-      "score": 126.91,
+      "score": 116.62,
       "signal_count": 1,
       "curators": [
         "mobiFlip"
@@ -2023,6 +2135,7 @@
         "quotes": 0
       },
       "tags": [
+        "hardware",
         "mobilität",
         "r2",
         "rivian"
@@ -2045,6 +2158,12 @@
           "source": "raw_tag",
           "via": "rivian",
           "weight": 2
+        },
+        {
+          "category": "hardware",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
         }
       ],
       "content": "Rivian R2: Der offizielle US-Auslieferungstermin steht fest Der US-amerikanische Elektroautobauer Rivian hat eine erfreuliche Nachricht zu verkünden: Ab dem 9. Juni wird der Kompakt-SUV R2 offiziell in den USA ausgeliefert und die ersten Kunden werden das Fahrzeug erhalten. Der R2 tritt dann als direkter Konkurrent zum Model Y von Tesla an. Ich bin schon sehr gespannt, wie die Kundschaft und die Medien zu diesem Herausforderer stehen werden. Das Unternehmen gibt außerdem bekannt, dass der R2"
@@ -2054,7 +2173,7 @@
       "url": "https://www.blogspiele.de/2026/05/31/swams-kids-12-viele-schluessel-und-ein-farmer/",
       "title": "SWAMS Kids #12: Viele Schlüssel und ein Farmer | Sneakfilm - Kino mal anders",
       "description": "SWAMS Kids #12: Viele Schlüssel und ein Farmer Blogspiele GnislewNachd...",
-      "score": 81.28,
+      "score": 76.73,
       "signal_count": 1,
       "curators": [
         "UberBlogr - Neueste Beiträge"
@@ -2077,15 +2196,15 @@
       "tag_debug": [
         {
           "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.41",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
           "weight": 2
         },
         {
           "category": "gaming",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "SWAMS Kids #12: Viele Schlüssel und ein Farmer – Blogspiele SWAMS Kids #12: Viele Schlüssel und ein Farmer Mai 31, 2026 #Das Schloss der 7 Schlösser, #Die magischen Schlüssel, #Ei Ei Stempelei, #Game Factory, #Huch, #Kinderspiel des Jahres, #Kinderspiele, #Podcast, #SWAMS Kids, #Zoch Nachdem der Spieledreierpack in Folge 11 so gut geklappt hat, gibt es in Folge 12 wieder einen Dreierpack. Den Start macht das Roll & Write Ei Ei, Stempelei. Es folgt das Kinderspiel des Jahres 2024 Die magischen"
@@ -2095,7 +2214,7 @@
       "url": "https://www.mobiflip.de/apple-muss-naechsten-monat-endlich-abliefern/",
       "title": "Apple muss nächsten Monat endlich abliefern",
       "description": "Nur noch wenige Tage bis zur WWDC 2026 und es deutet sich an, dass man, nach einem Jahr mit einer kleinen Pause, wieder viel über die Apple Intelligence sprechen wird. …",
-      "score": 67.17,
+      "score": 63.62,
       "signal_count": 1,
       "curators": [
         "mobiFlip"
@@ -2113,6 +2232,7 @@
       },
       "tags": [
         "apple",
+        "software",
         "kommentar"
       ],
       "tag_debug": [
@@ -2141,10 +2261,10 @@
           "weight": 2
         },
         {
-          "category": "apple",
+          "category": "software",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Apple muss nächsten Monat endlich abliefern Nur noch wenige Tage bis zur WWDC 2026 und es deutet sich an, dass man, nach einem Jahr mit einer kleinen Pause, wieder viel über die Apple Intelligence sprechen wird. Und das soll man auch, denn bei KI ist Apple mittlerweile weit abgeschlagen. Siri 2.0, KI-Wallpaper, KI-Shortcuts, eine eigene Chatbot-App, es steht viel im Raum für iOS 27, was Apple am 8. Juni um 19 Uhr deutscher Zeit enthüllen wird. Also in einer Woche etwa. Und dieses Mal muss man"
@@ -2154,7 +2274,7 @@
       "url": "https://www.mobiflip.de/google-von-fitbit-ist-kaum-noch-etwas-uebrig/",
       "title": "Google: Von Fitbit ist kaum noch etwas übrig",
       "description": "Google hält weiter an Fitbit fest, noch ist die Marke, die man 2019 für 2,1 Milliarden Dollar kaufte, ein Teil des Unternehmens. Aber je mehr Zeit vergeht, desto mehr Dinge …",
-      "score": 38.67,
+      "score": 37.27,
       "signal_count": 1,
       "curators": [
         "mobiFlip"
@@ -2171,6 +2291,7 @@
         "quotes": 0
       },
       "tags": [
+        "software",
         "marktgeschehen",
         "news",
         "fitbit",
@@ -2200,6 +2321,12 @@
           "source": "raw_tag",
           "via": "google",
           "weight": 2
+        },
+        {
+          "category": "software",
+          "source": "llm",
+          "via": "mlx",
+          "weight": 3
         }
       ],
       "content": "Google: Von Fitbit ist kaum noch etwas übrig Google hält weiter an Fitbit fest, noch ist die Marke, die man 2019 für 2,1 Milliarden Dollar kaufte, ein Teil des Unternehmens. Aber je mehr Zeit vergeht, desto mehr Dinge werden eingestellt und von Fitbit selbst ist 2026 nicht mehr viel übrig. Seit dieser Woche ist das Google Fitbit Air erhältlich, ein Band, welches nicht nur Fitbit Air, sondern ganz gezielt Google Fitbit Air heißt. Mittlerweile haben auch die anderen Fitbit-Produkte den Zusatz"
@@ -2209,7 +2336,7 @@
       "url": "https://www.basicthinking.de/blog/2026/05/31/neu-auf-netflix-im-juni-2026/",
       "title": "Neu auf Netflix: Poldi, J.Lo und Avatar starten im Juni 2026",
       "description": "Der Beitrag Neu auf Netflix: Poldi, J.Lo und Avatar starten im Juni 2026 erschien zuerst beim Online-Magazin BASIC thinking. Über unseren Newsletter UPDATE startest du jeden Morgen bestens informiert in den Tag.\nEine Doku über Lukas Podolski, eine Rom-Com mit Jennifer Lopez und die zweite Staffel vo",
-      "score": 34.59,
+      "score": 33.43,
       "signal_count": 1,
       "curators": [
         "BASIC thinking"
@@ -2227,6 +2354,7 @@
       },
       "tags": [
         "streaming",
+        "blog",
         "entertain",
         "news"
       ],
@@ -2256,10 +2384,16 @@
           "weight": 3
         },
         {
+          "category": "blog",
+          "source": "pattern",
+          "via": "\\bim\\s+(januar|februar|märz|april|mai|ju",
+          "weight": 2
+        },
+        {
           "category": "streaming",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Neu auf Netflix: Poldi, J.Lo und Avatar starten im Juni 2026 Eine Doku über Lukas Podolski, eine Rom-Com mit Jennifer Lopez und die zweite Staffel von Avatar: Im Juni 2026 schickt Netflix gleich drei prominente Neuzugänge ins Rennen. Wir zeigen dir die Highlights und alle weiteren Filme und Serien, die neu auf Netflix erscheinen. Netflix zählt weltweit über 220 Millionen Abonnements. Sie sind jeden Monat dazu bereit, für die Nutzung des Streaming-Dienstes einen festen Betrag zu überweisen, um"
@@ -2269,7 +2403,7 @@
       "url": "https://www.metacheles.de/spacex-boersengang-der-groesste-bankraub-geschichte/",
       "title": "SpaceX Boersengang – Der groesste Bankraub Geschichte",
       "description": "Diesen Monat geht SpaceX an die Boerse und es wird wohl der groesste Boersengang der Geschichte! Aber nicht nur das..., denn wenn alles glatt laeuft, dass wird dadurch Elon Musk zum ersten Billionaer ueberhaupt. Was aber noch viel gruseliger ist: Millionen Amerikaner werden SpaceX-Aktionaere – ohne ",
-      "score": 19.35,
+      "score": 18.92,
       "signal_count": 1,
       "curators": [
         "MeTacheles"
@@ -2299,7 +2433,7 @@
           "category": "wirtschaft",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "SpaceX Boersengang – Der groesste Bankraub Geschichte SpaceX Boersengang – Der groesste Bankraub Geschichte Diesen Monat geht SpaceX an die Boerse und es wird wohl der groesste Boersengang der Geschichte! Aber nicht nur das..., denn wenn alles glatt laeuft, dass wird dadurch Elon Musk zum ersten Billionaer ueberhaupt. Was aber noch viel gruseliger ist: Millionen Amerikaner werden SpaceX-Aktionaere – ohne eine einzige Aktie aktiv zu kaufen. Klingt nach einer technologischen Erfolgsgeschichte?"
@@ -2309,7 +2443,7 @@
       "url": "https://www.basicthinking.de/blog/2026/05/31/strassen-hawaii-fischernetze-plastik/",
       "title": "Plastikflut: Hawaii baut Straßen aus alten Fischernetzen und Müll",
       "description": "Der Beitrag Plastikflut: Hawaii baut Straßen aus alten Fischernetzen und Müll erschien zuerst beim Online-Magazin BASIC thinking. Über unseren Newsletter UPDATE startest du jeden Morgen bestens informiert in den Tag.\nHawaii versinkt im Plastikmüll – an Land und im Meer. Forscher der Hawaii Pacific U",
-      "score": 18.85,
+      "score": 18.44,
       "signal_count": 1,
       "curators": [
         "BASIC thinking"
@@ -2327,6 +2461,7 @@
       },
       "tags": [
         "umwelt",
+        "blog",
         "good_news",
         "news"
       ],
@@ -2362,6 +2497,12 @@
           "weight": 1
         },
         {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
           "category": "umwelt",
           "source": "embedding",
           "via": "sim=0.43",
@@ -2371,7 +2512,7 @@
           "category": "umwelt",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Plastikflut: Hawaii baut Straßen aus alten Fischernetzen und Müll Hawaii versinkt im Plastikmüll – an Land und im Meer. Forscher der Hawaii Pacific University haben jetzt eine Lösung getestet. Sie bauen Straßen aus alten Fischernetzen und Haushaltsplastik. Ein erster Praxistest auf der Insel Oahu liefert ein überraschendes Ergebnis zur Mikroplastik-Belastung. Warum der Recycling-Asphalt sogar besser abschneidet als erwartet. Der US-Bundesstaat Hawaii steht durch seine isolierte Lage vor einem"
@@ -2381,7 +2522,7 @@
       "url": "https://altner.github.io/blog/octobeat/",
       "title": "OctoBeat – ein sozialer Nachrichtenaggregator für unabhängige deutschsprachige Blogs",
       "description": "Wie ich mit Python, Mastodon, Bluesky und einem Embedding-Klassifikator einen News-Aggregator gebaut habe, der Artikel nach echten Social Signals aus dem Fediverse rankt.",
-      "score": 14.89,
+      "score": 14.61,
       "signal_count": 1,
       "curators": [
         "Adrian Altner"
@@ -2403,12 +2544,6 @@
       ],
       "tag_debug": [
         {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.56",
-          "weight": 2
-        },
-        {
           "category": "netzpolitik",
           "source": "embedding",
           "via": "sim=0.42",
@@ -2416,9 +2551,15 @@
         },
         {
           "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.39",
+          "weight": 2
+        },
+        {
+          "category": "blog",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "OctoBeat – ein sozialer Nachrichtenaggregator für unabhängige deutschsprachige Blogs · Adrian Altner ← Alle Beiträge OctoBeat – ein sozialer Nachrichtenaggregator für unabhängige deutschsprachige Blogs Was wäre, wenn ein Nachrichtenaggregator nicht von Redakteuren kuratiert wird, sondern von echten Menschen – die auf Mastodon und Bluesky teilen, was sie wirklich lesenswert finden? Genau das ist OctoBeat. Ein Projekt, das ich in wenigen Tagen gebaut habe und das jetzt täglich läuft, um ein"
@@ -2428,7 +2569,7 @@
       "url": "https://www.basicthinking.de/blog/2026/05/30/cloud-edge-enhancement-wolken-effekt-solaranlagen/",
       "title": "Cloud Edge Enhancement: Wolken-Effekt pusht Solaranlagen über Nennleistung",
       "description": "Der Beitrag Cloud Edge Enhancement: Wolken-Effekt pusht Solaranlagen über Nennleistung erschien zuerst beim Online-Magazin BASIC thinking. Über unseren Newsletter UPDATE startest du jeden Morgen bestens informiert in den Tag.\nWolken gelten als natürlicher Feind jeder Solaranlage. Doch unter bestimmt",
-      "score": 9.19,
+      "score": 9.07,
       "signal_count": 1,
       "curators": [
         "BASIC thinking"
@@ -2446,10 +2587,10 @@
       },
       "tags": [
         "umwelt",
+        "blog",
         "tech",
         "energie",
-        "evergreen",
-        "solarenergie"
+        "evergreen"
       ],
       "tag_debug": [
         {
@@ -2495,10 +2636,16 @@
           "weight": 1
         },
         {
+          "category": "blog",
+          "source": "pattern",
+          "via": "/\\d{4}/\\d{2}/",
+          "weight": 2
+        },
+        {
           "category": "umwelt",
           "source": "llm",
           "via": "mlx",
-          "weight": 4
+          "weight": 3
         }
       ],
       "content": "Cloud Edge: Wolken-Effekt pusht Solaranlagen über Nennleistung Wolken gelten als natürlicher Feind jeder Solaranlage. Doch unter bestimmten Bedingungen können sie die Stromproduktion sogar über die Nennleistung der Module hinaus steigern. Verantwortlich dafür ist der sogenannte Cloud-Edge-Enhancement-Effekt, den Forscher der finnischen Tampere University in einer Studie im Fachjournal Solar Energy dokumentiert haben. Was genau dabei passiert und wie stark der Effekt ausfällt, erklären wir dir"

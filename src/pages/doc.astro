@@ -88,15 +88,17 @@ const genTime = (feedData as any).generated_at
         </li>
       </ol>
       <p>
-        Only articles with at least one Mastodon or Bluesky signal make it into the feed —
-        RSS-only articles are filtered out.
+        Articles with at least one Mastodon or Bluesky signal are ranked by score and appear
+        in the main sections. Articles found only in RSS feeds — not yet shared on social
+        media — appear separately in the <strong>Fresh / Undiscovered</strong> section,
+        sorted by publication date.
       </p>
     </section>
 
     <section class="doc-section">
       <h2>How categories work</h2>
       <p>
-        OctoBeat assigns every article up to 5 category tags using a three-layer system,
+        OctoBeat assigns every article up to 5 category tags using four layers,
         each with a different confidence weight:
       </p>
       <div class="layer-list">
@@ -125,6 +127,17 @@ const genTime = (feedData as any).generated_at
             the title and URL. Used as a fallback and tie-breaker.
           </div>
         </div>
+        <div class="layer">
+          <span class="layer-badge llm">+4</span>
+          <div>
+            <strong>Local LLM</strong> — a small language model running fully locally
+            on Apple Silicon reads the article title, URL, description, and the first
+            few paragraphs of content to classify it into the right section. Also
+            suggests entirely new categories when it finds content that doesn't fit
+            any existing one — which are automatically added after appearing in
+            several crawl runs.
+          </div>
+        </div>
       </div>
       <p>
         Manual corrections can override any automatic assignment —
@@ -138,7 +151,8 @@ const genTime = (feedData as any).generated_at
         <div class="page-card">
           <h3>Feeds</h3>
           <p>The main page. Articles ranked by score, grouped into sections by category.
-          Includes a live search bar.</p>
+          A <em>Fresh / Undiscovered</em> section shows the newest RSS articles not yet
+          shared on social media. Includes a live search bar.</p>
         </div>
         <div class="page-card">
           <h3>Inspector</h3>
@@ -320,6 +334,7 @@ const genTime = (feedData as any).generated_at
   .layer-badge.tag-map   { background: rgba(74,158,255,0.15); color: #4a9eff; }
   .layer-badge.embedding { background: rgba(167,139,250,0.15); color: #a78bfa; }
   .layer-badge.keyword   { background: rgba(126,200,126,0.15); color: #7ec87e; }
+  .layer-badge.llm       { background: rgba(251,191,36,0.15);  color: #fbbf24; }
 
   .layer strong { color: var(--text); }
   .layer code {

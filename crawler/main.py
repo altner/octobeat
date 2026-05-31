@@ -261,6 +261,7 @@ def infer_article_tags(
     embed_scores: list[tuple[str, float]] | None = None,
     llm_categories: list[str] | None = None,
     llm_weight: int = 4,
+    tag_patterns: dict | None = None,
 ) -> tuple[list[str], list[dict]]:
     """Build section tags from several sources, highest to lowest weight:
     1. tag_map: source tags from RSS/social directly mapped to a category  (+3)
@@ -311,6 +312,22 @@ def infer_article_tags(
                 category_counts[cat_norm] += 1
                 debug.append({"category": cat_norm, "source": "keyword", "via": kw, "weight": 1})
                 break
+
+    # Regex pattern matching (+2 per match — between keyword rules and tag_map)
+    if tag_patterns:
+        for cat, patterns in tag_patterns.items():
+            cat_norm = normalize_tag(cat)
+            if not cat_norm:
+                continue
+            for pattern in patterns:
+                try:
+                    if re.search(pattern, text, re.IGNORECASE):
+                        category_counts[cat_norm] += 2
+                        debug.append({"category": cat_norm, "source": "pattern",
+                                      "via": pattern[:40], "weight": 2})
+                        break  # one match per category is enough
+                except re.error:
+                    pass
 
     # Embedding-based scores (+2..+4 depending on similarity, weight scale from embedder)
     if embed_scores:
@@ -505,10 +522,11 @@ async def run():
         # Best description: prefer og:description (fetched), fall back to RSS summary
         description = next((s.get("description") for s in sigs if s.get("description")), "")
 
-        # Derive tags: keyword rules + tag_map + embeddings
+        # Derive tags: keyword rules + tag_map + embeddings + patterns
         article_tags, tag_debug = infer_article_tags(
             title, url, sigs, cfg.get("tag_rules", {}), cfg.get("tag_map", {}),
             embed_scores=embed_results.get(url),
+            tag_patterns=cfg.get("tag_patterns", {}),
         )
 
         # Apply manual corrections (YAML file + DB, DB takes precedence).
@@ -646,6 +664,7 @@ async def run():
                     cfg.get("tag_rules", {}), cfg.get("tag_map", {}),
                     embed_scores=embed_results.get(a["url"]),
                     llm_categories=cats, llm_weight=llm_weight,
+                    tag_patterns=cfg.get("tag_patterns", {}),
                 )
                 # Manual corrections still win over everything.
                 if corrections.get(a["url"]) is None:
