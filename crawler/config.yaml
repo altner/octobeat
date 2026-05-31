@@ -3,7 +3,7 @@ rss_feeds:
   # Independent blogs & non-profit media
   - https://netzpolitik.org/feed/
   - https://www.basicthinking.de/blog/feed/
-  - https://www.stadt-bremerhaven.de/feed/   # Caschy's Blog
+  # - https://www.stadt-bremerhaven.de/feed/  # zu viel irrelevanter Content
   - https://www.kuketz-blog.de/feed/          # Privacy and security
   - https://www.mobiflip.de/feed/
   - https://carta.info/feed/                  # Media and digital
