@@ -24,8 +24,18 @@ HEADERS = {"User-Agent": "OctoBeatBot/1.0 (open source link discovery crawler)"}
 # Helpers
 # ---------------------------------------------------------------------------
 
+_URL_TRAILING_JUNK = re.compile(
+    r'(via|per|from|durch|quelle|source|ref|cc|ht|h/t)$', re.IGNORECASE
+)
+
+
 def normalize_url(url: str) -> str:
-    """Remove UTM parameters and tracking suffixes."""
+    """Remove UTM parameters, tracking suffixes, and trailing junk words."""
+    # Strip trailing punctuation and common appended words (e.g. "htmlvia")
+    url = re.sub(r'[.,;:!?)]+$', '', url)
+    # Split off trailing non-path words glued without separator (e.g. "htmlvia" → "html")
+    url = re.sub(r'(\.html?|\.php|\.aspx?)(via|per|from|durch|quelle|cc|ht).*$',
+                 r'\1', url, flags=re.IGNORECASE)
     tracked = {"utm_source", "utm_medium", "utm_campaign",
                "utm_content", "utm_term", "ref", "source", "fbclid"}
     p = urlparse(url)
