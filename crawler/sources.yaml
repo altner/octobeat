@@ -1,0 +1,50 @@
+# OctoBeat Sources
+# ─────────────────────────────────────────────────────────────────────────────
+# Community-maintained list of RSS feeds and Mastodon instances.
+#
+# Want to suggest a source? Open a GitHub Issue:
+#   → New RSS feed:        https://github.com/altner/octobeat/issues/new?template=suggest_feed.yml
+#   → New Mastodon instance: https://github.com/altner/octobeat/issues/new?template=suggest_instance.yml
+#
+# Guidelines for RSS feeds:
+#   - Independent blogs or non-profit media
+#   - Primarily German-language content
+#   - No purely commercial outlets or content farms
+#   - Actively maintained (published within the last 3 months)
+#
+# Guidelines for Mastodon instances:
+#   - Search API must be publicly accessible (no 404/401)
+#   - German-speaking community focus preferred
+# ─────────────────────────────────────────────────────────────────────────────
+
+rss_feeds:
+  # Independent blogs & non-profit media
+  - https://netzpolitik.org/feed/
+  - https://www.basicthinking.de/blog/feed/
+  - https://www.kuketz-blog.de/feed/          # Privacy and security
+  - https://www.mobiflip.de/feed/
+  - https://carta.info/feed/                  # Media and digital
+  - https://irights.info/feed                 # Digital rights
+
+  # Travel blogs
+  - https://reisehappen.de/feed/
+  - https://www.fernwehking.de/feed/
+  - https://nomadblogger.de/feed/
+  - https://www.reisefreiheit.org/feed/
+
+  # Blog aggregators
+  - https://www.metacheles.de/rss/
+  - https://uberblogr.de/rss
+  - https://uberblogr.de/rss-trending
+
+mastodon_instances:
+  # Public Fediverse instances with accessible search API.
+  # The own MASTODON_INSTANCE from .env is searched first — no need to list it here.
+  - https://mastodon.social
+  - https://mastodon.online
+  - https://troet.cafe
+  - https://social.tchncs.de
+  - https://chaos.social
+  - https://digitalcourage.social
+  - https://norden.social
+  - https://berlin.social

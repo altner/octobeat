@@ -41,6 +41,16 @@ def load_config() -> dict:
     with open(cfg_path) as f:
         cfg = yaml.safe_load(f)
 
+    # Load community-maintained sources (rss_feeds + mastodon_instances)
+    sources_path = CRAWLER_DIR / "sources.yaml"
+    if sources_path.exists():
+        with open(sources_path) as f:
+            sources = yaml.safe_load(f) or {}
+        cfg["rss_feeds"] = sources.get("rss_feeds", [])
+        cfg["mastodon_instances"] = sources.get("mastodon_instances", [])
+    else:
+        print("⚠ sources.yaml not found — no RSS feeds or Mastodon instances loaded.")
+
     corrections_path = CRAWLER_DIR / "corrections.yaml"
     if corrections_path.exists():
         with open(corrections_path) as f:

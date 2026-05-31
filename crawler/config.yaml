@@ -1,37 +1,6 @@
 # Default RSS feeds. data/feeds.json is the active source list.
-rss_feeds:
-  # Independent blogs & non-profit media
-  - https://netzpolitik.org/feed/
-  - https://www.basicthinking.de/blog/feed/
-  # - https://www.stadt-bremerhaven.de/feed/  # zu viel irrelevanter Content
-  - https://www.kuketz-blog.de/feed/          # Privacy and security
-  - https://www.mobiflip.de/feed/
-  - https://carta.info/feed/                  # Media and digital
-  - https://irights.info/feed                 # Digital rights
-
-  # Travel blogs
-  - https://reisehappen.de/feed/
-  - https://www.fernwehking.de/feed/
-  - https://nomadblogger.de/feed/
-  - https://www.reisefreiheit.org/feed/
-
-  - https://www.metacheles.de/rss/
-  - https://uberblogr.de/rss
-  - https://uberblogr.de/rss-trending
-
-# Public Mastodon instances used as additional Fediverse search windows.
-# The own MASTODON_INSTANCE from .env is searched first and does not need to be listed here.
-mastodon_instances:
-  - https://mastodon.social
-  - https://mastodon.online
-  - https://troet.cafe
-  - https://social.tchncs.de
-  # - https://social.heise.de  # kommerziell
-  - https://chaos.social
-  - https://digitalcourage.social
-  - https://norden.social
-  - https://berlin.social
-  # - https://troet.uberblogr.de  # Search-API deaktiviert (HTTP 404)
+# RSS feeds and Mastodon instances are in crawler/sources.yaml
+# (community-maintained, submit suggestions via GitHub Issues)
 
 # Additional social searches derived from RSS article URLs.
 social_search:

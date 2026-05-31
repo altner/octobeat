@@ -1,0 +1,37 @@
+name: "Suggest a Mastodon Instance"
+description: "Suggest a Mastodon/Fediverse instance to add as a search window in OctoBeat."
+title: "[Instance] "
+labels: ["sources", "instance-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a Mastodon instance! Requirements:
+        - The search API (`/api/v2/search`) must be publicly accessible
+        - Preferably German-speaking community focus
+
+  - type: input
+    id: instance_url
+    attributes:
+      label: Instance URL
+      placeholder: "https://example.social"
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: What community does this instance serve?
+      placeholder: "German-speaking tech and open source community."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I verified the search API works (no 404/401 on `/api/v2/search?q=test&type=statuses`)
+          required: true
+        - label: The instance is actively maintained and has a reasonable user base
+          required: true

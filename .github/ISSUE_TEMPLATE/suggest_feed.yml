@@ -1,0 +1,64 @@
+name: "Suggest an RSS Feed"
+description: "Suggest an independent German-language blog or non-profit media source to add to OctoBeat."
+title: "[Feed] "
+labels: ["sources", "feed-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a source! Please check the guidelines before submitting:
+        - Independent blog or non-profit media (no commercial outlets)
+        - Primarily German-language content
+        - Actively maintained (published within the last 3 months)
+
+  - type: input
+    id: feed_url
+    attributes:
+      label: RSS Feed URL
+      description: The direct URL to the RSS/Atom feed
+      placeholder: "https://example.org/feed/"
+    validations:
+      required: true
+
+  - type: input
+    id: site_url
+    attributes:
+      label: Website URL
+      placeholder: "https://example.org"
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: What is this blog/site about?
+      placeholder: "A personal tech blog focused on privacy and open source."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Main topic
+      options:
+        - Technology / Open Source
+        - Privacy / Security
+        - Politics / Society
+        - Travel
+        - Culture
+        - Personal / Diary
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: The feed is independent (not a commercial media outlet)
+          required: true
+        - label: Content is primarily in German
+          required: true
+        - label: The blog has published at least one post in the last 3 months
+          required: true
