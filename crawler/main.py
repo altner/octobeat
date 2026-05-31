@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 import yaml
 from dateutil import parser as dateparser
 
-from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles, _bluesky_token, collect_mastodon_trends
+from collector import collect_mastodon, collect_bluesky, collect_rss, enrich_titles, _bluesky_token, collect_mastodon_trends
 from curator  import is_valid_curator, calc_weight
 from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
@@ -344,15 +344,7 @@ async def run():
             all_signals.extend(sigs)
             print(f"  {domain}: {len(sigs)} signals")
 
-    # ── 5. Hacker News ─────────────────────────────────────────────────────
-    hn_cfg = cfg.get("hackernews", {})
-    if hn_cfg.get("enabled", True):
-        print("→ Crawling Hacker News...")
-        sigs = await collect_hackernews(hn_cfg.get("top_n", 100), hn_cfg.get("min_score", 10))
-        all_signals.extend(sigs)
-        print(f"  HN: {len(sigs)} signals")
-
-    # ── 6. Filter: domain blacklist + curator validation ──────────────────
+    # ── 5. Filter: domain blacklist + curator validation ──────────────────
     valid_signals = []
     for s in all_signals:
         if not domain_ok(s["url"], blacklist):

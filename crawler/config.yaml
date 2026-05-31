@@ -42,11 +42,6 @@ bluesky:
   enabled: true
   limit: 25
 
-# Include Hacker News?
-hackernews:
-  enabled: false
-  min_score: 10
-  top_n: 100
 
 # Spam filter for curators
 curator_filter:
