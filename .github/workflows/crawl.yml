@@ -5,6 +5,9 @@ on:
     # Avoiding minute 0 reduces scheduled workflow delays.
     - cron: "0 10 * * *"
       timezone: "Europe/Berlin"
+    # Fallback trigger in case GitHub skips the primary schedule.
+    - cron: "0 14 * * *"
+      timezone: "Europe/Berlin"
   workflow_dispatch:
   push:
     branches: [main]
