@@ -303,6 +303,9 @@ tag_anchors:
   politik: >
     Politik Bundesregierung Bundestag Koalition Partei Wahl
     Gesetzentwurf Demokratie Europa EU-Politik Außenpolitik
+  blog: >
+    Wochenrückblick Recap Monatsrückblick persönlicher Blog Tagebuch
+    Linksammlung Lesenswert Wochenende Alltag Gedanken Jahresrückblick
 
 # Qualified tags from title, URL slug, and existing signal tags.
 # Do not assign tags solely from the source domain.
@@ -378,6 +381,17 @@ tag_rules:
     - rechtsruck
     - neonazi
     - rassismus
+  blog:
+    - recap
+    - rückblick
+    - ruckblick
+    - wochenrückblick
+    - wochenruckblick
+    - monatsrückblick
+    - jahresrückblick
+    - linksammlung
+    - lesenswert
+    - wochenende
   reisen:
     - reise
     - reisen
