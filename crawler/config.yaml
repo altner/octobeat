@@ -326,6 +326,30 @@ tag_rules:
     - hotel
     - flug
     - outdoor
+  gaming:
+    - xbox
+    - playstation
+    - nintendo
+    - controller
+    - gaming
+    - videospiel
+    - steam
+    - esport
+    - turtle beach
+    - headset
+  hardware:
+    - cpu
+    - gpu
+    - grafikkarte
+    - prozessor
+    - mainboard
+    - speicher
+    - festplatte
+    - ssd
+    - netzteil
+    - kühlsystem
+    - gehäuse
+    - nas
 
 # Output
 output:
