@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import feedData from '../../data/feed.json';
+
+const genTime = (feedData as any).generated_at
+  ? new Date((feedData as any).generated_at).toLocaleString('en-GB', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit',
+      timeZone: 'Europe/Berlin',
+      timeZoneName: 'short',
+    })
+  : '';
+---
+
+<BaseLayout title="OctoBeat · Documentation">
+  <Header currentPage="doc" genTime={genTime} />
+
+  <main class="doc">
+
+    <header class="doc-hero">
+      <h1>How OctoBeat works</h1>
+      <p class="lead">
+        OctoBeat is a German-language social news aggregator. It scans the web for articles
+        that real people are actually sharing — and ranks them by signal strength, not by
+        editorial preference or ad revenue.
+      </p>
+    </header>
+
+    <section class="doc-section">
+      <h2>The idea</h2>
+      <p>
+        Most news aggregators either rely on editors choosing what matters, or on raw click
+        counts that can be gamed. OctoBeat takes a different approach: it watches what
+        curators — bloggers, journalists, and enthusiasts — share on
+        <strong>Mastodon</strong> and <strong>Bluesky</strong>, and uses those social signals
+        as votes. The more trusted people share a link, the higher it ranks.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Where the data comes from</h2>
+      <div class="source-grid">
+        <div class="source-card">
+          <span class="source-icon">🐘</span>
+          <h3>Mastodon</h3>
+          <p>Searches across multiple German-speaking instances for links shared by
+          active, credible accounts.</p>
+        </div>
+        <div class="source-card">
+          <span class="source-icon">🦋</span>
+          <h3>Bluesky</h3>
+          <p>Searches the Bluesky network for the same article domains to cross-reference
+          social signals.</p>
+        </div>
+        <div class="source-card">
+          <span class="source-icon">📡</span>
+          <h3>RSS Feeds</h3>
+          <p>Monitors curated RSS feeds from established German tech, news, and culture
+          blogs to seed the domain list.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>How articles are scored</h2>
+      <p>Every article gets a score based on four factors:</p>
+      <ol class="score-steps">
+        <li>
+          <strong>Curator weight</strong> — not all shares are equal. A share from an
+          account with many followers and a good follower/following ratio counts more
+          than one from a brand-new or spam-like account.
+        </li>
+        <li>
+          <strong>Unique curators</strong> — an article shared by 10 different people
+          scores higher than one shared 10 times by the same person.
+          Formula: <code>log₂(unique curators + 1)</code>
+        </li>
+        <li>
+          <strong>Platform bonus</strong> — Mastodon and Bluesky signals are weighted
+          differently based on observed signal quality.
+        </li>
+        <li>
+          <strong>Freshness decay</strong> — older articles score lower.
+          Formula: <code>1 / (age_hours + 2)^1.4</code>. Articles older than 48 hours
+          are dropped entirely.
+        </li>
+      </ol>
+      <p>
+        Only articles with at least one Mastodon or Bluesky signal make it into the feed —
+        RSS-only articles are filtered out.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>How categories work</h2>
+      <p>
+        OctoBeat assigns every article up to 5 category tags using a three-layer system,
+        each with a different confidence weight:
+      </p>
+      <div class="layer-list">
+        <div class="layer">
+          <span class="layer-badge tag-map">+3</span>
+          <div>
+            <strong>RSS tag mapping</strong> — when a feed publishes an article with a
+            tag like <code>#hardware</code> or <code>#linux</code>, that tag is mapped
+            directly to a category. Highest confidence.
+          </div>
+        </div>
+        <div class="layer">
+          <span class="layer-badge embedding">+2–4</span>
+          <div>
+            <strong>Semantic embeddings</strong> — the article title is compared to
+            category descriptions using a multilingual AI model
+            (<em>paraphrase-multilingual-MiniLM-L12-v2</em>). Understands meaning,
+            not just keywords — "Turtle Beach Controller für Xbox" is recognised as
+            gaming even without a #gaming tag.
+          </div>
+        </div>
+        <div class="layer">
+          <span class="layer-badge keyword">+1</span>
+          <div>
+            <strong>Keyword rules</strong> — a curated list of keywords matched against
+            the title and URL. Used as a fallback and tie-breaker.
+          </div>
+        </div>
+      </div>
+      <p>
+        Manual corrections can override any automatic assignment —
+        useful for edge cases the system consistently gets wrong.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>The pages</h2>
+      <div class="pages-grid">
+        <div class="page-card">
+          <h3>Feeds</h3>
+          <p>The main page. Articles ranked by score, grouped into sections by category.
+          Includes a live search bar.</p>
+        </div>
+        <div class="page-card">
+          <h3>Inspector</h3>
+          <p>Full article list with platform labels, curator handles, tags, and engagement
+          numbers. Good for spotting what's trending across platforms.</p>
+        </div>
+        <div class="page-card">
+          <h3>Metrics</h3>
+          <p>Shows how well the classifier is working — category distribution, which keywords
+          fire most, unmapped RSS tags, and articles without a category.</p>
+        </div>
+        <div class="page-card">
+          <h3>Settings</h3>
+          <p>Lists all active RSS sources. In local dev mode, feeds can be added, rated,
+          or blocked to influence future crawls.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>Update cycle</h2>
+      <p>
+        The crawler runs locally, writes results to a SQLite database and exports
+        <code>feed.json</code>. Pushing that file to GitHub triggers an automatic
+        deployment — the static site is rebuilt and live within about 2 minutes.
+        There is no server, no database in production — just a pre-built HTML file
+        served from GitHub Pages.
+      </p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Open source</h2>
+      <p>
+        OctoBeat is open source. The crawler is written in Python, the frontend in
+        Astro. You can find the source code on
+        <a href="https://github.com/altner/octobeat" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .doc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .doc-hero {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .doc-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .doc-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .doc-section h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .doc-section p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-section a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Source grid */
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .source-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .source-icon { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+
+  .source-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .source-card p {
+    font-size: 0.82rem;
+    margin: 0;
+  }
+
+  /* Score steps */
+  .score-steps {
+    margin: 0.75rem 0 0.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .score-steps li {
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: 0.9rem;
+  }
+
+  .score-steps code {
+    background: var(--surface);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--accent2);
+  }
+
+  /* Layer list */
+  .layer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .layer {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .layer-badge {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-top: 1px;
+  }
+
+  .layer-badge.tag-map   { background: rgba(74,158,255,0.15); color: #4a9eff; }
+  .layer-badge.embedding { background: rgba(167,139,250,0.15); color: #a78bfa; }
+  .layer-badge.keyword   { background: rgba(126,200,126,0.15); color: #7ec87e; }
+
+  .layer strong { color: var(--text); }
+  .layer code {
+    background: #111;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  /* Pages grid */
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .page-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .page-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .page-card p {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.55;
+  }
+</style>

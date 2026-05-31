@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentPage: 'main' | 'settings' | 'inspector' | 'metrics';
+  currentPage: 'main' | 'settings' | 'inspector' | 'metrics' | 'doc';
   genTime?: string;
 }
 const { currentPage, genTime = '' } = Astro.props;
@@ -13,6 +13,7 @@ const navItems = [
   { page: 'main',      label: 'Feeds',     href: base },
   { page: 'inspector', label: 'Inspector', href: `${base}inspector/` },
   { page: 'metrics',   label: 'Metrics',   href: `${base}metrics/` },
+  { page: 'doc',       label: 'Docs',      href: `${base}doc/` },
 ];
 
 const isSettings = currentPage === 'settings';
