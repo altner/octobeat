@@ -19,6 +19,9 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from numpy import ndarray
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
+
 MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 SIMILARITY_THRESHOLD = 0.38   # below this → ignore
 WEIGHT_SCALE = 4.0            # max weight added at similarity=1.0
