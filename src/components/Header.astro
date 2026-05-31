@@ -21,7 +21,6 @@ const isSettings = currentPage === 'settings';
   <a class="logo" href={base}>
     <img src={`${base}logo.png`} alt="OctoBeat" class="logo-img" />
   </a>
-  {isDev && currentPage === 'inspector' && <span class="debug-badge">Debug</span>}
   {genTime && <span class="meta"><span class="meta-label">Updated:</span> {genTime}</span>}
   <div class="spacer"></div>
   <nav class="nav-links">
