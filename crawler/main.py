@@ -462,11 +462,13 @@ async def run():
     if too_old_count:
         print(f"→ Dropped {too_old_count} finds older than {max_age_h}h")
 
-    # ── 8. Keep only articles with social signal ───────────────────────────
+    # ── 8. Keep only articles with social signal + meaningful title ────────
     social_platforms = {"mastodon", "bluesky"}
+    _numeric_title = re.compile(r"^\d+$")
     articles = [
         a for a in articles
         if social_platforms & set(a["platforms"])
+        and not _numeric_title.match((a.get("title") or "").strip())
     ]
     print(f"→ {len(articles)} finds with social signal (Mastodon/Bluesky)")
 
