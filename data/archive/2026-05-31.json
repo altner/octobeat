@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T12:06:56.745791+00:00",
+  "generated_at": "2026-05-31T12:20:25.288626+00:00",
   "article_count": 33,
   "top_curators": {
     "mastodon": [
@@ -76,14 +76,14 @@
       "id": "5b3bfe5938e0",
       "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
       "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
-      "score": 6079.11,
+      "score": 5647.33,
       "signal_count": 6,
       "curators": [
-        "fxneumann.bonn.social.ap.brid.gy",
         "netzpolitik_feed@chaos.social",
-        "pirati.bsky.social",
+        "netzpolitik.org",
         "karlbaer@gruene.social",
-        "netzpolitik.org"
+        "fxneumann.bonn.social.ap.brid.gy",
+        "pirati.bsky.social"
       ],
       "platforms": [
         "bluesky",
@@ -201,12 +201,12 @@
       "id": "f1190a9b7471",
       "url": "https://happybuddha1975.de/22-kw-2026-umsteigen-aussteigen-und-das-innere-gleichgewicht/",
       "title": "22 KW 2026 Umsteigen, Aussteigen und das innere Gleichgewicht | happybudddha1975",
-      "score": 3486.55,
+      "score": 3042.11,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge",
-        "Juergen@happybuddha1975.de"
+        "Juergen@happybuddha1975.de",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -234,8 +234,17 @@
         "quotes": 0,
         "comments": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "keyword",
+          "via": "kw 20",
+          "weight": 1
+        }
+      ],
       "wp_engagement": {
         "comments": 0
       }
@@ -244,14 +253,14 @@
       "id": "1fadb34b09f1",
       "url": "https://bunte-kuechenabenteuer.de/abenteuer-alltag-25-31-05-2026/",
       "title": "Abenteuer Alltag (25.-31.05.2026) | Bunte Küchenabenteuer",
-      "score": 2624.84,
+      "score": 2477.01,
       "signal_count": 5,
       "curators": [
         "buntkueche@bunte-kuechenabenteuer.de",
-        "uberblogr@troet.uberblogr.de",
+        "buntkueche@pixelfed.social",
         "freuwesen.eurosky.social",
         "UberBlogr - Neueste Beiträge",
-        "buntkueche@pixelfed.social"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "bluesky",
@@ -295,6 +304,7 @@
       "tags": [
         "blog",
         "reisen",
+        "kultur",
         "wochenrueckblick",
         "alltag"
       ],
@@ -326,7 +336,13 @@
         {
           "category": "reisen",
           "source": "embedding",
-          "via": "sim=0.46",
+          "via": "sim=0.51",
+          "weight": 2
+        },
+        {
+          "category": "kultur",
+          "source": "embedding",
+          "via": "sim=0.38",
           "weight": 2
         }
       ],
@@ -338,12 +354,12 @@
       "id": "6947c4764e0d",
       "url": "https://pixelboomer.de/heute-zum-ersten/",
       "title": "Mastodon 2026-05-31 12:39:34 | Pixelboomer",
-      "score": 2345.83,
+      "score": 2110.71,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
         "UberBlogr - Neueste Beiträge",
-        "blog@pixelboomer.de"
+        "blog@pixelboomer.de",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -397,12 +413,12 @@
       "id": "76c0fb9a04f4",
       "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
       "title": "Jackson C. Frank – Golden Mirror | Blütensthaub",
-      "score": 1540.01,
+      "score": 1415.61,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
+        "Elkeringhausen",
         "UberBlogr - Neueste Beiträge",
-        "Elkeringhausen"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -436,11 +452,11 @@
       "id": "547a68bfe8e7",
       "url": "https://www.henning-uhle.eu/allgemein/mecklenburgische-seenplatte-und-ploetzlich-bist-du-wieder-kind?pk_campaign=feed&pk_kwd=mecklenburgische-seenplatte-und-ploetzlich-bist-du-wieder-kind",
       "title": "Mecklenburgische Seenplatte: Und plötzlich bist du wieder Kind | Henning Uhle",
-      "score": 1530.78,
+      "score": 1348.28,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -463,9 +479,16 @@
         "comments": 0
       },
       "tags": [
-        "blog"
+        "blog",
+        "reisen"
       ],
       "tag_debug": [
+        {
+          "category": "reisen",
+          "source": "keyword",
+          "via": "seen",
+          "weight": 1
+        },
         {
           "category": "blog",
           "source": "embedding",
@@ -481,11 +504,11 @@
       "id": "a61fb77deb8d",
       "url": "https://thorsten-konigorski.de/journal/31-05-2026/",
       "title": "Mentionstest | Thorsten Konigorski",
-      "score": 1333.04,
+      "score": 1187.65,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -513,11 +536,11 @@
       "id": "53945724b746",
       "url": "https://blog.donswelt.de/2026/05/31/schmerzhafte-nostalgie-mit-gradius-notizen-eines-amateur-baristas-und-pragmatische-liebe.html",
       "title": "Schmerzhafte Nostalgie mit Gradius, Notizen eines Amateur-Baristas und eine pragmatische Beziehung | Torsten (donswelt)",
-      "score": 1332.04,
+      "score": 1186.83,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -554,11 +577,11 @@
       "id": "c727fa2f19b2",
       "url": "https://flashtaig.wordpress.com/2026/05/31/tatort-oder-taschentuch-4/",
       "title": "Tatort oder Taschentuch | Rina",
-      "score": 1331.05,
+      "score": 1186.02,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -579,18 +602,27 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
+      "tags": [
+        "kultur"
+      ],
+      "tag_debug": [
+        {
+          "category": "kultur",
+          "source": "keyword",
+          "via": "tatort",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "24055405a4e6",
       "url": "https://jonas-haller.de/2026/05/urlaub-juist/",
       "title": "Meine 8 Urlaubs-Highlights auf der autofreien Nordseeinsel Juist. | Jonas‘ Blog",
-      "score": 1330.06,
+      "score": 1185.21,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -626,7 +658,7 @@
         {
           "category": "reisen",
           "source": "embedding",
-          "via": "sim=0.50",
+          "via": "sim=0.53",
           "weight": 2
         }
       ],
@@ -638,12 +670,12 @@
       "id": "aa002276ac8e",
       "url": "https://www.auf-kurztrip.de/2026/05/20-episoden-spaeter-ein-rueckblick-auf-meinen-fotopodcast/",
       "title": "20 Episoden später: Ein Rückblick auf meinen Fotopodcast | Auf Kurztrip",
-      "score": 1204.47,
+      "score": 1126.99,
       "signal_count": 3,
       "curators": [
+        "UberBlogr - Neueste Beiträge",
         "blog@www.auf-kurztrip.de",
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -696,12 +728,12 @@
       "id": "f5509fd72572",
       "url": "https://nerdjunk.de/mein-ersteindruck-von-den-shokz-openrun-pro-2-knochenschall-sportkopfhoerern/",
       "title": "Mein Ersteindruck von den SHOKZ OpenRun Pro 2 Knochenschall Sportkopfhörern | Nerdjunk.de",
-      "score": 1053.88,
+      "score": 992.38,
       "signal_count": 3,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge",
         "nerdjunkblog@nerdjunk.de",
-        "UberBlogr - Neueste Beiträge"
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -730,11 +762,10 @@
         "comments": 0
       },
       "tags": [
+        "hardware",
         "kultur",
         "nerdjunk",
-        "headset",
-        "knochenschall",
-        "kopfhörer"
+        "shokz"
       ],
       "tag_debug": [
         {
@@ -744,22 +775,22 @@
           "weight": 2
         },
         {
-          "category": "headset",
-          "source": "raw_tag",
+          "category": "hardware",
+          "source": "tag_map",
           "via": "headset",
-          "weight": 2
+          "weight": 3
         },
         {
-          "category": "knochenschall",
-          "source": "raw_tag",
+          "category": "hardware",
+          "source": "tag_map",
           "via": "knochenschall",
-          "weight": 2
+          "weight": 3
         },
         {
-          "category": "kopfhörer",
-          "source": "raw_tag",
+          "category": "hardware",
+          "source": "tag_map",
           "via": "kopfhörer",
-          "weight": 2
+          "weight": 3
         },
         {
           "category": "kultur",
@@ -782,11 +813,11 @@
       "id": "6e829d83de18",
       "url": "https://codeundkram.de/passkeys-passworter-waren-eine-schlechte-idee-die-wir-viel-zu-lange-ertragen-haben/",
       "title": "Passkeys: Passwörter waren eine schlechte Idee, die wir viel zu lange ertragen haben | CODEundKRAM",
-      "score": 846.53,
+      "score": 777.98,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -823,11 +854,11 @@
       "id": "a7b567497110",
       "url": "https://www.heldenhaushalt.de/sari02/index.php/2026/05/31/30-marmeladenglasmomente-im-mai-2026/",
       "title": "30 Marmeladenglasmomente im Mai 2026 | Heldenhaushalt.de",
-      "score": 845.89,
+      "score": 777.43,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -848,18 +879,27 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
+      "tags": [
+        "blog"
+      ],
+      "tag_debug": [
+        {
+          "category": "blog",
+          "source": "keyword",
+          "via": "marmeladenglas",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "873f3ee70bb7",
       "url": "https://51nord.me/naechtlicher-besucher/",
       "title": "Nächtlicher Besucher | Martin",
-      "score": 845.16,
+      "score": 776.8,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -891,11 +931,11 @@
       "id": "a4d8d3178049",
       "url": "https://hmbl.blog/31-5-2026-recap/?pk_campaign=feed&pk_kwd=31-5-2026-recap",
       "title": "31.5.2026 – recap | Christian Fischer (jawl)",
-      "score": 601.9,
+      "score": 563.12,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -936,11 +976,11 @@
       "id": "1c3cf0b648b2",
       "url": "https://queergedacht.de/2026/05/kein-sport/",
       "title": "Kein Sport | QueerGedacht",
-      "score": 601.65,
+      "score": 562.89,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -972,11 +1012,11 @@
       "id": "aab6ba82d073",
       "url": "https://blog.kieselwiese.de/?p=270",
       "title": "2026-05-26: Pfingstochsentour Bremen Tag 4 (Heimfahrt) | Kieselblog",
-      "score": 601.35,
+      "score": 562.62,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -1013,11 +1053,11 @@
       "id": "e90e844a7f69",
       "url": "https://ohrenschmaus.blog/2026/05/31/5521/",
       "title": "5521 | Ohrenschmaus",
-      "score": 601.04,
+      "score": 562.35,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -1045,11 +1085,11 @@
       "id": "bd7f7494d88f",
       "url": "https://gruebelnundsinnieren.de/2026/05/31/chillen-und-buchhalten-samstag-30-5-2026/",
       "title": "Chillen und buchhalten, Samstag 30.5.2026 | Grübeln und Sinnieren",
-      "score": 600.74,
+      "score": 562.08,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "UberBlogr - Neueste Beiträge"
+        "UberBlogr - Neueste Beiträge",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon",
@@ -1090,13 +1130,13 @@
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
-      "score": 386.08,
+      "score": 381.97,
       "signal_count": 6,
       "curators": [
-        "PeterRu@climatejustice.social",
-        "netzpolitik_feed@chaos.social",
         "peterru.eurosky.social",
+        "netzpolitik_feed@chaos.social",
         "netzpolitik.org",
+        "PeterRu@climatejustice.social",
         "teezeh@ieji.de"
       ],
       "platforms": [
@@ -1145,7 +1185,7 @@
         "comments": 0
       },
       "tags": [
-        "öffentlichkeit",
+        "wirtschaft",
         "1789_capital",
         "brian_quintenz",
         "caroline_pham",
@@ -1153,10 +1193,10 @@
       ],
       "tag_debug": [
         {
-          "category": "öffentlichkeit",
-          "source": "raw_tag",
+          "category": "wirtschaft",
+          "source": "tag_map",
           "via": "öffentlichkeit",
-          "weight": 2
+          "weight": 3
         },
         {
           "category": "1789_capital",
@@ -1361,6 +1401,12 @@
           "source": "keyword",
           "via": "netzpolitik",
           "weight": 1
+        },
+        {
+          "category": "wirtschaft",
+          "source": "keyword",
+          "via": "prognose",
+          "weight": 1
         }
       ],
       "wp_engagement": {
@@ -1371,11 +1417,11 @@
       "id": "30cc40f98ec5",
       "url": "https://blog.kieselwiese.de/?p=248",
       "title": "Netzfunde – Kieselblog",
-      "score": 378.27,
+      "score": 358.21,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "flumen_calculi@ruhr.social"
+        "flumen_calculi@ruhr.social",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1417,11 +1463,11 @@
       "id": "8ff65b507d7b",
       "url": "https://daoweg.wordpress.com/2026/05/31/mrs-klein/",
       "title": "Mrs. Klein",
-      "score": 368.45,
+      "score": 348.88,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "Elkeringhausen"
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1454,14 +1500,14 @@
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
       "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
-      "score": 251.09,
+      "score": 249.23,
       "signal_count": 6,
       "curators": [
-        "fernx.bsky.social",
         "netzpolitik_feed@chaos.social",
+        "netzpolitik.org",
+        "fernx.bsky.social",
         "matthimon@systemli.social",
-        "pirati.bsky.social",
-        "netzpolitik.org"
+        "pirati.bsky.social"
       ],
       "platforms": [
         "bluesky",
@@ -1585,11 +1631,11 @@
       "id": "3ccae6f3e6b0",
       "url": "https://daoweg.wordpress.com/2026/05/31/von-der-einsamkeit-intelligenter-menschen/",
       "title": "Von der Einsamkeit intelligenter Menschen",
-      "score": 240.25,
+      "score": 230.76,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "Elkeringhausen"
+        "Elkeringhausen",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1622,7 +1668,7 @@
       "id": "45379436d6b6",
       "url": "https://reisehappen.de/lublin-tipps/",
       "title": "Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen",
-      "score": 52.64,
+      "score": 52.11,
       "signal_count": 2,
       "curators": [
         "Couchflucht@flipboard.com",
@@ -1681,11 +1727,11 @@
       "id": "120403e0493c",
       "url": "https://blog.kieselwiese.de/?p=251",
       "title": "2026-05-25: Pfingstochsentour Bremen Tag 3 – Kieselblog",
-      "score": 20.15,
+      "score": 20.01,
       "signal_count": 2,
       "curators": [
-        "uberblogr@troet.uberblogr.de",
-        "flumen_calculi@ruhr.social"
+        "flumen_calculi@ruhr.social",
+        "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
         "mastodon"
@@ -1727,7 +1773,7 @@
       "id": "26187b11d485",
       "url": "https://happybuddha1975.de/simpelbanking/",
       "title": "Simpelbanking – HappyBuddha",
-      "score": 16.53,
+      "score": 16.31,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1751,8 +1797,17 @@
         "quotes": 0,
         "comments": 0
       },
-      "tags": [],
-      "tag_debug": [],
+      "tags": [
+        "wirtschaft"
+      ],
+      "tag_debug": [
+        {
+          "category": "wirtschaft",
+          "source": "keyword",
+          "via": "simpelbanking",
+          "weight": 1
+        }
+      ],
       "wp_engagement": {
         "comments": 0
       }
@@ -1761,7 +1816,7 @@
       "id": "ec2deb3cad93",
       "url": "https://gruebelnundsinnieren.de/2026/05/30/krankenlager-freitag-29-5-2026/",
       "title": "Krankenlager, Freitag 29.5.2026 – Grübeln und Sinnieren",
-      "score": 13.08,
+      "score": 12.93,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1804,7 +1859,7 @@
       "id": "9694b3527545",
       "url": "https://www.heldenhaushalt.de/sari02/index.php/2026/05/30/projekt-52-im-juni-2026-teilnehmer/",
       "title": "Projekt 52 im Juni 2026 + Teilnehmer - Heldenhaushalt",
-      "score": 11.32,
+      "score": 11.21,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1843,7 +1898,7 @@
       "id": "d9e8d46d1320",
       "url": "https://flashtaig.wordpress.com/2026/05/30/fuell-die-buchluecken-samstags-luecke-stuermisches-norderney/",
       "title": "Füll die Buchlücken Samstags-Lücke – Stürmisches Norderney",
-      "score": 10.83,
+      "score": 10.72,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1882,7 +1937,7 @@
       "id": "cb30c7c6c2f0",
       "url": "https://ohrenschmaus.blog/2026/05/30/66-seen-weg-pfingsten-2026-6-melchow-falkenberg-23/",
       "title": "66 Seen Weg, Pfingsten 2026, 6 Melchow – Falkenberg 23",
-      "score": 10.36,
+      "score": 10.26,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1905,14 +1960,23 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
+      "tags": [
+        "reisen"
+      ],
+      "tag_debug": [
+        {
+          "category": "reisen",
+          "source": "keyword",
+          "via": "seen",
+          "weight": 1
+        }
+      ]
     },
     {
       "id": "6013fc7e7fab",
       "url": "https://flashtaig.wordpress.com/2026/05/30/meine-woche-223/",
       "title": "Meine Woche",
-      "score": 7.89,
+      "score": 7.83,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
