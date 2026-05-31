@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-05-31T11:28:56.691761+00:00",
-  "runs_count": 22,
+  "exported_at": "2026-05-31T11:33:53.288411+00:00",
+  "runs_count": 23,
   "curator_stats": [
     {
       "platform": "bluesky",
@@ -23,11 +23,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "alterskompetenz.bsky.social",
-      "total_signals": 24,
-      "top_articles": 1,
-      "score_sum": 16.14,
+      "total_signals": 25,
+      "top_articles": 2,
+      "score_sum": 32.35,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -77,11 +77,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "archifact.bsky.social",
-      "total_signals": 32,
+      "total_signals": 34,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -95,20 +95,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "atroxus.social.cologne.ap.brid.gy",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "aufkurztrip.de",
-      "total_signals": 77,
+      "total_signals": 88,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -275,11 +275,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "christophkappes.bsky.social",
-      "total_signals": 34,
+      "total_signals": 36,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -329,11 +329,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "cxor.de",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -410,20 +410,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "diuuk.bsky.social",
-      "total_signals": 32,
+      "total_signals": 34,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "dockson.bsky.social",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -482,20 +482,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "droid-boy.de",
-      "total_signals": 22,
+      "total_signals": 24,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "droidboy.social.cologne.ap.brid.gy",
-      "total_signals": 11,
+      "total_signals": 12,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -554,11 +554,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "einatmen.bsky.social",
-      "total_signals": 33,
+      "total_signals": 35,
       "top_articles": 1,
       "score_sum": 146.08,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -572,29 +572,29 @@
     {
       "platform": "bluesky",
       "curator_handle": "elkeringhausen2025.bsky.social",
-      "total_signals": 172,
+      "total_signals": 186,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "felicea.bsky.social",
-      "total_signals": 50,
+      "total_signals": 53,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "fernx.bsky.social",
-      "total_signals": 13,
-      "top_articles": 13,
-      "score_sum": 4141.490000000001,
+      "total_signals": 14,
+      "top_articles": 14,
+      "score_sum": 4397.1,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -635,11 +635,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "freuwesen.eurosky.social",
-      "total_signals": 233,
-      "top_articles": 8,
-      "score_sum": 38517.19,
+      "total_signals": 262,
+      "top_articles": 9,
+      "score_sum": 41575.990000000005,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -662,20 +662,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "fxneumann.bonn.social.ap.brid.gy",
-      "total_signals": 5,
-      "top_articles": 5,
-      "score_sum": 45750.92,
+      "total_signals": 6,
+      "top_articles": 6,
+      "score_sum": 53121.0,
       "first_seen": "2026-05-31T10:22:38.520592+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "gaborpaal.bsky.social",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -689,20 +689,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "geistgegenwart.bsky.social",
-      "total_signals": 13,
+      "total_signals": 14,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "georgfischer.openbiblio.social.ap.brid.gy",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -716,11 +716,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "gigold.me",
-      "total_signals": 44,
+      "total_signals": 48,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -752,11 +752,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "graunke.bsky.social",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -779,29 +779,29 @@
     {
       "platform": "bluesky",
       "curator_handle": "hagenhagen.de",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "hanshuett.bsky.social",
-      "total_signals": 64,
+      "total_signals": 68,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "hb-75.bsky.social",
-      "total_signals": 3,
+      "total_signals": 4,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T11:22:48.621882+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -815,29 +815,29 @@
     {
       "platform": "bluesky",
       "curator_handle": "helgemnielsen.bsky.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "henninguhle.bsky.social",
-      "total_signals": 11,
+      "total_signals": 12,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "herbaminor.bsky.social",
-      "total_signals": 309,
-      "top_articles": 8,
-      "score_sum": 13002.479999999998,
+      "total_signals": 334,
+      "top_articles": 10,
+      "score_sum": 15808.719999999998,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -959,11 +959,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "jakobsweg.bsky.social",
-      "total_signals": 152,
+      "total_signals": 171,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -986,11 +986,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "jawl.bsky.social",
-      "total_signals": 161,
+      "total_signals": 184,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1022,11 +1022,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "jogidingenskirchen.bsky.social",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1058,11 +1058,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "katjadiehl.bsky.social",
-      "total_signals": 34,
+      "total_signals": 36,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1139,11 +1139,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "klau.si",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1256,11 +1256,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "liesemueller.eurosky.social",
-      "total_signals": 26,
+      "total_signals": 27,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1292,20 +1292,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "llms.activitypub.awakari.com.ap.brid.gy",
-      "total_signals": 68,
+      "total_signals": 72,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "louisepumpernickel.bsky.social",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1319,11 +1319,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "lutzma.ch",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1373,29 +1373,29 @@
     {
       "platform": "bluesky",
       "curator_handle": "mailbox.org",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "marcelwink.bsky.social",
-      "total_signals": 5,
+      "total_signals": 6,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T10:22:38.520592+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "march.mstdn.io.ap.brid.gy",
-      "total_signals": 7,
+      "total_signals": 8,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1427,11 +1427,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "martinjost.bsky.social",
-      "total_signals": 32,
+      "total_signals": 34,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1445,38 +1445,38 @@
     {
       "platform": "bluesky",
       "curator_handle": "medienfeed.bsky.social",
-      "total_signals": 68,
+      "total_signals": 72,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "meikestoverock.bsky.social",
-      "total_signals": 7,
+      "total_signals": 8,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "merledieperle.bsky.social",
-      "total_signals": 73,
+      "total_signals": 76,
       "top_articles": 1,
       "score_sum": 2494.97,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "michael-lobeck.bonn.social.ap.brid.gy",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1499,11 +1499,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "mmiedl.bsky.social",
-      "total_signals": 18,
+      "total_signals": 19,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1535,11 +1535,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "mozilla.activitypub.awakari.com.ap.brid.gy",
-      "total_signals": 51,
+      "total_signals": 54,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1580,11 +1580,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "mthie.com",
-      "total_signals": 11,
+      "total_signals": 12,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1616,20 +1616,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "nathschlaeger.com",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "nefumanto.norden.social.ap.brid.gy",
-      "total_signals": 13,
+      "total_signals": 14,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1643,11 +1643,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "netzpolitik.org",
-      "total_signals": 90,
-      "top_articles": 90,
-      "score_sum": 191979.68999999992,
+      "total_signals": 94,
+      "top_articles": 94,
+      "score_sum": 200124.92999999988,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1670,11 +1670,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "noaasm.bsky.social",
-      "total_signals": 12,
-      "top_articles": 1,
-      "score_sum": 19.48,
+      "total_signals": 13,
+      "top_articles": 2,
+      "score_sum": 39.21,
       "first_seen": "2026-05-31T07:55:19.529884+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1697,11 +1697,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "nrdsblog.bsky.social",
-      "total_signals": 128,
+      "total_signals": 144,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:01:32.142331+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1724,20 +1724,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "oliverbweber.bsky.social",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "oliverding.de",
-      "total_signals": 32,
+      "total_signals": 34,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1760,20 +1760,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "palle.bsky.social",
-      "total_signals": 64,
+      "total_signals": 68,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "parentsforfuture.de",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1796,11 +1796,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "peterru.eurosky.social",
-      "total_signals": 42,
-      "top_articles": 25,
-      "score_sum": 40006.86,
+      "total_signals": 44,
+      "top_articles": 26,
+      "score_sum": 40403.16,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1832,11 +1832,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "pirati.bsky.social",
-      "total_signals": 114,
-      "top_articles": 105,
-      "score_sum": 198952.37999999992,
+      "total_signals": 118,
+      "top_articles": 109,
+      "score_sum": 206945.4799999999,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1850,11 +1850,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "posth.me",
-      "total_signals": 20,
+      "total_signals": 21,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1868,11 +1868,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "quallenchor.bsky.social",
-      "total_signals": 24,
+      "total_signals": 25,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1967,11 +1967,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "ripo1962.bsky.social",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -1985,20 +1985,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "roofjoke.netzpolitik.org",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 1,
       "score_sum": 289.24,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "rosefeldt.bsky.social",
-      "total_signals": 12,
-      "top_articles": 1,
-      "score_sum": 15.44,
+      "total_signals": 13,
+      "top_articles": 2,
+      "score_sum": 31.09,
       "first_seen": "2026-05-31T07:55:19.529884+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2057,11 +2057,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "sebmeineck.bsky.social",
-      "total_signals": 13,
-      "top_articles": 13,
-      "score_sum": 6654.960000000001,
+      "total_signals": 14,
+      "top_articles": 14,
+      "score_sum": 6899.120000000001,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2165,11 +2165,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "sysyphos.bsky.social",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2210,11 +2210,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "theunicornxxl.bsky.social",
-      "total_signals": 156,
+      "total_signals": 158,
       "top_articles": 27,
       "score_sum": 24085.22,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2237,11 +2237,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "thomasgerdes.de",
-      "total_signals": 51,
+      "total_signals": 54,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2273,20 +2273,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "thrommel.fc.troeterei.de.ap.brid.gy",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "tibor.net",
-      "total_signals": 32,
+      "total_signals": 34,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2363,11 +2363,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "ulli.bsky.social",
-      "total_signals": 13,
+      "total_signals": 14,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2381,11 +2381,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "v-i-o-l-a.openbiblio.social.ap.brid.gy",
-      "total_signals": 51,
+      "total_signals": 54,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2399,20 +2399,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "venusfrau.bsky.social",
-      "total_signals": 12,
+      "total_signals": 13,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "vorinstanz.bsky.social",
-      "total_signals": 18,
+      "total_signals": 19,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2462,11 +2462,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "wolfhartdsa.bsky.social",
-      "total_signals": 68,
+      "total_signals": 72,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2480,11 +2480,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "wurzelmann.at",
-      "total_signals": 34,
+      "total_signals": 36,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2498,20 +2498,20 @@
     {
       "platform": "bluesky",
       "curator_handle": "xwolf.de",
-      "total_signals": 16,
+      "total_signals": 17,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
       "curator_handle": "yosunai.bsky.social",
-      "total_signals": 40,
+      "total_signals": 45,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:01:32.142331+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2534,11 +2534,11 @@
     {
       "platform": "bluesky",
       "curator_handle": "zmoelnig.bsky.social",
-      "total_signals": 17,
+      "total_signals": 18,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "bluesky",
@@ -2552,11 +2552,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "A_Mimi@kolektiva.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2579,20 +2579,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "AndyGER",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "Andy_Scheuert@troet.cafe",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2606,20 +2606,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "AntjeZimmer2018@flipboard.com",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "BPS_TR@openbiblio.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2651,11 +2651,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Couchflucht@flipboard.com",
-      "total_signals": 120,
-      "top_articles": 1,
-      "score_sum": 17.06,
+      "total_signals": 130,
+      "top_articles": 2,
+      "score_sum": 34.08,
       "first_seen": "2026-05-31T07:55:19.529884+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2669,20 +2669,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "DerEntspannende@vivaldi.net",
-      "total_signals": 26,
+      "total_signals": 27,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "DigitalNaiv",
-      "total_signals": 206,
+      "total_signals": 215,
       "top_articles": 9,
       "score_sum": 10050.67,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2696,20 +2696,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "Elkeringhausen",
-      "total_signals": 317,
-      "top_articles": 34,
-      "score_sum": 5702.0300000000025,
+      "total_signals": 338,
+      "top_articles": 42,
+      "score_sum": 6188.810000000003,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "FlipboardDE@flipboard.com",
-      "total_signals": 76,
+      "total_signals": 80,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2750,20 +2750,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "Hammerwell@troet.cafe",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "HorstScheuer@darmstadt.social",
-      "total_signals": 50,
+      "total_signals": 52,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2795,11 +2795,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Lorker@sharkey.daddelwerk.net",
-      "total_signals": 9,
+      "total_signals": 10,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T08:51:19.600653+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2813,11 +2813,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Mela@zusammenkunft.net",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2831,11 +2831,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Nachtaktiv@nrw.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2849,11 +2849,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Ollital@nrw.social",
-      "total_signals": 60,
+      "total_signals": 63,
       "top_articles": 14,
       "score_sum": 29941.649999999998,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2867,11 +2867,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "ParteiKlima@nrw.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2885,11 +2885,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "PeterRu@climatejustice.social",
-      "total_signals": 42,
-      "top_articles": 29,
-      "score_sum": 40368.4,
+      "total_signals": 43,
+      "top_articles": 30,
+      "score_sum": 40764.700000000004,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2930,11 +2930,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "Sascha@bonn.social",
-      "total_signals": 40,
+      "total_signals": 41,
       "top_articles": 11,
       "score_sum": 27336.95,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -2975,11 +2975,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "ThomasGerdes",
-      "total_signals": 57,
+      "total_signals": 60,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3002,20 +3002,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "VdAKluttig@fedihum.org",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "ZBW_MediaTalk@openbiblio.social",
-      "total_signals": 114,
+      "total_signals": 120,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3056,11 +3056,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "andre_meister@chaos.social",
-      "total_signals": 22,
+      "total_signals": 23,
       "top_articles": 10,
       "score_sum": 17656.739999999998,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3074,20 +3074,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "aufkurztrip@nrw.social",
-      "total_signals": 72,
+      "total_signals": 81,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "avatter",
-      "total_signals": 38,
+      "total_signals": 40,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3101,11 +3101,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "b30@wandzeitung.xyz",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3146,20 +3146,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "blog@pixelboomer.de",
-      "total_signals": 74,
-      "top_articles": 3,
-      "score_sum": 10185.77,
+      "total_signals": 98,
+      "top_articles": 4,
+      "score_sum": 13347.07,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "blog@www.auf-kurztrip.de",
-      "total_signals": 112,
-      "top_articles": 7,
-      "score_sum": 15300.27,
+      "total_signals": 128,
+      "top_articles": 8,
+      "score_sum": 16738.670000000002,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3182,29 +3182,29 @@
     {
       "platform": "mastodon",
       "curator_handle": "brembs",
-      "total_signals": 38,
+      "total_signals": 40,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "buntkueche@bunte-kuechenabenteuer.de",
-      "total_signals": 117,
-      "top_articles": 9,
-      "score_sum": 43636.490000000005,
+      "total_signals": 130,
+      "top_articles": 10,
+      "score_sum": 46695.29000000001,
       "first_seen": "2026-05-31T08:51:19.600653+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "buntkueche@pixelfed.social",
-      "total_signals": 99,
-      "top_articles": 9,
-      "score_sum": 43636.490000000005,
+      "total_signals": 110,
+      "top_articles": 10,
+      "score_sum": 46695.29000000001,
       "first_seen": "2026-05-31T08:51:19.600653+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3218,20 +3218,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "carsten@herkenhoff.com",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "centaury@infosec.exchange",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3299,11 +3299,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "eay@eay.social",
-      "total_signals": 7,
+      "total_signals": 8,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T07:55:19.529884+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3317,11 +3317,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "eldiep@mastodon.online",
-      "total_signals": 55,
+      "total_signals": 57,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3353,11 +3353,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "flumen_calculi@ruhr.social",
-      "total_signals": 86,
-      "top_articles": 12,
-      "score_sum": 16940.780000000002,
+      "total_signals": 94,
+      "top_articles": 14,
+      "score_sum": 17396.920000000002,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3380,11 +3380,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "freuwesen@sueden.social",
-      "total_signals": 18,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T08:51:19.600653+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3398,11 +3398,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "georgfischer@openbiblio.social",
-      "total_signals": 57,
+      "total_signals": 60,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3434,11 +3434,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "happybuddha@social.saarland",
-      "total_signals": 9,
+      "total_signals": 10,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3488,20 +3488,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "isAutonomous@karlsruhe-social.de",
-      "total_signals": 36,
+      "total_signals": 37,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "jansenspott@ruhr.social",
-      "total_signals": 30,
+      "total_signals": 32,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3515,38 +3515,38 @@
     {
       "platform": "mastodon",
       "curator_handle": "juergen@hello.jyrgi.de",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "juergen@mementomori.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "kaffeeringe@social.tchncs.de",
-      "total_signals": 30,
+      "total_signals": 32,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "karlbaer@gruene.social",
-      "total_signals": 12,
-      "top_articles": 12,
-      "score_sum": 94781.34999999998,
+      "total_signals": 13,
+      "top_articles": 13,
+      "score_sum": 102151.42999999998,
       "first_seen": "2026-05-31T07:55:19.529884+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3569,11 +3569,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "kobaltauge@social.tchncs.de",
-      "total_signals": 9,
+      "total_signals": 12,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T11:22:48.621882+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3587,20 +3587,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "kuketzblog@social.tchncs.de",
-      "total_signals": 209,
+      "total_signals": 220,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "leibnizopenscience",
-      "total_signals": 76,
+      "total_signals": 80,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3614,11 +3614,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "linterfranz@tyrol.social",
-      "total_signals": 57,
+      "total_signals": 60,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3641,29 +3641,29 @@
     {
       "platform": "mastodon",
       "curator_handle": "mailbox_org@social.mailbox.org",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "malteengeler@legal.social",
-      "total_signals": 13,
-      "top_articles": 2,
-      "score_sum": 221.67999999999998,
+      "total_signals": 14,
+      "top_articles": 3,
+      "score_sum": 237.76999999999998,
       "first_seen": "2026-05-30T10:19:54.889195+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "march@mstdn.io",
-      "total_signals": 11,
+      "total_signals": 12,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3686,11 +3686,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "matthimon@systemli.social",
-      "total_signals": 16,
-      "top_articles": 16,
-      "score_sum": 21236.920000000002,
+      "total_signals": 17,
+      "top_articles": 17,
+      "score_sum": 21492.530000000002,
       "first_seen": "2026-05-29T08:10:55.459393+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3722,11 +3722,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "mcse",
-      "total_signals": 22,
+      "total_signals": 23,
       "top_articles": 7,
       "score_sum": 1382.41,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3758,11 +3758,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "mobiFlip",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3785,11 +3785,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "nele@ebildungslabor.de",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3803,11 +3803,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "nerdjunkblog@nerdjunk.de",
-      "total_signals": 163,
-      "top_articles": 8,
-      "score_sum": 13961.539999999999,
+      "total_signals": 181,
+      "top_articles": 9,
+      "score_sum": 15183.699999999999,
       "first_seen": "2026-05-31T08:51:19.600653+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3821,20 +3821,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "netzpolitik_feed@chaos.social",
-      "total_signals": 186,
-      "top_articles": 119,
-      "score_sum": 211029.10999999987,
+      "total_signals": 195,
+      "top_articles": 124,
+      "score_sum": 219418.50999999983,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "nicobruenjes@digitalcourage.social",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3902,20 +3902,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "oliverschwarz@indieweb.social",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "padeluun@digitalcourage.social",
-      "total_signals": 38,
+      "total_signals": 40,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3956,11 +3956,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "rs_fgl",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -3992,11 +3992,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "sr_rolando@fnordon.de",
-      "total_signals": 7,
+      "total_signals": 8,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-31T09:40:08.055809+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4019,20 +4019,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "stefanpfeiffer.blog@stefanpfeiffer.blog",
-      "total_signals": 18,
+      "total_signals": 19,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "stefanschuette@nrw.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4073,11 +4073,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "teezeh@ieji.de",
-      "total_signals": 112,
-      "top_articles": 44,
-      "score_sum": 54159.979999999996,
+      "total_signals": 115,
+      "top_articles": 45,
+      "score_sum": 54556.28,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4091,11 +4091,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "teufel100@social.guckt.info",
-      "total_signals": 15,
+      "total_signals": 16,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4109,20 +4109,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "tobru@mstdn.social",
-      "total_signals": 38,
+      "total_signals": 40,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
       "curator_handle": "tomatensson@nrw.social",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4145,11 +4145,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "uberblogr@troet.uberblogr.de",
-      "total_signals": 6881,
-      "top_articles": 297,
-      "score_sum": 297331.87000000005,
+      "total_signals": 7316,
+      "top_articles": 329,
+      "score_sum": 324775.9399999999,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4163,11 +4163,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "v_i_o_l_a@openbiblio.social",
-      "total_signals": 95,
+      "total_signals": 100,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4181,11 +4181,11 @@
     {
       "platform": "mastodon",
       "curator_handle": "warzazel@messydata.de",
-      "total_signals": 19,
+      "total_signals": 20,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:23:43.849414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "mastodon",
@@ -4235,20 +4235,20 @@
     {
       "platform": "mastodon",
       "curator_handle": "zulauf@nrw.social",
-      "total_signals": 22,
+      "total_signals": 23,
       "top_articles": 9,
       "score_sum": 10050.67,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
       "curator_handle": "BASIC thinking",
-      "total_signals": 220,
+      "total_signals": 230,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4271,11 +4271,11 @@
     {
       "platform": "rss",
       "curator_handle": "Kuketz IT-Security » Blog + Microblog",
-      "total_signals": 220,
+      "total_signals": 230,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4289,20 +4289,20 @@
     {
       "platform": "rss",
       "curator_handle": "MeTacheles",
-      "total_signals": 300,
+      "total_signals": 315,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-29T00:13:46.212977+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
       "curator_handle": "Reiseblog und Foodblog Reisehappen",
-      "total_signals": 110,
+      "total_signals": 115,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4325,11 +4325,11 @@
     {
       "platform": "rss",
       "curator_handle": "UberBlogr - Neueste Beiträge",
-      "total_signals": 300,
-      "top_articles": 247,
-      "score_sum": 292675.80000000005,
+      "total_signals": 320,
+      "top_articles": 265,
+      "score_sum": 319210.5099999999,
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4343,11 +4343,11 @@
     {
       "platform": "rss",
       "curator_handle": "carta.info",
-      "total_signals": 330,
+      "total_signals": 345,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4361,11 +4361,11 @@
     {
       "platform": "rss",
       "curator_handle": "iRights.info",
-      "total_signals": 440,
+      "total_signals": 460,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4379,20 +4379,20 @@
     {
       "platform": "rss",
       "curator_handle": "mobiFlip",
-      "total_signals": 440,
+      "total_signals": 460,
       "top_articles": 0,
       "score_sum": 0.0,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
       "curator_handle": "netzpolitik.org",
-      "total_signals": 440,
-      "top_articles": 119,
-      "score_sum": 211029.10999999987,
+      "total_signals": 460,
+      "top_articles": 124,
+      "score_sum": 219418.50999999983,
       "first_seen": "2026-05-28T23:08:53.180010+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "platform": "rss",
@@ -4442,25 +4442,25 @@
       "feed_url": "https://carta.info/feed/",
       "domain": "carta.info",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 270,
-      "social_signal_sum": 456,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 285,
+      "social_signal_sum": 486,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://irights.info/feed",
       "domain": "irights.info",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 360,
-      "social_signal_sum": 822,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 380,
+      "social_signal_sum": 870,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://mixed.de/feed/",
@@ -4478,20 +4478,20 @@
       "feed_url": "https://netzpolitik.org/feed/",
       "domain": "netzpolitik.org",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 360,
-      "social_signal_sum": 785,
-      "top_article_sum": 105,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 380,
+      "social_signal_sum": 828,
+      "top_article_sum": 114,
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://nomadblogger.de/feed/",
       "domain": "nomadblogger.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
       "rss_signal_sum": 0,
       "social_signal_sum": 0,
       "top_article_sum": 0,
@@ -4502,13 +4502,13 @@
       "feed_url": "https://reisehappen.de/feed/",
       "domain": "reisehappen.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 90,
-      "social_signal_sum": 224,
-      "top_article_sum": 1,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 95,
+      "social_signal_sum": 240,
+      "top_article_sum": 2,
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://t3n.de/rss.xml",
@@ -4526,44 +4526,44 @@
       "feed_url": "https://uberblogr.de/rss",
       "domain": "uberblogr.de",
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 15,
-      "rss_signal_sum": 300,
-      "social_signal_sum": 10781,
-      "top_article_sum": 340,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 16,
+      "rss_signal_sum": 320,
+      "social_signal_sum": 11521,
+      "top_article_sum": 380,
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://uberblogr.de/rss-trending",
       "domain": "uberblogr.de",
       "first_seen": "2026-05-29T10:34:15.615328+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 15,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 16,
       "rss_signal_sum": 2,
-      "social_signal_sum": 328,
+      "social_signal_sum": 350,
       "top_article_sum": 0,
       "last_rss_signal_at": "2026-05-29T11:47:40.642463+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://www.basicthinking.de/blog/feed/",
       "domain": "basicthinking.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 180,
-      "social_signal_sum": 90,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 190,
+      "social_signal_sum": 95,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://www.fernwehking.de/feed/",
       "domain": "fernwehking.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
       "rss_signal_sum": 0,
       "social_signal_sum": 0,
       "top_article_sum": 0,
@@ -4622,37 +4622,37 @@
       "feed_url": "https://www.kuketz-blog.de/feed/",
       "domain": "kuketz-blog.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 180,
-      "social_signal_sum": 958,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 190,
+      "social_signal_sum": 1014,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://www.metacheles.de/rss/",
       "domain": "metacheles.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 270,
-      "social_signal_sum": 129,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 285,
+      "social_signal_sum": 137,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://www.mobiflip.de/feed/",
       "domain": "mobiflip.de",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
-      "rss_signal_sum": 360,
-      "social_signal_sum": 18,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
+      "rss_signal_sum": 380,
+      "social_signal_sum": 19,
       "top_article_sum": 0,
-      "last_rss_signal_at": "2026-05-31T11:28:56.631447+00:00",
-      "last_social_signal_at": "2026-05-31T11:28:56.631447+00:00"
+      "last_rss_signal_at": "2026-05-31T11:33:53.222290+00:00",
+      "last_social_signal_at": "2026-05-31T11:33:53.222290+00:00"
     },
     {
       "feed_url": "https://www.nextpit.de/feed/rss",
@@ -4670,8 +4670,8 @@
       "feed_url": "https://www.reisefreiheit.org/feed/",
       "domain": "reisefreiheit.org",
       "first_seen": "2026-05-29T00:33:57.052414+00:00",
-      "last_seen": "2026-05-31T11:28:56.631447+00:00",
-      "runs_seen": 18,
+      "last_seen": "2026-05-31T11:33:53.222290+00:00",
+      "runs_seen": 19,
       "rss_signal_sum": 0,
       "social_signal_sum": 0,
       "top_article_sum": 0,
@@ -4732,14 +4732,14 @@
     {
       "tag": "irini",
       "domain": "netzpolitik.org",
-      "count": 14,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 16,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "öffentlichkeit",
       "domain": "netzpolitik.org",
-      "count": 14,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 16,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "browser",
@@ -4784,10 +4784,160 @@
       "last_seen": "2026-05-31T11:22:48.692976+00:00"
     },
     {
+      "tag": "1789_capital",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "alltag",
+      "domain": "bunte-kuechenabenteuer.de",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "appeals_centre_europe",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "blog",
+      "domain": "bunte-kuechenabenteuer.de",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "brian_quintenz",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "caroline_pham",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "cftc",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "changpeng_zhao",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "databrokerfiles",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "demokratie",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "donald_trump",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "donald_trump_jr",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "dsa",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
       "tag": "e-mobility",
       "domain": "stadt-bremerhaven.de",
       "count": 8,
       "last_seen": "2026-05-31T11:24:38.646426+00:00"
+    },
+    {
+      "tag": "enzyklika",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "frontex",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "gemeinsame_glückspielbehörde_der_länder",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "gesellschaftswetten",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "gewalt_im_netz",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "glücksspiel",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "glücksspielgesetz",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "hassrede",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "hatespeech",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "headset",
+      "domain": "nerdjunk.de",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "hetze",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "insider_trading",
+      "domain": "netzpolitik.org",
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "internet",
@@ -4796,388 +4946,238 @@
       "last_seen": "2026-05-31T11:24:38.646426+00:00"
     },
     {
-      "tag": "1789_capital",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "alltag",
-      "domain": "bunte-kuechenabenteuer.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "appeals_centre_europe",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "blog",
-      "domain": "bunte-kuechenabenteuer.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "brian_quintenz",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "caroline_pham",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "cftc",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "changpeng_zhao",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "databrokerfiles",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "demokratie",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "donald_trump",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "donald_trump_jr",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "dsa",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "enzyklika",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "frontex",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "gemeinsame_glückspielbehörde_der_länder",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "gesellschaftswetten",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "gewalt_im_netz",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "glücksspiel",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "glücksspielgesetz",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "hassrede",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "hatespeech",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "headset",
-      "domain": "nerdjunk.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "hetze",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "insider_trading",
-      "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
       "tag": "james_comer",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "jb_pritzker",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "kalshi",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "keith_ellison",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "knochenschall",
       "domain": "nerdjunk.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "kopfhörer",
       "domain": "nerdjunk.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "krypto",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "libyen",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "löschen",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "meta",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "michael_selig",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "moderation",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "moonpay",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "nerdjunk",
       "domain": "nerdjunk.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "netzpolitischer_wochenrückblick",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "netzsperre",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "nicols_maduro",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "nutzerrechte",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "online-glücksspiel",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "ostlibyen",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "papst_leo_xiv",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "plattformregulierung",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "polymarket",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "prabowo_subianto",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "prediction_markets",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "prognosemärkte",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "shokz",
       "domain": "nerdjunk.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "sportwetten",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "statewatch",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "steve_witkoff",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "sucht",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "technologie",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "tim_walz",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "transparenzbericht",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "trump",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "trump_media__technology",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "vatikan",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "wochenrueckblick",
       "domain": "bunte-kuechenabenteuer.de",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "world_liberty_financial",
       "domain": "netzpolitik.org",
-      "count": 7,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 8,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "cybersecurity",
@@ -5254,62 +5254,62 @@
     {
       "tag": "donaldsutherland",
       "domain": "minorherba.wordpress.com",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "maenner",
       "domain": "pixelboomer.de",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "movie",
+      "domain": "minorherba.wordpress.com",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "rasieren",
+      "domain": "pixelboomer.de",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "renerusso",
+      "domain": "minorherba.wordpress.com",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "rewatch",
+      "domain": "minorherba.wordpress.com",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "thriller",
+      "domain": "minorherba.wordpress.com",
+      "count": 4,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "366",
+      "domain": "minorherba.wordpress.com",
       "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
+    },
+    {
+      "tag": "366neuer",
+      "domain": "minorherba.wordpress.com",
+      "count": 3,
+      "last_seen": "2026-05-31T11:33:53.282821+00:00"
     },
     {
       "tag": "meta",
       "domain": "winfuture.de",
       "count": 3,
       "last_seen": "2026-05-31T11:22:48.692976+00:00"
-    },
-    {
-      "tag": "movie",
-      "domain": "minorherba.wordpress.com",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "rasieren",
-      "domain": "pixelboomer.de",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "renerusso",
-      "domain": "minorherba.wordpress.com",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "rewatch",
-      "domain": "minorherba.wordpress.com",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "thriller",
-      "domain": "minorherba.wordpress.com",
-      "count": 3,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "366",
-      "domain": "minorherba.wordpress.com",
-      "count": 2,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
-    },
-    {
-      "tag": "366neuer",
-      "domain": "minorherba.wordpress.com",
-      "count": 2,
-      "last_seen": "2026-05-31T11:28:56.686549+00:00"
     },
     {
       "tag": "google",
