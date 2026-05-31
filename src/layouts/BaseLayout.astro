@@ -49,5 +49,40 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 </head>
 <body>
   <slot />
+  <footer>
+    <span>© {new Date().getFullYear()} <a href="https://altner.github.io/blog/" target="_blank" rel="noopener">Adrian Altner</a></span>
+    <span class="sep">·</span>
+    <a href={`${base}doc/`}>Docs</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/altner/octobeat" target="_blank" rel="noopener">GitHub</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/altner/octobeat/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+  </footer>
 </body>
 </html>
+
+<style is:global>
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--text); }
+
+  footer .sep { opacity: 0.4; }
+</style>
