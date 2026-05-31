@@ -35,8 +35,9 @@ def _get_model():
     return _model
 
 
-def _to_blob(vec: "ndarray") -> bytes:
-    return struct.pack(f"{len(vec)}f", *vec.tolist())
+def _to_blob(vec) -> bytes:
+    data = vec.tolist() if hasattr(vec, "tolist") else list(vec)
+    return struct.pack(f"{len(data)}f", *data)
 
 
 def _from_blob(blob: bytes) -> list[float]:

@@ -150,7 +150,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
 # Bluesky
 # ---------------------------------------------------------------------------
 
-_bluesky_token_cache: str | None = None
+_bluesky_token_cache = None  # type: str | None
 
 
 async def _bluesky_token() -> str:
