@@ -114,10 +114,9 @@ function socialRows(article: Article) {
 }
 ---
 
-<BaseLayout title="OctoBeat – Debug">
+<BaseLayout title="OctoBeat · Inspector">
   <Header currentPage="inspector" genTime={genTime} />
 
-  {isDev ? (
   <main>
     <p class="count-line">{articles.length} find{articles.length !== 1 ? 's' : ''}</p>
 
@@ -226,11 +225,6 @@ function socialRows(article: Article) {
       ))}
     </div>
   </main>
-  ) : (
-  <main>
-    <p class="count-line">Debug is only available locally in dev mode.</p>
-  </main>
-  )}
 </BaseLayout>
 
 <style>
