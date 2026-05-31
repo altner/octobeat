@@ -256,8 +256,10 @@ async def run():
 
     # ── 2. Mastodon ────────────────────────────────────────────────────────
     print("→ Crawling Mastodon...")
-    for domain in source_domains:
-        sigs = await collect_mastodon(domain, cfg.get("mastodon_instances", []))
+    mastodon_results = await asyncio.gather(
+        *[collect_mastodon(domain, cfg.get("mastodon_instances", [])) for domain in source_domains]
+    )
+    for domain, sigs in zip(source_domains, mastodon_results):
         all_signals.extend(sigs)
         print(f"  {domain}: {len(sigs)} signals")
 
@@ -265,8 +267,10 @@ async def run():
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
         print("→ Crawling Bluesky...")
-        for domain in source_domains:
-            sigs = await collect_bluesky(domain, bsky_cfg.get("limit", 25))
+        bluesky_results = await asyncio.gather(
+            *[collect_bluesky(domain, bsky_cfg.get("limit", 25)) for domain in source_domains]
+        )
+        for domain, sigs in zip(source_domains, bluesky_results):
             all_signals.extend(sigs)
             print(f"  {domain}: {len(sigs)} signals")
 

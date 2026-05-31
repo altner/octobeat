@@ -5,6 +5,7 @@ Each signal = {url, platform, curator_handle, curator_meta, shared_at, title?}
 
 import os
 import re
+import asyncio
 import httpx
 import feedparser
 from pathlib import Path
@@ -366,11 +367,17 @@ async def enrich_titles(signals: list[dict]) -> list[dict]:
     url_to_title: dict[str, str] = {}
     urls_needed = list({s["url"] for s in missing})
 
+    sem = asyncio.Semaphore(20)
+
+    async def _fetch(url: str, client: httpx.AsyncClient) -> tuple[str, str]:
+        async with sem:
+            return url, await fetch_title(url, client)
+
     async with httpx.AsyncClient(headers=HEADERS, timeout=8) as client:
-        for url in urls_needed:
-            title = await fetch_title(url, client)
-            if title:
-                url_to_title[url] = title
+        results = await asyncio.gather(*[_fetch(u, client) for u in urls_needed])
+    for url, title in results:
+        if title:
+            url_to_title[url] = title
 
     for s in signals:
         if not s.get("title") and s["url"] in url_to_title:
