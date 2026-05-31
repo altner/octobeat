@@ -19,6 +19,7 @@
 
 rss_feeds:
   # Independent blogs & non-profit media
+  - https://altner.github.io/blog/rss.xml       # Adrian Altner's Blog
   - https://netzpolitik.org/feed/
   - https://www.basicthinking.de/blog/feed/
   - https://www.kuketz-blog.de/feed/          # Privacy and security
