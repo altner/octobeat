@@ -150,11 +150,18 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
 # Bluesky
 # ---------------------------------------------------------------------------
 
+_bluesky_token_cache: str | None = None
+
+
 async def _bluesky_token() -> str:
-    """Log in once with the app password and return an access token."""
+    """Log in once with the app password and return an access token. Cached per process."""
+    global _bluesky_token_cache
+    if _bluesky_token_cache is not None:
+        return _bluesky_token_cache
     handle   = os.getenv("BLUESKY_HANDLE", "")
     password = os.getenv("BLUESKY_APP_PASSWORD", "")
     if not handle or not password:
+        _bluesky_token_cache = ""
         return ""
     try:
         async with httpx.AsyncClient(headers=HEADERS, timeout=10) as client:
@@ -163,16 +170,19 @@ async def _bluesky_token() -> str:
                 json={"identifier": handle, "password": password},
             )
             if r.status_code == 200:
-                return r.json().get("accessJwt", "")
+                _bluesky_token_cache = r.json().get("accessJwt", "")
+                return _bluesky_token_cache
             print(f"  Bluesky login failed: HTTP {r.status_code}")
     except Exception as e:
         print(f"  Bluesky login: {e}")
+    _bluesky_token_cache = ""
     return ""
 
 
-async def collect_bluesky(domain: str, limit: int = 25) -> list[dict]:
+async def collect_bluesky(domain: str, limit: int = 25, token: str = "") -> list[dict]:
     """Authenticated Bluesky search. Token is loaded from .env."""
-    token = await _bluesky_token()
+    if not token:
+        token = await _bluesky_token()
     headers = {**HEADERS}
     if token:
         headers["Authorization"] = f"Bearer {token}"

@@ -41,7 +41,7 @@ mastodon_instances:
   - https://digitalcourage.social
   - https://norden.social
   - https://berlin.social
-  - https://troet.uberblogr.de
+  # - https://troet.uberblogr.de  # Search-API deaktiviert (HTTP 404)
 
 # Additional social searches derived from RSS article URLs.
 social_search:

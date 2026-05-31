@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 import yaml
 from dateutil import parser as dateparser
 
-from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles
+from collector import collect_mastodon, collect_bluesky, collect_hackernews, collect_rss, enrich_titles, _bluesky_token
 from curator  import is_valid_curator, calc_weight
 from database import (
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
@@ -330,8 +330,9 @@ async def run():
     bsky_cfg = cfg.get("bluesky", {})
     if bsky_cfg.get("enabled", True):
         print("→ Crawling Bluesky...")
+        bsky_token = await _bluesky_token()
         bluesky_results = await asyncio.gather(
-            *[collect_bluesky(domain, bsky_cfg.get("limit", 25)) for domain in source_domains]
+            *[collect_bluesky(domain, bsky_cfg.get("limit", 25), token=bsky_token) for domain in source_domains]
         )
         for domain, sigs in zip(source_domains, bluesky_results):
             all_signals.extend(sigs)
