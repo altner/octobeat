@@ -26,9 +26,10 @@ from datetime import datetime, timezone
 import yaml
 from dateutil import parser as dateparser
 
-from collector import collect_mastodon, collect_bluesky, collect_rss, enrich_titles, enrich_wordpress_engagement, _bluesky_token, collect_mastodon_trends
+from collector import collect_mastodon, collect_bluesky, collect_rss, enrich_titles, enrich_wordpress_engagement, enrich_article_content, _bluesky_token, collect_mastodon_trends
 from curator  import is_valid_curator, calc_weight
 from database import (
+    record_category_suggestions, get_promotable_categories, mark_category_promoted,
     apply_curator_learning, apply_feed_learning, inactive_feed_urls, record_run,
     record_tag_history, record_unmapped_tags, load_corrections_from_db,
     export_computed, restore_from_computed,
@@ -203,6 +204,49 @@ def newest_signal_time(signals: list[dict]) -> tuple[str, datetime | None]:
             newest_raw = raw
 
     return newest_raw, newest_at
+
+
+def promote_category_to_config(config_path: Path, category: str, sample_titles: str) -> bool:
+    """Add a new auto-discovered category to config.yaml (tag_anchors + tag_map + tag_rules).
+
+    Uses sample_titles (pipe-separated) as the semantic anchor description.
+    Returns True if the file was modified.
+    """
+    import yaml as _yaml
+    text = config_path.read_text(encoding="utf-8")
+    cfg  = _yaml.safe_load(text)
+
+    # Don't add if already present
+    if category in (cfg.get("tag_anchors") or {}):
+        return False
+
+    anchor_text = " ".join(dict.fromkeys(sample_titles.replace(" | ", " ").split()))[:200]
+
+    # ── tag_anchors ───────────────────────────────────────────────────────
+    anchor_block = f"\n  {category}: >\n    {anchor_text}\n"
+    text = text.replace(
+        "\n# Qualified tags from title",
+        anchor_block + "\n# Qualified tags from title",
+    )
+
+    # ── tag_map ───────────────────────────────────────────────────────────
+    map_block = f"\n  {category}:\n    - {category}\n"
+    # Insert before the first tag_rules comment or before tag_rules
+    if "tag_rules:" in text:
+        text = text.replace("\ntag_rules:", map_block + "\ntag_rules:", 1)
+
+    # ── tag_rules ─────────────────────────────────────────────────────────
+    # Add single keyword rule at the end of tag_rules section
+    # Find the last line of tag_rules before the next top-level key or EOF
+    rules_block = f"\n  {category}:\n    - {category}\n"
+    # Append before corrections section or at end
+    if "\ncorrections:" in text:
+        text = text.replace("\ncorrections:", rules_block + "\ncorrections:", 1)
+    else:
+        text = text.rstrip() + rules_block
+
+    config_path.write_text(text, encoding="utf-8")
+    return True
 
 
 def normalize_tag(tag: str) -> str:
@@ -458,6 +502,8 @@ async def run():
 
         score = score_article(sigs)
         title = next((s.get("title") for s in sigs if s.get("title")), "")
+        # Best description: prefer og:description (fetched), fall back to RSS summary
+        description = next((s.get("description") for s in sigs if s.get("description")), "")
 
         # Derive tags: keyword rules + tag_map + embeddings
         article_tags, tag_debug = infer_article_tags(
@@ -476,6 +522,7 @@ async def run():
             "id":            hashlib.md5(url.encode()).hexdigest()[:12],
             "url":           url,
             "title":         title,
+            "description":   description,
             "score":         score,
             "signal_count":  len(sigs),
             "curators":      list(set(s["curator_handle"] for s in sigs)),
@@ -552,6 +599,14 @@ async def run():
             break
     print(f"→ Selected {len(fresh)} fresh finds (max {domain_cap}/domain)")
 
+    # ── Article content enrichment (for LLM) ─────────────────────────────
+    if cfg.get("llm", {}).get("enabled", False):
+        print("→ Fetching article content for LLM context...")
+        final_for_content = (top + fresh)[: int(cfg.get("llm", {}).get("max_articles", 80))]
+        final_for_content = await enrich_article_content(final_for_content)
+        enriched_count = sum(1 for a in final_for_content if a.get("content"))
+        print(f"  {enriched_count}/{len(final_for_content)} articles with body text")
+
     # ── Local LLM section refinement (optional, only on the final feed) ────
     llm_cfg = cfg.get("llm", {})
     if llm_cfg.get("enabled", False):
@@ -560,7 +615,15 @@ async def run():
         categories = {normalize_tag(c): str(h) for c, h in anchors.items() if normalize_tag(c)}
         llm_weight = int(llm_cfg.get("weight", 4))
         final_articles = (top + fresh)[: int(llm_cfg.get("max_articles", 80))]
-        llm_input = [{"url": a["url"], "title": a.get("title") or a["url"]} for a in final_articles]
+        llm_input = [
+            {
+                "url":         a["url"],
+                "title":       a.get("title") or a["url"],
+                "description": a.get("description") or "",
+                "content":     a.get("content") or "",
+            }
+            for a in final_articles
+        ]
         llm_results = classify_articles_llm_subprocess(
             llm_input,
             categories,
@@ -569,7 +632,11 @@ async def run():
             max_tokens=int(llm_cfg.get("max_tokens", 512)),
             timeout_s=int(llm_cfg.get("timeout_s", 900)),
         )
+        new_suggestions: dict[str, str] = {}
         if llm_results:
+            # Extract and remove the special _new suggestions dict before processing
+            new_suggestions = llm_results.pop("_new", {}) or {}
+
             for a in final_articles:
                 cats = llm_results.get(a["url"])
                 if not cats:
@@ -585,6 +652,34 @@ async def run():
                     a["tags"] = new_tags
                     a["tag_debug"] = new_debug
         print(f"  {len(llm_results)} articles refined via LLM")
+
+        # ── Record new-category suggestions and auto-promote if threshold met ─
+        auto_cfg = llm_cfg.get("auto_categories", {})
+        if auto_cfg.get("enabled", True) and learning_cfg.get("enabled", True):
+            if new_suggestions:
+                record_category_suggestions(
+                    learning_db_path, None,  # run_id not yet assigned at this point
+                    new_suggestions, final_articles,
+                )
+                print(f"  {len(new_suggestions)} new-category suggestions recorded")
+
+            promotable = get_promotable_categories(
+                learning_db_path,
+                min_articles=int(auto_cfg.get("min_articles", 3)),
+                min_runs=int(auto_cfg.get("min_runs", 2)),
+            )
+            config_path = Path(__file__).parent / "config.yaml"
+            promoted = 0
+            max_per_run = int(auto_cfg.get("max_per_run", 2))
+            for row in promotable[:max_per_run]:
+                cat = row["category"]
+                ok = promote_category_to_config(config_path, cat, row["sample_titles"] or cat)
+                if ok:
+                    mark_category_promoted(learning_db_path, cat)
+                    print(f"  ✦ Auto-promoted new category '{cat}' → config.yaml")
+                    promoted += 1
+            if promoted:
+                print(f"  Restart the crawler to apply new categories to embeddings")
 
     # ── Build curator ranking from top articles ────────────────────────────
     curator_stats: dict[str, dict] = {}

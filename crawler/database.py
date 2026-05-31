@@ -178,6 +178,19 @@ def init_db(db_path: Path) -> None:
               data_json TEXT NOT NULL,
               fetched_at TEXT NOT NULL
             );
+
+            -- LLM-suggested new categories that don't exist yet in config.yaml.
+            -- Promoted once threshold is reached (articles_min + runs_min).
+            CREATE TABLE IF NOT EXISTS category_suggestions (
+              id          INTEGER PRIMARY KEY AUTOINCREMENT,
+              category    TEXT NOT NULL,
+              url         TEXT NOT NULL,
+              title       TEXT,
+              run_id      INTEGER,
+              created_at  TEXT NOT NULL,
+              promoted    INTEGER NOT NULL DEFAULT 0
+            );
+            CREATE INDEX IF NOT EXISTS idx_catsugg_cat ON category_suggestions(category);
             """
         )
         con.execute(
@@ -1099,3 +1112,94 @@ def restore_from_computed(db_path: Path, computed_path: Path) -> bool:
     runs_count = data.get("runs_count", 0)
     print(f"✓ Restored computed data ({runs_count} previous runs) from {computed_path}")
     return True
+
+
+# ── Auto-category suggestion tracking ────────────────────────────────────────
+
+def record_category_suggestions(
+    db_path: Path,
+    run_id: int | None,
+    suggestions: dict[str, str],   # {url: suggested_category}
+    articles: list[dict],
+) -> None:
+    """Store LLM-suggested new categories in the DB for threshold tracking."""
+    if not suggestions:
+        return
+    now = datetime.now(timezone.utc).isoformat()
+    title_by_url = {a["url"]: a.get("title", "") for a in articles}
+    with connect(db_path) as con:
+        for url, category in suggestions.items():
+            # Normalise: lowercase, underscores, strip noise
+            cat = re.sub(r"[^a-z0-9äöüß_-]", "", category.strip().lower().replace(" ", "_"))
+            if not cat or len(cat) < 3:
+                continue
+            con.execute(
+                """
+                INSERT INTO category_suggestions(category, url, title, run_id, created_at)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (cat, url, title_by_url.get(url, ""), run_id, now),
+            )
+
+
+def get_promotable_categories(
+    db_path: Path,
+    min_articles: int = 3,
+    min_runs: int = 2,
+) -> list[dict]:
+    """Return categories that have hit the suggestion threshold and aren't promoted yet.
+
+    Returns list of dicts: {category, article_count, run_count, sample_titles}
+    """
+    if not db_path.exists():
+        return []
+    with connect(db_path) as con:
+        rows = con.execute(
+            """
+            SELECT
+                category,
+                COUNT(*)                          AS article_count,
+                COUNT(DISTINCT COALESCE(run_id, 0)) AS run_count,
+                GROUP_CONCAT(title, ' | ')        AS sample_titles
+            FROM category_suggestions
+            WHERE promoted = 0
+            GROUP BY category
+            HAVING article_count >= ? AND run_count >= ?
+            ORDER BY article_count DESC
+            """,
+            (min_articles, min_runs),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def mark_category_promoted(db_path: Path, category: str) -> None:
+    """Mark all suggestion rows for a category as promoted."""
+    with connect(db_path) as con:
+        con.execute(
+            "UPDATE category_suggestions SET promoted = 1 WHERE category = ?",
+            (category,),
+        )
+
+
+import re as _re  # noqa: E402 — needed for record_category_suggestions above
+
+
+def category_suggestion_rows(db_path: Path) -> list[dict]:
+    """Return all pending (not yet promoted) category suggestions for /metrics."""
+    if not db_path.exists():
+        return []
+    with connect(db_path) as con:
+        rows = con.execute(
+            """
+            SELECT category,
+                   COUNT(*)                           AS article_count,
+                   COUNT(DISTINCT COALESCE(run_id,0)) AS run_count,
+                   MAX(created_at)                    AS last_seen,
+                   GROUP_CONCAT(title, ' | ')         AS sample_titles
+            FROM category_suggestions
+            WHERE promoted = 0
+            GROUP BY category
+            ORDER BY article_count DESC
+            """
+        ).fetchall()
+    return [dict(r) for r in rows]

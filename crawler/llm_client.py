@@ -101,7 +101,11 @@ def classify_articles_llm_subprocess(
 
         with open(tmp_out.name) as f:
             raw = _json.load(f)
-        return {url: [c for c in cats] for url, cats in raw.items()}
+        # Pass through _new suggestions unchanged; normalise other entries to lists
+        return {
+            url: (cats if url == "_new" else [c for c in cats])
+            for url, cats in raw.items()
+        }
     except Exception as e:  # noqa: BLE001
         print(f"  llm worker failed: {e}", file=sys.stderr)
         return {}

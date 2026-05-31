@@ -91,30 +91,56 @@ _USELESS_TITLES = re.compile(
 )
 
 
-async def fetch_title(url: str, client: httpx.AsyncClient) -> str:
-    """Fetch the <title> tag from a URL. Falls back to URL slug for useless titles."""
+async def fetch_title(url: str, client: httpx.AsyncClient) -> tuple[str, str]:
+    """Fetch title and og:description from a URL in a single request.
+
+    Returns (title, description).  title falls back to URL slug; description
+    may be empty if neither og:description nor meta[name=description] is found.
+    """
+    description = ""
     try:
         r = await client.get(url, timeout=8, follow_redirects=True)
-        # Try og:title first
+        text = r.text
+
+        # ── Title ─────────────────────────────────────────────────────────
+        title = ""
         m_og = re.search(
             r'(?:property=["\']og:title["\'][^>]*content|content[^>]*property=["\']og:title["\'])'
             r'[^>]*=["\']([^"\']{4,})',
-            r.text, re.IGNORECASE,
+            text, re.IGNORECASE,
         )
         if m_og:
             t = strip_html(m_og.group(1)).strip()
             if t and not _USELESS_TITLES.match(t):
-                return t
-        # Fall back to <title>
-        m = re.search(r"<title[^>]*>(.*?)</title>", r.text, re.IGNORECASE | re.DOTALL)
-        if m:
-            t = strip_html(m.group(1)).strip()
-            if t and not _USELESS_TITLES.match(t):
-                return t
+                title = t
+        if not title:
+            m = re.search(r"<title[^>]*>(.*?)</title>", text, re.IGNORECASE | re.DOTALL)
+            if m:
+                t = strip_html(m.group(1)).strip()
+                if t and not _USELESS_TITLES.match(t):
+                    title = t
+        if not title:
+            title = _title_from_slug(url)
+
+        # ── Description ───────────────────────────────────────────────────
+        # og:description first, then meta[name=description]
+        m_desc = re.search(
+            r'(?:property=["\']og:description["\'][^>]*content|content[^>]*property=["\']og:description["\'])'
+            r'[^>]*=["\']([^"\']{10,})',
+            text, re.IGNORECASE,
+        )
+        if not m_desc:
+            m_desc = re.search(
+                r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']{10,})',
+                text, re.IGNORECASE,
+            )
+        if m_desc:
+            description = strip_html(m_desc.group(1)).strip()[:300]
+
+        return title, description
     except Exception:
         pass
-    # Last resort: derive from URL slug
-    return _title_from_slug(url)
+    return _title_from_slug(url), ""
 
 
 # ---------------------------------------------------------------------------
@@ -470,9 +496,13 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
                     for t in getattr(entry, 'tags', [])
                     if (t.get('term') or t.get('label', '')).strip()
                 ))
+                # feedparser provides entry.summary (HTML) for most feeds
+                raw_summary = getattr(entry, "summary", "") or ""
+                summary = strip_html(raw_summary).strip()[:300] if raw_summary else ""
                 signals.append({
                     "url":            normalize_url(link),
                     "title":          entry.get("title", ""),
+                    "description":    summary,
                     "platform":       "rss",
                     "curator_handle": feed_title,
                     "feed_url":        url,
@@ -504,32 +534,133 @@ def collect_rss(feed_urls: list[str]) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 async def enrich_titles(signals: list[dict]) -> list[dict]:
-    """Fill missing titles by fetching the article URL."""
+    """Fill missing titles (and extract og:description) by fetching article URLs."""
     missing = [s for s in signals if not s.get("title")]
     if not missing:
         return signals
 
     # Deduplicate URLs.
-    url_to_title: dict[str, str] = {}
+    url_to_meta: dict[str, tuple[str, str]] = {}  # url → (title, description)
     urls_needed = list({s["url"] for s in missing})
 
     sem = asyncio.Semaphore(20)
 
-    async def _fetch(url: str, client: httpx.AsyncClient) -> tuple[str, str]:
+    async def _fetch(url: str, client: httpx.AsyncClient) -> tuple[str, str, str]:
         async with sem:
-            return url, await fetch_title(url, client)
+            title, desc = await fetch_title(url, client)
+            return url, title, desc
 
     async with httpx.AsyncClient(headers=HEADERS, timeout=8) as client:
         results = await asyncio.gather(*[_fetch(u, client) for u in urls_needed])
-    for url, title in results:
+    for url, title, desc in results:
         if title:
-            url_to_title[url] = title
+            url_to_meta[url] = (title, desc)
 
     for s in signals:
-        if not s.get("title") and s["url"] in url_to_title:
-            s["title"] = url_to_title[s["url"]]
+        if not s.get("title") and s["url"] in url_to_meta:
+            title, desc = url_to_meta[s["url"]]
+            s["title"] = title
+            if desc:
+                s["description"] = desc
 
     return signals
+
+
+# ---------------------------------------------------------------------------
+# Article content enrichment (for LLM classification)
+# ---------------------------------------------------------------------------
+
+# Block-level tags whose content is boilerplate — strip entire subtrees
+_BOILERPLATE_TAGS = re.compile(
+    r"<(script|style|nav|header|footer|aside|form|noscript|button|figure|figcaption)"
+    r"[\s>].*?</\1>",
+    re.IGNORECASE | re.DOTALL,
+)
+# Paragraph and heading tags — mark them so we can split on them later
+_BLOCK_TAGS = re.compile(r"</?(?:p|h[1-6]|li|blockquote|article|section)[^>]*>", re.IGNORECASE)
+
+
+def _extract_body_text(html: str, max_chars: int = 500) -> str:
+    """Extract the first ~500 chars of readable body text from raw HTML.
+
+    Strategy:
+    1. Strip boilerplate blocks (nav, footer, scripts …)
+    2. Split on block-level tags to get paragraph-like chunks
+    3. Strip remaining tags, normalise whitespace
+    4. Skip chunks that look like navigation/metadata (very short or all-caps)
+    5. Return the first meaningful paragraphs up to max_chars
+    """
+    # Remove boilerplate subtrees first
+    cleaned = _BOILERPLATE_TAGS.sub(" ", html)
+    # Split into chunks on block boundaries
+    chunks = _BLOCK_TAGS.split(cleaned)
+    result_parts: list[str] = []
+    total = 0
+    for chunk in chunks:
+        text = strip_html(chunk)
+        text = re.sub(r"\s+", " ", text).strip()
+        # Skip navigation-like noise: too short, or suspiciously many caps/special chars
+        if len(text) < 40:
+            continue
+        if sum(1 for c in text if c.isupper()) / max(len(text), 1) > 0.5:
+            continue
+        result_parts.append(text)
+        total += len(text)
+        if total >= max_chars:
+            break
+    combined = " ".join(result_parts)
+    return combined[:max_chars].rsplit(" ", 1)[0] if len(combined) > max_chars else combined
+
+
+async def enrich_article_content(
+    articles: list[dict],
+    max_concurrent: int = 8,
+) -> list[dict]:
+    """Fetch and extract body text for each article (for LLM context).
+
+    Only fetches articles that don't already have a `content` field.
+    Adds `content` (up to 500 chars of readable body text) to each article dict.
+    """
+    needed = [a for a in articles if not a.get("content")]
+    if not needed:
+        return articles
+
+    url_to_content: dict[str, str] = {}
+    sem = asyncio.Semaphore(max_concurrent)
+
+    async def _fetch(a: dict, client: httpx.AsyncClient) -> None:
+        async with sem:
+            try:
+                r = await client.get(a["url"], timeout=10, follow_redirects=True)
+                text = _extract_body_text(r.text)
+                if text:
+                    url_to_content[a["url"]] = text
+                    # Also backfill description if missing
+                    if not a.get("description"):
+                        m = re.search(
+                            r'(?:property=["\']og:description["\'][^>]*content|'
+                            r'content[^>]*property=["\']og:description["\'])'
+                            r'[^>]*=["\']([^"\']{10,})',
+                            r.text, re.IGNORECASE,
+                        )
+                        if not m:
+                            m = re.search(
+                                r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']{10,})',
+                                r.text, re.IGNORECASE,
+                            )
+                        if m:
+                            a["description"] = strip_html(m.group(1)).strip()[:300]
+            except Exception:
+                pass
+
+    async with httpx.AsyncClient(headers=HEADERS, timeout=10) as client:
+        await asyncio.gather(*[_fetch(a, client) for a in needed])
+
+    for a in articles:
+        if a["url"] in url_to_content:
+            a["content"] = url_to_content[a["url"]]
+
+    return articles
 
 
 # ---------------------------------------------------------------------------

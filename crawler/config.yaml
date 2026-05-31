@@ -36,13 +36,18 @@ embeddings:
 # (tag_map / embeddings / tag_rules) with a high-weight vote per category.
 # Runs isolated via os.posix_spawn to avoid the macOS fork crash.
 llm:
-  enabled: false
+  enabled: true
   model_id: mlx-community/Qwen2.5-7B-Instruct-4bit   # ~5 GB, good for German
   max_articles: 80                 # cap on how many final articles to classify
   batch_size: 10                   # articles per prompt
   max_tokens: 512
   weight: 4                        # score added per LLM-assigned category
   timeout_s: 900
+  auto_categories:
+    enabled: true
+    min_articles: 3      # suggestions across all runs before promotion
+    min_runs: 2          # must appear in at least this many separate runs
+    max_per_run: 2       # max new categories added to config.yaml per run
 
 learning:
   enabled: true
@@ -255,6 +260,26 @@ tag_map:
     - momentaufnahme
     - gedanken
     - linksammlung
+  umwelt:
+    - umwelt
+    - klima
+    - klimawandel
+    - klimaschutz
+    - nachhaltigkeit
+    - nachhaltiges
+    - erneuerbare_energie
+    - solar
+    - windenergie
+    - recycling
+    - plastik
+    - green
+    - elektroauto
+    - e-auto
+    - biodiversität
+    - naturschutz
+    - energiewende
+    - co2
+    - emissionen
   politik:
     - politik
     - bundesregierung
@@ -327,6 +352,11 @@ tag_anchors:
   blog: >
     Wochenrückblick Recap Monatsrückblick persönlicher Blog Tagebuch
     Linksammlung Lesenswert Wochenende Alltag Gedanken Jahresrückblick
+  umwelt: >
+    Klimawandel Klimaschutz Nachhaltigkeit Erneuerbare Energie Solar Wind
+    Recycling Plastik Umweltverschmutzung CO2 Emissionen Elektroauto
+    Biodiversität Artenschutz Naturschutz Energiewende Dekarbonisierung
+    Kreislaufwirtschaft Meeresschutz Tierschutz ökologisch grün
 
 # Qualified tags from title, URL slug, and existing signal tags.
 # Do not assign tags solely from the source domain.
@@ -439,6 +469,25 @@ tag_rules:
     - kw 22
     - kw 23
     - kw 24
+  umwelt:
+    - klimawandel
+    - klimaschutz
+    - klima
+    - nachhaltigkeit
+    - erneuerbare energie
+    - solar
+    - windenergie
+    - recycling
+    - plastik
+    - elektroauto
+    - e-auto
+    - biodiversität
+    - naturschutz
+    - energiewende
+    - co2
+    - emissionen
+    - dekarbonisierung
+    - artenschutz
   reisen:
     - reise
     - reisen
