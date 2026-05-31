@@ -41,9 +41,7 @@ rss_feeds:
 mastodon_instances:
   # Public Fediverse instances with accessible search API.
   # The own MASTODON_INSTANCE from .env is searched first — no need to list it here.
-  - https://mastodon.social
   - https://mastodon.online
-  - https://troet.cafe
   - https://social.tchncs.de
   - https://chaos.social
   - https://digitalcourage.social

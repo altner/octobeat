@@ -19,7 +19,14 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from numpy import ndarray
 
+import os
+import logging
 import warnings
+
+# Suppress HF Hub unauthenticated-request warning (model is cached locally)
+logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
+logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+
 warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
 
 MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
@@ -30,11 +37,24 @@ TOP_K = 3                     # max categories to emit per article
 _model = None
 
 
+def unload_model() -> None:
+    """Release model from memory after all embeddings are computed.
+    Call this before process exit to avoid torch atexit/fork crash on macOS."""
+    global _model
+    if _model is not None:
+        del _model
+        _model = None
+        import gc
+        gc.collect()
+
+
 def _get_model():
     global _model
     if _model is None:
+        import torch
+        torch.set_num_threads(1)
         from sentence_transformers import SentenceTransformer
-        _model = SentenceTransformer(MODEL_NAME)
+        _model = SentenceTransformer(MODEL_NAME, device="cpu")
     return _model
 
 
@@ -158,3 +178,46 @@ def classify_articles(
         results[url] = scores[:TOP_K]
 
     return results
+
+
+def classify_articles_subprocess(
+    articles: list[dict],
+    tag_anchors: dict[str, str],
+    db_path: "Path | None" = None,
+) -> "dict[str, list[tuple[str, float]]]":
+    """Run classification in an isolated subprocess (macOS 26 fork-crash fix).
+
+    torch and httpx never share a process, so the Network-framework fork
+    restriction on macOS 26 is never triggered.
+    """
+    import sys
+    import json as _json
+    import subprocess
+
+    worker = Path(__file__).parent / "embedder_worker.py"
+    payload = _json.dumps({
+        "articles":    articles,
+        "tag_anchors": tag_anchors,
+        "db_path":     str(db_path) if db_path else None,
+    })
+
+    try:
+        result = subprocess.run(
+            [sys.executable, str(worker)],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+        if result.stdout.strip():
+            raw = _json.loads(result.stdout.strip())
+            return {url: [(cat, score) for cat, score in scores] for url, scores in raw.items()}
+        if result.stderr:
+            print(f"  embedding worker: {result.stderr[:300]}", file=sys.stderr)
+        return {}
+    except subprocess.TimeoutExpired:
+        print("  embedding worker timed out — skipping", file=sys.stderr)
+        return {}
+    except Exception as e:
+        print(f"  embedding worker failed: {e}", file=sys.stderr)
+        return {}

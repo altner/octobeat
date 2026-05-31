@@ -187,7 +187,7 @@ async def collect_mastodon(domain: str, instances: list[str]) -> list[dict]:
                                 "tags":       tags,
                             })
             except Exception as e:
-                print(f"  Mastodon {instance}: {e}")
+                print(f"  Mastodon {instance}: {type(e).__name__}: {e}")
     return signals
 
 

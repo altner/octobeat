@@ -5,10 +5,18 @@ Combines all modules: discover -> filter -> score -> store.
 
 from __future__ import annotations
 
+# Must be set before ANY torch/transformers import to prevent macOS fork crash
+import os
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("PYTORCH_MPS_ENABLE", "0")
+
 import asyncio
 import hashlib
 import json
 import math
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -26,7 +34,7 @@ from database import (
     export_computed, restore_from_computed,
 )
 try:
-    from embedder import build_anchor_embeddings, classify_articles as embed_classify
+    from embedder import classify_articles_subprocess as embed_classify_subprocess
     _EMBEDDER_AVAILABLE = True
 except ImportError:
     _EMBEDDER_AVAILABLE = False
@@ -407,14 +415,14 @@ async def run():
     embed_results: dict[str, list[tuple[str, float]]] = {}
     if _EMBEDDER_AVAILABLE and embed_cfg.get("enabled", True):
         print("→ Computing semantic embeddings...")
-        anchor_embeddings = build_anchor_embeddings(cfg.get("tag_anchors", {}))
-        if anchor_embeddings:
-            proto_articles = [
-                {"url": url, "title": next((s.get("title") for s in sigs if s.get("title")), "")}
-                for url, sigs in by_url.items()
-            ]
-            embed_results = embed_classify(proto_articles, anchor_embeddings, learning_db_path)
-            print(f"  {len(embed_results)} articles classified via embeddings")
+        proto_articles = [
+            {"url": url, "title": next((s.get("title") for s in sigs if s.get("title")), "")}
+            for url, sigs in by_url.items()
+        ]
+        embed_results = embed_classify_subprocess(
+            proto_articles, cfg.get("tag_anchors", {}), learning_db_path
+        )
+        print(f"  {len(embed_results)} articles classified via embeddings")
 
     articles = []
     max_age_h = cfg["article_filter"].get("max_age_hours", 48)
@@ -596,3 +604,5 @@ async def run():
 
 if __name__ == "__main__":
     asyncio.run(run())
+    # os._exit avoids torch atexit/fork crash on macOS (all data already written to disk)
+    os._exit(0)

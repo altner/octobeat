@@ -10,8 +10,10 @@ OctoBeat is a German-language social news aggregator focused on independent blog
 
 ### Python crawler (runs locally — not in CI)
 ```bash
-# Install dependencies (run once, from repo root)
+# Install base dependencies (run once)
 pip3 install -r crawler/requirements.txt
+# Optional: ML-based tag classifier (pulls in torch ~73 MB — skip for CI)
+pip3 install -r crawler/requirements-ml.txt
 
 # Run the crawler
 python3 crawler/main.py
