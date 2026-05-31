@@ -604,5 +604,9 @@ async def run():
 
 if __name__ == "__main__":
     asyncio.run(run())
-    # os._exit avoids torch atexit/fork crash on macOS (all data already written to disk)
+    # os._exit avoids torch atexit/fork crash on macOS (all data already written to disk).
+    # Flush first — os._exit skips buffer flushing, which would drop stdout logs.
+    import sys
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(0)

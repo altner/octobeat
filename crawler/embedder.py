@@ -187,37 +187,87 @@ def classify_articles_subprocess(
 ) -> "dict[str, list[tuple[str, float]]]":
     """Run classification in an isolated subprocess (macOS 26 fork-crash fix).
 
-    torch and httpx never share a process, so the Network-framework fork
-    restriction on macOS 26 is never triggered.
+    Launches the worker via os.posix_spawn, NOT subprocess.run. subprocess.run
+    with the default close_fds=True uses fork+exec, and on macOS 26 a fork from
+    this multi-threaded, Network-framework-initialized process crashes in the
+    child before exec (nw_settings_child_has_forked, SIGSEGV / rc=-11).
+    posix_spawn never forks, so it sidesteps the crash entirely.
+
+    Communicates via temp files (not pipes) and redirects the worker's stderr to
+    a temp file so failures are diagnosable.
     """
     import sys
     import json as _json
-    import subprocess
+    import tempfile
+    import time
+    import signal
+    import os as _os
 
     worker = Path(__file__).parent / "embedder_worker.py"
-    payload = _json.dumps({
-        "articles":    articles,
-        "tag_anchors": tag_anchors,
-        "db_path":     str(db_path) if db_path else None,
-    })
+    timeout_s = 120
 
+    tmp_in  = tempfile.NamedTemporaryFile(mode="w", suffix="_emb_in.json",  delete=False)
+    tmp_out = tempfile.NamedTemporaryFile(mode="w", suffix="_emb_out.json", delete=False)
+    tmp_err = tempfile.NamedTemporaryFile(mode="w", suffix="_emb_err.log",  delete=False)
     try:
-        result = subprocess.run(
-            [sys.executable, str(worker)],
-            input=payload,
-            capture_output=True,
-            text=True,
-            timeout=120,
-        )
-        if result.stdout.strip():
-            raw = _json.loads(result.stdout.strip())
-            return {url: [(cat, score) for cat, score in scores] for url, scores in raw.items()}
-        if result.stderr:
-            print(f"  embedding worker: {result.stderr[:300]}", file=sys.stderr)
-        return {}
-    except subprocess.TimeoutExpired:
-        print("  embedding worker timed out — skipping", file=sys.stderr)
-        return {}
+        _json.dump({
+            "articles":    articles,
+            "tag_anchors": tag_anchors,
+            "db_path":     str(db_path) if db_path else None,
+        }, tmp_in)
+        tmp_in.flush()
+        tmp_in.close()
+        tmp_out.close()
+        tmp_err.close()
+
+        errfd = _os.open(tmp_err.name, _os.O_WRONLY)
+        try:
+            pid = _os.posix_spawn(
+                sys.executable,
+                [sys.executable, str(worker), tmp_in.name, tmp_out.name],
+                _os.environ,
+                file_actions=[(_os.POSIX_SPAWN_DUP2, errfd, 2)],
+            )
+        finally:
+            _os.close(errfd)
+
+        # Wait with a deadline (posix_spawn has no built-in timeout).
+        deadline = time.monotonic() + timeout_s
+        rc: int | None = None
+        while time.monotonic() < deadline:
+            wpid, status = _os.waitpid(pid, _os.WNOHANG)
+            if wpid == pid:
+                rc = _os.waitstatus_to_exitcode(status)
+                break
+            time.sleep(0.1)
+        if rc is None:
+            _os.kill(pid, signal.SIGKILL)
+            _os.waitpid(pid, 0)
+            print("  embedding worker timed out — skipping", file=sys.stderr)
+            return {}
+
+        if rc != 0:
+            err = ""
+            try:
+                err = open(tmp_err.name).read().strip()
+            except OSError:
+                pass
+            print(
+                f"  embedding worker exited {rc} — skipping"
+                + (f"\n    {err}" if err else ""),
+                file=sys.stderr,
+            )
+            return {}
+
+        with open(tmp_out.name) as f:
+            raw = _json.load(f)
+        return {url: [(cat, score) for cat, score in scores] for url, scores in raw.items()}
     except Exception as e:
         print(f"  embedding worker failed: {e}", file=sys.stderr)
         return {}
+    finally:
+        for p in (tmp_in.name, tmp_out.name, tmp_err.name):
+            try:
+                _os.unlink(p)
+            except OSError:
+                pass

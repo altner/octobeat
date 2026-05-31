@@ -1,26 +1,22 @@
 {
-  "generated_at": "2026-05-31T17:51:10.298426+00:00",
-  "article_count": 35,
+  "generated_at": "2026-05-31T18:28:13.212653+00:00",
+  "article_count": 29,
   "top_curators": {
     "mastodon": [
       {
         "handle": "uberblogr@troet.uberblogr.de",
-        "articles": 26
-      },
-      {
-        "handle": "Elkeringhausen",
-        "articles": 3
+        "articles": 22
       },
       {
         "handle": "netzpolitik_feed@chaos.social",
         "articles": 3
       },
       {
-        "handle": "flumen_calculi@ruhr.social",
-        "articles": 2
+        "handle": "Elkeringhausen",
+        "articles": 3
       },
       {
-        "handle": "hello@c0d1.eu",
+        "handle": "flumen_calculi@ruhr.social",
         "articles": 2
       },
       {
@@ -42,24 +38,32 @@
       {
         "handle": "matthimon@systemli.social",
         "articles": 1
+      },
+      {
+        "handle": "fischr",
+        "articles": 1
       }
     ],
     "bluesky": [
+      {
+        "handle": "netzpolitik.org",
+        "articles": 3
+      },
       {
         "handle": "z428.eu",
         "articles": 3
       },
       {
-        "handle": "netzpolitik.org",
-        "articles": 3
+        "handle": "pirati.bsky.social",
+        "articles": 2
       },
       {
         "handle": "moviescape.bsky.social",
         "articles": 2
       },
       {
-        "handle": "pirati.bsky.social",
-        "articles": 2
+        "handle": "modlogan.bsky.social",
+        "articles": 1
       },
       {
         "handle": "fxneumann.bonn.social.ap.brid.gy",
@@ -68,24 +72,160 @@
       {
         "handle": "fernx.bsky.social",
         "articles": 1
+      },
+      {
+        "handle": "fischr.org",
+        "articles": 1
       }
     ]
   },
   "articles": [
     {
+      "id": "5b3bfe5938e0",
+      "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
+      "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
+      "score": 18516.9,
+      "signal_count": 7,
+      "curators": [
+        "karlbaer@gruene.social",
+        "modlogan.bsky.social",
+        "netzpolitik_feed@chaos.social",
+        "fxneumann.bonn.social.ap.brid.gy",
+        "pirati.bsky.social",
+        "netzpolitik.org"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss",
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-31T18:17:10.836Z",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "modlogan.bsky.social",
+          "url": "https://bsky.app/profile/modlogan.bsky.social/post/3mn66f4eots2v",
+          "shared_at": "2026-05-31T18:17:10.836Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "fxneumann.bonn.social.ap.brid.gy",
+          "url": "https://bsky.app/profile/fxneumann.bonn.social.ap.brid.gy/post/3mn5cio52mxn2",
+          "shared_at": "2026-05-31T09:58:02.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "karlbaer@gruene.social",
+          "url": "https://gruene.social/@karlbaer/116668060994156670",
+          "shared_at": "2026-05-31T07:42:13.000Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "pirati.bsky.social",
+          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mn4zuadzbp2y",
+          "shared_at": "2026-05-31T07:23:29Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "netzpolitik.org",
+          "url": "https://bsky.app/profile/netzpolitik.org/post/3mn4zn666ps2x",
+          "shared_at": "2026-05-31T07:19:32.708Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "netzpolitik_feed@chaos.social",
+          "url": "https://chaos.social/@netzpolitik_feed/116667970135835364",
+          "shared_at": "2026-05-31T07:19:06.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 30,
+        "likes": 60,
+        "replies": 5,
+        "quotes": 2,
+        "comments": 0
+      },
+      "tags": [
+        "netzpolitik",
+        "ki",
+        "politik",
+        "technologie",
+        "enzyklika"
+      ],
+      "tag_debug": [
+        {
+          "category": "technologie",
+          "source": "raw_tag",
+          "via": "technologie",
+          "weight": 2
+        },
+        {
+          "category": "enzyklika",
+          "source": "raw_tag",
+          "via": "enzyklika",
+          "weight": 2
+        },
+        {
+          "category": "ki",
+          "source": "tag_map",
+          "via": "künstliche_intelligenz",
+          "weight": 3
+        },
+        {
+          "category": "papst_leo_xiv",
+          "source": "raw_tag",
+          "via": "papst_leo_xiv",
+          "weight": 2
+        },
+        {
+          "category": "netzpolitik",
+          "source": "tag_map",
+          "via": "urheberrecht",
+          "weight": 3
+        },
+        {
+          "category": "vatikan",
+          "source": "raw_tag",
+          "via": "vatikan",
+          "weight": 2
+        },
+        {
+          "category": "netzpolitik",
+          "source": "keyword",
+          "via": "netzpolitik",
+          "weight": 1
+        },
+        {
+          "category": "netzpolitik",
+          "source": "embedding",
+          "via": "sim=0.44",
+          "weight": 2
+        },
+        {
+          "category": "politik",
+          "source": "embedding",
+          "via": "sim=0.42",
+          "weight": 2
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
+    },
+    {
       "id": "e93ecd4cbf0f",
       "url": "https://moviescape.blog/2026/05/31/projekt-52-2026-22-sehnsucht/",
       "title": "Projekt 52 – 2026 #22: Sehnsucht | Moviescape",
-      "score": 3318.71,
+      "score": 2388.63,
       "signal_count": 3,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
         "moviescape.bsky.social",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
         "mastodon",
+        "rss",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T17:31:19.000Z",
@@ -165,16 +305,16 @@
       "id": "09521959711b",
       "url": "https://moviescape.blog/2026/05/31/run-fatboy-run-2336/",
       "title": "Run, Fatboy, Run (2336) | Moviescape",
-      "score": 3299.42,
+      "score": 2377.64,
       "signal_count": 3,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
         "moviescape.bsky.social",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
         "mastodon",
+        "rss",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T17:30:44.000Z",
@@ -214,16 +354,16 @@
       "id": "e50d53dbf76f",
       "url": "https://daoweg.wordpress.com/2026/05/31/in-eigener-sache-2/",
       "title": "In eigener Sache | Blütensthaub",
-      "score": 2883.24,
+      "score": 2069.07,
       "signal_count": 3,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
         "Elkeringhausen",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:32:43.000Z",
       "syndications": [
@@ -253,16 +393,16 @@
       "id": "aaddde795e2e",
       "url": "https://status.z428.eu/these-colours-in-the-afternoon-shadows-%F0%9F%93%B7-lost-in-moments%C2%A0",
       "title": "These colours in the afternoon shadows. 📷 lost-in-moments  #outerworld #lost_in_moments... | z428",
-      "score": 2366.57,
+      "score": 1902.03,
       "signal_count": 3,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
         "z428.eu",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
         "mastodon",
+        "rss",
         "bluesky"
       ],
       "latest_shared": "2026-05-31T18:20:02+02:00",
@@ -282,8 +422,8 @@
       ],
       "engagement": {
         "boosts": 1,
-        "likes": 16,
-        "replies": 0,
+        "likes": 20,
+        "replies": 1,
         "quotes": 0
       },
       "tags": [
@@ -332,123 +472,43 @@
       ]
     },
     {
-      "id": "5b3bfe5938e0",
-      "url": "https://netzpolitik.org/2026/netzpolitische-enzyklika-wie-papst-leo-gegen-die-verzweckung-des-menschen-argumentiert/",
-      "title": "Netzpolitische Enzyklika: Wie Papst Leo gegen die Verzweckung des Menschen argumentiert",
-      "score": 1822.25,
-      "signal_count": 6,
+      "id": "a643c32349e1",
+      "url": "https://benedikt.io/2026/05/laufen-rudern-fahrrad-mai/?mtm_campaign=rss",
+      "title": "Kein Lauf im Mai, viel Fahrrad gefahren … und einmal fast überfahren worden | benedikt.io",
+      "score": 1441.71,
+      "signal_count": 2,
       "curators": [
-        "pirati.bsky.social",
-        "fxneumann.bonn.social.ap.brid.gy",
-        "karlbaer@gruene.social",
-        "netzpolitik.org",
-        "netzpolitik_feed@chaos.social"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
         "mastodon",
-        "bluesky"
+        "rss"
       ],
-      "latest_shared": "2026-05-31T09:58:02.000Z",
+      "latest_shared": "2026-05-31T18:00:01.000Z",
       "syndications": [
         {
-          "platform": "bluesky",
-          "curator": "fxneumann.bonn.social.ap.brid.gy",
-          "url": "https://bsky.app/profile/fxneumann.bonn.social.ap.brid.gy/post/3mn5cio52mxn2",
-          "shared_at": "2026-05-31T09:58:02.000Z"
-        },
-        {
           "platform": "mastodon",
-          "curator": "karlbaer@gruene.social",
-          "url": "https://gruene.social/@karlbaer/116668060994156670",
-          "shared_at": "2026-05-31T07:42:13.000Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "pirati.bsky.social",
-          "url": "https://bsky.app/profile/pirati.bsky.social/post/3mn4zuadzbp2y",
-          "shared_at": "2026-05-31T07:23:29Z"
-        },
-        {
-          "platform": "bluesky",
-          "curator": "netzpolitik.org",
-          "url": "https://bsky.app/profile/netzpolitik.org/post/3mn4zn666ps2x",
-          "shared_at": "2026-05-31T07:19:32.708Z"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "netzpolitik_feed@chaos.social",
-          "url": "https://chaos.social/@netzpolitik_feed/116667970135835364",
-          "shared_at": "2026-05-31T07:19:06.000Z"
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c7721-922c-99f4-ab1b-80909f502dbc.json",
+          "shared_at": "2026-05-31T18:00:01.000Z"
         }
       ],
       "engagement": {
-        "boosts": 28,
-        "likes": 56,
-        "replies": 5,
-        "quotes": 2,
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
         "comments": 0
       },
       "tags": [
-        "netzpolitik",
-        "ki",
-        "politik",
-        "technologie",
-        "enzyklika"
+        "reisen"
       ],
       "tag_debug": [
         {
-          "category": "technologie",
-          "source": "raw_tag",
-          "via": "technologie",
-          "weight": 2
-        },
-        {
-          "category": "enzyklika",
-          "source": "raw_tag",
-          "via": "enzyklika",
-          "weight": 2
-        },
-        {
-          "category": "ki",
-          "source": "tag_map",
-          "via": "künstliche_intelligenz",
-          "weight": 3
-        },
-        {
-          "category": "papst_leo_xiv",
-          "source": "raw_tag",
-          "via": "papst_leo_xiv",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitik",
-          "source": "tag_map",
-          "via": "urheberrecht",
-          "weight": 3
-        },
-        {
-          "category": "vatikan",
-          "source": "raw_tag",
-          "via": "vatikan",
-          "weight": 2
-        },
-        {
-          "category": "netzpolitik",
-          "source": "keyword",
-          "via": "netzpolitik",
-          "weight": 1
-        },
-        {
-          "category": "netzpolitik",
+          "category": "reisen",
           "source": "embedding",
-          "via": "sim=0.44",
-          "weight": 2
-        },
-        {
-          "category": "politik",
-          "source": "embedding",
-          "via": "sim=0.42",
+          "via": "sim=0.51",
           "weight": 2
         }
       ],
@@ -460,16 +520,16 @@
       "id": "521c438c41cf",
       "url": "https://blog.kieselwiese.de/?p=271",
       "title": "2026-05-27: Hautkrebsscreening, Summer in the City | Kieselblog",
-      "score": 1743.5,
+      "score": 1376.84,
       "signal_count": 3,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
         "flumen_calculi@ruhr.social",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T16:30:07.000Z",
       "syndications": [
@@ -496,18 +556,50 @@
       "tag_debug": []
     },
     {
-      "id": "9e47f1b6bd06",
-      "url": "https://www.volker-krause-photographie.de/2026/05/31/wieder-mal-stacking/",
-      "title": "Wieder mal Stacking | volker-krause-photographie",
-      "score": 1572.29,
+      "id": "8d6e7f48a553",
+      "url": "https://status.z428.eu/%E2%98%81%EF%B8%8F-stadtwolken-stadtstra%C3%9Fen-zusammenk%C3%BCnfte-auf-dem-b%C3%BCrgers",
+      "title": "☁️ Stadtwolken, Stadtstraßen, Zusammenkünfte auf dem Bürgersteig und weit offene... | z428",
+      "score": 1350.1,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "z428.eu",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
         "rss",
-        "mastodon"
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-31T19:40:03+02:00",
+      "syndications": [
+        {
+          "platform": "bluesky",
+          "curator": "z428.eu",
+          "url": "https://bsky.app/profile/z428.eu/post/3mn64cqblnu2x",
+          "shared_at": "2026-05-31T19:40:03+02:00"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 8,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [],
+      "tag_debug": []
+    },
+    {
+      "id": "9e47f1b6bd06",
+      "url": "https://www.volker-krause-photographie.de/2026/05/31/wieder-mal-stacking/",
+      "title": "Wieder mal Stacking | volker-krause-photographie",
+      "score": 1130.39,
+      "signal_count": 2,
+      "curators": [
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
+      ],
+      "platforms": [
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:31:54.000Z",
       "syndications": [
@@ -537,58 +629,18 @@
       ]
     },
     {
-      "id": "7b54cf2cf4e0",
-      "url": "https://status.z428.eu/r%C3%BCckweg-auch-die-brachiale-energie-mit-der-selten-wahrgen",
-      "title": "Rückweg, auch: Die brachiale Energie, mit der selten wahrgenommene Düfte... | z428",
-      "score": 1563.86,
-      "signal_count": 3,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "z428.eu",
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon",
-        "bluesky"
-      ],
-      "latest_shared": "2026-05-31T16:40:03+02:00",
-      "syndications": [
-        {
-          "platform": "bluesky",
-          "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn5saua6li2o",
-          "shared_at": "2026-05-31T16:40:03+02:00"
-        },
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c53f9-90a7-d2e2-ae08-7754fe12ab96.json",
-          "shared_at": "2026-05-31T15:30:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 10,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
       "id": "bbe04230919d",
       "url": "https://christiansblog.eu/post/bkf/phillipinos_in_soest/",
       "title": "Warum Fahrer aus Drittstaaten den Fahrermangel nicht lösen | Christians Blog",
-      "score": 1545.29,
+      "score": 1115.01,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:30:10.000Z",
       "syndications": [
@@ -612,15 +664,15 @@
       "id": "9323c2d2826d",
       "url": "https://eay.cc/2026/enzyklika-magnifica-humanitas-des-heiligen-vaters-leo-xiv-ueber-die-bewahrung-des-menschen-im-zeitalter-der-kuenstlichen-intelligenz/",
       "title": "Enzyklika Magnifica Humanitas des heiligen Vaters Leo XIV. über die Bewahrung des Menschen im Zeitalter der Künstlichen Intelligenz | Stefan Grund",
-      "score": 1178.04,
+      "score": 895.67,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T17:00:01.000Z",
       "syndications": [
@@ -648,15 +700,15 @@
       "id": "1b9502f3028d",
       "url": "https://micro.bln41.de/ukraine-zivilisten-in-der-drohnenhoelle/",
       "title": "Ukraine: Zivilisten in der Drohnenhölle | micro // bln41.de – Gedanken, Reaktionen, Zeug … für alles in kurz!",
-      "score": 941.89,
+      "score": 743.33,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T16:30:22.000Z",
       "syndications": [
@@ -706,15 +758,15 @@
       "id": "26b56d323478",
       "url": "https://kopfzeiler.org/blog/2026/05/31/a-lonely-planet/",
       "title": "A Lonely Planet | Johannes Kuhn (kopfzeiler)",
-      "score": 940.9,
+      "score": 742.67,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T16:30:13.000Z",
       "syndications": [
@@ -739,54 +791,18 @@
       }
     },
     {
-      "id": "6933172ccd2d",
-      "url": "https://wolfwitte.de/stehen-hier-rum/",
-      "title": "Stehen hier rum | Wolf Witte",
-      "score": 939.59,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T16:30:01.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c6209-513f-704b-acfa-fb92967ce192.json",
-          "shared_at": "2026-05-31T16:30:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0,
-        "comments": 0
-      },
-      "tags": [],
-      "tag_debug": [],
-      "wp_engagement": {
-        "comments": 0
-      }
-    },
-    {
       "id": "decc7f3e5f68",
       "url": "https://lordjohn75.de/spielenswert-und-spielmagazin/",
       "title": "spielenswert und Spielmagazin | John's Spielwiese",
-      "score": 773.4,
+      "score": 628.28,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
+        "uberblogr@troet.uberblogr.de",
+        "UberBlogr - Neueste Beiträge"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-31T16:00:01.000Z",
       "syndications": [
@@ -811,202 +827,37 @@
       }
     },
     {
-      "id": "bfba5300154c",
-      "url": "https://www.sports-insider.de/wings-for-life-world-run-berlin-warum-der-community-run-auf-dem-tempelhofer-feld-ueberrascht-hat-59904/",
-      "title": "Wings for Life World Run Berlin: Warum der Community Run auf dem Tempelhofer Feld überrascht hat | Sports Insider Laufblog",
-      "score": 653.26,
+      "id": "7b54cf2cf4e0",
+      "url": "https://status.z428.eu/r%C3%BCckweg-auch-die-brachiale-energie-mit-der-selten-wahrgen",
+      "title": "Rückweg auch die brachiale energie mit der selten wahrgen",
+      "score": 604.36,
       "signal_count": 2,
       "curators": [
-        "UberBlogr - Neueste Beiträge",
+        "z428.eu",
         "uberblogr@troet.uberblogr.de"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T15:30:24.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c5410-fb35-d3e5-b06e-05642b65f4aa.json",
-          "shared_at": "2026-05-31T15:30:24.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "blog",
-        "politik",
-        "reisen"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.53",
-          "weight": 2
-        },
-        {
-          "category": "politik",
-          "source": "embedding",
-          "via": "sim=0.45",
-          "weight": 2
-        },
-        {
-          "category": "reisen",
-          "source": "embedding",
-          "via": "sim=0.40",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "172718568ac1",
-      "url": "https://xn--krautundrbenblog-rzb.com/uncategorized/alles-sehr-exquisit/",
-      "title": "Alles sehr exquisit | krautundrübenblog",
-      "score": 652.91,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T15:30:18.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c540a-5132-981a-a548-ee81e28aa5b9.json",
-          "shared_at": "2026-05-31T15:30:18.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0,
-        "comments": 0
-      },
-      "tags": [
-        "blog"
-      ],
-      "tag_debug": [
-        {
-          "category": "blog",
-          "source": "embedding",
-          "via": "sim=0.65",
-          "weight": 3
-        }
-      ],
-      "wp_engagement": {
-        "comments": 0
-      }
-    },
-    {
-      "id": "e8fed93ffc2b",
-      "url": "https://dodio.de/dblog/2026/05/the-week-that-was/",
-      "title": "the week that was | Dodio",
-      "score": 652.27,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T15:30:07.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c53ff-bbf8-c01e-982f-9aaf9f322827.json",
-          "shared_at": "2026-05-31T15:30:07.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "4d3f3f3053ea",
-      "url": "https://c0d1.eu/hier-ist-keine-muellhalde/?pk_campaign=feed&pk_kwd=hier-ist-keine-muellhalde",
-      "title": "„Hier ist keine Müllhalde“ … | C0d1 Online",
-      "score": 559.85,
-      "signal_count": 2,
-      "curators": [
-        "UberBlogr - Neueste Beiträge",
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "rss",
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T15:00:01.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c4cf1-9d15-dcf1-8f33-76492220073b.json",
-          "shared_at": "2026-05-31T15:00:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [
-        "netzpolitik"
-      ],
-      "tag_debug": [
-        {
-          "category": "netzpolitik",
-          "source": "embedding",
-          "via": "sim=0.38",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "id": "8d6e7f48a553",
-      "url": "https://status.z428.eu/%E2%98%81%EF%B8%8F-stadtwolken-stadtstra%C3%9Fen-zusammenk%C3%BCnfte-auf-dem-b%C3%BCrgers",
-      "title": "☁️ stadtwolken stadtstraßen zusammenkünfte auf dem bürgers",
-      "score": 490.09,
-      "signal_count": 1,
-      "curators": [
-        "z428.eu"
-      ],
-      "platforms": [
+        "mastodon",
         "bluesky"
       ],
-      "latest_shared": "2026-05-31T19:40:03+02:00",
+      "latest_shared": "2026-05-31T16:40:03+02:00",
       "syndications": [
         {
           "platform": "bluesky",
           "curator": "z428.eu",
-          "url": "https://bsky.app/profile/z428.eu/post/3mn64cqblnu2x",
-          "shared_at": "2026-05-31T19:40:03+02:00"
+          "url": "https://bsky.app/profile/z428.eu/post/3mn5saua6li2o",
+          "shared_at": "2026-05-31T16:40:03+02:00"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1c53f9-90a7-d2e2-ae08-7754fe12ab96.json",
+          "shared_at": "2026-05-31T15:30:01.000Z"
         }
       ],
       "engagement": {
         "boosts": 0,
-        "likes": 3,
+        "likes": 12,
         "replies": 0,
         "quotes": 0
       },
@@ -1017,7 +868,7 @@
       "id": "1260e2a86d75",
       "url": "https://daoweg.wordpress.com/2026/05/31/domburg/",
       "title": "Domburg",
-      "score": 430.7,
+      "score": 369.69,
       "signal_count": 2,
       "curators": [
         "Elkeringhausen",
@@ -1054,7 +905,7 @@
       "id": "5d8183d4e486",
       "url": "https://netzpolitik.org/2026/hype-um-prognosemaerkte-haelt-an-wetten-dass-familie-trump-gewinnt/",
       "title": "Hype um Prognosemärkte hält an: Wetten, dass Familie Trump gewinnt",
-      "score": 230.15,
+      "score": 224.56,
       "signal_count": 5,
       "curators": [
         "PeterRu@climatejustice.social",
@@ -1063,8 +914,8 @@
         "netzpolitik_feed@chaos.social"
       ],
       "platforms": [
-        "rss",
         "mastodon",
+        "rss",
         "bluesky"
       ],
       "latest_shared": "2026-05-30T07:23:15.000Z",
@@ -1334,18 +1185,18 @@
       "id": "5372a2ed6d98",
       "url": "https://netzpolitik.org/2026/statt-durchsetzung-von-voelkerrecht-eu-mittelmeermission-irini-dient-kuenftig-nur-noch-der-migrationsabwehr/",
       "title": "Statt Durchsetzung von Völkerrecht: EU-Mittelmeermission IRINI dient künftig nur noch der Migrationsabwehr",
-      "score": 210.19,
+      "score": 206.52,
       "signal_count": 6,
       "curators": [
-        "pirati.bsky.social",
         "fernx.bsky.social",
-        "matthimon@systemli.social",
+        "netzpolitik_feed@chaos.social",
+        "pirati.bsky.social",
         "netzpolitik.org",
-        "netzpolitik_feed@chaos.social"
+        "matthimon@systemli.social"
       ],
       "platforms": [
-        "rss",
         "mastodon",
+        "rss",
         "bluesky"
       ],
       "latest_shared": "2026-05-29T19:51:56.244Z",
@@ -1465,7 +1316,7 @@
       "id": "76c0fb9a04f4",
       "url": "https://daoweg.wordpress.com/2026/05/31/jackson-c-frank-golden-mirror/",
       "title": "Jackson C. Frank – Golden Mirror",
-      "score": 180.36,
+      "score": 164.97,
       "signal_count": 2,
       "curators": [
         "Elkeringhausen",
@@ -1499,49 +1350,10 @@
       "tag_debug": []
     },
     {
-      "id": "5c24d9915e95",
-      "url": "https://c0d1.eu/hier-ist-keine-muellhalde/?mtm_campaign=mastodonblog",
-      "title": "\"Hier ist keine Müllhalde\" ...",
-      "score": 156.22,
-      "signal_count": 1,
-      "curators": [
-        "hello@c0d1.eu"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T14:58:49.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "hello@c0d1.eu",
-          "url": "https://c0d1.eu/hier-ist-keine-muellhalde/",
-          "shared_at": "2026-05-31T14:58:49.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 1,
-        "quotes": 0
-      },
-      "tags": [
-        "müll"
-      ],
-      "tag_debug": [
-        {
-          "category": "müll",
-          "source": "raw_tag",
-          "via": "müll",
-          "weight": 2
-        }
-      ]
-    },
-    {
       "id": "30cc40f98ec5",
       "url": "https://blog.kieselwiese.de/?p=248",
       "title": "Netzfunde – Kieselblog",
-      "score": 141.55,
+      "score": 131.58,
       "signal_count": 2,
       "curators": [
         "flumen_calculi@ruhr.social",
@@ -1584,40 +1396,10 @@
       ]
     },
     {
-      "id": "7b5d7d19b6cf",
-      "url": "https://www.sports-insider.de/kiprun-laufschuhe-im-test-kann-der-kipride-max-mit-asics-adidas-nike-und-co-mithalten-59884/",
-      "title": "KIPRUN Laufschuhe im Test. Kann der KIPRIDE MAX mit Asics, adidas, Nike und Co. mithalten? | SPORTS INSIDER",
-      "score": 108.35,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T13:45:01.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1c3b5d-f9c1-b8c5-9af0-ea99d228ba07.json",
-          "shared_at": "2026-05-31T13:45:01.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0
-      },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
       "id": "aab6ba82d073",
       "url": "https://blog.kieselwiese.de/?p=270",
       "title": "2026-05-26: Pfingstochsentour Bremen Tag 4 (Heimfahrt) – Kieselblog",
-      "score": 51.74,
+      "score": 47.74,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1653,18 +1435,72 @@
       ]
     },
     {
+      "id": "8e7c47f893ce",
+      "url": "https://fischr.org/i-stopped-tracking-my-life/",
+      "title": "I stopped tracking my life",
+      "score": 45.25,
+      "signal_count": 3,
+      "curators": [
+        "fischr.org",
+        "fischr",
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ],
+      "latest_shared": "2026-05-29T20:30:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a19f749-c7ad-c237-80e0-f7a539c9fefe.json",
+          "shared_at": "2026-05-29T20:30:01.000Z"
+        },
+        {
+          "platform": "mastodon",
+          "curator": "fischr",
+          "url": "https://mastodon.social/@fischr/116659490819819020",
+          "shared_at": "2026-05-29T19:22:42.559Z"
+        },
+        {
+          "platform": "bluesky",
+          "curator": "fischr.org",
+          "url": "https://bsky.app/profile/fischr.org/post/3mmzb4gsjvo22",
+          "shared_at": "2026-05-29T19:22:42.267321+00:00"
+        }
+      ],
+      "engagement": {
+        "boosts": 1,
+        "likes": 1,
+        "replies": 0,
+        "quotes": 0
+      },
+      "tags": [
+        "datenschutz"
+      ],
+      "tag_debug": [
+        {
+          "category": "datenschutz",
+          "source": "keyword",
+          "via": "tracking",
+          "weight": 1
+        }
+      ]
+    },
+    {
       "id": "45379436d6b6",
       "url": "https://reisehappen.de/lublin-tipps/",
       "title": "Lublin: 12 Sehenswürdigkeiten & Geheimtipps für die unbekannte Stadt in Ostpolen",
-      "score": 40.81,
+      "score": 39.9,
       "signal_count": 2,
       "curators": [
         "Reiseblog und Foodblog Reisehappen",
         "Couchflucht@flipboard.com"
       ],
       "platforms": [
-        "rss",
-        "mastodon"
+        "mastodon",
+        "rss"
       ],
       "latest_shared": "2026-05-30T10:07:55.000Z",
       "syndications": [
@@ -1712,44 +1548,10 @@
       }
     },
     {
-      "id": "6994245dfd56",
-      "url": "https://wolfwitte.de/warum-hat-donkey-republic-in-meiner-ecke-denn-so-gar-nichts-stehen/",
-      "title": "Warum hat „Donkey Republic“ in meiner Ecke denn so gar nichts stehen? – Wolf Witte",
-      "score": 36.23,
-      "signal_count": 1,
-      "curators": [
-        "uberblogr@troet.uberblogr.de"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-31T06:30:29.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1bd585-6572-a980-8c75-1416595f811e.json",
-          "shared_at": "2026-05-31T06:30:29.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 0,
-        "likes": 0,
-        "replies": 0,
-        "quotes": 0,
-        "comments": 0
-      },
-      "tags": [],
-      "tag_debug": [],
-      "wp_engagement": {
-        "comments": 0
-      }
-    },
-    {
       "id": "310304982b3f",
       "url": "https://eay.cc/2026/status-2026-05-30-2336/",
       "title": "Status 2026-05-30 23:36",
-      "score": 17.88,
+      "score": 17.21,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1780,10 +1582,10 @@
       }
     },
     {
-      "id": "b5285b8eae9d",
-      "url": "https://www.sports-insider.de/marathon-der-ultimative-guide-fuer-training-ernaehrung-wettkampf-und-regeneration-59788/",
-      "title": "Marathon: Der ultimative Guide für Training, Ernährung, Wettkampf und Regeneration | SPORTS INSIDER",
-      "score": 14.76,
+      "id": "c09ec73e9abe",
+      "url": "https://fischr.org/mal-wieder-piepmatz-rettung/",
+      "title": "Mal wieder Piepmatz-Rettung 🐦‍⬛🛟",
+      "score": 12.87,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1791,13 +1593,13 @@
       "platforms": [
         "mastodon"
       ],
-      "latest_shared": "2026-05-30T18:30:13.000Z",
+      "latest_shared": "2026-05-30T16:30:01.000Z",
       "syndications": [
         {
           "platform": "mastodon",
           "curator": "uberblogr@troet.uberblogr.de",
-          "url": "https://troet.uberblogr.de/posts/6a1b2cb5-0693-cefd-9a1f-2adf229f830a.json",
-          "shared_at": "2026-05-30T18:30:13.000Z"
+          "url": "https://troet.uberblogr.de/posts/6a1b1089-97ae-44ec-a71d-31d92dd10242.json",
+          "shared_at": "2026-05-30T16:30:01.000Z"
         }
       ],
       "engagement": {
@@ -1806,78 +1608,23 @@
         "replies": 0,
         "quotes": 0
       },
-      "tags": [],
-      "tag_debug": []
-    },
-    {
-      "id": "c6bb9a3148e2",
-      "url": "https://c0d1.eu/video-tipp-windows-11-zwingt-mich-dazu/?mtm_campaign=mastodonblog",
-      "title": "Video-Tipp: Windows 11 zwingt mich dazu",
-      "score": 12.75,
-      "signal_count": 1,
-      "curators": [
-        "hello@c0d1.eu"
-      ],
-      "platforms": [
-        "mastodon"
-      ],
-      "latest_shared": "2026-05-30T11:52:27.000Z",
-      "syndications": [
-        {
-          "platform": "mastodon",
-          "curator": "hello@c0d1.eu",
-          "url": "https://c0d1.eu/video-tipp-windows-11-zwingt-mich-dazu/",
-          "shared_at": "2026-05-30T11:52:27.000Z"
-        }
-      ],
-      "engagement": {
-        "boosts": 4,
-        "likes": 3,
-        "replies": 1,
-        "quotes": 0,
-        "comments": 0
-      },
       "tags": [
-        "unix",
-        "windows",
-        "streaming",
-        "digitalesouveränität"
+        "blog"
       ],
       "tag_debug": [
         {
-          "category": "digitalesouveränität",
-          "source": "raw_tag",
-          "via": "digitalesouveränität",
-          "weight": 2
-        },
-        {
-          "category": "unix",
-          "source": "tag_map",
-          "via": "linux",
-          "weight": 3
-        },
-        {
-          "category": "windows",
-          "source": "tag_map",
-          "via": "windows",
-          "weight": 3
-        },
-        {
-          "category": "streaming",
+          "category": "blog",
           "source": "embedding",
-          "via": "sim=0.42",
+          "via": "sim=0.38",
           "weight": 2
         }
-      ],
-      "wp_engagement": {
-        "comments": 0
-      }
+      ]
     },
     {
       "id": "eb7be6d22f87",
       "url": "https://kopfzeiler.org/blog/2026/05/30/queens-of-the-yard-act/",
       "title": "Queens of the Yard Act – kopfzeiler.org",
-      "score": 12.62,
+      "score": 12.25,
       "signal_count": 1,
       "curators": [
         "uberblogr@troet.uberblogr.de"
@@ -1911,7 +1658,7 @@
       "id": "0b3e450d8e45",
       "url": "https://eay.cc/2020/1017-jahre-eay-cc/",
       "title": "1017 Jahre eay.cc",
-      "score": 11.65,
+      "score": 11.81,
       "signal_count": 1,
       "curators": [
         "eay@eay.social"
@@ -1945,7 +1692,7 @@
       "id": "9d08041f0e08",
       "url": "https://github.com/stefangrund/eay.cc-static-archive",
       "title": "GitHub - stefangrund/eay.cc-static-archive: Static Archive of eay.cc",
-      "score": 11.65,
+      "score": 11.81,
       "signal_count": 1,
       "curators": [
         "eay@eay.social"
@@ -1979,6 +1726,56 @@
           "weight": 2
         }
       ]
+    },
+    {
+      "id": "8d7e5ab2ec38",
+      "url": "https://benedikt.io/2026/05/kritik-outlander-serie-2014-2026/?mtm_campaign=rss",
+      "title": "Kritik: »Outlander« – die komplette Serie (2014–2026)",
+      "score": 10.91,
+      "signal_count": 1,
+      "curators": [
+        "uberblogr@troet.uberblogr.de"
+      ],
+      "platforms": [
+        "mastodon"
+      ],
+      "latest_shared": "2026-05-30T13:00:01.000Z",
+      "syndications": [
+        {
+          "platform": "mastodon",
+          "curator": "uberblogr@troet.uberblogr.de",
+          "url": "https://troet.uberblogr.de/posts/6a1adf51-b596-60f2-816b-dd1969245953.json",
+          "shared_at": "2026-05-30T13:00:01.000Z"
+        }
+      ],
+      "engagement": {
+        "boosts": 0,
+        "likes": 0,
+        "replies": 0,
+        "quotes": 0,
+        "comments": 0
+      },
+      "tags": [
+        "blog",
+        "kultur"
+      ],
+      "tag_debug": [
+        {
+          "category": "kultur",
+          "source": "keyword",
+          "via": "serie",
+          "weight": 1
+        },
+        {
+          "category": "blog",
+          "source": "embedding",
+          "via": "sim=0.46",
+          "weight": 2
+        }
+      ],
+      "wp_engagement": {
+        "comments": 0
+      }
     }
   ]
 }
