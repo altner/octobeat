@@ -74,19 +74,19 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
 
     <!-- ── Overview metrics ──────────────────────────────────────────────── -->
     <section class="panel">
-      <h2>Übersicht</h2>
+      <h2>Overview</h2>
       <div class="metrics">
         <div class="metric">
           <span class="metric-value">{totalArticles}</span>
-          <span class="metric-label">Artikel gesamt</span>
+          <span class="metric-label">Total articles</span>
         </div>
         <div class="metric">
           <span class="metric-value">{categorizedCount}</span>
-          <span class="metric-label">Kategorisiert</span>
+          <span class="metric-label">Categorized</span>
         </div>
         <div class="metric bad">
           <span class="metric-value">{uncategorized.length}</span>
-          <span class="metric-label">Ohne Kategorie</span>
+          <span class="metric-label">Uncategorized</span>
         </div>
         <div class="metric">
           <span class="metric-value">{coveragePercent}%</span>
@@ -94,15 +94,15 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
         </div>
         <div class="metric">
           <span class="metric-value">{sectionTags.length}</span>
-          <span class="metric-label">Aktive Sektionen</span>
+          <span class="metric-label">Active sections</span>
         </div>
       </div>
     </section>
 
     <!-- ── Signal source breakdown ───────────────────────────────────────── -->
     <section class="panel">
-      <h2>Tag-Quellen</h2>
-      <p class="hint">Woher kommen die Kategorie-Zuordnungen? tag_map (+3) schlägt keyword (+1).</p>
+      <h2>Tag Sources</h2>
+      <p class="hint">Where do category assignments come from? tag_map (+3) beats keyword (+1).</p>
       <div class="source-bars">
         {Object.entries(sourceTypeCount).map(([src, count]) => {
           const total = Object.values(sourceTypeCount).reduce((a,b) => a+b, 0);
@@ -122,9 +122,9 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
 
     <!-- ── Category distribution ─────────────────────────────────────────── -->
     <section class="panel">
-      <h2>Sektionen</h2>
+      <h2>Sections</h2>
       <table class="data-table">
-        <thead><tr><th>Sektion</th><th>Artikel</th><th>Anteil</th><th>Bar</th></tr></thead>
+        <thead><tr><th>Section</th><th>Articles</th><th>Share</th><th>Bar</th></tr></thead>
         <tbody>
           {sectionTags.map(tag => {
             const count = sections[tag].length;
@@ -139,7 +139,7 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
             );
           })}
           <tr class="warn-row">
-            <td>— ohne Sektion</td>
+            <td>— no section</td>
             <td class="num">{uncategorized.length}</td>
             <td class="num">{totalArticles > 0 ? Math.round((uncategorized.length/totalArticles)*100) : 0}%</td>
             <td></td>
@@ -150,10 +150,10 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
 
     <!-- ── Top firing keywords ───────────────────────────────────────────── -->
     <section class="panel">
-      <h2>Keyword-Treffer (tag_rules)</h2>
-      <p class="hint">Welche Keywords feuern am häufigsten. Häufige Keywords = gute Regel. Seltene = evtl. zu spezifisch.</p>
+      <h2>Keyword Hits (tag_rules)</h2>
+      <p class="hint">Most frequently firing keywords. High hits = good rule. Low hits = possibly too specific.</p>
       <table class="data-table">
-        <thead><tr><th>Keyword</th><th>Treffer</th></tr></thead>
+        <thead><tr><th>Keyword</th><th>Hits</th></tr></thead>
         <tbody>
           {topKeywords.map(([kw, count]) => (
             <tr><td><code>{kw}</code></td><td class="num">{count}</td></tr>
@@ -164,16 +164,16 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
 
     <!-- ── Unmapped raw tags ─────────────────────────────────────────────── -->
     <section class="panel">
-      <h2>Ungemappte RSS-Tags</h2>
-      <p class="hint">Diese Tags kommen aus RSS-Feeds, sind aber noch nicht in <code>tag_map</code>. Häufige Kandidaten für neue Einträge.</p>
+      <h2>Unmapped RSS Tags</h2>
+      <p class="hint">Tags from RSS feeds not yet in <code>tag_map</code>. Frequent ones are good candidates to add.</p>
       <table class="data-table">
-        <thead><tr><th>RSS-Tag</th><th>Vorkommen</th><th>→ Aktion</th></tr></thead>
+        <thead><tr><th>RSS Tag</th><th>Count</th><th>Action</th></tr></thead>
         <tbody>
           {topUnmapped.map(([tag, count]) => (
             <tr>
               <td><code>{tag}</code></td>
               <td class="num">{count}</td>
-              <td><button class="copy-btn" data-copy={tag} title="In Zwischenablage">copy</button></td>
+              <td><button class="copy-btn" data-copy={tag} title="Copy to clipboard">copy</button></td>
             </tr>
           ))}
         </tbody>
@@ -183,17 +183,17 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
     <!-- ── Uncategorized articles ────────────────────────────────────────── -->
     {uncategorized.length > 0 && (
       <section class="panel warn">
-        <h2>Ohne Kategorie ({uncategorized.length})</h2>
-        <p class="hint">Diese Artikel landen in "More". Korrekturen in <code>crawler/corrections.yaml</code> eintragen.</p>
+        <h2>Uncategorized ({uncategorized.length})</h2>
+        <p class="hint">These articles fall into "More". Add corrections to <code>crawler/corrections.yaml</code>.</p>
         <table class="data-table">
-          <thead><tr><th>Titel</th><th>Score</th><th>Correction-Snippet</th></tr></thead>
+          <thead><tr><th>Title</th><th>Score</th><th>Correction snippet</th></tr></thead>
           <tbody>
             {uncategorized.map(a => (
               <tr>
                 <td><a href={a.url} target="_blank" rel="noopener">{a.title || a.url}</a></td>
                 <td class="num">{a.score?.toFixed(1)}</td>
                 <td>
-                  <button class="copy-btn" data-copy={`${a.url}: [kategorie]`} title="Correction-Snippet kopieren">
+                  <button class="copy-btn" data-copy={`${a.url}: [category]`} title="Copy correction snippet">
                     copy yaml
                   </button>
                 </td>
@@ -209,7 +209,7 @@ const coveragePercent = totalArticles > 0 ? Math.round((categorizedCount / total
       <section class="panel" id={`sec-${tag}`}>
         <h2>#{tag} <span class="count-badge">{sections[tag].length}</span></h2>
         <table class="data-table">
-          <thead><tr><th>Titel</th><th>Score</th><th>Zuordnung via</th></tr></thead>
+          <thead><tr><th>Title</th><th>Score</th><th>Assigned via</th></tr></thead>
           <tbody>
             {sections[tag].map(a => {
               const reason = (a.tag_debug ?? [])
