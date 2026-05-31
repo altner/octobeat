@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentPage: 'main' | 'settings' | 'debug' | 'metrics';
+  currentPage: 'main' | 'settings' | 'inspector' | 'metrics';
   genTime?: string;
 }
 const { currentPage, genTime = '' } = Astro.props;
@@ -11,7 +11,7 @@ const isDev = import.meta.env.DEV;
 
 const navItems = [
   { page: 'main', label: 'Feeds', href: base },
-  ...(isDev ? [{ page: 'debug', label: 'Debug', href: `${base}debug/` }] : []),
+  ...(isDev ? [{ page: 'inspector', label: 'Inspector', href: `${base}inspector/` }] : []),
   ...(isDev ? [{ page: 'metrics', label: 'Metrics', href: `${base}metrics/` }] : []),
 ];
 
@@ -19,7 +19,7 @@ const isSettings = currentPage === 'settings';
 ---
 <header>
   <a class="logo" href={base}>OctoBeat</a>
-  {isDev && currentPage === 'debug' && <span class="debug-badge">Debug</span>}
+  {isDev && currentPage === 'inspector' && <span class="debug-badge">Debug</span>}
   {genTime && <span class="meta">{genTime}</span>}
   <div class="spacer"></div>
   <nav class="nav-links">
