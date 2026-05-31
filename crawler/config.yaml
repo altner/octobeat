@@ -157,15 +157,24 @@ tag_map:
     - startup
     - börse
     - aktien
-    - finanzen
     - ipo
     - übernahme
     - investition
+    - öffentlichkeit
+    - markt
+  finanzen:
+    - finanzen
     - banking
     - bank
-    - öffentlichkeit
-    - prognose
-    - markt
+    - budget
+    - sparen
+    - geld
+    - kredit
+    - versicherung
+    - altersvorsorge
+    - rente
+    - haushaltsbuch
+    - finanzplanung
   gaming:
     - games
     - gaming
@@ -280,6 +289,10 @@ tag_anchors:
   wirtschaft: >
     Wirtschaft Startup Technologieunternehmen Börse Aktien Investition
     Übernahme Fusion IPO Venture Capital Marktentwicklung Umsatz Gewinn
+  finanzen: >
+    Persönliche Finanzen Banking Sparen Budget Haushaltsbuch Geldanlage
+    Altersvorsorge Kredit Versicherung Finanzplanung Schuldenfreiheit
+    Finanzfrei Sparrate Rente Vermögensaufbau Simpelbanking
   mobile: >
     Smartphone Android iPhone Mobile App Mobilgerät Samsung Google Pixel
     5G Mobilfunk Tablet Wearable Smartwatch
@@ -355,10 +368,16 @@ tag_rules:
     - uebernahme
     - temu
     - strafe
-    - banking
     - prognose
-    - finanz
+  finanzen:
     - simpelbanking
+    - haushaltsbuch
+    - finanzplanung
+    - altersvorsorge
+    - finanzfrei
+    - sparrate
+    - budget
+    - geldanlage
   arbeit:
     - arbeitszeit
     - arbeitsrecht
