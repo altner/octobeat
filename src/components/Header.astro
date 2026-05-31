@@ -10,9 +10,9 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 const isDev = import.meta.env.DEV;
 
 const navItems = [
-  { page: 'main', label: 'Feeds', href: base },
-  ...(isDev ? [{ page: 'inspector', label: 'Inspector', href: `${base}inspector/` }] : []),
-  ...(isDev ? [{ page: 'metrics', label: 'Metrics', href: `${base}metrics/` }] : []),
+  { page: 'main',      label: 'Feeds',     href: base },
+  { page: 'inspector', label: 'Inspector', href: `${base}inspector/` },
+  { page: 'metrics',   label: 'Metrics',   href: `${base}metrics/` },
 ];
 
 const isSettings = currentPage === 'settings';

@@ -181,7 +181,8 @@ function socialRows(article: Article) {
                       data-platform={s.platform}
                       data-curator={s.curator}
                       data-rating="1"
-                      title="Increase curator weight"
+                      title={isDev ? "Increase curator weight" : "Only available in local dev"}
+                      disabled={!isDev || undefined}
                     >+</button>
                     <button
                       class="feedback-button"
@@ -189,7 +190,8 @@ function socialRows(article: Article) {
                       data-platform={s.platform}
                       data-curator={s.curator}
                       data-rating="-1"
-                      title="Decrease curator weight"
+                      title={isDev ? "Decrease curator weight" : "Only available in local dev"}
+                      disabled={!isDev || undefined}
                     >-</button>
                     <button
                       class="feedback-button danger"
@@ -197,7 +199,8 @@ function socialRows(article: Article) {
                       data-platform={s.platform}
                       data-curator={s.curator}
                       data-blocked="true"
-                      title="Block curator"
+                      title={isDev ? "Block curator" : "Only available in local dev"}
+                      disabled={!isDev || undefined}
                     >Block</button>
                     </span>
                   </div>
@@ -334,6 +337,12 @@ function socialRows(article: Article) {
     gap: 6px;
     justify-content: flex-end;
   }
+  .feedback-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   .feedback-button {
     background: var(--surface2);
     border: 1px solid var(--border);
