@@ -188,7 +188,9 @@ def infer_article_tags(title: str, url: str, signals: list[dict], tag_rules: dic
         if not normalized:
             continue
         for keyword in keywords:
-            if str(keyword).casefold() in text:
+            kw = str(keyword).casefold()
+            pattern = rf"(?<![a-zäöüß]){re.escape(kw)}"
+            if re.search(pattern, text):
                 tag_counts[normalized] += 1
                 break
 
