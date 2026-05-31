@@ -1,0 +1,117 @@
+name: Triage Source Suggestion
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  triage:
+    if: |
+      github.event.label.name == 'feed-suggestion' ||
+      github.event.label.name == 'instance-suggestion'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse issue and create PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          LABEL: ${{ github.event.label.name }}
+        run: |
+          set -euo pipefail
+
+          # Extract URL from issue body (first https:// line after the URL field heading)
+          if [ "$LABEL" = "feed-suggestion" ]; then
+            FIELD="RSS Feed URL"
+            YAML_KEY="rss_feeds"
+            PR_PREFIX="feed"
+          else
+            FIELD="Instance URL"
+            YAML_KEY="mastodon_instances"
+            PR_PREFIX="instance"
+          fi
+
+          URL=$(echo "$ISSUE_BODY" | grep -A2 "### $FIELD" | grep -o 'https://[^ ]*' | head -1 | tr -d '[:space:]')
+
+          if [ -z "$URL" ]; then
+            gh issue comment "$ISSUE_NUMBER" --body "⚠️ Could not extract a URL from this issue. Please make sure the URL field is filled in correctly."
+            exit 0
+          fi
+
+          echo "Extracted URL: $URL"
+
+          # Check if URL already exists in sources.yaml
+          if grep -qF "$URL" crawler/sources.yaml; then
+            gh issue comment "$ISSUE_NUMBER" --body "ℹ️ \`$URL\` is already in \`sources.yaml\`."
+            exit 0
+          fi
+
+          # Create branch
+          BRANCH="suggestion/${PR_PREFIX}-${ISSUE_NUMBER}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+
+          # Append URL to the correct section in sources.yaml
+          python3 - <<PYEOF
+          import re, sys
+
+          with open("crawler/sources.yaml") as f:
+              content = f.read()
+
+          url = "$URL"
+          key = "$YAML_KEY"
+          issue = "$ISSUE_NUMBER"
+
+          # Find the section and append before the next top-level key or end of file
+          pattern = rf"({re.escape(key)}:.*?)(\n\n[a-z]|\Z)"
+          def replacer(m):
+              return m.group(1) + f"\n  - {url}  # suggested via issue #{issue}" + m.group(2)
+
+          new_content = re.sub(pattern, replacer, content, flags=re.DOTALL)
+
+          if new_content == content:
+              # fallback: just append to end of file
+              new_content = content.rstrip() + f"\n  - {url}  # suggested via issue #{issue}\n"
+
+          with open("crawler/sources.yaml", "w") as f:
+              f.write(new_content)
+
+          print("Done.")
+          PYEOF
+
+          git add crawler/sources.yaml
+          git commit -m "sources: add $URL (suggested in #${ISSUE_NUMBER})"
+          git push origin "$BRANCH"
+
+          # Open PR
+          gh pr create \
+            --title "Add suggested ${PR_PREFIX}: $URL" \
+            --body "$(cat <<EOF
+          Automatically generated from issue #${ISSUE_NUMBER}.
+
+          **URL:** \`$URL\`
+          **Type:** $LABEL
+
+          Please review \`crawler/sources.yaml\` and verify the source meets the guidelines before merging.
+
+          Closes #${ISSUE_NUMBER}
+          EOF
+          )" \
+            --head "$BRANCH" \
+            --base main
+
+          # Comment on issue
+          PR_URL=$(gh pr list --head "$BRANCH" --json url -q '.[0].url')
+          gh issue comment "$ISSUE_NUMBER" --body "✅ Thanks! A pull request has been opened to add this source: $PR_URL
+
+          It will be reviewed before merging."
